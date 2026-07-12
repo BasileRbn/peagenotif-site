@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprendre les péages — Péage Notif</title>
+<meta name="description" content="Système fermé, système ouvert, flux libre, tarifs origine-destination, bretelles payantes, barrières pleine voie, classes de véhicules : le fonctionnement des péages français expliqué simplement.">
+<link rel="icon" type="image/png" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+  :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="img/icon.png" alt="" width="30" height="30"> Péage Notif</a></div></header>
+
+<div class="wrap">
+  <h1>Comprendre les péages</h1>
+  <div class="date">Pourquoi ce montant-là, à cet endroit-là ? Le fonctionnement des péages français, expliqué simplement.</div>
+
+  <div class="tldr">
+    <b>L'essentiel :</b> en France, il n'existe pas « un » péage mais <b>trois systèmes</b> qui cohabitent — le système fermé (à ticket), le système ouvert (forfait à chaque barrière) et le flux libre (portiques sans barrière). Une même autoroute peut passer de l'un à l'autre, et c'est ce qui rend certains relevés de télépéage déroutants.
+  </div>
+
+  <section class="legal">
+
+  <h2>Les trois systèmes</h2>
+
+  <h3>1. Le système fermé (« à ticket »)</h3>
+  <p>Vous prenez un ticket (ou votre badge est lu) à l'<b>entrée</b>, vous payez à la <b>sortie</b>. Le prix dépend du couple <b>entrée&nbsp;→&nbsp;sortie</b> : c'est ce qu'on appelle un tarif <b>origine-destination</b> (« OD »). Les sociétés d'autoroutes publient chaque année de véritables matrices : une ligne par gare d'entrée, une colonne par gare de sortie, le prix à l'intersection. La majorité du réseau (APRR, ASF, Sanef, Escota…) fonctionne ainsi.</p>
+
+  <h3>2. Le système ouvert (forfait au passage)</h3>
+  <p>Pas de ticket : une <b>barrière en travers de la voie</b> vous facture un <b>montant fixe</b> à chaque franchissement, quelle que soit votre provenance ou votre destination. Les entrées et sorties intermédiaires sont souvent gratuites. C'est le cas de sections urbaines ou côtières très fréquentées — par exemple certaines barrières de l'A8 autour de Nice.</p>
+
+  <h3>3. Le flux libre (free-flow)</h3>
+  <p>Plus aucune barrière : des <b>portiques</b> enjambent l'autoroute et détectent le véhicule au passage, à pleine vitesse (badge, plaque d'immatriculation). Sans badge de télépéage, il faut <b>payer soi-même en ligne dans les 72 heures</b>, sous peine de majoration. L'A79 et l'A13/A14 en Normandie fonctionnent ainsi.</p>
+
+  <h2>Les cas qui surprennent</h2>
+
+  <h3>La bretelle d'entrée payante</h3>
+  <p>À la frontière entre une zone ouverte et une zone fermée, certaines <b>bretelles d'accès</b> sont elles-mêmes équipées d'une barrière qui facture un petit forfait à l'entrée. L'opérateur découpe alors le tarif officiel en <b>deux lignes sur votre relevé</b> : le forfait de la bretelle, puis le <b>solde</b> à la barrière de sortie. La somme des deux retombe exactement sur le tarif origine-destination publié.</p>
+
+  <div class="ex">
+    <div class="t">Exemple réel — A8, Nice Saint-Isidore → Antibes (classe 1, tarifs 2026)</div>
+    <table>
+      <tr><td>Bretelle d'entrée « Saint-Isidore »</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Barrière de sortie « Antibes Est »</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Total = le tarif officiel Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Deux lignes sur le relevé de télépéage, un seul trajet, un seul tarif de la grille officielle.</p>
+  </div>
+
+  <h3>Sortir sans barrière… et être quand même facturé</h3>
+  <p>En système ouvert, on peut <b>entrer ou sortir par une bretelle gratuite</b> : on ne paie que si l'on franchit une barrière pleine voie sur son chemin. Inversement, on peut être facturé <b>en entrant</b> sur l'autoroute (barrière traversée dans le sens de l'insertion) puis sortir librement. Le montant ne correspond donc pas toujours à « l'endroit où l'on quitte l'autoroute » — il correspond aux barrières réellement franchies.</p>
+
+  <h3>Le même échangeur, des bretelles différentes</h3>
+  <p>Un échangeur, c'est souvent <b>quatre bretelles</b> (entrée/sortie, dans chaque sens) — et elles ne sont pas toujours logées à la même enseigne : l'une peut être payante au forfait, l'autre gratuite, une troisième équipée d'une gare de sortie du système fermé. C'est pour cela que deux passages « au même péage » peuvent produire deux montants différents selon la bretelle empruntée.</p>
+
+  <h3>Le ticket perdu : le tarif le plus cher</h3>
+  <p>En système fermé, sans preuve de votre gare d'entrée (ticket perdu, badge illisible), la société applique le <b>tarif le plus cher</b> possible vers votre gare de sortie (dit « TLPC »). Certaines paires de la grille officielle affichent d'ailleurs des montants qui paraissent illogiques : ce sont des valeurs réglementaires de ce type, pas des erreurs.</p>
+
+  <h2>Petit lexique</h2>
+  <dl>
+    <dt>Tarif OD <span class="tag">origine-destination</span></dt>
+    <dd>Prix officiel d'un couple gare d'entrée → gare de sortie en système fermé. Publié chaque année dans des grilles par société d'autoroute.</dd>
+
+    <dt>Gare de péage</dt>
+    <dd>Le point de perception : ensemble des voies de paiement d'un échangeur ou d'une barrière. Une gare peut être « entrée seulement », « sortie seulement », ou les deux.</dd>
+
+    <dt>BPV <span class="tag">barrière pleine voie</span></dt>
+    <dd>Barrière qui coupe l'autoroute elle-même (toutes les voies), par opposition aux gares situées sur les bretelles d'un échangeur. C'est l'outil du système ouvert.</dd>
+
+    <dt>Portique flux libre</dt>
+    <dd>Arche équipée de capteurs qui remplace la barrière : détection à pleine vitesse, paiement par badge ou en ligne sous 72 h.</dd>
+
+    <dt>Forfait</dt>
+    <dd>Montant fixe facturé à chaque franchissement d'un point donné (barrière ouverte, portique, tunnel), indépendant du reste du trajet.</dd>
+
+    <dt>Transit <span class="tag">flux libre A79</span></dt>
+    <dd>Sur l'A79, deux portiques encadrent chaque échangeur. Les franchir tous les deux (on ne fait que passer) coûte un tarif « transit » bundlé, qui n'est pas la simple somme des deux zones.</dd>
+
+    <dt>Classes de véhicules (1 à 5)</dt>
+    <dd>Classe 1 : voiture (hauteur &lt; 2 m). Classe 2 : fourgons, vans aménagés, voitures avec caravane basse. Classes 3 et 4 : poids lourds et autocars. Classe 5 : motos. Le prix d'un même trajet change fortement d'une classe à l'autre.</dd>
+
+    <dt>Télépéage (badge)</dt>
+    <dd>Boîtier (Ulys, Bip&amp;Go, Fulli…) qui paie automatiquement au passage. Le relevé mensuel de l'opérateur liste chaque perception — c'est la référence pour vérifier une estimation.</dd>
+
+    <dt>Révision du 1<sup>er</sup> février</dt>
+    <dd>Les tarifs des autoroutes concédées sont révisés chaque année au 1<sup>er</sup> février (arrêtés publiés au Journal officiel fin janvier). Une estimation calculée sur l'ancienne grille peut différer de quelques centimes début février.</dd>
+  </dl>
+
+  <h2>Et Péage Notif dans tout ça ?</h2>
+  <p>L'application embarque les grilles officielles (matrices OD, forfaits, tarifs flux libre) et reconstitue votre trajet en direct : elle mémorise votre gare d'entrée, reconnaît les barrières réellement franchies — bretelles payantes comprises — et annonce le montant correspondant au passage. Quand une information manque (entrée non détectée, paire absente de la grille officielle), elle préfère <b>annoncer honnêtement « entrée inconnue »</b> plutôt qu'inventer un chiffre. Les montants restent des <b>estimations non contractuelles</b> : seul le relevé de votre opérateur fait foi.</p>
+
+  <a class="back" href="index.html">← Retour à l'accueil</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI — RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" href="img/icon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Péage Notif","operatingSystem":"iOS","applicationCategory":"TravelApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Le prix estimé de chaque péage, en notification, à la seconde où vous le franchissez."}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Péage Notif","operatingSystem":"iOS","applicationCategory":"TravelApplication","installUrl":"https://apps.apple.com/fr/app/id6787924563","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Le prix estimé de chaque péage, en notification, à la seconde où vous le franchissez."}
 </script>
 <style>
   :root{
@@ -281,6 +281,15 @@
     .marquee .track{animation:none}
     .trip .row{opacity:1;transform:none}
   }
+  /* ---------- Galerie App Store ---------- */
+  .gallery{display:flex;gap:20px;overflow-x:auto;padding:8px 4px 22px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery img{width:min(304px,74vw);height:auto;flex:none;border-radius:22px;border:1px solid var(--line);box-shadow:0 20px 48px rgba(0,0,0,.5);scroll-snap-align:center;transition:transform .25s ease,box-shadow .25s ease}
+  .gallery img:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+  .gallery-hint{text-align:center;color:var(--tx3);font-size:13px;margin-top:2px}
+  /* centre quand ça tient, reste scrollable quand ça déborde (jamais de côté gauche coupé) */
+  .gallery img:first-child{margin-left:auto}
+  .gallery img:last-child{margin-right:auto}
 </style>
 </head>
 <body>
@@ -307,7 +316,7 @@
       <h1>Le prix de votre péage,<br><span class="hl">pile au passage.</span></h1>
       <p class="lead">La première app qui vous annonce le prix <b>au moment où vous franchissez le péage</b> — flux libre ou barrière. Gratuit, sans compte, hors-ligne.</p>
       <div class="cta-row">
-        <span class="btn btn-app"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Bientôt sur</small><b>l'App Store</b></span></span>
+        <a class="btn btn-app" href="https://apps.apple.com/fr/app/id6787924563" rel="noopener"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Télécharger dans</small><b>l'App Store</b></span></a>
         <a href="#comment" class="btn btn-ghost">Voir comment ça marche</a>
       </div>
       <div class="pills">
@@ -526,6 +535,25 @@
   </div>
 </section>
 
+<!-- GALERIE -->
+<section id="galerie" class="band">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">L'app en images</span>
+      <h2>Conçue pour la route</h2>
+      <p>Les mêmes écrans que sur l'App Store — le prix en héros, le reste en légende.</p>
+    </div>
+    <div class="gallery">
+      <img class="rv" src="img/store/01-prix-au-passage.webp" alt="Notification « ≈ 4,70 € — Fréjus → Antibes · Escota » affichée au passage du péage" width="720" height="1558" loading="lazy">
+      <img class="rv" style="--d:.08s" src="img/store/02-annonce-vocale.webp" alt="Annonce vocale « Péage Antibes, 4 euros 70 » — haut-parleur, Bluetooth ou CarPlay" width="720" height="1558" loading="lazy">
+      <img class="rv" style="--d:.16s" src="img/store/03-un-appui.webp" alt="Écran d'accueil : un appui sur le bouton vert et le suivi démarre" width="720" height="1558" loading="lazy">
+      <img class="rv" style="--d:.24s" src="img/store/04-total-direct.webp" alt="Carte « Trajet en cours » : deux péages détectés, total estimé 6,90 €" width="720" height="1558" loading="lazy">
+      <img class="rv" style="--d:.32s" src="img/store/05-tout-embarque.webp" alt="1 000+ péages embarqués, 100 % hors ligne, zéro compte, gratuit" width="720" height="1558" loading="lazy">
+    </div>
+    <p class="gallery-hint" aria-hidden="true">← Glissez →</p>
+  </div>
+</section>
+
 <!-- PRIVACY -->
 <section class="privacy-band">
   <div class="wrap">
@@ -567,10 +595,10 @@
 <!-- CTA -->
 <section class="cta band">
   <div class="wrap">
-    <span class="soon rv"><span class="dot"></span> En test — bientôt disponible</span>
+    <span class="soon rv"><span class="dot"></span> Disponible sur l'App Store</span>
     <h2 class="rv" style="margin-top:22px;--d:.08s">Ne vous demandez plus<br>« ça m'a coûté combien ? »</h2>
-    <p class="rv" style="--d:.16s">Péage Notif arrive sur l'App Store. En attendant, écrivez-nous pour toute question.</p>
-    <a href="mailto:support@peagenotif.fr" class="btn btn-app rv" style="display:inline-flex;--d:.24s">✉︎&nbsp; support@peagenotif.fr</a>
+    <p class="rv" style="--d:.16s">Péage Notif est gratuit, sans compte — installé en dix secondes.</p>
+    <a href="https://apps.apple.com/fr/app/id6787924563" rel="noopener" class="btn btn-app rv" style="display:inline-flex;--d:.24s"><svg viewBox="0 0 384 512" fill="currentColor" width="18" height="22" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Télécharger dans</small><b>l'App Store</b></span></a>
   </div>
 </section>
 

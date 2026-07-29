@@ -50,11 +50,17 @@
   header{position:sticky;top:0;z-index:30;background:rgba(7,10,18,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
   header.scrolled{border-color:var(--line)}
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--tx);font-size:17px}
-  .logo .badge{width:32px;height:32px;border-radius:9px;box-shadow:0 4px 14px rgba(11,95,255,.4);display:block}
-  nav a{color:var(--tx2);margin-left:26px;font-size:15px;font-weight:500}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--tx);font-size:17px;white-space:nowrap}
+  .logo .badge{width:32px;height:32px;border-radius:9px;box-shadow:0 4px 14px rgba(11,95,255,.4);display:block;flex:none}
+  /* Le header tient sur UNE ligne à toute largeur : les libellés ne se coupent pas
+     (`nowrap`) et les liens secondaires s'effacent par paliers. Sans cela, les six
+     entrées repassaient à la ligne dès ~1000 px et le logo se coupait en deux. */
+  nav{display:flex;align-items:center}
+  nav a{color:var(--tx2);margin-left:26px;font-size:15px;font-weight:500;white-space:nowrap}
   nav a:hover{color:var(--tx);text-decoration:none}
-  @media(max-width:640px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
+  @media(max-width:1000px){nav a{margin-left:20px}nav a.hide-m{display:none}}
+  @media(max-width:760px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
+  @media(max-width:560px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
 
   /* ---------- Hero ---------- */
   .hero{position:relative;padding:76px 0 40px;overflow:hidden}
@@ -300,12 +306,12 @@
   <div class="wrap">
     <div class="logo"><img class="badge" src="img/icon.png" alt="" width="32" height="32"> Péage Notif</div>
     <nav>
-      <a href="#comment" class="hide-s">Comment ça marche</a>
+      <a href="#comment" class="hide-m">Comment ça marche</a>
       <a href="#fonctions">Fonctions</a>
       <a href="#nouveautes" class="hide-s">Nouveautés</a>
-      <a href="peages-mode-emploi.html">Comprendre les péages</a>
+      <a href="peages-mode-emploi.html" class="hide-xs">Comprendre les péages</a>
       <a href="#support">Support</a>
-      <a href="confidentialite.html" class="hide-s">Confidentialité</a>
+      <a href="confidentialite.html" class="hide-m">Confidentialité</a>
     </nav>
   </div>
 </header>

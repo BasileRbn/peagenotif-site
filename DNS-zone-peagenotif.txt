@@ -1,0 +1,18 @@
+$TTL 3600
+@	IN SOA dns106.ovh.net. tech.ovh.net. (2083330542 86400 3600 3600000 60)
+        IN NS     dns106.ovh.net.
+        IN NS     ns106.ovh.net.
+        IN MX     1 mx0.mail.ovh.net.
+        IN MX     50 mx2.mail.ovh.net.
+        IN MX     100 mx3.mail.ovh.net.
+        IN MX     5 mx1.mail.ovh.net.
+        IN A     185.199.108.153
+        IN A     185.199.109.153
+        IN A     185.199.110.153
+        IN A     185.199.111.153
+        IN TXT     "v=spf1 include:mx.ovh.com ~all"
+_autodiscover._tcp        IN SRV     0 0 443 zimbra1.mail.ovh.net.
+ftp        IN CNAME     peagenotif.fr.
+ovhmo-selector-1._domainkey        IN CNAME     ovhmo-selector-1._domainkey.4733343.fn.dkim.mail.ovh.net.
+ovhmo-selector-2._domainkey        IN CNAME     ovhmo-selector-2._domainkey.4733344.fn.dkim.mail.ovh.net.
+www        IN CNAME     basilerbn.github.io.

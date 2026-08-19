@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Péage Notif — le prix de votre péage, au passage</title>
-<meta name="description" content="Péage Notif affiche le prix estimé d'un péage dans une notification, à la seconde où vous le franchissez. Gratuit, sans compte, tous les réseaux d'autoroutes français.">
+<meta name="description" content="Péage Notif affiche le prix estimé d'un péage dans une notification, à la seconde où vous le franchissez. Gratuit, sans compte, en France et en Italie.">
 <meta name="theme-color" content="#070A12">
 <meta property="og:title" content="Péage Notif — le prix de votre péage, au passage">
 <meta property="og:description" content="Une notification vous annonce le montant estimé au passage de chaque péage. Gratuit, sans compte, hors-ligne.">
@@ -192,9 +192,10 @@
 
   /* ---------- Marquee réseaux ---------- */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);background:rgba(255,255,255,.015)}
-  /* 52 s et non 26 : la liste est passée de 11 à 23 réseaux, et la durée couvre une
-     translation de -50 % — à durée constante, doubler la longueur doublerait la vitesse. */
-  .marquee .track{display:flex;gap:44px;width:max-content;animation:slide 52s linear infinite}
+  /* La durée suit la LONGUEUR de la liste : la translation vaut -50 %, donc à durée
+     constante, rallonger la liste accélère le défilement d'autant. 11 réseaux tenaient en
+     26 s, 23 en 52 s, et l'Italie porte le compte à 28, d'où 63 s. */
+  .marquee .track{display:flex;gap:44px;width:max-content;animation:slide 63s linear infinite}
   .marquee span{color:var(--tx3);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
   .marquee span b{color:var(--tx2)}
   @keyframes slide{to{transform:translateX(-50%)}}
@@ -382,6 +383,8 @@
     <span><b>Aliaé</b> · A79</span><span><b>Atlandes</b> · A63</span><span><b>Albéa</b> · A150</span>
     <span><b>ALIS</b> · A28</span><span><b>ARCOUR</b> · A19</span><span><b>ADELAC</b> · A41</span>
     <span><b>SFTRF</b> · Fréjus</span><span><b>ATMB</b> · Mont-Blanc</span><span><b>CEVM</b> · Millau</span>
+    <span><b>Autostrade</b> · Italie</span><span><b>SATAP</b> · A4</span><span><b>Brennero</b> · A22</span>
+    <span><b>Tangenziale</b> · Napoli</span><span><b>Pedemontana</b> · A36</span>
     <span><b>Arcos</b> · A355</span><span><b>Duplex A86</b></span><span>Tunnels du <b>Prado</b></span>
     <span>Pont de <b>Normandie</b></span><span>Flux libre · A13 &amp; A14</span><span>Gares à barrière</span>
   </div>
@@ -402,8 +405,8 @@
     </div>
     <div class="stats">
       <div class="stat rv"><div class="v"><span data-count="96">0</span>&nbsp;%</div><div class="l">des gares de péage françaises</div></div>
-      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="56304">0</span></div><div class="l">trajets tarifés, hors-ligne</div></div>
-      <div class="stat rv" style="--d:.2s"><div class="v"><span data-count="17">0</span></div><div class="l">réseaux vérifiés à la source</div></div>
+      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="160027">0</span></div><div class="l">trajets tarifés, hors-ligne</div></div>
+      <div class="stat rv" style="--d:.2s"><div class="v"><span data-count="20">0</span></div><div class="l">réseaux vérifiés à la source</div></div>
       <div class="stat rv" style="--d:.3s"><div class="v">0</div><div class="l">compte, 0 traceur</div></div>
     </div>
   </div>
@@ -466,7 +469,7 @@
         <p>Une Live Activity suit le total qui grimpe au fil des péages — sur l'écran verrouillé, en Dynamic Island et sur CarPlay.</p>
         <ul>
           <li>Total mis à jour à chaque borne</li>
-          <li>Visible d'un coup d'œil, sans ouvrir l'app</li>
+          <li>Un écran CarPlay dédié : le suivi se démarre et s'arrête sans toucher au téléphone</li>
           <li>Récapitulatif complet en fin de trajet</li>
         </ul>
       </div>
@@ -502,10 +505,10 @@
 
     <div class="feat">
       <div class="txt rv">
-        <h3>Tous les réseaux, hors-ligne</h3>
-        <p>776 des 811 gares de péage françaises, tarifs officiels embarqués. L'app fonctionne sans connexion.</p>
+        <h3>La France et l'Italie, hors-ligne</h3>
+        <p>776 des 811 gares de péage françaises et 582 points italiens, tarifs officiels embarqués. L'app fonctionne sans connexion.</p>
         <ul>
-          <li>17 réseaux comparés ligne à ligne à leur grille officielle</li>
+          <li>20 réseaux comparés ligne à ligne à leur grille officielle</li>
           <li>Classe de véhicule réglable (classe 1 par défaut)</li>
           <li>Signalement d'erreur intégré pour améliorer la base</li>
         </ul>

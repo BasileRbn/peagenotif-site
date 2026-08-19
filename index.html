@@ -192,9 +192,10 @@
 
   /* ---------- Marquee réseaux ---------- */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);background:rgba(255,255,255,.015)}
-  /* La durée suit la LONGUEUR de la liste : la translation vaut -50 %, donc à durée
-     constante, rallonger la liste accélère le défilement d'autant. 11 réseaux tenaient en
-     26 s, 23 en 52 s, et l'Italie porte le compte à 28, d'où 63 s. */
+  /* La durée est POSÉE PAR LE SCRIPT d'après la largeur mesurée de la piste, à vitesse
+     constante : la translation vaut -50 %, donc à durée fixe, rallonger la liste
+     accélérerait le défilement d'autant. La valeur ci-dessous est le repli si le script
+     ne tourne pas ; elle correspond aux 28 réseaux d'aujourd'hui. */
   .marquee .track{display:flex;gap:44px;width:max-content;animation:slide 63s linear infinite}
   .marquee span{color:var(--tx3);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
   .marquee span b{color:var(--tx2)}
@@ -322,7 +323,7 @@
   <div class="lanes"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Autoroutes françaises · iPhone</span>
+      <span class="eyebrow">Autoroutes françaises et italiennes · iPhone</span>
       <h1>Le prix de votre péage,<br><span class="hl">pile au passage.</span></h1>
       <p class="lead">La première app qui vous annonce le prix <b>au moment où vous franchissez le péage</b> — flux libre ou barrière. Gratuit, sans compte, hors-ligne.</p>
       <div class="cta-row">
@@ -691,9 +692,13 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-  // marquee : duplique la piste pour une boucle sans couture
+  // marquee : duplique la piste pour une boucle sans couture, puis cale la durée
+  // sur la largeur mesurée — 69 px/s, la vitesse d'origine (4346 px en 63 s).
+  // Ainsi ajouter un réseau ne change plus la vitesse de défilement.
   const mq=document.getElementById('mq');
   mq.innerHTML+=mq.innerHTML;
+  const largeur=mq.scrollWidth/2;                  // une copie de la liste
+  if(largeur>0)mq.style.animationDuration=Math.round(largeur/69)+'s';
 
   // compteurs animés
   const fmt=new Intl.NumberFormat('fr-FR');

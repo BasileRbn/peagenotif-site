@@ -58,9 +58,18 @@
   nav{display:flex;align-items:center}
   nav a{color:var(--tx2);margin-left:26px;font-size:15px;font-weight:500;white-space:nowrap}
   nav a:hover{color:var(--tx);text-decoration:none}
-  @media(max-width:1000px){nav a{margin-left:20px}nav a.hide-m{display:none}}
-  @media(max-width:760px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
-  @media(max-width:560px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
+  /* Paliers relevés de ~200 px depuis l'ajout du sélecteur de langue, qui occupe
+     à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
+     écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
+     largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
+  @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
+  @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
+  @media(max-width:660px){
+    nav a.hide-xxs{display:none}
+    .langs{margin-left:8px;padding:1px}
+    .langs a{padding:3px 7px;font-size:11px}
+  }
 
   /* ---------- Hero ---------- */
   .hero{position:relative;padding:76px 0 40px;overflow:hidden}
@@ -316,10 +325,10 @@
     <div class="logo"><img class="badge" src="../img/icon.png" alt="" width="32" height="32"> Péage Notif</div>
     <nav>
       <a href="#comment" class="hide-m">Come funziona</a>
-      <a href="#fonctions">Funzioni</a>
+      <a href="#fonctions" class="hide-xxs">Funzioni</a>
       <a href="#nouveautes" class="hide-s">Novità</a>
       <a href="peages-mode-emploi.html" class="hide-xs">Capire i pedaggi</a>
-      <a href="#support">Assistenza</a>
+      <a href="#support" class="hide-xxs">Assistenza</a>
       <a href="confidentialite.html" class="hide-m">Privacy</a>
       <span class="langs" role="group" aria-label="Langue"><a href="/" hreflang="fr" data-lang="fr">FR</a><a href="/en/" hreflang="en" data-lang="en">EN</a><a href="/it/" hreflang="it" data-lang="it">IT</a></span>
     </nav>

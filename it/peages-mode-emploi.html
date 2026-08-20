@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capire i pedaggi — Péage Notif</title>
+<meta name="description" content="Sistema chiuso, sistema aperto, free flow, tariffe origine-destinazione, rampe a pagamento, barriere a piena carreggiata, classi di veicoli: il funzionamento dei pedaggi francesi spiegato in modo semplice.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><span class="langs" role="group" aria-label="Langue"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr">FR</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en">EN</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it">IT</a></span></div></header>
+
+<div class="wrap">
+  <h1>Capire i pedaggi</h1>
+  <div class="date">Perché proprio quell'importo, proprio in quel punto? Il funzionamento dei pedaggi francesi, spiegato in modo semplice.</div>
+
+  <div class="tldr">
+    <b>In sintesi:</b> in Francia non esiste «un» pedaggio ma <b>tre sistemi</b> che convivono: il sistema chiuso (a ticket), il sistema aperto (importo fisso a ogni barriera) e il free flow (portali senza barriera). Una stessa autostrada può passare dall'uno all'altro, ed è questo a rendere sconcertanti certi estratti conto del telepedaggio.
+  </div>
+
+  <section class="legal">
+
+  <h2>I tre sistemi</h2>
+
+  <h3>1. Il sistema chiuso («a ticket»)</h3>
+  <p>Prendi un ticket (o il tuo dispositivo viene letto) in <b>ingresso</b>, e paghi in <b>uscita</b>. Il prezzo dipende dalla coppia <b>ingresso&nbsp;→&nbsp;uscita</b>: è ciò che si chiama tariffa <b>origine-destinazione</b> («OD»). Le società autostradali pubblicano ogni anno vere e proprie matrici: una riga per casello di ingresso, una colonna per casello di uscita, il prezzo all'incrocio. La maggior parte della rete (APRR, ASF, Sanef, Escota…) funziona così.</p>
+
+  <h3>2. Il sistema aperto (importo fisso al passaggio)</h3>
+  <p>Nessun ticket: una <b>barriera che attraversa la carreggiata</b> ti addebita un <b>importo fisso</b> a ogni passaggio, qualunque sia la tua provenienza o destinazione. Gli ingressi e le uscite intermedi sono spesso gratuiti. È il caso di tratte urbane o costiere molto trafficate — per esempio alcune barriere della A8 intorno a Nizza.</p>
+
+  <h3>3. Il free flow</h3>
+  <p>Nessuna barriera: <b>portali</b> scavalcano l'autostrada e rilevano il veicolo al passaggio, a piena velocità (dispositivo, targa). Senza telepedaggio bisogna <b>pagare da sé online entro 72 ore</b>, pena una maggiorazione. La A79 e la A13/A14 in Normandia funzionano così.</p>
+
+  <h2>I casi che sorprendono</h2>
+
+  <h3>La rampa di ingresso a pagamento</h3>
+  <p>Al confine tra una zona aperta e una zona chiusa, alcune <b>rampe di accesso</b> sono a loro volta dotate di una barriera che addebita un piccolo importo fisso all'ingresso. L'operatore divide allora la tariffa ufficiale in <b>due righe sul tuo estratto conto</b>: l'importo della rampa, poi il <b>saldo</b> alla barriera di uscita. La somma dei due ricade esattamente sulla tariffa origine-destinazione pubblicata.</p>
+
+  <div class="ex">
+    <div class="t">Esempio reale — A8, Nice Saint-Isidore → Antibes (classe 1, tariffe 2026)</div>
+    <table>
+      <tr><td>Rampa di ingresso «Saint-Isidore»</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Barriera di uscita «Antibes Est»</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Totale = la tariffa ufficiale Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Due righe sull'estratto conto del telepedaggio, un solo viaggio, una sola tariffa del tariffario ufficiale.</p>
+  </div>
+
+  <h3>Uscire senza barriera… ed essere comunque addebitati</h3>
+  <p>Nel sistema aperto si può <b>entrare o uscire da una rampa gratuita</b>: si paga solo se si attraversa una barriera a piena carreggiata lungo il percorso. Al contrario, si può essere addebitati <b>entrando</b> in autostrada (barriera attraversata nel senso dell'immissione) e poi uscire liberamente. L'importo non corrisponde quindi sempre al «punto in cui si lascia l'autostrada»: corrisponde alle barriere realmente attraversate.</p>
+
+  <h3>Lo stesso svincolo, rampe diverse</h3>
+  <p>Uno svincolo è spesso fatto di <b>quattro rampe</b> (ingresso e uscita, in ciascun senso) — e non sono sempre trattate allo stesso modo: una può essere a pagamento con importo fisso, un'altra gratuita, una terza dotata di un casello di uscita del sistema chiuso. È per questo che due passaggi «allo stesso pedaggio» possono produrre due importi diversi a seconda della rampa presa.</p>
+
+  <h3>Il ticket perso: la tariffa più cara</h3>
+  <p>Nel sistema chiuso, senza prova del tuo casello di ingresso (ticket perso, dispositivo illeggibile), la società applica la <b>tariffa più cara</b> possibile verso il tuo casello di uscita (detta «TLPC» in francese). Alcune coppie del tariffario ufficiale mostrano del resto importi che sembrano illogici: sono valori regolamentari di questo tipo, non errori.</p>
+
+  <h2>Piccolo glossario</h2>
+  <dl>
+    <dt>Tariffa OD <span class="tag">origine-destinazione</span></dt>
+    <dd>Prezzo ufficiale di una coppia casello di ingresso → casello di uscita nel sistema chiuso. Pubblicato ogni anno in tariffari per società autostradale.</dd>
+
+    <dt>Casello</dt>
+    <dd>Il punto di esazione: l'insieme delle corsie di pagamento di uno svincolo o di una barriera. Un casello può essere «solo ingresso», «solo uscita», o entrambi.</dd>
+
+    <dt>BPV <span class="tag">barriera a piena carreggiata</span></dt>
+    <dd>Barriera che taglia l'autostrada stessa (tutte le corsie), in opposizione ai caselli situati sulle rampe di uno svincolo. È lo strumento del sistema aperto.</dd>
+
+    <dt>Portale free flow</dt>
+    <dd>Arco dotato di sensori che sostituisce la barriera: rilevamento a piena velocità, pagamento con dispositivo o online entro 72 h.</dd>
+
+    <dt>Importo fisso</dt>
+    <dd>Importo fisso addebitato a ogni passaggio di un dato punto (barriera aperta, portale, tunnel), indipendente dal resto del viaggio.</dd>
+
+    <dt>Transito <span class="tag">free flow A79</span></dt>
+    <dd>Sulla A79 due portali incorniciano ogni svincolo. Attraversarli entrambi (si è solo di passaggio) costa una tariffa «transito» unica, che non è la semplice somma delle due zone.</dd>
+
+    <dt>Classi di veicoli (da 1 a 5)</dt>
+    <dd>Classe 1: automobile (altezza &lt; 2 m). Classe 2: furgoni, van attrezzati, auto con caravan basso. Classi 3 e 4: mezzi pesanti e autobus. Classe 5: moto. Il prezzo di uno stesso viaggio cambia molto da una classe all'altra.</dd>
+
+    <dt>Telepedaggio (dispositivo)</dt>
+    <dd>Apparecchio (Ulys, Bip&amp;Go, Fulli…) che paga automaticamente al passaggio. L'estratto conto mensile dell'operatore elenca ogni esazione: è il riferimento per verificare una stima.</dd>
+
+    <dt>Revisione del 1<sup>°</sup> febbraio</dt>
+    <dd>Le tariffe delle autostrade francesi in concessione sono riviste ogni anno il 1<sup>°</sup> febbraio (decreti pubblicati sulla Gazzetta ufficiale francese a fine gennaio). Una stima calcolata sul vecchio tariffario può differire di qualche centesimo a inizio febbraio.</dd>
+  </dl>
+
+  <h2>E Péage Notif in tutto questo?</h2>
+  <p>L'applicazione integra i tariffari ufficiali (matrici OD, importi fissi, tariffe free flow) e ricostruisce il tuo viaggio in tempo reale: memorizza il tuo casello di ingresso, riconosce le barriere realmente attraversate — rampe a pagamento comprese — e annuncia l'importo corrispondente al passaggio. Quando un'informazione manca (ingresso non rilevato, coppia assente dal tariffario ufficiale), preferisce <b>annunciare onestamente «ingresso sconosciuto»</b> piuttosto che inventare una cifra. Gli importi restano <b>stime non vincolanti</b>: fa fede solo l'estratto conto del tuo operatore.</p>
+
+  <a class="back" href="index.html">← Torna alla home</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI — Registro imprese di Nizza 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understanding tolls — Péage Notif</title>
+<meta name="description" content="Closed system, open system, free-flow, origin-destination prices, paying slip roads, full-carriageway barriers, vehicle classes: how French tolls work, explained simply.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><span class="langs" role="group" aria-label="Langue"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr">FR</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en">EN</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it">IT</a></span></div></header>
+
+<div class="wrap">
+  <h1>Understanding tolls</h1>
+  <div class="date">Why that amount, in that place? How French tolls work, explained simply.</div>
+
+  <div class="tldr">
+    <b>The essentials:</b> in France there is not “one” toll system but <b>three systems</b> side by side: the closed system (with a ticket), the open system (a flat fee at each barrier) and free-flow (gantries with no barrier). A single motorway can move from one to another, and that is what makes some toll-badge statements puzzling.
+  </div>
+
+  <section class="legal">
+
+  <h2>The three systems</h2>
+
+  <h3>1. The closed system (“with a ticket”)</h3>
+  <p>You take a ticket (or your badge is read) at the <b>entrance</b>, and you pay at the <b>exit</b>. The price depends on the pair <b>entrance&nbsp;→&nbsp;exit</b>: this is what is called an <b>origin-destination</b> price (“OD”). Motorway companies publish genuine matrices every year: one row per entry plaza, one column per exit plaza, the price where they meet. Most of the network (APRR, ASF, Sanef, Escota…) works this way.</p>
+
+  <h3>2. The open system (flat fee as you pass)</h3>
+  <p>No ticket: a <b>barrier across the carriageway</b> charges you a <b>fixed amount</b> at every crossing, whatever your origin or destination. Intermediate entries and exits are often free. This is the case on busy urban or coastal sections — for example some of the A8 barriers around Nice.</p>
+
+  <h3>3. Free-flow</h3>
+  <p>No barrier at all: <b>gantries</b> span the motorway and detect the vehicle as it passes, at full speed (badge, number plate). Without a toll badge, you must <b>pay online yourself within 72 hours</b>, or face a surcharge. The A79 and the A13/A14 in Normandy work this way.</p>
+
+  <h2>The cases that surprise people</h2>
+
+  <h3>The paying entry slip road</h3>
+  <p>At the boundary between an open zone and a closed zone, some <b>access slip roads</b> are themselves fitted with a barrier that charges a small flat fee on entry. The operator then splits the official price into <b>two lines on your statement</b>: the slip road fee, then the <b>balance</b> at the exit barrier. The two added together land exactly on the published origin-destination price.</p>
+
+  <div class="ex">
+    <div class="t">A real example — A8, Nice Saint-Isidore → Antibes (class 1, 2026 prices)</div>
+    <table>
+      <tr><td>Entry slip road “Saint-Isidore”</td><td>€0.50</td></tr>
+      <tr><td>Exit barrier “Antibes Est”</td><td>€1.70</td></tr>
+      <tr class="total"><td>Total = the official Saint-Isidore&nbsp;→&nbsp;Antibes price</td><td>€2.20</td></tr>
+    </table>
+    <p class="muted">Two lines on the toll-badge statement, one single trip, one single price from the official list.</p>
+  </div>
+
+  <h3>Leaving with no barrier… and still being charged</h3>
+  <p>In the open system, you can <b>enter or leave by a free slip road</b>: you pay only if you cross a full-carriageway barrier along the way. Conversely, you can be charged <b>on entering</b> the motorway (a barrier crossed in the direction of the merge) and then leave freely. So the amount does not always match “where you left the motorway” — it matches the barriers you actually crossed.</p>
+
+  <h3>The same junction, different slip roads</h3>
+  <p>A junction often means <b>four slip roads</b> (entry and exit, in each direction) — and they are not always treated alike: one may charge a flat fee, another may be free, a third may carry an exit plaza of the closed system. That is why two crossings “at the same toll” can produce two different amounts depending on the slip road taken.</p>
+
+  <h3>The lost ticket: the highest price</h3>
+  <p>In the closed system, with no proof of your entry plaza (lost ticket, unreadable badge), the company applies the <b>highest possible price</b> to your exit plaza (known in French as “TLPC”). Some pairs in the official list do show amounts that look illogical: these are regulatory values of that kind, not mistakes.</p>
+
+  <h2>A short glossary</h2>
+  <dl>
+    <dt>OD price <span class="tag">origin-destination</span></dt>
+    <dd>Official price of an entry plaza → exit plaza pair in the closed system. Published every year in price lists by motorway company.</dd>
+
+    <dt>Toll plaza</dt>
+    <dd>The point of collection: all the payment lanes of a junction or of a barrier. A plaza can be “entry only”, “exit only”, or both.</dd>
+
+    <dt>BPV <span class="tag">full-carriageway barrier</span></dt>
+    <dd>A barrier that cuts across the motorway itself (every lane), as opposed to plazas sitting on the slip roads of a junction. It is the instrument of the open system.</dd>
+
+    <dt>Free-flow gantry</dt>
+    <dd>An arch fitted with sensors that replaces the barrier: detection at full speed, payment by badge or online within 72 h.</dd>
+
+    <dt>Flat fee</dt>
+    <dd>A fixed amount charged at every crossing of a given point (open barrier, gantry, tunnel), independent of the rest of the trip.</dd>
+
+    <dt>Transit <span class="tag">A79 free-flow</span></dt>
+    <dd>On the A79, two gantries frame each junction. Crossing both (you are only passing through) costs a bundled “transit” price, which is not the simple sum of the two zones.</dd>
+
+    <dt>Vehicle classes (1 to 5)</dt>
+    <dd>Class 1: car (height &lt; 2 m). Class 2: vans, camper vans, cars with a low caravan. Classes 3 and 4: lorries and coaches. Class 5: motorcycles. The price of the same trip changes sharply from one class to another.</dd>
+
+    <dt>Toll badge</dt>
+    <dd>A unit (Ulys, Bip&amp;Go, Fulli…) that pays automatically as you pass. The operator's monthly statement lists every collection — it is the reference against which to check an estimate.</dd>
+
+    <dt>The 1<sup>st</sup> February revision</dt>
+    <dd>The prices of concession motorways are revised every year on 1<sup>st</sup> February (orders published in the Journal officiel at the end of January). An estimate calculated on the old price list may differ by a few cents in early February.</dd>
+  </dl>
+
+  <h2>And where does Péage Notif fit in?</h2>
+  <p>The app carries the official price lists (OD matrices, flat fees, free-flow prices) and rebuilds your trip live: it remembers your entry plaza, recognises the barriers actually crossed — paying slip roads included — and announces the corresponding amount as you pass. When information is missing (entry not detected, pair absent from the official list), it would rather <b>say honestly “entry unknown”</b> than invent a figure. The amounts remain <b>non-binding estimates</b>: only your operator's statement is authoritative.</p>
+
+  <a class="back" href="index.html">← Back to the home page</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI — Nice Trade Register 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

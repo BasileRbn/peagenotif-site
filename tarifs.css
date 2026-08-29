@@ -1,0 +1,33 @@
+:root{--blue:#0B5FFF;--green:#1FB25A;--bg:#0A0E17;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}header .wrap{display:flex;align-items:center;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+h1{font-size:clamp(26px,4.6vw,38px);letter-spacing:-.02em;margin:36px 0 10px}
+.intro{color:var(--tx2);margin-bottom:26px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0 30px}
+th,td{padding:9px 10px;border-top:1px solid var(--line);text-align:left}
+th{color:var(--tx2);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+td+td,th+th{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cta{background:linear-gradient(180deg,rgba(31,178,90,.10),transparent);border:1px solid rgba(31,178,90,.30);border-radius:16px;padding:22px;margin:30px 0}
+.cta b{color:var(--green);display:block;margin-bottom:6px;font-size:18px}
+.btn{display:inline-block;margin-top:12px;background:var(--blue);color:#fff;font-weight:700;padding:11px 18px;border-radius:12px}
+.btn:hover{text-decoration:none;opacity:.92}
+.cols{columns:3 200px;column-gap:26px;margin:6px 0 34px}
+.cols a{display:block;padding:3px 0;break-inside:avoid}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--tx2);font-size:14px;margin-top:20px}
+.langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px}
+.langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;color:var(--tx2)}
+.langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+/* Sous 720 px la quatrième colonne débordait : le tableau se resserre plutôt que de
+   masquer une classe de véhicule — un routier vient précisément pour la sienne. */
+@media (max-width:720px){
+  body{font-size:15px}
+  table{font-size:13.5px}
+  th,td{padding:8px 5px}
+  th{font-size:10.5px;letter-spacing:.03em}
+  .wrap{padding:0 14px}
+}

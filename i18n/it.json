@@ -388,5 +388,8 @@
   "estimations non contractuelles": "stime non vincolanti",
   ": seul le relevé de votre opérateur fait foi.": ": fa fede solo l'estratto conto del tuo operatore.",
   "Système fermé, système ouvert, flux libre, tarifs origine-destination, bretelles payantes, barrières pleine voie, classes de véhicules : le fonctionnement des péages français expliqué simplement.": "Sistema chiuso, sistema aperto, free flow, tariffe origine-destinazione, rampe a pagamento, barriere a piena carreggiata, classi di veicoli: il funzionamento dei pedaggi francesi spiegato in modo semplice.",
-  "Prix des péages": "Prezzo dei pedaggi"
+  "Prix des péages": "Prezzo dei pedaggi",
+  "Péage Notif fonctionne sans compte, sans inscription et sans traceur publicitaire : tout le traitement se fait localement, sur votre téléphone. La seule donnée qui quitte l'appareil est le": "Péage Notif funziona senza account, senza registrazione e senza tracciatori pubblicitari: tutta l'elaborazione avviene localmente, sul tuo telefono. L'unico dato che lascia il dispositivo è la",
+  ", sur votre téléphone :": ", sul tuo telefono:",
+  "uniquement sur votre téléphone": "unicamente sul tuo telefono"
 }

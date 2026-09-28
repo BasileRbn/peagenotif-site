@@ -388,5 +388,8 @@
   "estimations non contractuelles": "non-binding estimates",
   ": seul le relevé de votre opérateur fait foi.": ": only your operator's statement is authoritative.",
   "Système fermé, système ouvert, flux libre, tarifs origine-destination, bretelles payantes, barrières pleine voie, classes de véhicules : le fonctionnement des péages français expliqué simplement.": "Closed system, open system, free-flow, origin-destination prices, paying slip roads, full-carriageway barriers, vehicle classes: how French tolls work, explained simply.",
-  "Prix des péages": "Toll prices"
+  "Prix des péages": "Toll prices",
+  "Péage Notif fonctionne sans compte, sans inscription et sans traceur publicitaire : tout le traitement se fait localement, sur votre téléphone. La seule donnée qui quitte l'appareil est le": "Péage Notif works with no account, no sign-up and no advertising tracker: all processing happens locally, on your phone. The only data that leaves the device is the",
+  ", sur votre téléphone :": ", on your phone:",
+  "uniquement sur votre téléphone": "on your phone only"
 }

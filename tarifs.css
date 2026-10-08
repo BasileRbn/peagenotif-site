@@ -19,9 +19,14 @@ td+td,th+th{text-align:right;font-variant-numeric:tabular-nums;white-space:nowra
 .cols{columns:3 200px;column-gap:26px;margin:6px 0 34px}
 .cols a{display:block;padding:3px 0;break-inside:avoid}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--tx2);font-size:14px;margin-top:20px}
-.langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px}
-.langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;color:var(--tx2)}
-.langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+details.langs{position:relative;margin-left:auto}
+details.langs summary{list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--tx2)}
+details.langs summary::-webkit-details-marker{display:none}
+details.langs summary::after{content:" ▾";font-weight:400}
+.langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+.langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);white-space:nowrap}
+.langs-l a:hover{text-decoration:none;background:var(--card)}
+.langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
 /* Sous 720 px la quatrième colonne débordait : le tableau se resserre plutôt que de
    masquer une classe de véhicule — un routier vient précisément pour la sienne. */
 @media (max-width:720px){

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Péage Notif — le prix de votre péage, au passage</title>
-<meta name="description" content="Péage Notif affiche le prix estimé d'un péage dans une notification, à la seconde où vous le franchissez. Gratuit, sans compte, en France et en Italie.">
+<meta name="description" content="Péage Notif affiche le prix estimé d'un péage dans une notification, à la seconde où vous le franchissez. Gratuit, sans compte, en France, en Italie et dans 11 autres pays d'Europe.">
 <meta name="theme-color" content="#070A12">
 <meta property="og:title" content="Péage Notif — le prix de votre péage, au passage">
 <meta property="og:description" content="Une notification vous annonce le montant estimé au passage de chaque péage. Gratuit, sans compte, hors-ligne.">
@@ -67,8 +67,6 @@
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
   @media(max-width:660px){
     nav a.hide-xxs{display:none}
-    .langs{margin-left:8px;padding:1px}
-    .langs a{padding:3px 7px;font-size:11px}
   }
 
   /* ---------- Hero ---------- */
@@ -204,9 +202,6 @@
   }
 
   /* ---------- Marquee réseaux ---------- */
-  .langs{display:inline-flex;gap:2px;margin-left:10px;padding:2px;border:1px solid var(--line);border-radius:999px}
-  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4}
-  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);background:rgba(255,255,255,.015)}
   /* La durée est POSÉE PAR LE SCRIPT d'après la largeur mesurée de la piste, à vitesse
      constante : la translation vaut -50 %, donc à durée fixe, rallonger la liste
@@ -316,10 +311,30 @@
   /* centre quand ça tient, reste scrollable quand ça déborde (jamais de côté gauche coupé) */
   .gallery img:first-child{margin-left:auto}
   .gallery img:last-child{margin-right:auto}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
 </style>
   <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/">
   <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/">
   <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/">
   <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/">
 </head>
 <body>
@@ -334,7 +349,7 @@
       <a href="tarifs/" class="hide-xs">Prix des péages</a><a href="peages-mode-emploi.html" class="hide-xs">Comprendre les péages</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Confidentialité</a>
-      <span class="langs" role="group" aria-label="Langue"><a href="/" hreflang="fr" data-lang="fr">FR</a><a href="/en/" hreflang="en" data-lang="en">EN</a><a href="/it/" hreflang="it" data-lang="it">IT</a></span>
+      <details class="langs" translate="no"><summary aria-label="Langue">FR</summary><span class="langs-l"><a href="/" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details>
     </nav>
   </div>
 </header>
@@ -344,7 +359,7 @@
   <div class="lanes"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Autoroutes françaises et italiennes · iPhone et Android</span>
+      <span class="eyebrow">Autoroutes de France, d'Italie et d'Europe · iPhone et Android</span>
       <h1>Le prix de votre péage,<br><span class="hl">pile au passage.</span></h1>
       <p class="lead">La première app qui vous annonce le prix <b>au moment où vous franchissez le péage</b> — flux libre ou barrière. Gratuit, sans compte, hors-ligne.</p>
       <div class="cta-row">
@@ -422,6 +437,11 @@
     <span><b>Tangenziale</b> · Napoli</span><span><b>Pedemontana</b> · A36</span>
     <span><b>Arcos</b> · A355</span><span><b>Duplex A86</b></span><span>Tunnels du <b>Prado</b></span>
     <span>Pont de <b>Normandie</b></span><span>Flux libre · A13 &amp; A14</span><span>Gares à barrière</span>
+    <span><b>Attiki Odos</b></span><span><b>Olympia Odos</b></span><span><b>Egnatia Odos</b></span>
+    <span><b>SEITT</b> · Madrid</span><span><b>Ausol</b> · Málaga</span><span><b>Audenasa</b> · AP-15</span>
+    <span><b>Lusoponte</b> · Lisboa</span><span><b>ASFINAG</b> · Brenner</span><span><b>Envalira</b></span>
+    <span><b>Grand-Saint-Bernard</b></span><span><b>Karavanke</b></span><span><b>Dartford</b></span>
+    <span><b>M50</b> · Dublin</span><span><b>Storebælt</b></span><span><b>Øresund</b></span>
   </div>
 </div>
 
@@ -440,7 +460,7 @@
     </div>
     <div class="stats">
       <div class="stat rv"><div class="v"><span data-count="96">0</span>&nbsp;%</div><div class="l">des gares de péage françaises</div></div>
-      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="160027">0</span></div><div class="l">trajets tarifés, hors-ligne</div></div>
+      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="160363">0</span></div><div class="l">trajets tarifés, hors-ligne</div></div>
       <div class="stat rv" style="--d:.2s"><div class="v"><span data-count="20">0</span></div><div class="l">réseaux vérifiés à la source</div></div>
       <div class="stat rv" style="--d:.3s"><div class="v">0</div><div class="l">compte, 0 traceur</div></div>
     </div>
@@ -540,11 +560,13 @@
 
     <div class="feat">
       <div class="txt rv">
-        <h3>La France et l'Italie, hors-ligne</h3>
-        <p>776 des 811 gares de péage françaises et 582 points italiens, tarifs officiels embarqués. L'app fonctionne sans connexion.</p>
+        <h3>La France, l'Italie et l'Europe, hors-ligne</h3>
+        <p>776 des 811 gares de péage françaises, 582 points italiens et plus de 450 péages en Espagne, au Portugal, en Grèce, en Autriche, en Suisse, en Slovénie, en Andorre, au Royaume-Uni, en Irlande, aux Pays-Bas et au Danemark. Tarifs officiels embarqués : l'app fonctionne sans connexion.</p>
         <ul>
           <li>20 réseaux comparés ligne à ligne à leur grille officielle</li>
           <li>Classe de véhicule réglable (classe 1 par défaut)</li>
+          <li>Vignette annoncée à l'entrée de la Suisse, de l'Autriche, de la Slovénie, de la Tchéquie, de la Slovaquie, de la Hongrie, de la Roumanie, de la Bulgarie et de la Moldavie</li>
+          <li>Prix dans la devise du pays : euro, franc suisse, livre sterling, couronne danoise</li>
           <li>Signalement d'erreur intégré pour améliorer la base</li>
         </ul>
       </div>
@@ -598,7 +620,7 @@
       <div class="step rv">
         <div class="n">📱</div>
         <h3>Tout ce que fait l'app iPhone</h3>
-        <p>Plus de 1 500 péages en France et en Italie, l'annonce vocale, le total du trajet et le récap de fin de route. En français, en italien et en anglais.</p>
+        <p>Près de 2 000 péages dans 13 pays d'Europe, l'annonce vocale, le total du trajet et le récap de fin de route. En onze langues.</p>
       </div>
       <div class="step rv" style="--d:.12s">
         <div class="n">🚗</div>
@@ -753,7 +775,7 @@
   // Le format du montant suit la langue de la PAGE : un anglophone lit « €4.70 »,
   // un francophone « 4,70 € ». Écrit en dur, c'était français dans les trois versions.
   const LANGUE=document.documentElement.lang||'fr';
-  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT'}[LANGUE]||'fr-FR';
+  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT',de:'de-DE',es:'es-ES',pt:'pt-PT',nl:'nl-NL',el:'el-GR',sl:'sl-SI',da:'da-DK',ca:'ca-ES'}[LANGUE]||'fr-FR';
   const nfEur=new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR'});
   const eur=v=>nfEur.format(v);
   const T=k=>document.querySelector(`#i18n-data [data-k="${k}"]`)?.textContent||'';

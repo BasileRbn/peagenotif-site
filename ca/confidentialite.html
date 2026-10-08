@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privadesa · Péage Notif</title>
+<meta name="description" content="Política de privadesa de l'aplicació Péage Notif: tractament local al dispositiu, sense compte ni rastrejadors; només es transmeten els informes d'error que vostè envia voluntàriament, sense vincle amb la seva identitat.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:32px 0 10px;padding-top:8px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/confidentialite.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/confidentialite.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/confidentialite.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/confidentialite.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/confidentialite.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/confidentialite.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/confidentialite.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/confidentialite.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/confidentialite.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/confidentialite.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/confidentialite.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/confidentialite.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Idioma">CA</summary><span class="langs-l"><a href="/confidentialite.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/confidentialite.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/confidentialite.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/confidentialite.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/confidentialite.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/confidentialite.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/confidentialite.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/confidentialite.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/confidentialite.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <div class="tldr" style="border-left-color:#6B7C9C">Aquesta traducció s'ofereix per comoditat. En cas de discrepància, preval la <a href="/confidentialite.html">versió francesa</a>.</div>
+  <h1>Política de privadesa</h1>
+  <div class="date">Aplicació <b>Péage Notif</b> (darrera actualització: 31 de juliol de 2026)</div>
+
+  <div class="tldr">
+    <b>En una frase:</b> Péage Notif funciona sense compte, sense registre i sense rastrejadors publicitaris: tot el tractament es fa localment, al seu telèfon. L'única dada que surt del dispositiu és un <b>informe d'error que vostè decideix enviar</b> (vegi el §&nbsp;6), que mai no es vincula a la seva identitat.
+  </div>
+
+  <section class="legal">
+
+  <h2>1. Responsable del tractament</h2>
+  <p>L'editor de l'aplicació és <b>SECRETARAI</b>, SASU amb un capital de 50 €, inscrita al RCS de Nice amb el núm. 103&nbsp;272&nbsp;100. Contacte: <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a> · Suport a l'usuari: <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>.</p>
+
+  <h2>2. Sense compte, sense perfil, sense seguiment</h2>
+  <p>Péage Notif funciona sense compte i sense registre. L'aplicació no crea cap perfil d'usuari, no fa servir cap identificador publicitari i no envia cap dada amb finalitats d'anàlisi, publicitat o seguiment. <b>L'única transmissió de dades és l'informe d'error que vostè mateix activa</b> (descrit al §&nbsp;6), que no conté ni nom, ni correu electrònic, ni cap identificador del seu dispositiu.</p>
+
+  <h2>3. Ubicació (GPS)</h2>
+  <p>Per detectar el pas per un peatge, l'aplicació fa servir la posició del seu dispositiu. Aquesta dada es tracta <b>exclusivament en local i en temps real</b>, al seu telèfon:</p>
+  <ul>
+    <li>la ubicació només està activa durant un trajecte <b>que vostè inicia manualment</b> (botó «Iniciar el seguiment») i s'atura quan acaba el trajecte;</li>
+    <li>la seva posició <b>no es transmet</b> ni a l'editor ni a cap servidor de tercers, amb una sola excepció: les posicions puntuals contingudes en un informe d'error que vostè envia voluntàriament (§&nbsp;6);</li>
+    <li>el permís «Mentre s'utilitza l'app» és suficient; l'indicador d'ubicació d'iOS es manté visible durant el seguiment.</li>
+  </ul>
+
+  <h2>4. Dades emmagatzemades al dispositiu</h2>
+  <p>Algunes dades es desen <b>només al seu telèfon</b>, per al funcionament de l'app, i no surten mai del dispositiu:</p>
+  <ul>
+    <li>l'historial dels seus trajectes i dels peatges passats (imports estimats, data i hora);</li>
+    <li>les seves preferències (classe de vehicle, anunci de veu activat o no);</li>
+    <li>un registre de diagnòstic opcional, que només vostè pot consultar, exportar o esborrar.</li>
+  </ul>
+  <p>Aquestes dades se suprimeixen si les esborra a l'app o si desinstal·la l'aplicació.</p>
+
+  <h2>5. Notificacions, àudio i Activitat en directe</h2>
+  <p>Les notificacions de preu, els anuncis de veu i l'Activitat en directe (pantalla bloquejada, Dynamic Island, CarPlay) les genera <b>localment</b> l'aplicació. No depenen de cap servei de notificacions remot i no transmeten cap dada.</p>
+
+  <h2>6. Informe d'error (opcional)</h2>
+  <p>No es transmet res mentre <b>vostè mateix no hagi comunicat un error</b> (peatge no detectat, preu erroni…): és el seu toc al botó d'avís el que crea l'informe, i res més. Un cop acabat el trajecte, aquest informe s'envia sol, mitjançant una connexió xifrada (HTTPS), a un servidor de l'editor allotjat a l'Europa occidental, per estalviar-li una acció més al volant. Si en aquell moment no hi ha connexió, simplement espera la propera vegada que obri l'aplicació. <b>Cap informe no s'envia sense que vostè l'hagi activat</b>, i pot esborrar en qualsevol moment els que encara no s'hagin transmès, des de Configuració › Comunicar un error.</p>
+  <p>Aquest informe conté <b>només el que serveix per corregir l'error</b>:</p>
+  <ul>
+    <li>la posició, la velocitat i la data i hora en el moment de cada avís;</li>
+    <li>el seu comentari dictat (transcrit a text) i l'eventual correcció de preu que hagi indicat;</li>
+    <li>el registre del trajecte corresponent (esdeveniments de detecció amb data i hora);</li>
+    <li>la versió de l'app i de la graella de tarifes, i la classe de vehicle configurada.</li>
+  </ul>
+  <p>No conté <b>ni nom, ni adreça electrònica, ni número de telèfon, ni cap identificador del seu dispositiu</b>: no podem relacionar un informe amb una persona. Aquests informes s'utilitzen exclusivament per corregir la detecció i els preus, i se suprimeixen un cop resolt l'error. Pot demanar la supressió d'un informe escrivint a <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> i indicant la data i l'hora de l'enviament.</p>
+
+  <h2>7. Actualitzacions de tarifes</h2>
+  <p>Les graelles de tarifes estan incloses a l'aplicació. Si hi ha disponible una comprovació d'actualitzacions, consisteix únicament a <b>descarregar una graella de preus pública</b>; durant aquesta operació no es transmet cap dada sobre vostè.</p>
+
+  <h2>8. Cap cessió ni venda de dades</h2>
+  <p>Cap dada no es ven, es lloga ni es comparteix amb tercers, sigui quina sigui la finalitat. Els informes d'error (§&nbsp;6) només són accessibles per a l'editor i serveixen únicament per millorar l'aplicació.</p>
+
+  <h2 id="vos-droits">9. Els seus drets (RGPD)</h2>
+  <p>Les dades del seu dispositiu són sota el seu control exclusiu: les pot consultar, exportar o suprimir en qualsevol moment des de l'app. Les úniques dades que conservem són els informes d'error que ens ha enviat (§&nbsp;6); no contenen cap identificador directe, i en pot demanar la supressió escrivint a <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>. Per a qualsevol pregunta sobre protecció de dades, escrigui a <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a>. També pot presentar una reclamació davant la CNIL, l'autoritat francesa de protecció de dades (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+
+  <h2>10. Infants</h2>
+  <p>L'aplicació no s'adreça específicament als infants i no recull conscientment cap dada que els afecti.</p>
+
+  <h2>11. Canvis</h2>
+  <p>Aquesta política es pot actualitzar; la data a la part superior de la pàgina indica la darrera revisió. Els canvis substancials s'indicaran en aquesta pàgina.</p>
+
+  <a class="back" href="index.html">← Tornar a la pàgina d'inici</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

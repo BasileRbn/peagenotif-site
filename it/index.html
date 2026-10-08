@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Péage Notif — il prezzo del pedaggio, al passaggio</title>
-<meta name="description" content="Péage Notif mostra il prezzo stimato di un pedaggio in una notifica, nel secondo esatto in cui lo attraversi. Gratis, senza account, in Francia e in Italia.">
+<meta name="description" content="Péage Notif mostra il prezzo stimato di un pedaggio in una notifica, nel secondo esatto in cui lo attraversi. Gratis, senza account, in Francia, in Italia e in altri 11 Paesi europei.">
 <meta name="theme-color" content="#070A12">
 <meta property="og:title" content="Péage Notif — il prezzo del pedaggio, al passaggio">
 <meta property="og:description" content="Una notifica ti annuncia l'importo stimato al passaggio di ogni pedaggio. Gratis, senza account, offline.">
@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Péage Notif","operatingSystem":"iOS, Android","applicationCategory":"TravelApplication","installUrl":"https://apps.apple.com/fr/app/id6787924563","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Il prezzo stimato di ogni pedaggio, in una notifica, nel secondo esatto in cui lo attraversi."}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Péage Notif","operatingSystem":"iOS, Android","applicationCategory":"TravelApplication","installUrl":"https://apps.apple.com/app/id6787924563","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Il prezzo stimato di ogni pedaggio, in una notifica, nel secondo esatto in cui lo attraversi."}
 </script>
 <style>
  :root{
@@ -67,8 +67,6 @@
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
   @media(max-width:660px){
     nav a.hide-xxs{display:none}
-    .langs{margin-left:8px;padding:1px}
-    .langs a{padding:3px 7px;font-size:11px}
   }
 
   /* ---------- Hero ---------- */
@@ -204,9 +202,6 @@
   }
 
   /* ---------- Marquee réseaux ---------- */
-  .langs{display:inline-flex;gap:2px;margin-left:10px;padding:2px;border:1px solid var(--line);border-radius:999px}
-  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4}
-  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);background:rgba(255,255,255,.015)}
   /* La durée est POSÉE PAR LE SCRIPT d'après la largeur mesurée de la piste, à vitesse
      constante: la translation vaut -50 %, donc à durée fixe, rallonger la liste
@@ -316,10 +311,30 @@
   /* centre quand ça tient, reste scrollable quand ça déborde (jamais de côté gauche coupé) */
   .gallery img:first-child{margin-left:auto}
   .gallery img:last-child{margin-right:auto}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
 </style>
   <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/">
   <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/">
   <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/">
   <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/">
 </head>
 <body>
@@ -334,7 +349,7 @@
       <a href="tarifs/" class="hide-xs">Prezzo dei pedaggi</a><a href="peages-mode-emploi.html" class="hide-xs">Capire i pedaggi</a>
       <a href="#support" class="hide-xxs">Assistenza</a>
       <a href="confidentialite.html" class="hide-m">Privacy</a>
-      <span class="langs" role="group" aria-label="Langue"><a href="/" hreflang="fr" data-lang="fr">FR</a><a href="/en/" hreflang="en" data-lang="en">EN</a><a href="/it/" hreflang="it" data-lang="it">IT</a></span>
+      <details class="langs" translate="no"><summary aria-label="Lingua">IT</summary><span class="langs-l"><a href="/" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details>
     </nav>
   </div>
 </header>
@@ -344,11 +359,11 @@
   <div class="lanes"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Autostrade francesi e italiane · iPhone e Android</span>
+      <span class="eyebrow">Autostrade di Francia, Italia ed Europa · iPhone e Android</span>
       <h1>Il prezzo del pedaggio,<br><span class="hl">esattamente al passaggio.</span></h1>
       <p class="lead">La prima app che ti annuncia il prezzo <b>nel momento in cui passi il casello</b> — free flow o barriera. Gratis, senza account, offline.</p>
       <div class="cta-row">
-        <a class="btn btn-app" href="https://apps.apple.com/fr/app/id6787924563" rel="noopener"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Scarica su</small><b>l'App Store</b></span></a>
+        <a class="btn btn-app" href="https://apps.apple.com/app/id6787924563" rel="noopener"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Scarica su</small><b>l'App Store</b></span></a>
         <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif" rel="noopener"><img src="../img/play-badge-it.png" alt="Disponibile su Google Play" width="202" height="60"></a>
         <a href="#comment" class="btn btn-ghost">Scopri come funziona</a>
       </div>
@@ -422,6 +437,11 @@
     <span><b>Tangenziale</b> · Napoli</span><span><b>Pedemontana</b> · A36</span>
     <span><b>Arcos</b> · A355</span><span><b>Duplex A86</b></span><span>Tunnel del <b>Prado</b></span>
     <span>Pont de <b>Normandie</b></span><span>Free flow · A13 &amp; A14</span><span>Caselli a barriera</span>
+    <span><b>Attiki Odos</b></span><span><b>Olympia Odos</b></span><span><b>Egnatia Odos</b></span>
+    <span><b>SEITT</b> · Madrid</span><span><b>Ausol</b> · Málaga</span><span><b>Audenasa</b> · AP-15</span>
+    <span><b>Lusoponte</b> · Lisboa</span><span><b>ASFINAG</b> · Brenner</span><span><b>Envalira</b></span>
+    <span><b>Gran San Bernardo</b></span><span><b>Karavanke</b></span><span><b>Dartford</b></span>
+    <span><b>M50</b> · Dublin</span><span><b>Storebælt</b></span><span><b>Øresund</b></span>
   </div>
 </div>
 
@@ -440,7 +460,7 @@
     </div>
     <div class="stats">
       <div class="stat rv"><div class="v"><span data-count="96">0</span>&nbsp;%</div><div class="l">dei caselli francesi</div></div>
-      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="160027">0</span></div><div class="l">percorsi tariffati, offline</div></div>
+      <div class="stat rv" style="--d:.1s"><div class="v"><span data-count="160363">0</span></div><div class="l">percorsi tariffati, offline</div></div>
       <div class="stat rv" style="--d:.2s"><div class="v"><span data-count="20">0</span></div><div class="l">reti verificate alla fonte</div></div>
       <div class="stat rv" style="--d:.3s"><div class="v">0</div><div class="l">account, 0 tracciatori</div></div>
     </div>
@@ -540,11 +560,13 @@
 
     <div class="feat">
       <div class="txt rv">
-        <h3>Francia e Italia, offline</h3>
-        <p>776 degli 811 caselli francesi e 582 punti italiani, con le tariffe ufficiali integrate. L'app funziona senza connessione.</p>
+        <h3>La Francia, l'Italia e l'Europa, offline</h3>
+        <p>776 degli 811 caselli francesi, 582 punti italiani e oltre 450 pedaggi in Spagna, Portogallo, Grecia, Austria, Svizzera, Slovenia, Andorra, Regno Unito, Irlanda, Paesi Bassi e Danimarca. Tariffe ufficiali integrate: l'app funziona senza connessione.</p>
         <ul>
           <li>20 reti confrontate riga per riga con la loro tariffa ufficiale</li>
           <li>Classe del veicolo regolabile (classe A come predefinita)</li>
+          <li>Vignetta segnalata all'ingresso in Svizzera, Austria, Slovenia, Cechia, Slovacchia, Ungheria, Romania, Bulgaria e Moldavia</li>
+          <li>Prezzi nella valuta del Paese: euro, franco svizzero, sterlina, corona danese</li>
           <li>Segnalazione errori integrata per migliorare la banca dati</li>
         </ul>
       </div>
@@ -598,7 +620,7 @@
       <div class="step rv">
         <div class="n">📱</div>
         <h3>Tutto quello che fa su iPhone</h3>
-        <p>Oltre 1.500 pedaggi in Francia e in Italia, l'annuncio vocale, il totale del viaggio e il riepilogo di fine percorso. In italiano, francese e inglese.</p>
+        <p>Quasi 2.000 pedaggi in 13 Paesi europei, l'annuncio vocale, il totale del viaggio e il riepilogo di fine percorso. In undici lingue.</p>
       </div>
       <div class="step rv" style="--d:.12s">
         <div class="n">🚗</div>
@@ -711,7 +733,7 @@
     <span class="soon rv"><span class="dot"></span> Disponibile sull'App Store e su Google Play</span>
     <h2 class="rv" style="margin-top:22px;--d:.08s">Non chiederti più<br>«quanto mi è costato?»</h2>
     <p class="rv" style="--d:.16s">Péage Notif è gratis, senza account, installato in dieci secondi.</p>
-    <a href="https://apps.apple.com/fr/app/id6787924563" rel="noopener" class="btn btn-app rv" style="display:inline-flex;--d:.24s"><svg viewBox="0 0 384 512" fill="currentColor" width="18" height="22" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Scarica su</small><b>l'App Store</b></span></a>
+    <a href="https://apps.apple.com/app/id6787924563" rel="noopener" class="btn btn-app rv" style="display:inline-flex;--d:.24s"><svg viewBox="0 0 384 512" fill="currentColor" width="18" height="22" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Scarica su</small><b>l'App Store</b></span></a>
     <a class="btn-play rv" style="margin-left:10px;vertical-align:middle;--d:.3s" href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif" rel="noopener"><img src="../img/play-badge-it.png" alt="Disponibile su Google Play" width="202" height="60"></a>
   </div>
 </section>
@@ -753,7 +775,7 @@
   // Le format du montant suit la langue de la PAGE: un anglophone lit «€4.70»,
   // un francophone «4,70 €». Écrit en dur, c'était français dans les trois versions.
   const LANGUE=document.documentElement.lang||'fr';
-  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT'}[LANGUE]||'fr-FR';
+  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT',de:'de-DE',es:'es-ES',pt:'pt-PT',nl:'nl-NL',el:'el-GR',sl:'sl-SI',da:'da-DK',ca:'ca-ES'}[LANGUE]||'fr-FR';
   const nfEur=new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR'});
   const eur=v=>nfEur.format(v);
   const T=k=>document.querySelector(`#i18n-data [data-k="${k}"]`)?.textContent||'';

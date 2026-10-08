@@ -32,15 +32,35 @@
   .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
   .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
   .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
 </style>
   <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/confidentialite.html">
   <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/confidentialite.html">
   <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/confidentialite.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/confidentialite.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/confidentialite.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/confidentialite.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/confidentialite.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/confidentialite.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/confidentialite.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/confidentialite.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/confidentialite.html">
   <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/confidentialite.html">
 </head>
 <body>
 
-<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="img/icon.png" alt="" width="30" height="30"> Péage Notif</a><span class="langs" role="group" aria-label="Langue"><a href="/confidentialite.html" hreflang="fr" data-lang="fr">FR</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en">EN</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it">IT</a></span></div></header>
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Langue">FR</summary><span class="langs-l"><a href="/confidentialite.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/confidentialite.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/confidentialite.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/confidentialite.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/confidentialite.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/confidentialite.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/confidentialite.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/confidentialite.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/confidentialite.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
 
 <div class="wrap">
   <h1>Politique de confidentialité</h1>

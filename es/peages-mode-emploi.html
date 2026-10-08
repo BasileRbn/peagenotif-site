@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entender los peajes · Péage Notif</title>
+<meta name="description" content="Sistema cerrado, sistema abierto, flujo libre, tarifas origen-destino, ramales de pago, barreras troncales, clases de vehículos: así funcionan los peajes franceses, explicado de forma sencilla.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Idioma">ES</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Entender los peajes</h1>
+  <div class="date">¿Por qué ese importe, en ese lugar? Así funcionan los peajes franceses, explicado de forma sencilla.</div>
+
+  <div class="tldr">
+    <b>Lo esencial:</b> en Francia no existe «un» único sistema de peaje, sino <b>tres sistemas</b> que conviven: el sistema cerrado (con tique), el sistema abierto (importe fijo en cada barrera) y el flujo libre (pórticos sin barrera). Una misma autopista puede pasar de uno a otro, y eso es lo que hace que algunos extractos de telepeaje resulten desconcertantes.
+  </div>
+
+  <section class="legal">
+
+  <h2>Los tres sistemas</h2>
+
+  <h3>1. El sistema cerrado («con tique»)</h3>
+  <p>Coges un tique (o se lee tu dispositivo de telepeaje) en la <b>entrada</b>; pagas en la <b>salida</b>. El precio depende del par <b>entrada&nbsp;→&nbsp;salida</b>: es lo que se llama una tarifa <b>origen-destino</b> («OD»). Las sociedades de autopistas publican cada año auténticas matrices: una fila por estación de entrada, una columna por estación de salida y el precio en el cruce. La mayor parte de la red (APRR, ASF, Sanef, Escota…) funciona así.</p>
+
+  <h3>2. El sistema abierto (importe fijo al pasar)</h3>
+  <p>Sin tique: una <b>barrera que cruza la calzada</b> te cobra un <b>importe fijo</b> en cada paso, sea cual sea tu origen o tu destino. Las entradas y salidas intermedias suelen ser gratuitas. Es el caso de tramos urbanos o costeros muy transitados, por ejemplo algunas barreras de la A8 en torno a Nice.</p>
+
+  <h3>3. El flujo libre (free flow)</h3>
+  <p>Ninguna barrera: <b>pórticos</b> que cruzan la autopista detectan el vehículo al pasar, a plena velocidad (dispositivo de telepeaje, matrícula). Sin dispositivo de telepeaje, hay que <b>pagar uno mismo en línea en un plazo de 72 horas</b>, so pena de recargo. La A79 y la A13/A14 en Normandía funcionan así.</p>
+
+  <h2>Los casos que sorprenden</h2>
+
+  <h3>El ramal de entrada de pago</h3>
+  <p>En la frontera entre una zona abierta y una zona cerrada, algunos <b>ramales de acceso</b> tienen su propia barrera, que cobra un pequeño importe fijo a la entrada. El operador divide entonces la tarifa oficial en <b>dos líneas en tu extracto</b>: el importe del ramal y luego el <b>saldo</b> en la barrera de salida. La suma de ambas coincide exactamente con la tarifa origen-destino publicada.</p>
+
+  <div class="ex">
+    <div class="t">Ejemplo real: A8, Nice Saint-Isidore → Antibes (clase 1, tarifas 2026)</div>
+    <table>
+      <tr><td>Ramal de entrada «Saint-Isidore»</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Barrera de salida «Antibes Est»</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Total = la tarifa oficial Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Dos líneas en el extracto de telepeaje, un solo trayecto, una sola tarifa de la tabla oficial.</p>
+  </div>
+
+  <h3>Salir sin barrera… y que te cobren igualmente</h3>
+  <p>En el sistema abierto, puedes <b>entrar o salir por un ramal gratuito</b>: solo pagas si cruzas una barrera troncal en tu camino. A la inversa, pueden cobrarte <b>al entrar</b> en la autopista (barrera cruzada en el sentido de la incorporación) y luego salir libremente. Así que el importe no siempre corresponde al «lugar donde dejas la autopista»: corresponde a las barreras que has cruzado realmente.</p>
+
+  <h3>El mismo enlace, ramales distintos</h3>
+  <p>Un enlace suele tener <b>cuatro ramales</b> (entrada y salida, en cada sentido), y no siempre reciben el mismo trato: uno puede ser de pago con importe fijo, otro gratuito y un tercero tener una estación de salida del sistema cerrado. Por eso dos pasos «por el mismo peaje» pueden dar dos importes distintos según el ramal que tomes.</p>
+
+  <h3>El tique perdido: la tarifa más cara</h3>
+  <p>En el sistema cerrado, sin prueba de tu estación de entrada (tique perdido, dispositivo ilegible), la sociedad aplica la <b>tarifa más cara</b> posible hasta tu estación de salida (llamada «TLPC» en Francia). De hecho, algunos pares de la tabla oficial muestran importes que parecen ilógicos: son valores reglamentarios de este tipo, no errores.</p>
+
+  <h2>Pequeño glosario</h2>
+  <dl>
+    <dt>Tarifa OD <span class="tag">origen-destino</span></dt>
+    <dd>Precio oficial de un par estación de entrada → estación de salida en el sistema cerrado. Se publica cada año en tablas por sociedad de autopistas.</dd>
+
+    <dt>Estación de peaje</dt>
+    <dd>El punto de cobro: el conjunto de carriles de pago de un enlace o de una barrera. Una estación puede ser «solo entrada», «solo salida» o ambas.</dd>
+
+    <dt>BPV <span class="tag">barrera troncal</span></dt>
+    <dd>Barrera que corta la propia autopista (todos los carriles), a diferencia de las estaciones situadas en los ramales de un enlace. Es la herramienta del sistema abierto.</dd>
+
+    <dt>Pórtico de flujo libre</dt>
+    <dd>Arco equipado con sensores que sustituye a la barrera: detección a plena velocidad, pago con dispositivo de telepeaje o en línea en un plazo de 72 h.</dd>
+
+    <dt>Importe fijo</dt>
+    <dd>Importe fijo cobrado en cada paso por un punto determinado (barrera abierta, pórtico, túnel), independiente del resto del trayecto.</dd>
+
+    <dt>Tránsito <span class="tag">flujo libre A79</span></dt>
+    <dd>En la A79, dos pórticos enmarcan cada enlace. Cruzar los dos (solo estás de paso) cuesta una tarifa de «tránsito» conjunta, que no es la simple suma de las dos zonas.</dd>
+
+    <dt>Clases de vehículos (1 a 5)</dt>
+    <dd>Clase 1: coche (altura &lt; 2 m). Clase 2: furgonetas, furgonetas camper, coches con caravana baja. Clases 3 y 4: camiones y autocares. Clase 5: motos. El precio de un mismo trayecto cambia mucho de una clase a otra.</dd>
+
+    <dt>Telepeaje (dispositivo)</dt>
+    <dd>Dispositivo (Ulys, Bip&amp;Go, Fulli…) que paga automáticamente al pasar. El extracto mensual del operador detalla cada cobro: es la referencia para comprobar una estimación.</dd>
+
+    <dt>Revisión del 1<sup>​</sup> de febrero</dt>
+    <dd>Las tarifas de las autopistas de peaje en concesión se revisan cada año el 1<sup>​</sup> de febrero (órdenes publicadas en el Journal officiel a finales de enero). Una estimación calculada con la tabla antigua puede diferir en unos céntimos a principios de febrero.</dd>
+  </dl>
+
+  <h2>En el resto de Europa</h2>
+
+  <h3>La viñeta</h3>
+  <p>En Suiza, Austria, Eslovenia, Chequia, Eslovaquia y Hungría no se paga al pasar: una <b>viñeta</b>, casi siempre electrónica y vinculada a la matrícula, es obligatoria en las autopistas. En Rumanía, Bulgaria y Moldavia también vale para las carreteras nacionales. Se compra antes de salir, en la web oficial del país. En Austria, algunos túneles y puertos de montaña (Brenner, Tauern, Arlberg…) añaden un peaje especial a la viñeta.</p>
+
+  <h3>Pagar después</h3>
+  <p>Varias infraestructuras se cruzan sin barrera: el paso de Dartford cerca de Londres, la autopista M50 de Dublín, el túnel de la A24 en Rotterdam, los pórticos electrónicos de Portugal. Sin dispositivo de telepeaje, el pago se hace después, en línea y en un plazo corto; pasado ese plazo, puede sumarse una multa.</p>
+
+  <h2>¿Y qué hace Péage Notif en todo esto?</h2>
+  <p>La aplicación incluye las tablas oficiales (matrices OD, importes fijos, tarifas de flujo libre) y reconstruye tu trayecto en directo: memoriza tu estación de entrada, reconoce las barreras que cruzas realmente (ramales de pago incluidos) y anuncia el importe correspondiente al pasar. Cuando falta información (entrada no detectada, par ausente de la tabla oficial), prefiere <b>anunciar con honestidad «entrada desconocida»</b> antes que inventar una cifra. Fuera de Francia, te avisa de la viñeta al entrar en un país que la exige, y te recuerda el plazo de pago y la web oficial de las infraestructuras que se pagan después. Los importes siguen siendo <b>estimaciones sin valor contractual</b>: solo cuenta el extracto de tu operador.</p>
+
+  <a class="back" href="index.html">← Volver a la página de inicio</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

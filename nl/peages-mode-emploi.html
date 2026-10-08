@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tol begrijpen · Péage Notif</title>
+<meta name="description" content="Gesloten systeem, open systeem, free flow, herkomst-bestemmingstarieven, betaalde opritten, slagbomen op de hoofdrijbaan, voertuigklassen: hoe de Franse tol werkt, eenvoudig uitgelegd.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Taal">NL</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Tol begrijpen</h1>
+  <div class="date">Waarom dat bedrag, op die plek? Hoe de Franse tol werkt, eenvoudig uitgelegd.</div>
+
+  <div class="tldr">
+    <b>Het belangrijkste:</b> in Frankrijk bestaat niet “één” tolsysteem, maar <b>drie systemen</b> die naast elkaar bestaan: het gesloten systeem (met ticket), het open systeem (vast bedrag bij elke slagboom) en free flow (portalen zonder slagboom). Eén snelweg kan van het ene naar het andere overgaan, en dat maakt sommige tolbadge-afschriften verwarrend.
+  </div>
+
+  <section class="legal">
+
+  <h2>De drie systemen</h2>
+
+  <h3>1. Het gesloten systeem (“met ticket”)</h3>
+  <p>Je neemt een ticket (of je tolbadge wordt gelezen) bij de <b>ingang</b>; je betaalt bij de <b>uitgang</b>. De prijs hangt af van het paar <b>ingang&nbsp;→&nbsp;uitgang</b>: dit heet een tarief op basis van <b>herkomst-bestemming</b> (“OD”). De snelwegmaatschappijen publiceren elk jaar echte matrices: één rij per ingangsstation, één kolom per uitgangsstation, de prijs op het kruispunt. Het grootste deel van het net (APRR, ASF, Sanef, Escota…) werkt zo.</p>
+
+  <h3>2. Het open systeem (vast bedrag bij het passeren)</h3>
+  <p>Geen ticket: een <b>slagboom dwars over de rijbaan</b> rekent je een <b>vast bedrag</b> aan bij elke passage, ongeacht waar je vandaan komt of naartoe gaat. Tussenliggende op- en afritten zijn vaak gratis. Dat geldt voor drukke stedelijke of kustgedeelten, bijvoorbeeld sommige slagbomen van de A8 rond Nice.</p>
+
+  <h3>3. Free flow</h3>
+  <p>Helemaal geen slagboom meer: <b>portalen</b> overspannen de snelweg en registreren het voertuig bij het passeren, op volle snelheid (tolbadge, kenteken). Zonder tolbadge moet je <b>zelf binnen 72 uur online betalen</b>, anders volgt een toeslag. De A79 en de A13/A14 in Normandië werken zo.</p>
+
+  <h2>Gevallen die verrassen</h2>
+
+  <h3>De betaalde oprit</h3>
+  <p>Op de grens tussen een open en een gesloten zone zijn sommige <b>opritten</b> zelf uitgerust met een slagboom die bij het oprijden een klein vast bedrag rekent. De exploitant splitst het officiële tarief dan in <b>twee regels op je afschrift</b>: het bedrag van de oprit, daarna het <b>saldo</b> bij de uitgangsslagboom. Samen komen ze precies uit op het gepubliceerde herkomst-bestemmingstarief.</p>
+
+  <div class="ex">
+    <div class="t">Echt voorbeeld: A8, Nice Saint-Isidore → Antibes (klasse 1, tarieven 2026)</div>
+    <table>
+      <tr><td>Oprit “Saint-Isidore”</td><td>€ 0,50</td></tr>
+      <tr><td>Uitgangsslagboom “Antibes Est”</td><td>€ 1,70</td></tr>
+      <tr class="total"><td>Totaal = het officiële tarief Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>€ 2,20</td></tr>
+    </table>
+    <p class="muted">Twee regels op het tolbadge-afschrift, één rit, één tarief uit de officiële lijst.</p>
+  </div>
+
+  <h3>Afrijden zonder slagboom… en toch betalen</h3>
+  <p>In het open systeem kun je <b>via een gratis op- of afrit de snelweg op of af</b>: je betaalt alleen als je onderweg een slagboom op de hoofdrijbaan passeert. Omgekeerd kun je <b>bij het oprijden</b> van de snelweg moeten betalen (slagboom gepasseerd in de invoegrichting) en daarna vrij afrijden. Het bedrag komt dus niet altijd overeen met “de plek waar je de snelweg verlaat”: het komt overeen met de slagbomen die je echt bent gepasseerd.</p>
+
+  <h3>Dezelfde aansluiting, verschillende op- en afritten</h3>
+  <p>Een aansluiting heeft vaak <b>vier op- en afritten</b> (op- en afrit, in elke richting), en die worden niet altijd hetzelfde behandeld: de ene kan een vast bedrag kosten, een andere gratis zijn, een derde een uitgangsstation van het gesloten systeem hebben. Daarom kunnen twee passages “bij dezelfde tolpoort” twee verschillende bedragen opleveren, afhankelijk van de gebruikte op- of afrit.</p>
+
+  <h3>Het verloren ticket: het duurste tarief</h3>
+  <p>In het gesloten systeem rekent de maatschappij zonder bewijs van je ingangsstation (ticket kwijt, badge onleesbaar) het <b>duurst mogelijke tarief</b> naar je uitgangsstation (in Frankrijk “TLPC” genoemd). Sommige paren in de officiële lijst tonen trouwens bedragen die onlogisch lijken: dat zijn wettelijke waarden van dit type, geen fouten.</p>
+
+  <h2>Kleine woordenlijst</h2>
+  <dl>
+    <dt>OD-tarief <span class="tag">herkomst-bestemming</span></dt>
+    <dd>Officiële prijs van een paar ingangsstation → uitgangsstation in het gesloten systeem. Wordt elk jaar per snelwegmaatschappij in tarievenlijsten gepubliceerd.</dd>
+
+    <dt>Tolstation</dt>
+    <dd>Het inningspunt: alle betaalstroken van een aansluiting of van een slagboom. Een station kan “alleen ingang”, “alleen uitgang” of beide zijn.</dd>
+
+    <dt>BPV <span class="tag">slagboom op de hoofdrijbaan</span></dt>
+    <dd>Slagboom die de snelweg zelf afsluit (alle rijstroken), in tegenstelling tot stations op de op- en afritten van een aansluiting. Het is het instrument van het open systeem.</dd>
+
+    <dt>Free-flowportaal</dt>
+    <dd>Boog met sensoren die de slagboom vervangt: detectie op volle snelheid, betaling met tolbadge of online binnen 72 u.</dd>
+
+    <dt>Vast bedrag</dt>
+    <dd>Vast bedrag dat bij elke passage van een bepaald punt wordt aangerekend (open slagboom, portaal, tunnel), los van de rest van de rit.</dd>
+
+    <dt>Transit <span class="tag">free flow A79</span></dt>
+    <dd>Op de A79 omringen twee portalen elke aansluiting. Beide passeren (je rijdt alleen door) kost een gebundeld “transit”-tarief, dat niet zomaar de som van de twee zones is.</dd>
+
+    <dt>Voertuigklassen (1 tot 5)</dt>
+    <dd>Klasse 1: auto (hoogte &lt; 2 m). Klasse 2: bestelwagens, campervans, auto's met een lage caravan. Klassen 3 en 4: vrachtwagens en touringcars. Klasse 5: motoren. De prijs van dezelfde rit verschilt sterk per klasse.</dd>
+
+    <dt>Tolbadge</dt>
+    <dd>Kastje (Ulys, Bip&amp;Go, Fulli…) dat automatisch betaalt bij het passeren. Het maandelijkse afschrift van de aanbieder vermeldt elke inning: dat is de referentie om een schatting te controleren.</dd>
+
+    <dt>Herziening van 1<sup>​</sup> februari</dt>
+    <dd>De tarieven van de geconcessioneerde snelwegen worden elk jaar herzien op 1<sup>​</sup> februari (besluiten gepubliceerd in het Journal officiel eind januari). Een schatting op basis van de oude lijst kan begin februari een paar cent afwijken.</dd>
+  </dl>
+
+  <h2>Elders in Europa</h2>
+
+  <h3>Het vignet</h3>
+  <p>In Zwitserland, Oostenrijk, Slovenië, Tsjechië, Slowakije en Hongarije betaal je niet bij het passeren: een <b>vignet</b>, meestal digitaal en gekoppeld aan je kenteken, is verplicht op de snelwegen. In Roemenië, Bulgarije en Moldavië geldt het ook voor de nationale wegen. Je koopt het voordat je gaat rijden, op de officiële website van het land. In Oostenrijk komt bij een paar tunnels en bergpassen (Brenner, Tauern, Arlberg…) een speciale tol bovenop het vignet.</p>
+
+  <h3>Achteraf betalen</h3>
+  <p>Verschillende kunstwerken passeer je zonder slagboom: de Dartford-oversteek bij Londen, de snelweg M50 van Dublin, de tunnel van de A24 in Rotterdam, de elektronische portalen in Portugal. Zonder tolbadge betaal je achteraf, online en binnen een korte termijn; na die termijn kan er een boete bijkomen.</p>
+
+  <h2>En waar past Péage Notif in dit verhaal?</h2>
+  <p>De app bevat de officiële tarievenlijsten (OD-matrices, vaste bedragen, free-flowtarieven) en reconstrueert je rit live: hij onthoudt je ingangsstation, herkent de slagbomen die je echt passeert (betaalde opritten inbegrepen) en meldt het bijbehorende bedrag bij het passeren. Als er informatie ontbreekt (ingang niet herkend, paar niet in de officiële lijst), meldt hij liever <b>eerlijk “ingang onbekend”</b> dan een getal te verzinnen. Buiten Frankrijk waarschuwt hij je voor het vignet bij binnenkomst in een land dat het verplicht stelt, en herinnert hij je aan de betaaltermijn en de officiële website van kunstwerken die je achteraf betaalt. De bedragen blijven <b>niet-bindende schattingen</b>: alleen het afschrift van je aanbieder is doorslaggevend.</p>
+
+  <a class="back" href="index.html">← Terug naar de startpagina</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

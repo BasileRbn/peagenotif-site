@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Förstå vägtullarna · Péage Notif</title>
+<meta name="description" content="Slutet system, öppet system, fritt flöde, priser efter ursprung och destination, avgiftsbelagda ramper, bommar på huvudkörbanan, fordonsklasser: så fungerar de franska vägtullarna, enkelt förklarat.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sv" href="https://peagenotif.fr/sv/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nb" href="https://peagenotif.fr/nb/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Språk">SV</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a><a href="/sv/peages-mode-emploi.html" hreflang="sv" data-lang="sv" lang="sv">Svenska</a><a href="/nb/peages-mode-emploi.html" hreflang="nb" data-lang="nb" lang="nb">Norsk bokmål</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Förstå vägtullarna</h1>
+  <div class="date">Varför just det beloppet, just där? Så fungerar de franska vägtullarna, enkelt förklarat.</div>
+
+  <div class="tldr">
+    <b>Det viktigaste:</b> i Frankrike finns det inte ”ett” vägtullssystem utan <b>tre system</b> som finns sida vid sida: det slutna systemet (med biljett), det öppna systemet (fast avgift vid varje bom) och fritt flöde (portaler utan bom). Samma motorväg kan gå över från det ena till det andra, och det är därför vissa transponderfakturor kan verka förvirrande.
+  </div>
+
+  <section class="legal">
+
+  <h2>De tre systemen</h2>
+
+  <h3>1. Det slutna systemet (”med biljett”)</h3>
+  <p>Du tar en biljett (eller så läses din transponder av) vid <b>påfarten</b>, och du betalar vid <b>avfarten</b>. Priset beror på paret <b>påfarten&nbsp;→&nbsp;avfarten</b>: det kallas ett pris efter <b>ursprung och destination</b> (”OD”). Motorvägsbolagen publicerar varje år regelrätta matriser: en rad per påfartsstation, en kolumn per avfartsstation och priset där de möts. Större delen av nätet (APRR, ASF, Sanef, Escota m.fl.) fungerar så.</p>
+
+  <h3>2. Det öppna systemet (fast avgift vid passage)</h3>
+  <p>Ingen biljett: en <b>bom tvärs över körbanan</b> tar ut ett <b>fast belopp</b> vid varje passage, oavsett var du kommer ifrån eller vart du ska. På- och avfarter däremellan är ofta gratis. Så är det på hårt trafikerade sträckor i städer eller längs kusten, till exempel vid vissa bommar på A8 runt Nice.</p>
+
+  <h3>3. Fritt flöde (free flow)</h3>
+  <p>Inga bommar alls: <b>portaler</b> spänner över motorvägen och registrerar fordonet när det passerar i full fart (transponder, registreringsskylt). Utan transponder måste du <b>själv betala online inom 72 timmar</b>, annars tillkommer en tilläggsavgift. A79 och A13/A14 i Normandie fungerar så. <a href="index.html#flux-libre">Péage Notif påminner dig om beloppet och sista betalningsdag</a>.</p>
+
+  <h2>Fallen som överraskar</h2>
+
+  <h3>Den avgiftsbelagda påfartsrampen</h3>
+  <p>Vid gränsen mellan en öppen och en sluten zon är vissa <b>påfartsramper</b> själva utrustade med en bom som tar ut en liten fast avgift vid påfarten. Operatören delar då upp det officiella priset i <b>två rader på din faktura</b>: rampens avgift och sedan <b>resterande belopp</b> vid avfartsbommen. Summan av de två blir exakt det publicerade priset efter ursprung och destination.</p>
+
+  <div class="ex">
+    <div class="t">Ett verkligt exempel: A8, Nice Saint-Isidore → Antibes (klass 1, priser 2026)</div>
+    <table>
+      <tr><td>Påfartsramp ”Saint-Isidore”</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Avfartsbom ”Antibes Est”</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Totalt = det officiella priset Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Två rader på transponderfakturan, en enda resa, ett enda pris från den officiella tabellen.</p>
+  </div>
+
+  <h3>Köra av utan bom … och ändå få betala</h3>
+  <p>I det öppna systemet kan du <b>köra på eller av via en gratis ramp</b>: du betalar bara om du passerar en bom på huvudkörbanan längs vägen. Omvänt kan du få betala <b>när du kör på</b> motorvägen (en bom som passeras i påfartsriktningen) och sedan köra av fritt. Beloppet motsvarar alltså inte alltid ”platsen där man lämnar motorvägen”, utan de bommar du faktiskt har passerat.</p>
+
+  <h3>Samma trafikplats, olika ramper</h3>
+  <p>En trafikplats har ofta <b>fyra ramper</b> (på- och avfart i varje riktning), och de behandlas inte alltid lika: en kan kosta en fast avgift, en annan vara gratis, en tredje ha en avfartsstation från det slutna systemet. Därför kan två passager ”vid samma betalstation” ge två olika belopp beroende på vilken ramp du tog.</p>
+
+  <h3>Den borttappade biljetten: det högsta priset</h3>
+  <p>I det slutna systemet tillämpar bolaget, om du inte kan visa var du körde på (borttappad biljett, oläslig transponder), det <b>högsta möjliga priset</b> till din avfartsstation (kallat ”TLPC” i Frankrike). Vissa par i den officiella tabellen visar för övrigt belopp som verkar ologiska: det är föreskrivna värden av det slaget, inte fel.</p>
+
+  <h2>Liten ordlista</h2>
+  <dl>
+    <dt>OD-pris <span class="tag">ursprung och destination</span></dt>
+    <dd>Officiellt pris för ett par påfartsstation → avfartsstation i det slutna systemet. Publiceras varje år i pristabeller per motorvägsbolag.</dd>
+
+    <dt>Betalstation</dt>
+    <dd>Uppbördsplatsen: alla betalfiler vid en trafikplats eller en bom. En station kan vara ”endast påfart”, ”endast avfart” eller båda.</dd>
+
+    <dt>BPV <span class="tag">bom på huvudkörbanan</span></dt>
+    <dd>Bom som spärrar själva motorvägen (alla körfält), till skillnad från stationer på ramperna vid en trafikplats. Det är det öppna systemets verktyg.</dd>
+
+    <dt>Portal för fritt flöde</dt>
+    <dd>Båge med sensorer som ersätter bommen: detektering i full fart, betalning med transponder eller online inom 72 h.</dd>
+
+    <dt>Fast avgift</dt>
+    <dd>Fast belopp som tas ut vid varje passage av en viss punkt (öppen bom, portal, tunnel), oberoende av resten av resan.</dd>
+
+    <dt>Transit <span class="tag">fritt flöde A79</span></dt>
+    <dd>På A79 ramar två portaler in varje trafikplats. Att passera båda (du kör bara förbi) kostar ett samlat ”transitpris”, som inte bara är summan av de två zonerna.</dd>
+
+    <dt>Fordonsklasser (1 till 5)</dt>
+    <dd>Klass 1: bil (höjd &lt; 2 m). Klass 2: skåpbilar, husbilar, bilar med låg husvagn. Klass 3 och 4: lastbilar och bussar. Klass 5: motorcyklar. Priset för samma resa skiljer sig kraftigt från en klass till en annan.</dd>
+
+    <dt>Elektronisk vägtull (transponder)</dt>
+    <dd>Enhet (Ulys, Bip&amp;Go, Fulli m.fl.) som betalar automatiskt vid passage. Operatörens månadsfaktura listar varje avgift: den är referensen när du vill kontrollera en uppskattning.</dd>
+
+    <dt>Justeringen den 1<sup>​</sup> februari</dt>
+    <dd>Priserna på de koncessionerade motorvägarna justeras varje år den 1<sup>​</sup> februari (beslut som publiceras i Journal officiel i slutet av januari). En uppskattning som beräknats på den gamla tabellen kan skilja sig med några cent i början av februari.</dd>
+  </dl>
+
+  <h2>Övriga Europa</h2>
+
+  <h3>Vinjetten</h3>
+  <p>I Schweiz, Österrike, Slovenien, Tjeckien, Slovakien och Ungern betalar du inte vid passage: en <b>vinjett</b>, oftast elektronisk och kopplad till registreringsskylten, krävs på motorvägarna. I Rumänien, Bulgarien och Moldavien gäller den även på riksvägarna. Den köps innan du kör, på landets officiella webbplats. I Österrike lägger några tunnlar och pass (Brenner, Tauern, Arlberg m.fl.) till en särskild avgift utöver vinjetten.</p>
+
+  <h3>Betala i efterhand</h3>
+  <p>Flera sträckor passeras utan bom: Dartford Crossing nära London, motorväg M50 i Dublin, tunneln på A24 i Rotterdam och Portugals elektroniska portaler. Utan transponder betalar du i efterhand, online och inom en kort frist; efter fristen kan böter tillkomma. I Norge och Sverige behöver du däremot inte göra något: fakturan kommer av sig själv. <a href="index.html#flux-libre">Fristerna, land för land</a>.</p>
+
+  <h2>Och var kommer Péage Notif in?</h2>
+  <p>Appen har de officiella pristabellerna inbyggda (OD-matriser, fasta avgifter, priser för fritt flöde) och återskapar din resa i realtid: den minns var du körde på, känner igen de bommar du faktiskt passerar, avgiftsbelagda ramper inräknade, och meddelar motsvarande belopp när du passerar. Vid en portal utan bom påminner den dig också om fristen och den officiella webbplats där du betalar. När en uppgift saknas (påfart som inte upptäckts, par som saknas i den officiella tabellen) föredrar den att <b>ärligt säga ”okänd påfart”</b> i stället för att hitta på en siffra. Utanför Frankrike påminner den dig om vinjetten när du kör in i ett land som kräver en. Beloppen är fortfarande <b>icke bindande uppskattningar</b>: endast din operatörs faktura gäller.</p>
+
+  <a class="back" href="index.html">← Tillbaka till startsidan</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

@@ -439,6 +439,8 @@
   <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/">
   <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/">
   <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/">
+  <link rel="alternate" hreflang="sv" href="https://peagenotif.fr/sv/">
+  <link rel="alternate" hreflang="nb" href="https://peagenotif.fr/nb/">
   <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/">
 </head>
 <body>
@@ -453,7 +455,7 @@
       <a href="tarifs/" class="hide-xs">Vejafgifter</a><a href="peages-mode-emploi.html" class="hide-xs">Forstå vejafgifterne</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Privatliv</a>
-      <details class="langs" translate="no"><summary aria-label="Sprog">DA</summary><span class="langs-l"><a href="/" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details>
+      <details class="langs" translate="no"><summary aria-label="Sprog">DA</summary><span class="langs-l"><a href="/" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/" hreflang="ca" data-lang="ca" lang="ca">Català</a><a href="/sv/" hreflang="sv" data-lang="sv" lang="sv">Svenska</a><a href="/nb/" hreflang="nb" data-lang="nb" lang="nb">Norsk bokmål</a></span></details>
     </nav>
   </div>
 </header>
@@ -1020,7 +1022,7 @@
   // Le format du montant suit la langue de la PAGE: un anglophone lit „€4.70“,
   // un francophone „4,70 €“. Écrit en dur, c'était français dans les trois versions.
   const LANGUE=document.documentElement.lang||'fr';
-  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT',de:'de-DE',es:'es-ES',pt:'pt-PT',nl:'nl-NL',el:'el-GR',sl:'sl-SI',da:'da-DK',ca:'ca-ES'}[LANGUE]||'fr-FR';
+  const LOCALE={fr:'fr-FR',en:'en-GB',it:'it-IT',de:'de-DE',es:'es-ES',pt:'pt-PT',nl:'nl-NL',el:'el-GR',sl:'sl-SI',da:'da-DK',ca:'ca-ES',sv:'sv-SE',nb:'nb-NO'}[LANGUE]||'fr-FR';
   const nfEur=new Intl.NumberFormat(LOCALE,{style:'currency',currency:'EUR'});
   const eur=v=>nfEur.format(v);
   const T=k=>document.querySelector(`#i18n-data [data-k="${k}"]`)?.textContent||'';

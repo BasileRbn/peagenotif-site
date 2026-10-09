@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personvernerklæring · Péage Notif</title>
+<meta name="description" content="Personvernerklæring for appen Péage Notif: lokal behandling på enheten, uten konto eller sporingsverktøy; bare feilrapportene du frivillig sender, overføres, og uten kobling til identiteten din.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:32px 0 10px;padding-top:8px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/confidentialite.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/confidentialite.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/confidentialite.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/confidentialite.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/confidentialite.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/confidentialite.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/confidentialite.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/confidentialite.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/confidentialite.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/confidentialite.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/confidentialite.html">
+  <link rel="alternate" hreflang="sv" href="https://peagenotif.fr/sv/confidentialite.html">
+  <link rel="alternate" hreflang="nb" href="https://peagenotif.fr/nb/confidentialite.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/confidentialite.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Språk">NB</summary><span class="langs-l"><a href="/confidentialite.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/confidentialite.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/confidentialite.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/confidentialite.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/confidentialite.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/confidentialite.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/confidentialite.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/confidentialite.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/confidentialite.html" hreflang="ca" data-lang="ca" lang="ca">Català</a><a href="/sv/confidentialite.html" hreflang="sv" data-lang="sv" lang="sv">Svenska</a><a href="/nb/confidentialite.html" hreflang="nb" data-lang="nb" lang="nb">Norsk bokmål</a></span></details></div></header>
+
+<div class="wrap">
+  <div class="tldr" style="border-left-color:#6B7C9C">Denne oversettelsen er gitt for enkelhets skyld. Ved avvik gjelder den <a href="/confidentialite.html">franske versjonen</a>.</div>
+  <h1>Personvernerklæring</h1>
+  <div class="date">Appen <b>Péage Notif</b> (sist oppdatert 31. juli 2026)</div>
+
+  <div class="tldr">
+    <b>Med én setning:</b> Péage Notif fungerer uten konto, uten registrering og uten sporingsverktøy for reklame: all behandling skjer lokalt, på telefonen din. Den eneste informasjonen som forlater enheten, er <b>feilrapporten du selv velger å sende</b> (se §&nbsp;6), og den er aldri knyttet til identiteten din.
+  </div>
+
+  <section class="legal">
+
+  <h2>1. Behandlingsansvarlig</h2>
+  <p>Utgiveren av appen er <b>SECRETARAI</b>, et SASU med en aksjekapital på 50 €, registrert i handelsregisteret (RCS) i Nice under nr. 103&nbsp;272&nbsp;100. Kontakt: <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a> · Brukerstøtte: <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>.</p>
+
+  <h2>2. Ingen konto, ingen profil, ingen brukersporing</h2>
+  <p>Péage Notif fungerer uten konto og uten registrering. Appen oppretter ingen brukerprofil, bruker ingen reklame-ID og sender ingen data for analyse, reklame eller brukersporing. <b>Den eneste dataoverføringen er feilrapporten du selv utløser</b> (beskrevet i §&nbsp;6), og den inneholder verken navn, e-post eller noen identifikator for enheten din.</p>
+
+  <h2>3. Posisjon (GPS)</h2>
+  <p>For å oppdage at du passerer en bomstasjon, bruker appen posisjonen til enheten din. Disse dataene behandles <b>utelukkende lokalt og i sanntid</b>, på telefonen din:</p>
+  <ul>
+    <li>posisjonstjenesten er bare aktiv under en tur <b>som du starter manuelt</b> (knappen «Start sporing») og stopper når du avslutter turen;</li>
+    <li>posisjonen din <b>overføres ikke</b> til utgiveren eller til noen tredjepartsserver, med ett eneste unntak: enkeltposisjonene i en feilrapport som du sender frivillig (§&nbsp;6);</li>
+    <li>tillatelsen «Når appen er i bruk» er tilstrekkelig for å bruke appen; posisjonsindikatoren i iOS forblir synlig under sporingen.</li>
+  </ul>
+
+  <h2>4. Data som lagres på enheten</h2>
+  <p>Enkelte opplysninger lagres <b>bare på telefonen din</b>, for at appen skal fungere, og forlater aldri enheten:</p>
+  <ul>
+    <li>historikken over turene dine og bomstasjonene du har passert (anslåtte beløp, tidsstempler);</li>
+    <li>preferansene dine (kjøretøyklasse, om opplesning er slått på);</li>
+    <li>en valgfri diagnoselogg som bare du kan se, eksportere eller slette.</li>
+  </ul>
+  <p>Disse dataene slettes hvis du sletter dem i appen, eller hvis du avinstallerer appen.</p>
+
+  <h2>5. Varsler, lyd og Live-aktivitet</h2>
+  <p>Prisvarslene, opplesningene og Live-aktiviteten (låseskjerm, Dynamic Island, CarPlay) genereres <b>lokalt</b> av appen. De er ikke avhengige av noen ekstern varslingstjeneste og overfører ingen data.</p>
+
+  <h2>6. Feilrapportering (valgfritt)</h2>
+  <p>Ingenting overføres før <b>du selv har rapportert en feil</b> (bomstasjon som ikke ble oppdaget, feil pris …): det er trykket ditt på rapportknappen som oppretter rapporten, og bare det. Når turen er avsluttet, sendes rapporten automatisk, over en kryptert forbindelse (HTTPS), til en server hos utgiveren som driftes i Vest-Europa, slik at du slipper enda en ting å gjøre bak rattet. Hvis det ikke er forbindelse i det øyeblikket, venter den rett og slett til neste gang du åpner appen. <b>Ingen rapport sendes uten at du har utløst den</b>, og du kan når som helst slette dem som ennå ikke er overført, under Innstillinger › Rapporter en feil.</p>
+  <p>Denne rapporten inneholder <b>bare det som trengs for å rette feilen</b>:</p>
+  <ul>
+    <li>posisjon, hastighet og tidsstempel i øyeblikket for hver rapport;</li>
+    <li>kommentaren du har diktert (omgjort til tekst) og en eventuell priskorrigering du har oppgitt;</li>
+    <li>loggen for den aktuelle turen (registreringshendelser med tidsstempel);</li>
+    <li>versjonen av appen og takstlisten, og kjøretøyklassen som er valgt.</li>
+  </ul>
+  <p>Den inneholder <b>verken navn, e-postadresse, telefonnummer eller noen identifikator for enheten din</b>: vi kan ikke knytte en rapport til en person. Disse rapportene brukes utelukkende til å rette registreringen og prisene, og slettes når feilen er behandlet. Du kan be om at en rapport slettes ved å skrive til <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> og oppgi dato og klokkeslett for sendingen.</p>
+
+  <h2>7. Oppdatering av takster</h2>
+  <p>Takstlistene er innebygd i appen. Hvis en sjekk etter oppdateringer er tilgjengelig, består den utelukkende i å <b>laste ned en offentlig takstliste</b>; ingen data om deg overføres under denne operasjonen.</p>
+
+  <h2>8. Ingen deling eller salg av data</h2>
+  <p>Ingen data selges, leies ut eller deles med tredjeparter, uansett formål. Feilrapportene (§&nbsp;6) er bare tilgjengelige for utgiveren og brukes bare til å forbedre appen.</p>
+
+  <h2 id="vos-droits">9. Dine rettigheter (GDPR)</h2>
+  <p>Dataene på enheten din er bare under din kontroll: du kan når som helst se, eksportere eller slette dem fra appen. De eneste dataene vi har, er feilrapportene du har sendt oss (§&nbsp;6); de inneholder ingen direkte identifikator, og du kan be om at de slettes ved å skrive til <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>. Har du spørsmål om personvern, kan du skrive til <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a>. Du kan også sende en klage til CNIL (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+
+  <h2>10. Barn</h2>
+  <p>Appen er ikke spesielt rettet mot barn og samler ikke bevisst inn data om dem.</p>
+
+  <h2>11. Endringer</h2>
+  <p>Denne erklæringen kan bli oppdatert; datoen øverst på siden viser siste revisjon. Vesentlige endringer vil bli gjort kjent på denne siden.</p>
+
+  <a class="back" href="index.html">← Tilbake til forsiden</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

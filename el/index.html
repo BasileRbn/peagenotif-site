@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Péage Notif: η τιμή των διοδίων, μόλις περνάτε</title>
-<meta name="description" content="Το Péage Notif εμφανίζει την εκτιμώμενη τιμή των διοδίων σε ειδοποίηση, τη στιγμή που περνάτε. Δωρεάν, χωρίς λογαριασμό, σε Γαλλία, Ιταλία και άλλες 11 ευρωπαϊκές χώρες.">
+<meta name="description" content="Το Péage Notif εμφανίζει την εκτιμώμενη τιμή των διοδίων σε μια ειδοποίηση, τη στιγμή ακριβώς που περνάτε. Δωρεάν, χωρίς λογαριασμό, σε 18 χώρες, από τη Γαλλία έως τη Νορβηγία, το Μαρόκο και τον Καναδά.">
 <meta name="theme-color" content="#070A12">
 <meta property="og:title" content="Péage Notif: η τιμή των διοδίων, μόλις περνάτε">
 <meta property="og:description" content="Μια ειδοποίηση σας ανακοινώνει το εκτιμώμενο ποσό σε κάθε σταθμό διοδίων. Δωρεάν, χωρίς λογαριασμό, εκτός σύνδεσης.">
@@ -111,6 +111,8 @@
   .phone::before{content:"";position:absolute;inset:-12% -22%;background:radial-gradient(50% 50% at 50% 42%,rgba(11,95,255,.32),transparent 70%);z-index:-1;filter:blur(6px)}
   .phone .frame{position:relative;aspect-ratio:331/720;border-radius:44px;background:#0B101C;border:10px solid #1b2130;box-shadow:inset 0 0 0 2px #2b3346,0 34px 80px rgba(0,0,0,.6);overflow:hidden}
 
+  /* Capture RÉELLE de l'app dans le cadre du téléphone (même rapport que l'écran: 1206×2622). */
+  .phone .frame img.reel{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .tilt-js{transition:transform .25s ease-out;will-change:transform}
   .hero-phone{animation:floaty 7s ease-in-out infinite}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -312,6 +314,108 @@
   .gallery img:first-child{margin-left:auto}
   .gallery img:last-child{margin-right:auto}
 
+  /* ---------- Périmètre (carte générée par tools/site_carte_perimetre.py) ---------- */
+  .geo{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center;margin-top:40px}
+  .geo-map{margin:0;position:relative}
+  /* Bords fondus: la carte se clôt sur un rectangle, que le fondu efface dans la page. */
+  .geo-map img{display:block;width:100%;height:auto;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
+    mask-composite:intersect}
+  .geo-leg{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:14px;font-size:13.5px;color:var(--tx2)}
+  .geo-leg span{display:inline-flex;align-items:center;gap:8px}
+  .geo-leg .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .geo-leg .dot.b{background:var(--blue-lite)}
+  .geo-leg .dot.g{background:var(--green-hi);box-shadow:0 0 0 4px rgba(69,200,120,.2)}
+  .geo-leg a{color:var(--tx2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+  .geo-cards{display:grid;gap:14px}
+  .geo-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .geo-card h3{display:flex;align-items:center;gap:10px;font-size:19px;margin-bottom:8px}
+  .geo-card ul{list-style:none}
+  .geo-card li{position:relative;padding:4px 0 4px 18px;color:var(--tx2);font-size:14.5px;line-height:1.5}
+  .geo-card li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--blue-lite)}
+  .geo-card li b{color:var(--tx)}
+  /* drapeaux en CSS: un emoji drapeau s'affiche «FR» sous Windows */
+  .flag{width:22px;height:15px;border-radius:3px;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+  .flag.fr{background:linear-gradient(90deg,#0055A4 0 33.4%,#fff 0 66.7%,#EF4135 0)}
+  .flag.it{background:linear-gradient(90deg,#009246 0 33.4%,#fff 0 66.7%,#CE2B37 0)}
+  .flag.ie{background:linear-gradient(90deg,#169B62 0 33.4%,#fff 0 66.7%,#FF883E 0)}
+  .flag.at{background:linear-gradient(#ED2939 0 33.4%,#fff 0 66.7%,#ED2939 0)}
+  .flag.nl{background:linear-gradient(#AE1C28 0 33.4%,#fff 0 66.7%,#21468B 0)}
+  .flag.es{background:linear-gradient(#AA151B 0 25%,#F1BF00 0 75%,#AA151B 0)}
+  .flag.pt{background:linear-gradient(90deg,#006600 0 40%,#FF0000 0)}
+  .flag.ad{background:linear-gradient(90deg,#10069F 0 33.4%,#FEDD00 0 66.7%,#D50032 0)}
+  /* Les armoiries (écu bleu bordé de rouge): sans elles, c'est le drapeau russe. */
+  .flag.si{background:linear-gradient(#0057B8,#0057B8) 25% 24%/14% 34% no-repeat,linear-gradient(#ED1C24,#ED1C24) 24% 20%/20% 46% no-repeat,linear-gradient(#fff 0 33.4%,#0057B8 0 66.7%,#ED1C24 0)}
+  .flag.dk{background:linear-gradient(90deg,transparent 28%,#fff 28% 40%,transparent 40%),linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%),#C8102E}
+  .flag.se{background:linear-gradient(90deg,transparent 28%,#FECC02 28% 41%,transparent 41%),linear-gradient(transparent 40%,#FECC02 40% 60%,transparent 60%),#006AA7}
+  .flag.no{background:linear-gradient(90deg,transparent 30%,#00205B 30% 38%,transparent 38%),linear-gradient(transparent 44%,#00205B 44% 56%,transparent 56%),linear-gradient(90deg,transparent 26%,#fff 26% 42%,transparent 42%),linear-gradient(transparent 36%,#fff 36% 64%,transparent 64%),#BA0C2F}
+  .flag.ch{width:15px;background:linear-gradient(90deg,transparent 40%,#fff 40% 60%,transparent 60%) center/60% 60% no-repeat,linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%) center/60% 60% no-repeat,#DA291C}
+  .flag.gr{background:linear-gradient(90deg,transparent 15%,#fff 15% 23%,transparent 23%) 0 0/40% 55.6% no-repeat,linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%) 0 0/40% 55.6% no-repeat,linear-gradient(#0D5EAF,#0D5EAF) 0 0/40% 55.6% no-repeat,repeating-linear-gradient(#0D5EAF 0 11.11%,#fff 11.11% 22.22%)}
+  .flag.gb{background:linear-gradient(90deg,transparent 43%,#C8102E 43% 57%,transparent 57%),linear-gradient(transparent 40%,#C8102E 40% 60%,transparent 60%),linear-gradient(90deg,transparent 38%,#fff 38% 62%,transparent 62%),linear-gradient(transparent 33%,#fff 33% 67%,transparent 67%),linear-gradient(33.7deg,transparent 45%,#fff 45% 55%,transparent 55%),linear-gradient(-33.7deg,transparent 45%,#fff 45% 55%,transparent 55%),#012169}
+  .flag.ca{background:radial-gradient(circle at 50% 52%,#D80621 0 22%,transparent 23%),linear-gradient(90deg,#D80621 0 25%,#fff 0 75%,#D80621 0)}
+  .flag.ma{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23C1272D'/%3E%3Cpath d='M15 5.2 16.9 11 12 7.4h6L13.1 11z' fill='none' stroke='%23006233' stroke-width='.9'/%3E%3C/svg%3E") center/cover}
+  .flag.tn{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23E70013'/%3E%3Ccircle cx='15' cy='10' r='5' fill='%23fff'/%3E%3Ccircle cx='15.6' cy='10' r='3.6' fill='%23E70013'/%3E%3Ccircle cx='16.5' cy='10' r='2.9' fill='%23fff'/%3E%3Cpath d='M15 10l2.6-.85-1.6 2.2V8.65l1.6 2.2z' fill='%23E70013'/%3E%3C/svg%3E") center/cover}
+  @media(max-width:860px){.geo{grid-template-columns:1fr;gap:26px}}
+  .geo-leg .dot.v{background:transparent;box-shadow:inset 0 0 0 2px #B9A23A;border-radius:3px}
+  .geo-ca{margin:0;padding:12px 14px 14px}
+  .geo-ca img{display:block;width:100%;height:auto;border-radius:10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .geo-ca figcaption{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14.5px;color:var(--tx2)}
+  .geo-ca figcaption b{color:var(--tx)}
+  .pays-titre{font-size:19px;margin:44px 0 14px}
+  .pays{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+  .pays li .flag{margin-top:3px}
+  .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
+  @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.pays{grid-template-columns:1fr}}
+  .geo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 28px;margin-top:30px;padding:22px 24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
+  .geo-strip h4{font-size:15.5px;color:var(--tx);margin-bottom:6px}
+  .geo-strip p{color:var(--tx2);font-size:14px;line-height:1.55}
+  @media(max-width:860px){.geo-strip{grid-template-columns:1fr}}
+
+  /* ---------- Péages sans barrière: du passage à l'échéance ---------- */
+  .ff-steps{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+  .ff{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  /* La capture est RÉELLE (simulateur, trajet rejoué): recadrée, jamais redessinée. */
+  /* Recadrées sur ce qui compte (bannière, carte «À payer»…), à une échelle où le texte se lit. */
+  .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
+  .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  .ff .ff-txt{padding:18px 20px 22px}
+  .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
+  .ff h3{font-size:17px;margin-bottom:6px}
+  .ff p{color:var(--tx2);font-size:14.5px}
+  .ff q{color:var(--tx);font-style:italic}
+  /* guillemets français avec leurs espaces insécables; les autres langues gardent ceux du navigateur */
+ :lang(fr) .ff q{quotes:"«\00a0" "\00a0»"}
+  @media(max-width:760px){.ff-steps{grid-template-columns:1fr}}
+  .delais{max-width:820px;margin:44px auto 0}
+  .delais h3{font-size:19px;margin-bottom:12px;text-align:center}
+  .delais table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .delais th,.delais td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  .delais th{color:var(--tx3);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.02)}
+  .delais tr:last-child td{border-bottom:none}
+  .delais td b{color:var(--tx);white-space:nowrap}
+  .delais td{color:var(--tx2)}
+  .delais tr.pays-ligne th{color:var(--tx);font-size:13px;letter-spacing:.04em;text-transform:none;background:rgba(255,255,255,.035);padding:9px 16px}
+  .delais tr.pays-ligne .flag{display:inline-block;vertical-align:-2px;margin-right:9px}
+  .delais .note{margin-top:10px;font-size:13px;color:var(--tx3);text-align:center}
+  @media(max-width:620px){
+    .delais thead{display:none}
+    .delais tr{display:block;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .delais tr:last-child{border-bottom:none}
+    .delais td{display:block;border:none;padding:2px 0}
+    .delais tr.pays-ligne{padding:0}
+    .delais tr.pays-ligne th{display:block}
+  }
+  .ff-plus{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:22px auto 0}
+  .ff-plus div{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
+  .ff-plus h4{font-size:15.5px;margin-bottom:4px;color:var(--tx)}
+  .ff-plus p{font-size:14px;color:var(--tx2)}
+  @media(max-width:620px){.ff-plus{grid-template-columns:1fr}}
+
   /* sélecteur de langue (tools/site_i18n.py) */
   details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
   details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
@@ -359,7 +463,7 @@
   <div class="lanes"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Αυτοκινητόδρομοι σε Γαλλία, Ιταλία και Ευρώπη · iPhone και Android</span>
+      <span class="eyebrow">18 χώρες · iPhone και Android</span>
       <h1>Η τιμή των διοδίων σας,<br><span class="hl">τη στιγμή που περνάτε.</span></h1>
       <p class="lead">Η πρώτη εφαρμογή που σας ανακοινώνει την τιμή <b>τη στιγμή που περνάτε από τα διόδια,</b> είτε με ελεύθερη ροή είτε με μπάρα. Δωρεάν, χωρίς λογαριασμό, εκτός σύνδεσης.</p>
       <div class="cta-row">
@@ -560,48 +664,185 @@
 
     <div class="feat">
       <div class="txt rv">
-        <h3>Γαλλία, Ιταλία και Ευρώπη, εκτός σύνδεσης</h3>
-        <p>776 από τους 811 γαλλικούς σταθμούς διοδίων, 582 ιταλικά σημεία και πάνω από 450 σταθμοί διοδίων σε Ισπανία, Πορτογαλία, Ελλάδα, Αυστρία, Ελβετία, Σλοβενία, Ανδόρα, Ηνωμένο Βασίλειο, Ιρλανδία, Ολλανδία και Δανία. Ενσωματωμένες επίσημες τιμές: η εφαρμογή λειτουργεί χωρίς σύνδεση.</p>
+        <h3>Η τιμή για το όχημά σας, χωρίς σύνδεση</h3>
+        <p>Αυτοκίνητο, αυτοκινούμενο, φορτηγό ή μοτοσικλέτα: ρυθμίστε μία φορά την κατηγορία του οχήματός σας και η εφαρμογή ανακοινώνει την τιμή που σας αντιστοιχεί. Οι επίσημες τιμές βρίσκονται μέσα στην εφαρμογή, που λειτουργεί ακόμη και χωρίς δίκτυο.</p>
         <ul>
           <li>20 δίκτυα συγκρίθηκαν γραμμή προς γραμμή με τον επίσημο τιμοκατάλογό τους</li>
-          <li>Ρυθμιζόμενη κατηγορία οχήματος (αυτοκίνητο από προεπιλογή)</li>
-          <li>Ειδοποίηση για βινιέτα κατά την είσοδο σε Ελβετία, Αυστρία, Σλοβενία, Τσεχία, Σλοβακία, Ουγγαρία, Ρουμανία, Βουλγαρία και Μολδαβία</li>
-          <li>Τιμές στο νόμισμα της χώρας: ευρώ, ελβετικό φράγκο, λίρα στερλίνα, δανική κορόνα</li>
+          <li>Τιμές που ελέγχονται κάθε εβδομάδα και ενημερώνονται σε κάθε ετήσια αναθεώρηση</li>
           <li>Ενσωματωμένη αναφορά σφαλμάτων για τη βελτίωση της βάσης δεδομένων</li>
         </ul>
       </div>
       <div class="art rv" style="--d:.15s">
         <div class="shot">
-          <div class="phone" role="img" aria-label="Ρυθμίσεις: κατηγορία οχήματος, φωνητική ανακοίνωση, ενημέρωση τιμών">
+          <div class="phone">
             <div class="frame">
-              <div class="scr" aria-hidden="true">
-                <div class="di"></div>
-                <div class="sb"><b>12:50</b><span class="ic">
-                  <svg width="20" height="10" viewBox="0 0 20 10"><rect x=".5" y=".5" width="16" height="9" rx="2.5" fill="none" stroke="#EDF2FC" opacity=".5"/><rect x="2" y="2" width="12" height="6" rx="1.4" fill="#EDF2FC"/><rect x="17.5" y="3" width="2" height="4" rx="1" fill="#EDF2FC" opacity=".5"/></svg>
-                </span></div>
-                <div class="body" style="padding-top:6px">
-                  <div class="nav"><span class="back">‹</span> Ρυθμίσεις</div>
-                  <div class="slab" style="margin-top:6px">Ρυθμίσεις</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(11,95,255,.18);color:var(--blue-lite)">🚙</span><span class="lbl">Τύπος οχήματος</span><span class="val">Κατηγορία 2 · Αυτοκίνητο / SUV <span class="chev">›</span></span></div>
-                    <div class="srow"><span class="sic" style="background:rgba(31,178,90,.16);color:var(--green-hi)">🔊</span><span class="lbl">Φωνητική ανακοίνωση</span><span class="tog"></span></div>
-                  </div>
-                  <div class="slab">Τιμές</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(255,212,0,.14);color:var(--yellow)">€</span><span class="lbl">Σε ισχύ από</span><span class="val">1 Φεβρουαρίου 2026</span></div>
-                    <div class="srow"><span class="sic" style="background:rgba(11,95,255,.18);color:var(--blue-lite)"><span class="spin">↻</span></span><span class="lbl" style="color:var(--blue-lite)">Έλεγχος ενημερώσεων</span></div>
-                  </div>
-                  <div class="sfoot">Οι τιμές των αυτοκινητοδρόμων αναθεωρούνται κάθε χρόνο την 1η Φεβρουαρίου. Τότε η εφαρμογή ελέγχει αυτόματα για ενημερωμένο τιμοκατάλογο.</div>
-                  <div class="slab">Βοήθεια</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(217,44,31,.15)">🛟</span><span class="lbl">Αναφορά σφάλματος</span><span class="val"><span class="chev">›</span></span></div>
-                  </div>
-                </div>
-                <div class="hi"></div>
-              </div>
+              <div class="di"></div>
+              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Ρυθμίσεις του Péage Notif: όχημα αυτοκίνητο, φωνητικές ανακοινώσεις, CarPlay, ενημερωμένες τιμές, αναφορά προβλήματος">
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PÉRIMÈTRE -->
+<!-- Couverture de la 2.0: fiches App Store 2.0 (appstore/fiches/europe/fr-FR.md), notes de
+     claude/scandinavie et claude/monde. Carte: tools/site_carte_perimetre.py, à relancer sur
+     les ressources de la version EN VENTE. Ne citer aucun pays qui n'y est pas. -->
+<section id="perimetre" class="band">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Κάλυψη</span>
+      <h2>Από τη Λισαβόνα έως το Όσλο, από την Ταγγέρη έως το Τορόντο</h2>
+      <p>Αυτοκινητόδρομοι, σήραγγες, γέφυρες και πύλες χωρίς μπάρα σε 18 χώρες: κάθε σημείο του χάρτη είναι ένας σταθμός διοδίων που το Péage Notif αναγνωρίζει τη στιγμή που περνάτε. Όλα είναι ήδη μέσα στην εφαρμογή, δεν χρειάζεται καμία λήψη στη διαδρομή.</p>
+    </div>
+    <div class="geo">
+      <figure class="geo-map rv">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Χάρτης της Ευρώπης και του Μαγκρέμπ γεμάτος σημεία: σε μπλε οι σταθμοί διοδίων που αναγνωρίζει η εφαρμογή, σε πράσινο οι πύλες χωρίς μπάρα με πληρωμή online, με κίτρινο περίγραμμα οι χώρες με βινιέτα">
+        <figcaption class="geo-leg">
+          <span><i class="dot b"></i>Σταθμός διοδίων, μπάρα, γέφυρα ή σήραγγα</span>
+          <span><i class="dot g"></i><a href="#flux-libre">Πύλη χωρίς μπάρα, πληρωμή online</a></span>
+          <span><i class="dot v"></i>Βινιέτα που ανακοινώνεται κατά την είσοδο</span>
+        </figcaption>
+      </figure>
+      <div class="geo-cards">
+        <div class="geo-card rv">
+          <h3><i class="flag fr" aria-hidden="true"></i>Γαλλία</h3>
+          <ul>
+            <li><b>96 %</b> των σταθμών διοδίων των αυτοκινητοδρόμων, όλων των φορέων εκμετάλλευσης</li>
+            <li>Οι πύλες χωρίς μπάρα της A13, της A14 και της A79</li>
+            <li>Σήραγγες του Λευκού Όρους, του Fréjus, του Puymorens και του Prado, Duplex A86, γέφυρα της Νορμανδίας, οδογέφυρα του Μιγιό</li>
+          </ul>
+        </div>
+        <div class="geo-card rv" style="--d:.1s">
+          <h3><i class="flag it" aria-hidden="true"></i>Ιταλία</h3>
+          <ul>
+            <li>Ολόκληρο το δίκτυο αυτοκινητοδρόμων με διόδια, από τη Βεντιμίλια έως τη Σικελία</li>
+            <li>Οι περιφερειακοί δρόμοι του Μιλάνου, του Τορίνου και της Νάπολης</li>
+            <li>Οι πύλες χωρίς μπάρα της Pedemontana και της Corda Molle</li>
+          </ul>
+        </div>
+        <figure class="geo-card geo-ca rv" style="--d:.2s">
+          <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Ένθετος χάρτης του Καναδά: οι πύλες του αυτοκινητοδρόμου 407 γύρω από το Τορόντο, η γέφυρα της A25 και η μπάρα της A30 κοντά στο Μόντρεαλ">
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Καναδάς</b> · Οντάριο και Κεμπέκ</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="pays-titre rv">Στην υπόλοιπη Ευρώπη</h3>
+    <ul class="pays rv">
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Ισπανία</b><span>Αυτοκινητόδρομοι Radiales της Μαδρίτης, AP-7 (Costa del Sol, Αλικάντε-Καρθαγένη, Καρθαγένη-Βέρα), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, διόδια του Garraf, σήραγγες Cadí και Artxanda</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b>Πορτογαλία</b><span>Ηλεκτρονικές πύλες στις A4, A8, A17, A19, A28, A29, A33, A41 και A42, μπάρες της A16, γέφυρες 25ης Απριλίου και Βάσκο ντα Γκάμα</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b>Ελλάδα</b><span>Όλοι οι αυτοκινητόδρομοι υπό παραχώρηση και η γέφυρα Ρίου-Αντιρρίου</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b>Αυστρία</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken και Felbertauern, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b>Ελβετία</b><span>Σήραγγα του Μεγάλου Αγίου Βερνάρδου, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b>Σλοβενία</b><span>Σήραγγα Karavanke, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b>Ανδόρα</b><span>Σήραγγα Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b>Ηνωμένο Βασίλειο</b><span>Dartford, σήραγγες Blackwall και Silvertown, γέφυρες του Mersey, σήραγγες του Tyne, γέφυρα του Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ιρλανδία</b><span>M50 χωρίς μπάρα, μπάρες στις M1, M3, M4, M6, M7, M8, N25 και στη σήραγγα του Λίμερικ</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b>Κάτω Χώρες</b><span>Kiltunnel και A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b>Δανία</b><span>Γέφυρες του Μεγάλου Μπελτ και του Έρεσουντ</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b>Νορβηγία</b><span>Οι σταθμοί AutoPASS: αστικά διόδια του Όσλο, του Μπέργκεν ή του Τρόντχαϊμ και δρόμοι με διόδια</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b>Σουηδία</b><span>Τέλη συμφόρησης της Στοκχόλμης και του Γκέτεμποργκ, γέφυρες Motala, Sundsvall και Skuru</span></div></li>
+    </ul>
+
+    <h3 class="pays-titre rv">Εκτός Ευρώπης</h3>
+    <ul class="pays rv">
+      <li><i class="flag ma" aria-hidden="true"></i><div><b>Μαρόκο</b><span>Το δίκτυο της Autoroutes du Maroc, από την Ταγγέρη έως το Αγκαντίρ και από την Καζαμπλάνκα έως την Ούζντα</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b>Τυνησία</b><span>Οι αυτοκινητόδρομοι A1, A3 και A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b>Καναδάς</b><span>Αυτοκινητόδρομος 407 ETR γύρω από το Τορόντο, με εκτιμώμενη τιμή ανά χιλιόμετρο, γέφυρα της A25 και μπάρα της A30 κοντά στο Μόντρεαλ</span></div></li>
+    </ul>
+
+    <div class="geo-strip rv">
+      <div><h4>Η βινιέτα, στα σύνορα</h4><p>Όταν μπαίνετε σε Ελβετία, Αυστρία, Σλοβενία, Τσεχία, Σλοβακία, Ουγγαρία, Ρουμανία, Βουλγαρία, Μολδαβία ή Λευκορωσία, η εφαρμογή σας υπενθυμίζει ότι η βινιέτα είναι υποχρεωτική και πού να την αγοράσετε.</p></div>
+      <div><h4>Το νόμισμα της χώρας</h4><p>Ελβετικό φράγκο, λίρα στερλίνα, κορόνες, ντιρχάμ, δηνάριο ή καναδικό δολάριο: το ποσό εμφανίζεται στο νόμισμα της χώρας, μαζί με το αντίστοιχο σε ευρώ όταν η Ευρωπαϊκή Κεντρική Τράπεζα δημοσιεύει την ισοτιμία του.</p></div>
+      <div><h4>Η γλώσσα σας, παντού</h4><p>Η εφαρμογή μιλά δεκατρείς γλώσσες και κρατά τη δική σας και από τις δύο πλευρές των συνόρων. Τα ονόματα των σταθμών μένουν όπως είναι γραμμένα στις πινακίδες.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÉAGES SANS BARRIÈRE -->
+<section id="flux-libre" class="band">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Διόδια χωρίς μπάρα</span>
+      <h2>Χωρίς μπάρα, χωρίς ξεχασμένες πληρωμές</h2>
+      <p>Στην A13, την A14, την A79, γύρω από το Μιλάνο, στο Dartford, στη M50 του Δουβλίνου ή στην Πορτογαλία, οι μπάρες έδωσαν τη θέση τους σε πύλες: περνάτε χωρίς να σταματήσετε. Με πομποδέκτη, τα διόδια χρεώνονται αυτόματα. Χωρίς πομποδέκτη, πληρώνονται αργότερα online, μέσα σε σύντομη προθεσμία. Το Péage Notif σας λέει πόσο, πού να πληρώσετε και έως πότε.</p>
+    </div>
+    <ol class="ff-steps">
+      <li class="ff rv">
+        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Ειδοποίηση του Péage Notif τη στιγμή της διέλευσης από την πύλη του Dozulé: περίπου 4,20 €, πληρωμή online εντός 72 ωρών στο sanef.com"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">1</span>
+          <h3>Τη στιγμή που περνάτε από την πύλη</h3>
+          <p>Το ποσό εμφανίζεται και ανακοινώνεται φωναχτά, μαζί με την προθεσμία πληρωμής: <q>Διόδια Dozulé, 4 ευρώ και 20. Πληρωμή online εντός 72 ωρών.</q></p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.1s">
+        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Σύνοψη στο τέλος της διαδρομής: κάρτα «Προς πληρωμή στο sanef.com» με το ποσό, την προθεσμία και τα βήματα πληρωμής"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">2</span>
+          <h3>Κατά την άφιξη, το σύνολο προς πληρωμή</h3>
+          <p>Στο τέλος της διαδρομής ανακοινώνονται το ποσό και η προθεσμία. Η σύνοψη ανοίγει με ένα πάτημα τον επίσημο ιστότοπο του φορέα εκμετάλλευσης, μαζί με τα βήματα που πρέπει να ακολουθήσετε.</p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.2s">
+        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Υπενθύμιση του Péage Notif στην οθόνη κλειδώματος: διόδια προς πληρωμή στο sanef.com έως την προθεσμία, με προσαύξηση μετά από αυτήν"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">3</span>
+          <h3>Υπενθύμιση, ποτέ τη νύχτα</h3>
+          <p>Μία υπενθύμιση την επόμενη ημέρα και μία λίγο πριν λήξει η προθεσμία, πάντα μεταξύ 9:00 και 21:00. Ένα πάτημα στο «Πληρώθηκε» και η εφαρμογή δεν το ξαναναφέρει.</p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.3s">
+        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Συμβάν αποθηκευμένο στο Ημερολόγιο: διόδια προς πληρωμή στο sanef.com, με την προθεσμία και τον σύνδεσμο προς τον ιστότοπο πληρωμής"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">4</span>
+          <h3>Η προθεσμία στο ημερολόγιό σας</h3>
+          <p>Η εφαρμογή σας προτείνει το συμβάν ήδη συμπληρωμένο, με ειδοποίηση: ένα πάτημα για να το αποθηκεύσετε. Δεν χρειάζεται πρόσβαση στο ημερολόγιό σας.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="delais rv">
+      <h3>Οι προθεσμίες που πρέπει να τηρήσετε</h3>
+      <table>
+        <thead><tr><th>Πού</th><th>Προθεσμία</th><th>Πού πληρώνετε</th></tr></thead>
+        <tbody>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag fr" aria-hidden="true"></i>Γαλλία</th></tr>
+          <tr><td>A13 και A14, μεταξύ Παρισιού και Καν</td><td><b>72 ώρες</b></td><td>sanef.com ή σε καπνοπωλείο του δικτύου Nirio</td></tr>
+          <tr><td>A4, έξοδος 36 (Boulay-Moselle)</td><td><b>72 ώρες</b></td><td>sanef.com ή σε καπνοπωλείο του δικτύου Nirio</td></tr>
+          <tr><td>A79, μεταξύ Montmarault και Digoin</td><td><b>72 ώρες</b></td><td>paiement.aliae.com ή σε τερματικό πληρωμής κατά μήκος του αυτοκινητοδρόμου</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag it" aria-hidden="true"></i>Ιταλία</th></tr>
+          <tr><td>Pedemontana, βόρεια του Μιλάνου</td><td><b>15 ημέρες</b></td><td>apl.pedemontana.com</td></tr>
+          <tr><td>Corda Molle, κοντά στη Μπρέσια</td><td><b>15 ημέρες</b></td><td>autoviapadana.it ή η εφαρμογή του φορέα εκμετάλλευσης</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag gb" aria-hidden="true"></i>Ηνωμένο Βασίλειο</th></tr>
+          <tr><td>Dartford, ανατολικά του Λονδίνου</td><td><b>Έως τα μεσάνυχτα της επόμενης ημέρας</b></td><td>gov.uk</td></tr>
+          <tr><td>Γέφυρες του Mersey, στο Λίβερπουλ</td><td><b>Έως τα μεσάνυχτα της επόμενης ημέρας</b></td><td>merseyflow.co.uk</td></tr>
+          <tr><td>Σήραγγες του Tyne, στο Νιούκαστλ</td><td><b>Έως τα μεσάνυχτα της επόμενης ημέρας</b></td><td>tt2.co.uk</td></tr>
+          <tr><td>Σήραγγες Blackwall και Silvertown, στο Λονδίνο</td><td><b>3 ημέρες</b></td><td>tfl.gov.uk</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag ie" aria-hidden="true"></i>Ιρλανδία</th></tr>
+          <tr><td>M50, γύρω από το Δουβλίνο</td><td><b>Έως τις 20:00 της επόμενης ημέρας</b></td><td>eflow.ie</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag nl" aria-hidden="true"></i>Κάτω Χώρες</th></tr>
+          <tr><td>A24 Blankenburg, στο Ρότερνταμ</td><td><b>72 ώρες</b></td><td>e-tol.nl</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag pt" aria-hidden="true"></i>Πορτογαλία</th></tr>
+          <tr><td>Ηλεκτρονικές πύλες</td><td><b>Εγγραφή πριν από τη διέλευση</b></td><td>pttolls.com, αλλιώς μόλις η διέλευση εμφανιστεί στον επίσημο ιστότοπο</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag es" aria-hidden="true"></i>Ισπανία</th></tr>
+          <tr><td>AP-636, Gipuzkoa</td><td><b>Εγγραφή πριν από τη διέλευση</b></td><td>bidegi.eus</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Μετά την προθεσμία, ο φορέας εκμετάλλευσης επιβάλλει προσαύξηση. Στη Νορβηγία και στη Σουηδία δεν χρειάζεται να κάνετε τίποτα: ο λογαριασμός έρχεται από μόνος του, και η εφαρμογή σας το επισημαίνει στη σύνοψη. Οι προθεσμίες προέρχονται από τους επίσημους ιστότοπους των φορέων εκμετάλλευσης.</p>
+    </div>
+
+    <div class="ff-plus rv">
+      <div>
+        <h4>Έχετε πομποδέκτη;</h4>
+        <p>Τα διόδια χρεώνονται αυτόματα. Δηλώστε το μία φορά στις ρυθμίσεις: η εφαρμογή δεν σας ξαναμιλά για πληρωμές.</p>
+      </div>
+      <div>
+        <h4>Ποτέ SMS</h4>
+        <p>Το Péage Notif δεν θα σας ζητήσει ποτέ να πληρώσετε και δεν στέλνει κανένα SMS. Η πληρωμή γίνεται μόνο στον επίσημο ιστότοπο του φορέα εκμετάλλευσης, αυτόν που σας υποδεικνύει η εφαρμογή.</p>
       </div>
     </div>
   </div>
@@ -620,7 +861,7 @@
       <div class="step rv">
         <div class="n">📱</div>
         <h3>Ό,τι κάνει η εφαρμογή για iPhone</h3>
-        <p>Σχεδόν 2.000 σταθμοί διοδίων σε 13 ευρωπαϊκές χώρες, η φωνητική ανακοίνωση, το σύνολο της διαδρομής και η σύνοψη στο τέλος. Σε έντεκα γλώσσες.</p>
+        <p>Τα διόδια 18 χωρών, η φωνητική ανακοίνωση, το σύνολο της διαδρομής και η σύνοψη στο τέλος. Σε δεκατρείς γλώσσες.</p>
       </div>
       <div class="step rv" style="--d:.12s">
         <div class="n">🚗</div>
@@ -640,31 +881,31 @@
 <section id="nouveautes" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Έκδοση 1.3</span>
+      <span class="eyebrow">Νέα</span>
       <h2>Βελτιωμένη χάρη στις αναφορές σας</h2>
-      <p>Κάθε αναφορά που στέλνεται από τον δρόμο συγκρίνεται με τους επίσημους τιμοκαταλόγους. Αυτό έδωσαν οι πιο πρόσφατες.</p>
+      <p>Κάθε αναφορά που στέλνεται από τον δρόμο ελέγχεται ξανά με βάση τους επίσημους τιμοκαταλόγους. Στις τελευταίες εκδόσεις, μεταξύ άλλων:</p>
     </div>
     <div class="steps">
       <div class="step rv">
-        <div class="n">🛣️</div>
-        <h3>Η A355 προστέθηκε</h3>
-        <p>Μετά από αναφορά από την μπάρα του Ittenheim, η δυτική περιφερειακή του Strasbourg έχει πλέον τιμή: 20 χρονικές ζώνες, 4 προφίλ ημέρας και υπολογισμένες αργίες.</p>
+        <div class="n">🔊</div>
+        <h3>Η φωνή, χωρίς ήχο ειδοποίησης</h3>
+        <p>Όταν περνάτε από σταθμό διοδίων, η φωνητική ανακοίνωση δεν καλύπτεται πια από τον ήχο της ειδοποίησης. Αν η φωνή είναι απενεργοποιημένη, ο ήχος επανέρχεται: κανένας σταθμός διοδίων δεν περνά αθόρυβα.</p>
       </div>
       <div class="step rv" style="--d:.12s">
-        <div class="n">🎯</div>
-        <h3>Η σωστή μπάρα, τη σωστή στιγμή</h3>
-        <p>Τα σημεία διοδίων που προσεγγίζετε αργά αναγνωρίζονται με μεγαλύτερο περιθώριο, και η κατεύθυνση κίνησης απαιτείται όπου το επίσημο μητρώο περιγράφει και τα δύο ρεύματα: τέλος οι ανακοινώσεις από το αντίθετο ρεύμα.</p>
+        <div class="n">🌍</div>
+        <h3>Η γλώσσα σας, και από τις δύο πλευρές των συνόρων</h3>
+        <p>Η εφαρμογή μιλά δεκατρείς γλώσσες, και η σύνοψη αναφέρει την ημερομηνία των τιμών κάθε χώρας που διασχίσατε.</p>
       </div>
       <div class="step rv" style="--d:.24s">
-        <div class="n">💬</div>
-        <h3>Ποτέ επινοημένο ποσό</h3>
-        <p>Όταν μια τιμή δεν δημοσιεύεται σε κανέναν τιμοκατάλογο, η εφαρμογή εμφανίζει «μη διαθέσιμη τιμή» αντί να σωπαίνει, και σας ειδοποιεί αν δεν επιτρέπεται η πρόσβαση στην τοποθεσία.</p>
+        <div class="n">🎯</div>
+        <h3>Όλο και πιο ακριβής</h3>
+        <p>Οι μπάρες που πλησιάζετε με χαμηλή ταχύτητα, οι μεγάλοι σταθμοί διοδίων και οι γειτονικοί σταθμοί αναγνωρίζονται καλύτερα, και η σωστή τιμή εμφανίζεται και στις δύο κατευθύνσεις.</p>
       </div>
     </div>
     <div class="stats">
-      <div class="stat rv"><div class="v">A86</div><div class="l">Duplex, 5 προφίλ ημέρας</div></div>
-      <div class="stat rv" style="--d:.1s"><div class="v">Prado</div><div class="l">σήραγγες της Marseille</div></div>
-      <div class="stat rv" style="--d:.2s"><div class="v">Normandie</div><div class="l">η γέφυρα, με τιμή</div></div>
+      <div class="stat rv"><div class="v">18</div><div class="l">καλυπτόμενες χώρες</div></div>
+      <div class="stat rv" style="--d:.1s"><div class="v">13</div><div class="l">γλώσσες</div></div>
+      <div class="stat rv" style="--d:.2s"><div class="v">72 ώρ.</div><div class="l">υπενθυμίζονται τη στιγμή που περνάτε από την πύλη</div></div>
       <div class="stat rv" style="--d:.3s"><div class="v">7 ημ.</div><div class="l">αυτόματος έλεγχος τιμοκαταλόγων</div></div>
     </div>
   </div>
@@ -715,14 +956,16 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Υποστήριξη</span>
       <h2>Έχετε ερώτηση; Σας απαντάμε.</h2>
-      <p>Γράψτε μας στο <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> ή αναφέρετε ένα σφάλμα απευθείας από την εφαρμογή (Ρυθμίσεις › Βοήθεια).</p>
+      <p>Γράψτε μας στο <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> ή αναφέρετε ένα σφάλμα απευθείας από την εφαρμογή (Ρυθμίσεις › Αναφορά προβλήματος).</p>
     </div>
     <div class="faq rv">
       <details><summary>Είναι η εφαρμογή πράγματι δωρεάν;</summary><p>Ναι, εντελώς δωρεάν και χωρίς συνδρομή. Δεν απαιτείται λογαριασμός.</p></details>
       <details><summary>Είναι ακριβείς οι τιμές που εμφανίζονται;</summary><p>Πρόκειται για εκτιμήσεις που υπολογίζονται με βάση τους επίσημους τιμοκαταλόγους (αυτοκίνητο από προεπιλογή, με δυνατότητα αλλαγής στις ρυθμίσεις). Δεν είναι δεσμευτικές: ισχύει μόνο το ποσό που χρεώνει ο πάροχος ηλεκτρονικών διοδίων σας ή η εταιρεία του αυτοκινητοδρόμου.</p></details>
-      <details><summary>Χρειάζεται πομποδέκτης ηλεκτρονικών διοδίων;</summary><p>Όχι. Το Péage Notif είναι ανεξάρτητο από κάθε πάροχο και δεν εισπράττει διόδια. Απλώς σας ενημερώνει για την εκτιμώμενη τιμή τη στιγμή που περνάτε.</p></details>
-      <details><summary>Αδειάζει η εφαρμογή την μπαταρία μου;</summary><p>Το GPS λειτουργεί μόνο κατά τη διάρκεια μιας παρακολούθησης που ξεκινήσατε εσείς. Σε αδράνεια, η εφαρμογή δεν καταναλώνει τίποτα. Θυμηθείτε να σταματήσετε την παρακολούθηση στο τέλος της διαδρομής.</p></details>
-      <details><summary>Ένας σταθμός διοδίων δεν εντοπίστηκε ή η τιμή φαίνεται λάθος</summary><p>Αναφέρετέ το από Ρυθμίσεις › Βοήθεια › «Αναφορά σφάλματος» (μπορείτε να επισυνάψετε το αρχείο καταγραφής της διαδρομής) ή με email στο support@peagenotif.fr. Οι αναφορές αυτές χρησιμοποιούνται απευθείας για τη διόρθωση της βάσης διοδίων.</p></details>
+      <details><summary>Χρειάζεται πομποδέκτης ηλεκτρονικών διοδίων;</summary><p>Όχι. Το Péage Notif είναι ανεξάρτητο από κάθε πάροχο και δεν εισπράττει διόδια. Σας ενημερώνει για την εκτιμώμενη τιμή τη στιγμή που περνάτε. Στους αυτοκινητοδρόμους χωρίς μπάρα (A13, A14, A79…), χωρίς πομποδέκτη, τα διόδια πληρώνονται αργότερα online: η εφαρμογή σας υπενθυμίζει το ποσό και την προθεσμία.</p></details>
+      <details><summary>Αδειάζει η εφαρμογή την μπαταρία μου;</summary><p>Το GPS λειτουργεί μόνο κατά τη διάρκεια μιας παρακολούθησης που ξεκινήσατε εσείς. Σε αδράνεια, η εφαρμογή δεν καταναλώνει τίποτα, και όταν είστε σταματημένοι μειώνει τον ρυθμό του GPS. Αν ξεχάσετε να σταματήσετε την παρακολούθηση όταν φτάσετε, σας ρωτά αν η διαδρομή ολοκληρώθηκε.</p></details>
+      <details><summary>Ένας σταθμός διοδίων δεν εντοπίστηκε ή η τιμή φαίνεται λάθος</summary><p>Κατά τη διαδρομή, πατήστε το κουμπί αναφοράς και πείτε τι δεν πάει καλά. Αργότερα, μεταβείτε στις Ρυθμίσεις › Αναφορά προβλήματος ή γράψτε στο support@peagenotif.fr. Οι αναφορές αυτές χρησιμοποιούνται απευθείας για τη διόρθωση της βάσης διοδίων.</p></details>
+      <details><summary>Σε ποιες χώρες λειτουργεί η εφαρμογή;</summary><p>Σε 18 χώρες: τη Γαλλία και την Ιταλία σε όλους τους αυτοκινητοδρόμους τους με διόδια, δεκατρείς ακόμη ευρωπαϊκές χώρες, το Μαρόκο, την Τυνησία και τον Καναδά (Οντάριο και Κεμπέκ). Ο <a href="#perimetre">χάρτης κάλυψης</a> δείχνει κάθε σταθμό διοδίων που αναγνωρίζει η εφαρμογή.</p></details>
+      <details><summary>Έλαβα SMS που μου ζητά να πληρώσω απλήρωτα διόδια. Είναι από το Péage Notif;</summary><p>Όχι. Το Péage Notif δεν θα σας ζητήσει ποτέ να πληρώσετε και δεν στέλνει ούτε SMS ούτε email. Κυκλοφορούν απατηλά SMS αυτού του είδους: μην πατήσετε τον σύνδεσμό τους. Τα διόδια χωρίς μπάρα πληρώνονται μόνο στον επίσημο ιστότοπο του φορέα εκμετάλλευσης, για παράδειγμα στο sanef.com για την A13 και την A14.</p></details>
     </div>
   </div>
 </section>
@@ -750,6 +993,8 @@
         <h4>Πλοήγηση</h4>
         <a href="#comment">Πώς λειτουργεί</a>
         <a href="#fonctions">Λειτουργίες</a>
+        <a href="#perimetre">Καλυπτόμενες χώρες</a>
+        <a href="#flux-libre">Διόδια χωρίς μπάρα</a>
         <a href="peages-mode-emploi.html">Κατανοώντας τα διόδια</a>
         <a href="#support">Υποστήριξη</a>
         <a href="confidentialite.html">Απόρρητο</a>

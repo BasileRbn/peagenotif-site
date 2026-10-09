@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Péage Notif: der Mautpreis genau beim Passieren</title>
-<meta name="description" content="Péage Notif zeigt den geschätzten Mautpreis in einer Benachrichtigung an, in der Sekunde der Durchfahrt. Kostenlos, ohne Konto, in Frankreich, Italien und 11 weiteren Ländern Europas.">
+<meta name="description" content="Péage Notif zeigt den geschätzten Preis einer Mautstelle als Benachrichtigung an, in der Sekunde, in der Sie sie passieren. Kostenlos, ohne Konto, in 18 Ländern, von Frankreich bis Norwegen, Marokko und Kanada.">
 <meta name="theme-color" content="#070A12">
 <meta property="og:title" content="Péage Notif: der Mautpreis genau beim Passieren">
 <meta property="og:description" content="Eine Benachrichtigung nennt Ihnen den geschätzten Betrag an jeder Mautstelle. Kostenlos, ohne Konto, offline.">
@@ -111,6 +111,8 @@
   .phone::before{content:"";position:absolute;inset:-12% -22%;background:radial-gradient(50% 50% at 50% 42%,rgba(11,95,255,.32),transparent 70%);z-index:-1;filter:blur(6px)}
   .phone .frame{position:relative;aspect-ratio:331/720;border-radius:44px;background:#0B101C;border:10px solid #1b2130;box-shadow:inset 0 0 0 2px #2b3346,0 34px 80px rgba(0,0,0,.6);overflow:hidden}
 
+  /* Capture RÉELLE de l'app dans le cadre du téléphone (même rapport que l'écran: 1206×2622). */
+  .phone .frame img.reel{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .tilt-js{transition:transform .25s ease-out;will-change:transform}
   .hero-phone{animation:floaty 7s ease-in-out infinite}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -312,6 +314,108 @@
   .gallery img:first-child{margin-left:auto}
   .gallery img:last-child{margin-right:auto}
 
+  /* ---------- Périmètre (carte générée par tools/site_carte_perimetre.py) ---------- */
+  .geo{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center;margin-top:40px}
+  .geo-map{margin:0;position:relative}
+  /* Bords fondus: la carte se clôt sur un rectangle, que le fondu efface dans la page. */
+  .geo-map img{display:block;width:100%;height:auto;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
+    -webkit-mask-composite:source-in;
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);
+    mask-composite:intersect}
+  .geo-leg{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:14px;font-size:13.5px;color:var(--tx2)}
+  .geo-leg span{display:inline-flex;align-items:center;gap:8px}
+  .geo-leg .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .geo-leg .dot.b{background:var(--blue-lite)}
+  .geo-leg .dot.g{background:var(--green-hi);box-shadow:0 0 0 4px rgba(69,200,120,.2)}
+  .geo-leg a{color:var(--tx2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+  .geo-cards{display:grid;gap:14px}
+  .geo-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .geo-card h3{display:flex;align-items:center;gap:10px;font-size:19px;margin-bottom:8px}
+  .geo-card ul{list-style:none}
+  .geo-card li{position:relative;padding:4px 0 4px 18px;color:var(--tx2);font-size:14.5px;line-height:1.5}
+  .geo-card li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--blue-lite)}
+  .geo-card li b{color:var(--tx)}
+  /* drapeaux en CSS: un emoji drapeau s'affiche „FR“ sous Windows */
+  .flag{width:22px;height:15px;border-radius:3px;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+  .flag.fr{background:linear-gradient(90deg,#0055A4 0 33.4%,#fff 0 66.7%,#EF4135 0)}
+  .flag.it{background:linear-gradient(90deg,#009246 0 33.4%,#fff 0 66.7%,#CE2B37 0)}
+  .flag.ie{background:linear-gradient(90deg,#169B62 0 33.4%,#fff 0 66.7%,#FF883E 0)}
+  .flag.at{background:linear-gradient(#ED2939 0 33.4%,#fff 0 66.7%,#ED2939 0)}
+  .flag.nl{background:linear-gradient(#AE1C28 0 33.4%,#fff 0 66.7%,#21468B 0)}
+  .flag.es{background:linear-gradient(#AA151B 0 25%,#F1BF00 0 75%,#AA151B 0)}
+  .flag.pt{background:linear-gradient(90deg,#006600 0 40%,#FF0000 0)}
+  .flag.ad{background:linear-gradient(90deg,#10069F 0 33.4%,#FEDD00 0 66.7%,#D50032 0)}
+  /* Les armoiries (écu bleu bordé de rouge): sans elles, c'est le drapeau russe. */
+  .flag.si{background:linear-gradient(#0057B8,#0057B8) 25% 24%/14% 34% no-repeat,linear-gradient(#ED1C24,#ED1C24) 24% 20%/20% 46% no-repeat,linear-gradient(#fff 0 33.4%,#0057B8 0 66.7%,#ED1C24 0)}
+  .flag.dk{background:linear-gradient(90deg,transparent 28%,#fff 28% 40%,transparent 40%),linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%),#C8102E}
+  .flag.se{background:linear-gradient(90deg,transparent 28%,#FECC02 28% 41%,transparent 41%),linear-gradient(transparent 40%,#FECC02 40% 60%,transparent 60%),#006AA7}
+  .flag.no{background:linear-gradient(90deg,transparent 30%,#00205B 30% 38%,transparent 38%),linear-gradient(transparent 44%,#00205B 44% 56%,transparent 56%),linear-gradient(90deg,transparent 26%,#fff 26% 42%,transparent 42%),linear-gradient(transparent 36%,#fff 36% 64%,transparent 64%),#BA0C2F}
+  .flag.ch{width:15px;background:linear-gradient(90deg,transparent 40%,#fff 40% 60%,transparent 60%) center/60% 60% no-repeat,linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%) center/60% 60% no-repeat,#DA291C}
+  .flag.gr{background:linear-gradient(90deg,transparent 15%,#fff 15% 23%,transparent 23%) 0 0/40% 55.6% no-repeat,linear-gradient(transparent 40%,#fff 40% 60%,transparent 60%) 0 0/40% 55.6% no-repeat,linear-gradient(#0D5EAF,#0D5EAF) 0 0/40% 55.6% no-repeat,repeating-linear-gradient(#0D5EAF 0 11.11%,#fff 11.11% 22.22%)}
+  .flag.gb{background:linear-gradient(90deg,transparent 43%,#C8102E 43% 57%,transparent 57%),linear-gradient(transparent 40%,#C8102E 40% 60%,transparent 60%),linear-gradient(90deg,transparent 38%,#fff 38% 62%,transparent 62%),linear-gradient(transparent 33%,#fff 33% 67%,transparent 67%),linear-gradient(33.7deg,transparent 45%,#fff 45% 55%,transparent 55%),linear-gradient(-33.7deg,transparent 45%,#fff 45% 55%,transparent 55%),#012169}
+  .flag.ca{background:radial-gradient(circle at 50% 52%,#D80621 0 22%,transparent 23%),linear-gradient(90deg,#D80621 0 25%,#fff 0 75%,#D80621 0)}
+  .flag.ma{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23C1272D'/%3E%3Cpath d='M15 5.2 16.9 11 12 7.4h6L13.1 11z' fill='none' stroke='%23006233' stroke-width='.9'/%3E%3C/svg%3E") center/cover}
+  .flag.tn{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23E70013'/%3E%3Ccircle cx='15' cy='10' r='5' fill='%23fff'/%3E%3Ccircle cx='15.6' cy='10' r='3.6' fill='%23E70013'/%3E%3Ccircle cx='16.5' cy='10' r='2.9' fill='%23fff'/%3E%3Cpath d='M15 10l2.6-.85-1.6 2.2V8.65l1.6 2.2z' fill='%23E70013'/%3E%3C/svg%3E") center/cover}
+  @media(max-width:860px){.geo{grid-template-columns:1fr;gap:26px}}
+  .geo-leg .dot.v{background:transparent;box-shadow:inset 0 0 0 2px #B9A23A;border-radius:3px}
+  .geo-ca{margin:0;padding:12px 14px 14px}
+  .geo-ca img{display:block;width:100%;height:auto;border-radius:10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .geo-ca figcaption{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14.5px;color:var(--tx2)}
+  .geo-ca figcaption b{color:var(--tx)}
+  .pays-titre{font-size:19px;margin:44px 0 14px}
+  .pays{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+  .pays li .flag{margin-top:3px}
+  .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
+  @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.pays{grid-template-columns:1fr}}
+  .geo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 28px;margin-top:30px;padding:22px 24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
+  .geo-strip h4{font-size:15.5px;color:var(--tx);margin-bottom:6px}
+  .geo-strip p{color:var(--tx2);font-size:14px;line-height:1.55}
+  @media(max-width:860px){.geo-strip{grid-template-columns:1fr}}
+
+  /* ---------- Péages sans barrière: du passage à l'échéance ---------- */
+  .ff-steps{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+  .ff{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  /* La capture est RÉELLE (simulateur, trajet rejoué): recadrée, jamais redessinée. */
+  /* Recadrées sur ce qui compte (bannière, carte „À payer“…), à une échelle où le texte se lit. */
+  .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
+  .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  .ff .ff-txt{padding:18px 20px 22px}
+  .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
+  .ff h3{font-size:17px;margin-bottom:6px}
+  .ff p{color:var(--tx2);font-size:14.5px}
+  .ff q{color:var(--tx);font-style:italic}
+  /* guillemets français avec leurs espaces insécables; les autres langues gardent ceux du navigateur */
+ :lang(fr) .ff q{quotes:"„\00a0" "\00a0“"}
+  @media(max-width:760px){.ff-steps{grid-template-columns:1fr}}
+  .delais{max-width:820px;margin:44px auto 0}
+  .delais h3{font-size:19px;margin-bottom:12px;text-align:center}
+  .delais table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .delais th,.delais td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  .delais th{color:var(--tx3);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.02)}
+  .delais tr:last-child td{border-bottom:none}
+  .delais td b{color:var(--tx);white-space:nowrap}
+  .delais td{color:var(--tx2)}
+  .delais tr.pays-ligne th{color:var(--tx);font-size:13px;letter-spacing:.04em;text-transform:none;background:rgba(255,255,255,.035);padding:9px 16px}
+  .delais tr.pays-ligne .flag{display:inline-block;vertical-align:-2px;margin-right:9px}
+  .delais .note{margin-top:10px;font-size:13px;color:var(--tx3);text-align:center}
+  @media(max-width:620px){
+    .delais thead{display:none}
+    .delais tr{display:block;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .delais tr:last-child{border-bottom:none}
+    .delais td{display:block;border:none;padding:2px 0}
+    .delais tr.pays-ligne{padding:0}
+    .delais tr.pays-ligne th{display:block}
+  }
+  .ff-plus{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:22px auto 0}
+  .ff-plus div{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
+  .ff-plus h4{font-size:15.5px;margin-bottom:4px;color:var(--tx)}
+  .ff-plus p{font-size:14px;color:var(--tx2)}
+  @media(max-width:620px){.ff-plus{grid-template-columns:1fr}}
+
   /* sélecteur de langue (tools/site_i18n.py) */
   details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
   details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
@@ -359,7 +463,7 @@
   <div class="lanes"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Autobahnen in Frankreich, Italien und Europa · iPhone und Android</span>
+      <span class="eyebrow">18 Länder · iPhone und Android</span>
       <h1>Der Preis Ihrer Maut,<br><span class="hl">genau beim Passieren.</span></h1>
       <p class="lead">Die erste App, die Ihnen den Preis <b>im Moment der Durchfahrt</b> ansagt, an Free-Flow-Portalen wie an Schranken. Kostenlos, ohne Konto, offline.</p>
       <div class="cta-row">
@@ -560,48 +664,185 @@
 
     <div class="feat">
       <div class="txt rv">
-        <h3>Frankreich, Italien und Europa, offline</h3>
-        <p>776 der 811 französischen Mautstationen, 582 italienische Punkte und über 450 Mautstellen in Spanien, Portugal, Griechenland, Österreich, der Schweiz, Slowenien, Andorra, dem Vereinigten Königreich, Irland, den Niederlanden und Dänemark. Offizielle Tarife an Bord: Die App funktioniert ohne Verbindung.</p>
+        <h3>Der Tarif für Ihr Fahrzeug, ohne Verbindung</h3>
+        <p>Pkw, Wohnmobil, Lkw oder Motorrad: Stellen Sie Ihre Klasse einmal ein, und die App sagt den Tarif an, der für Sie gilt. Die offiziellen Tarife sind in der App gespeichert, sie funktioniert auch ohne Netz.</p>
         <ul>
           <li>20 Netze, Zeile für Zeile mit ihrer offiziellen Tarifliste abgeglichen</li>
-          <li>Einstellbare Fahrzeugklasse (standardmäßig Klasse 1)</li>
-          <li>Vignetten-Hinweis bei der Einreise: Schweiz, Österreich, Slowenien, Tschechien, Slowakei, Ungarn, Rumänien, Bulgarien und Moldau</li>
-          <li>Preise in der Landeswährung: Euro, Schweizer Franken, Pfund Sterling, Dänische Krone</li>
+          <li>Tarife jede Woche geprüft und bei jeder jährlichen Anpassung aktualisiert</li>
           <li>Integrierte Fehlermeldung, um die Datenbank zu verbessern</li>
         </ul>
       </div>
       <div class="art rv" style="--d:.15s">
         <div class="shot">
-          <div class="phone" role="img" aria-label="Einstellungen: Fahrzeugklasse, Sprachansage, Tarifaktualisierung">
+          <div class="phone">
             <div class="frame">
-              <div class="scr" aria-hidden="true">
-                <div class="di"></div>
-                <div class="sb"><b>12:50</b><span class="ic">
-                  <svg width="20" height="10" viewBox="0 0 20 10"><rect x=".5" y=".5" width="16" height="9" rx="2.5" fill="none" stroke="#EDF2FC" opacity=".5"/><rect x="2" y="2" width="12" height="6" rx="1.4" fill="#EDF2FC"/><rect x="17.5" y="3" width="2" height="4" rx="1" fill="#EDF2FC" opacity=".5"/></svg>
-                </span></div>
-                <div class="body" style="padding-top:6px">
-                  <div class="nav"><span class="back">‹</span> Einstellungen</div>
-                  <div class="slab" style="margin-top:6px">Einstellungen</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(11,95,255,.18);color:var(--blue-lite)">🚙</span><span class="lbl">Fahrzeugtyp</span><span class="val">Klasse 1 · Pkw / SUV <span class="chev">›</span></span></div>
-                    <div class="srow"><span class="sic" style="background:rgba(31,178,90,.16);color:var(--green-hi)">🔊</span><span class="lbl">Sprachansage</span><span class="tog"></span></div>
-                  </div>
-                  <div class="slab">Tarife</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(255,212,0,.14);color:var(--yellow)">€</span><span class="lbl">Gültig seit</span><span class="val">1. Februar 2026</span></div>
-                    <div class="srow"><span class="sic" style="background:rgba(11,95,255,.18);color:var(--blue-lite)"><span class="spin">↻</span></span><span class="lbl" style="color:var(--blue-lite)">Nach Updates suchen</span></div>
-                  </div>
-                  <div class="sfoot">Die Autobahntarife werden jedes Jahr zum 1. Februar angepasst. Die App sucht dann automatisch nach einer aktuellen Tarifliste.</div>
-                  <div class="slab">Hilfe</div>
-                  <div class="set">
-                    <div class="srow"><span class="sic" style="background:rgba(217,44,31,.15)">🛟</span><span class="lbl">Fehler melden</span><span class="val"><span class="chev">›</span></span></div>
-                  </div>
-                </div>
-                <div class="hi"></div>
-              </div>
+              <div class="di"></div>
+              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Einstellungen von Péage Notif: Fahrzeug in Klasse 1, Sprachansagen, CarPlay, aktuelle Tarife, Problem melden">
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PÉRIMÈTRE -->
+<!-- Couverture de la 2.0: fiches App Store 2.0 (appstore/fiches/europe/fr-FR.md), notes de
+     claude/scandinavie et claude/monde. Carte: tools/site_carte_perimetre.py, à relancer sur
+     les ressources de la version EN VENTE. Ne citer aucun pays qui n'y est pas. -->
+<section id="perimetre" class="band">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Abdeckung</span>
+      <h2>Von Lissabon bis Oslo, von Tanger bis Toronto</h2>
+      <p>Autobahnen, Tunnel, Brücken und Portale ohne Schranke in 18 Ländern: Jeder Punkt auf der Karte ist eine Mautstelle, die Péage Notif bei der Durchfahrt erkennt. Alles ist in der App gespeichert, unterwegs wird nichts heruntergeladen.</p>
+    </div>
+    <div class="geo">
+      <figure class="geo-map rv">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Karte von Europa und dem Maghreb voller Punkte: die von der App erkannten Mautstellen in Blau, die online zu bezahlenden Portale ohne Schranke in Grün, die Vignettenländer gelb umrandet">
+        <figcaption class="geo-leg">
+          <span><i class="dot b"></i>Mautstation, Schranke, Brücke oder Tunnel</span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portal ohne Schranke, online zu bezahlen</a></span>
+          <span><i class="dot v"></i>Vignettenhinweis bei der Einreise</span>
+        </figcaption>
+      </figure>
+      <div class="geo-cards">
+        <div class="geo-card rv">
+          <h3><i class="flag fr" aria-hidden="true"></i>Frankreich</h3>
+          <ul>
+            <li><b>96 %</b> der Autobahn-Mautstationen, über alle Betreiber hinweg</li>
+            <li>Die Portale ohne Schranke auf der A13, der A14 und der A79</li>
+            <li>Mont-Blanc-, Fréjus-, Puymorens- und Prado-Tunnel, Duplex A86, Pont de Normandie, Viadukt von Millau</li>
+          </ul>
+        </div>
+        <div class="geo-card rv" style="--d:.1s">
+          <h3><i class="flag it" aria-hidden="true"></i>Italien</h3>
+          <ul>
+            <li>Das gesamte mautpflichtige Autobahnnetz, von Ventimiglia bis Sizilien</li>
+            <li>Die Ringautobahnen von Mailand, Turin und Neapel</li>
+            <li>Die Portale ohne Schranke der Pedemontana und der Corda Molle</li>
+          </ul>
+        </div>
+        <figure class="geo-card geo-ca rv" style="--d:.2s">
+          <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Ausschnitt Kanada: die Portale der Autobahn 407 rund um Toronto, die Brücke der A25 und die Schranke der A30 bei Montreal">
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Kanada</b> · Ontario und Québec</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 class="pays-titre rv">Anderswo in Europa</h3>
+    <ul class="pays rv">
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radiales von Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Mautstrecke Garraf, Cadí- und Artxanda-Tunnel</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektronische Portale auf der A4, A8, A17, A19, A28, A29, A33, A41 und A42, Schranken der A16, Brücke des 25. April und Vasco-da-Gama-Brücke</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b>Griechenland</b><span>Alle konzessionierten Autobahnen und die Rio-Andirrio-Brücke</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b>Österreich</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken und Felbertauern, dazu die Vignette</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b>Schweiz</b><span>Tunnel des Großen St. Bernhard, dazu die Vignette</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b>Slowenien</b><span>Karawankentunnel, dazu die Vignette</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-Tunnel</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b>Vereinigtes Königreich</b><span>Dartford, Blackwall- und Silvertown-Tunnel, Mersey-Brücken, Tyne-Tunnel, Tamar-Brücke</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 ohne Schranke, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b>Niederlande</b><span>Kiltunnel und A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b>Dänemark</b><span>Brücken über den Großen Belt und den Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b>Norwegen</b><span>Die AutoPASS-Stellen: Mautringe von Oslo, Bergen oder Trondheim und Mautstraßen</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b>Schweden</b><span>City-Maut von Stockholm und Göteborg, Brücken von Motala, Sundsvall und Skuru</span></div></li>
+    </ul>
+
+    <h3 class="pays-titre rv">Außerhalb Europas</h3>
+    <ul class="pays rv">
+      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marokko</b><span>Das Netz von Autoroutes du Maroc, von Tanger bis Agadir und von Casablanca bis Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunesien</b><span>Die Autobahnen A1, A3 und A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b>Kanada</b><span>Autobahn 407 ETR rund um Toronto mit geschätztem Kilometertarif, Brücke der A25 und Schranke der A30 bei Montreal</span></div></li>
+    </ul>
+
+    <div class="geo-strip rv">
+      <div><h4>Die Vignette an der Grenze</h4><p>In der Schweiz, in Österreich, Slowenien, Tschechien, der Slowakei, Ungarn, Rumänien, Bulgarien, Moldau und Belarus erinnert Sie die App gleich bei der Einreise daran, dass die Vignette Pflicht ist und wo Sie sie kaufen können.</p></div>
+      <div><h4>Die Landeswährung</h4><p>Schweizer Franken, Pfund Sterling, Kronen, Dirham, Dinar oder Kanadischer Dollar: Der Betrag erscheint in der Landeswährung, mit dem Gegenwert in Euro, sofern die Europäische Zentralbank einen Kurs dafür veröffentlicht.</p></div>
+      <div><h4>Ihre Sprache, überall</h4><p>Die App spricht dreizehn Sprachen und bleibt auch jenseits der Grenze bei Ihrer. Die Stationsnamen bleiben so, wie sie auf den Schildern stehen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÉAGES SANS BARRIÈRE -->
+<section id="flux-libre" class="band">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Maut ohne Schranke</span>
+      <h2>Keine Schranke, kein Vergessen</h2>
+      <p>Auf der A13, der A14, der A79, rund um Mailand, in Dartford, auf der M50 in Dublin oder in Portugal haben Portale die Schranken ersetzt: Man fährt durch, ohne anzuhalten. Mit Mautbox wird die Maut automatisch abgebucht. Ohne Mautbox bezahlt man sie danach online, innerhalb einer kurzen Frist. Péage Notif sagt Ihnen, wie viel, wo Sie bezahlen und bis wann.</p>
+    </div>
+    <ol class="ff-steps">
+      <li class="ff rv">
+        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Benachrichtigung von Péage Notif beim Passieren des Portals Dozulé: etwa 4,20 €, online innerhalb von 72 Stunden auf sanef.com zu bezahlen"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">1</span>
+          <h3>Bei der Durchfahrt am Portal</h3>
+          <p>Der Betrag erscheint auf dem Bildschirm und wird laut angesagt, mit der Zahlungsfrist: <q>Mautstelle Dozulé, 4 Euro 20. Online innerhalb von 72 Stunden bezahlen.</q></p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.1s">
+        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Zusammenfassung am Ende der Fahrt: Karte „Zu bezahlen auf sanef.com“ mit Betrag, Frist und Zahlungsschritten"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">2</span>
+          <h3>Bei der Ankunft: was noch zu zahlen ist</h3>
+          <p>Am Ende der Fahrt werden der Betrag und die Frist angesagt. Die Zusammenfassung öffnet mit einem Tippen die offizielle Website des Betreibers, samt den nötigen Schritten.</p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.2s">
+        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Erinnerung von Péage Notif auf dem Sperrbildschirm: Maut fristgerecht auf sanef.com zu bezahlen, danach mit Zuschlag"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">3</span>
+          <h3>Eine Erinnerung, nie nachts</h3>
+          <p>Eine Erinnerung am nächsten Tag, eine weitere kurz vor Fristende, immer zwischen 9 und 21 Uhr. Ein Tippen auf „Ist bezahlt“, und die App erwähnt es nicht mehr.</p>
+        </div>
+      </li>
+      <li class="ff rv" style="--d:.3s">
+        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Im Kalender gespeicherter Termin: Maut auf sanef.com zu bezahlen, mit Frist und Link zur Zahlungsseite"></figure>
+        <div class="ff-txt">
+          <span class="ff-n">4</span>
+          <h3>Die Frist in Ihrem Kalender</h3>
+          <p>Die App schlägt Ihnen den Termin bereits ausgefüllt vor, mit Erinnerung: ein Tippen, und er ist gespeichert. Zugriff auf Ihren Kalender braucht sie dafür nicht.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="delais rv">
+      <h3>Die einzuhaltenden Fristen</h3>
+      <table>
+        <thead><tr><th>Wo</th><th>Frist</th><th>Wo bezahlen</th></tr></thead>
+        <tbody>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag fr" aria-hidden="true"></i>Frankreich</th></tr>
+          <tr><td>A13 und A14, zwischen Paris und Caen</td><td><b>72 Stunden</b></td><td>sanef.com oder in einem Tabakladen des Nirio-Netzes</td></tr>
+          <tr><td>A4, Ausfahrt 36 (Boulay-Moselle)</td><td><b>72 Stunden</b></td><td>sanef.com oder in einem Tabakladen des Nirio-Netzes</td></tr>
+          <tr><td>A79, zwischen Montmarault und Digoin</td><td><b>72 Stunden</b></td><td>paiement.aliae.com oder an einem Automaten entlang der Autobahn</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag it" aria-hidden="true"></i>Italien</th></tr>
+          <tr><td>Pedemontana, nördlich von Mailand</td><td><b>15 Tage</b></td><td>apl.pedemontana.com</td></tr>
+          <tr><td>Corda Molle, bei Brescia</td><td><b>15 Tage</b></td><td>autoviapadana.it oder die App des Betreibers</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag gb" aria-hidden="true"></i>Vereinigtes Königreich</th></tr>
+          <tr><td>Dartford, östlich von London</td><td><b>Bis Mitternacht am Folgetag</b></td><td>gov.uk</td></tr>
+          <tr><td>Mersey-Brücken, in Liverpool</td><td><b>Bis Mitternacht am Folgetag</b></td><td>merseyflow.co.uk</td></tr>
+          <tr><td>Tyne-Tunnel, in Newcastle</td><td><b>Bis Mitternacht am Folgetag</b></td><td>tt2.co.uk</td></tr>
+          <tr><td>Blackwall- und Silvertown-Tunnel, in London</td><td><b>3 Tage</b></td><td>tfl.gov.uk</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag ie" aria-hidden="true"></i>Irland</th></tr>
+          <tr><td>M50, rund um Dublin</td><td><b>Bis 20 Uhr am Folgetag</b></td><td>eflow.ie</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag nl" aria-hidden="true"></i>Niederlande</th></tr>
+          <tr><td>A24 Blankenburg, in Rotterdam</td><td><b>72 Stunden</b></td><td>e-tol.nl</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag pt" aria-hidden="true"></i>Portugal</th></tr>
+          <tr><td>Elektronische Portale</td><td><b>Registrierung vor der Durchfahrt</b></td><td>pttolls.com, sonst sobald die Durchfahrt im offiziellen Portal erscheint</td></tr>
+          <tr class="pays-ligne"><th colspan="3"><i class="flag es" aria-hidden="true"></i>Spanien</th></tr>
+          <tr><td>AP-636, Gipuzkoa</td><td><b>Registrierung vor der Durchfahrt</b></td><td>bidegi.eus</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Nach Ablauf der Frist erhebt der Betreiber einen Zuschlag. In Norwegen und Schweden ist nichts zu tun: Die Rechnung kommt von selbst, und die App weist Sie in der Zusammenfassung darauf hin. Fristen laut den offiziellen Websites der Betreiber.</p>
+    </div>
+
+    <div class="ff-plus rv">
+      <div>
+        <h4>Sie haben eine Mautbox?</h4>
+        <p>Dann wird die Maut automatisch abgebucht. Geben Sie das einmal in den Einstellungen an: Danach spricht die App nicht mehr vom Bezahlen.</p>
+      </div>
+      <div>
+        <h4>Nie eine SMS</h4>
+        <p>Péage Notif fordert Sie nie zum Bezahlen auf und verschickt keine SMS. Bezahlt wird ausschließlich auf der offiziellen Website des Betreibers, die Ihnen die App nennt.</p>
       </div>
     </div>
   </div>
@@ -620,7 +861,7 @@
       <div class="step rv">
         <div class="n">📱</div>
         <h3>Alles, was die iPhone-App kann</h3>
-        <p>Fast 2.000 Mautstellen in 13 europäischen Ländern, die Sprachansage, die Gesamtkosten der Fahrt und die Zusammenfassung am Ende. In elf Sprachen.</p>
+        <p>Die Mautstellen aus 18 Ländern, die Sprachansage, die Fahrtsumme und die Zusammenfassung am Ende der Fahrt. In dreizehn Sprachen.</p>
       </div>
       <div class="step rv" style="--d:.12s">
         <div class="n">🚗</div>
@@ -640,31 +881,31 @@
 <section id="nouveautes" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Version 1.3</span>
+      <span class="eyebrow">Neuheiten</span>
       <h2>Verbessert durch Ihre Meldungen</h2>
-      <p>Jede Rückmeldung von unterwegs wird mit den offiziellen Tariflisten abgeglichen. Das haben die letzten ergeben.</p>
+      <p>Jede Rückmeldung von unterwegs wird mit den offiziellen Tariflisten abgeglichen. In den letzten Versionen unter anderem:</p>
     </div>
     <div class="steps">
       <div class="step rv">
-        <div class="n">🛣️</div>
-        <h3>Die A355 ist dabei</h3>
-        <p>Von der Schranke in Ittenheim aus gemeldet, ist die Westumgehung von Strasbourg jetzt tarifiert: 20 Zeitfenster, 4 Tagesprofile und berechnete Feiertage.</p>
+        <div class="n">🔊</div>
+        <h3>Die Stimme, ohne Signalton</h3>
+        <p>An einer Mautstelle wird die Sprachansage nicht mehr vom Benachrichtigungston übertönt. Ist die Stimme ausgeschaltet, kommt der Ton zurück: Keine Mautstelle bleibt stumm.</p>
       </div>
       <div class="step rv" style="--d:.12s">
-        <div class="n">🎯</div>
-        <h3>Die richtige Schranke im richtigen Moment</h3>
-        <p>Langsam angefahrene Mautstellen werden großzügiger erkannt, und die Fahrtrichtung wird überall dort verlangt, wo das amtliche Verzeichnis beide Fahrbahnen beschreibt: Schluss mit Ansagen von der Gegenseite.</p>
+        <div class="n">🌍</div>
+        <h3>Ihre Sprache, diesseits und jenseits der Grenzen</h3>
+        <p>Die App spricht dreizehn Sprachen, und die Zusammenfassung nennt das Tarifdatum jedes durchfahrenen Landes.</p>
       </div>
       <div class="step rv" style="--d:.24s">
-        <div class="n">💬</div>
-        <h3>Nie ein erfundener Betrag</h3>
-        <p>Wenn ein Tarif in keiner Liste veröffentlicht ist, zeigt die App „Tarif nicht verfügbar“ an, statt zu schweigen, und warnt Sie, wenn der Standortzugriff nicht erlaubt ist.</p>
+        <div class="n">🎯</div>
+        <h3>Immer genauer</h3>
+        <p>Langsam angefahrene Schranken, große Mautplattformen und benachbarte Stationen werden besser erkannt, und der richtige Tarif erscheint in beiden Richtungen.</p>
       </div>
     </div>
     <div class="stats">
-      <div class="stat rv"><div class="v">A86</div><div class="l">Duplex, 5 Tagesprofile</div></div>
-      <div class="stat rv" style="--d:.1s"><div class="v">Prado</div><div class="l">Tunnel in Marseille</div></div>
-      <div class="stat rv" style="--d:.2s"><div class="v">Normandie</div><div class="l">die Brücke, mit Tarif</div></div>
+      <div class="stat rv"><div class="v">18</div><div class="l">abgedeckte Länder</div></div>
+      <div class="stat rv" style="--d:.1s"><div class="v">13</div><div class="l">Sprachen</div></div>
+      <div class="stat rv" style="--d:.2s"><div class="v">72 h</div><div class="l">Zahlungsfrist, am Portal angesagt</div></div>
       <div class="stat rv" style="--d:.3s"><div class="v">7 T</div><div class="l">automatische Tarifprüfung</div></div>
     </div>
   </div>
@@ -715,14 +956,16 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Support</span>
       <h2>Eine Frage? Wir antworten.</h2>
-      <p>Schreiben Sie uns an <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> oder melden Sie einen Fehler direkt in der App (Einstellungen › Hilfe).</p>
+      <p>Schreiben Sie uns an <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> oder melden Sie einen Fehler direkt in der App (Einstellungen › Problem melden).</p>
     </div>
     <div class="faq rv">
       <details><summary>Ist die App wirklich kostenlos?</summary><p>Ja, vollständig kostenlos und ohne Abo. Ein Konto ist nicht nötig.</p></details>
       <details><summary>Sind die angezeigten Preise genau?</summary><p>Es handelt sich um Schätzungen, die anhand der offiziellen Tariflisten berechnet werden (standardmäßig Klasse 1, in den Einstellungen änderbar). Sie sind unverbindlich: Maßgeblich ist allein der Betrag, den Ihr Mautbox-Anbieter oder die Autobahngesellschaft berechnet.</p></details>
-      <details><summary>Braucht man eine Mautbox?</summary><p>Nein. Péage Notif ist von allen Anbietern unabhängig und erhebt keine Maut. Die App informiert Sie lediglich bei der Durchfahrt über den geschätzten Preis.</p></details>
-      <details><summary>Leert die App meinen Akku?</summary><p>Das GPS läuft nur während einer Aufzeichnung, die Sie selbst gestartet haben. Im Ruhezustand verbraucht die App nichts. Denken Sie daran, die Aufzeichnung am Ende der Fahrt zu beenden.</p></details>
-      <details><summary>Eine Mautstelle wurde nicht erkannt, oder der Preis scheint falsch</summary><p>Melden Sie es über Einstellungen › Hilfe › „Fehler melden“ (Sie können das Fahrtprotokoll anhängen) oder per E-Mail an support@peagenotif.fr. Diese Rückmeldungen fließen direkt in die Korrektur der Mautdatenbank ein.</p></details>
+      <details><summary>Braucht man eine Mautbox?</summary><p>Nein. Péage Notif ist von allen Betreibern unabhängig und kassiert keine Maut. Die App informiert Sie bei der Durchfahrt über den geschätzten Preis. Auf Autobahnen ohne Schranke (A13, A14, A79 …) wird die Maut ohne Mautbox anschließend online bezahlt: Die App erinnert Sie an Betrag und Frist.</p></details>
+      <details><summary>Leert die App meinen Akku?</summary><p>Das GPS läuft nur während einer Aufzeichnung, die Sie gestartet haben. Im Ruhezustand verbraucht die App nichts, und bei stehendem Fahrzeug drosselt sie das GPS. Vergessen Sie bei der Ankunft, die Aufzeichnung zu beenden, fragt sie Sie, ob die Fahrt vorbei ist.</p></details>
+      <details><summary>Eine Mautstelle wurde nicht erkannt, oder der Preis scheint falsch</summary><p>Tippen Sie während der Fahrt auf die Meldeschaltfläche und sagen Sie, was nicht stimmt. Danach geht es über Einstellungen › Problem melden, oder Sie schreiben an support@peagenotif.fr. Diese Rückmeldungen fließen direkt in die Korrektur der Mautdatenbank ein.</p></details>
+      <details><summary>In welchen Ländern funktioniert die App?</summary><p>In 18 Ländern: Frankreich und Italien auf allen mautpflichtigen Autobahnen, dreizehn weitere Länder Europas, Marokko, Tunesien und Kanada (Ontario und Québec). Die <a href="#perimetre">Abdeckungskarte</a> zeigt jede erkannte Mautstelle.</p></details>
+      <details><summary>Ich habe eine SMS erhalten, die eine unbezahlte Maut einfordert. Kommt sie von Péage Notif?</summary><p>Nein. Péage Notif fordert Sie nie zum Bezahlen auf und verschickt weder SMS noch E-Mails. Betrügerische SMS dieser Art sind im Umlauf: Tippen Sie nicht auf ihren Link. Maut ohne Schranke wird ausschließlich auf der offiziellen Website des Betreibers bezahlt, zum Beispiel auf sanef.com für die A13 und die A14.</p></details>
     </div>
   </div>
 </section>
@@ -750,6 +993,8 @@
         <h4>Navigation</h4>
         <a href="#comment">So funktioniert's</a>
         <a href="#fonctions">Funktionen</a>
+        <a href="#perimetre">Abgedeckte Länder</a>
+        <a href="#flux-libre">Maut ohne Schranke</a>
         <a href="peages-mode-emploi.html">Maut verstehen</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Datenschutz</a>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Κατανοώντας τα διόδια · Péage Notif</title>
+<meta name="description" content="Κλειστό σύστημα, ανοικτό σύστημα, ελεύθερη ροή, τιμές προέλευσης-προορισμού, κλάδοι με χρέωση, μετωπικοί σταθμοί διοδίων, κατηγορίες οχημάτων: πώς λειτουργούν τα γαλλικά διόδια, με απλά λόγια.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Γλώσσα">EL</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Κατανοώντας τα διόδια</h1>
+  <div class="date">Γιατί αυτό το ποσό, σε αυτό το σημείο; Πώς λειτουργούν τα γαλλικά διόδια, με απλά λόγια.</div>
+
+  <div class="tldr">
+    <b>Το βασικό:</b> στη Γαλλία δεν υπάρχει «ένα» σύστημα διοδίων, αλλά <b>τρία συστήματα</b> που συνυπάρχουν: το κλειστό σύστημα (με εισιτήριο), το ανοικτό σύστημα (σταθερό ποσό σε κάθε μπάρα) και η ελεύθερη ροή (πύλες χωρίς μπάρα). Ο ίδιος αυτοκινητόδρομος μπορεί να περνά από το ένα στο άλλο, και αυτό κάνει ορισμένα αντίγραφα κίνησης ηλεκτρονικών διοδίων να μπερδεύουν.
+  </div>
+
+  <section class="legal">
+
+  <h2>Τα τρία συστήματα</h2>
+
+  <h3>1. Το κλειστό σύστημα («με εισιτήριο»)</h3>
+  <p>Παίρνετε εισιτήριο (ή διαβάζεται ο πομποδέκτης σας) στην <b>είσοδο</b>· πληρώνετε στην <b>έξοδο</b>. Η τιμή εξαρτάται από το ζεύγος <b>είσοδο&nbsp;→&nbsp;έξοδο</b>: αυτό ονομάζεται τιμή <b>προέλευσης-προορισμού</b> («OD»). Οι εταιρείες αυτοκινητοδρόμων δημοσιεύουν κάθε χρόνο πραγματικούς πίνακες: μία γραμμή ανά σταθμό εισόδου, μία στήλη ανά σταθμό εξόδου, και η τιμή στη διασταύρωσή τους. Το μεγαλύτερο μέρος του δικτύου (APRR, ASF, Sanef, Escota…) λειτουργεί έτσι.</p>
+
+  <h3>2. Το ανοικτό σύστημα (σταθερό ποσό τη στιγμή της διέλευσης)</h3>
+  <p>Χωρίς εισιτήριο: μια <b>μπάρα κατά πλάτος του οδοστρώματος</b> σας χρεώνει ένα <b>σταθερό ποσό</b> σε κάθε διέλευση, όποια κι αν είναι η αφετηρία ή ο προορισμός σας. Οι ενδιάμεσες είσοδοι και έξοδοι είναι συχνά δωρεάν. Αυτό ισχύει σε πολυσύχναστα αστικά ή παραλιακά τμήματα, για παράδειγμα σε ορισμένες μπάρες της A8 γύρω από τη Nice.</p>
+
+  <h3>3. Η ελεύθερη ροή (free flow)</h3>
+  <p>Καμία μπάρα πια: <b>πύλες</b> εκτείνονται πάνω από τον αυτοκινητόδρομο και ανιχνεύουν το όχημα κατά τη διέλευση, με πλήρη ταχύτητα (πομποδέκτης, πινακίδα κυκλοφορίας). Χωρίς πομποδέκτη, πρέπει να <b>πληρώσετε μόνοι σας online εντός 72 ωρών</b>, αλλιώς επιβάλλεται προσαύξηση. Η A79 και η A13/A14 στη Νορμανδία λειτουργούν έτσι.</p>
+
+  <h2>Οι περιπτώσεις που εκπλήσσουν</h2>
+
+  <h3>Ο κλάδος εισόδου με χρέωση</h3>
+  <p>Στο όριο μεταξύ ανοικτής και κλειστής ζώνης, ορισμένοι <b>κλάδοι πρόσβασης</b> διαθέτουν δική τους μπάρα, που χρεώνει ένα μικρό σταθερό ποσό κατά την είσοδο. Ο φορέας χωρίζει τότε την επίσημη τιμή σε <b>δύο γραμμές στο αντίγραφο κίνησης</b>: το ποσό του κλάδου και στη συνέχεια το <b>υπόλοιπο</b> στην μπάρα εξόδου. Το άθροισμα των δύο αντιστοιχεί ακριβώς στη δημοσιευμένη τιμή προέλευσης-προορισμού.</p>
+
+  <div class="ex">
+    <div class="t">Πραγματικό παράδειγμα: A8, Nice Saint-Isidore → Antibes (κατηγορία 1, τιμές 2026)</div>
+    <table>
+      <tr><td>Κλάδος εισόδου «Saint-Isidore»</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Μπάρα εξόδου «Antibes Est»</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Σύνολο = η επίσημη τιμή Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Δύο γραμμές στο αντίγραφο κίνησης ηλεκτρονικών διοδίων, μία μόνο διαδρομή, μία μόνο τιμή από τον επίσημο τιμοκατάλογο.</p>
+  </div>
+
+  <h3>Έξοδος χωρίς μπάρα… και παρ' όλα αυτά χρέωση</h3>
+  <p>Στο ανοικτό σύστημα, μπορείτε να <b>μπείτε ή να βγείτε από δωρεάν κλάδο</b>: πληρώνετε μόνο αν περάσετε από μετωπικό σταθμό διοδίων στη διαδρομή σας. Αντίστροφα, μπορεί να χρεωθείτε <b>κατά την είσοδο</b> στον αυτοκινητόδρομο (μπάρα που περνάτε κατά την κατεύθυνση της εισόδου) και μετά να βγείτε ελεύθερα. Επομένως, το ποσό δεν αντιστοιχεί πάντα στο «σημείο όπου βγαίνετε από τον αυτοκινητόδρομο»: αντιστοιχεί στις μπάρες από τις οποίες πραγματικά περάσατε.</p>
+
+  <h3>Ο ίδιος κόμβος, διαφορετικοί κλάδοι</h3>
+  <p>Ένας κόμβος έχει συχνά <b>τέσσερις κλάδους</b> (είσοδος και έξοδος, σε κάθε κατεύθυνση), και δεν αντιμετωπίζονται πάντα με τον ίδιο τρόπο: ο ένας μπορεί να έχει σταθερή χρέωση, ο άλλος να είναι δωρεάν, ένας τρίτος να διαθέτει σταθμό εξόδου του κλειστού συστήματος. Γι' αυτό δύο διελεύσεις «από τον ίδιο σταθμό» μπορεί να δώσουν δύο διαφορετικά ποσά ανάλογα με τον κλάδο που χρησιμοποιήσατε.</p>
+
+  <h3>Το χαμένο εισιτήριο: η ακριβότερη τιμή</h3>
+  <p>Στο κλειστό σύστημα, χωρίς απόδειξη του σταθμού εισόδου σας (χαμένο εισιτήριο, μη αναγνώσιμος πομποδέκτης), η εταιρεία εφαρμόζει την <b>ακριβότερη δυνατή τιμή</b> έως τον σταθμό εξόδου σας (στη Γαλλία ονομάζεται «TLPC»). Άλλωστε, ορισμένα ζεύγη του επίσημου τιμοκαταλόγου εμφανίζουν ποσά που φαίνονται παράλογα: πρόκειται για κανονιστικές τιμές αυτού του είδους, όχι για λάθη.</p>
+
+  <h2>Μικρό γλωσσάρι</h2>
+  <dl>
+    <dt>Τιμή OD <span class="tag">προέλευσης-προορισμού</span></dt>
+    <dd>Επίσημη τιμή ενός ζεύγους σταθμός εισόδου → σταθμός εξόδου στο κλειστό σύστημα. Δημοσιεύεται κάθε χρόνο σε τιμοκαταλόγους ανά εταιρεία αυτοκινητοδρόμου.</dd>
+
+    <dt>Σταθμός διοδίων</dt>
+    <dd>Το σημείο είσπραξης: το σύνολο των λωρίδων πληρωμής ενός κόμβου ή μιας μπάρας. Ένας σταθμός μπορεί να είναι «μόνο εισόδου», «μόνο εξόδου» ή και τα δύο.</dd>
+
+    <dt>BPV <span class="tag">μετωπικός σταθμός διοδίων</span></dt>
+    <dd>Μπάρα που διακόπτει τον ίδιο τον αυτοκινητόδρομο (όλες τις λωρίδες), σε αντίθεση με τους σταθμούς που βρίσκονται στους κλάδους ενός κόμβου. Είναι το εργαλείο του ανοικτού συστήματος.</dd>
+
+    <dt>Πύλη ελεύθερης ροής</dt>
+    <dd>Αψίδα εξοπλισμένη με αισθητήρες που αντικαθιστά την μπάρα: ανίχνευση με πλήρη ταχύτητα, πληρωμή με πομποδέκτη ή online εντός 72 ωρών.</dd>
+
+    <dt>Σταθερό ποσό</dt>
+    <dd>Σταθερό ποσό που χρεώνεται σε κάθε διέλευση από ένα συγκεκριμένο σημείο (ανοικτή μπάρα, πύλη, σήραγγα), ανεξάρτητα από την υπόλοιπη διαδρομή.</dd>
+
+    <dt>Διέλευση <span class="tag">ελεύθερη ροή A79</span></dt>
+    <dd>Στην A79, δύο πύλες πλαισιώνουν κάθε κόμβο. Αν περάσετε και από τις δύο (απλώς διέρχεστε), πληρώνετε ενιαία τιμή «διέλευσης», που δεν είναι το απλό άθροισμα των δύο ζωνών.</dd>
+
+    <dt>Κατηγορίες οχημάτων (1 έως 5)</dt>
+    <dd>Κατηγορία 1: αυτοκίνητο (ύψος &lt; 2 m). Κατηγορία 2: βαν, βαν τύπου κάμπερ, αυτοκίνητα με χαμηλό τροχόσπιτο. Κατηγορίες 3 και 4: φορτηγά και λεωφορεία. Κατηγορία 5: μοτοσικλέτες. Η τιμή της ίδιας διαδρομής αλλάζει πολύ από κατηγορία σε κατηγορία.</dd>
+
+    <dt>Ηλεκτρονικά διόδια (πομποδέκτης)</dt>
+    <dd>Συσκευή (Ulys, Bip&amp;Go, Fulli…) που πληρώνει αυτόματα τη στιγμή της διέλευσης. Το μηνιαίο αντίγραφο κίνησης του παρόχου αναγράφει κάθε χρέωση: αυτό είναι το σημείο αναφοράς για τον έλεγχο μιας εκτίμησης.</dd>
+
+    <dt>Αναθεώρηση την 1<sup>η</sup> Φεβρουαρίου</dt>
+    <dd>Οι τιμές των αυτοκινητοδρόμων υπό παραχώρηση αναθεωρούνται κάθε χρόνο την 1<sup>η</sup> Φεβρουαρίου (υπουργικές αποφάσεις που δημοσιεύονται στο Journal officiel στα τέλη Ιανουαρίου). Μια εκτίμηση με βάση τον παλιό τιμοκατάλογο μπορεί να διαφέρει κατά λίγα λεπτά στις αρχές Φεβρουαρίου.</dd>
+  </dl>
+
+  <h2>Στην υπόλοιπη Ευρώπη</h2>
+
+  <h3>Η βινιέτα</h3>
+  <p>Σε Ελβετία, Αυστρία, Σλοβενία, Τσεχία, Σλοβακία και Ουγγαρία δεν πληρώνετε κατά τη διέλευση: μια <b>βινιέτα</b>, συνήθως ηλεκτρονική και συνδεδεμένη με την πινακίδα, είναι υποχρεωτική στους αυτοκινητοδρόμους. Σε Ρουμανία, Βουλγαρία και Μολδαβία ισχύει και για τους εθνικούς δρόμους. Αγοράζεται πριν ξεκινήσετε, στον επίσημο ιστότοπο της χώρας. Στην Αυστρία, ορισμένες σήραγγες και ορεινά περάσματα (Brenner, Tauern, Arlberg…) προσθέτουν ειδικά διόδια πέρα από τη βινιέτα.</p>
+
+  <h3>Πληρωμή εκ των υστέρων</h3>
+  <p>Αρκετά έργα τα διασχίζετε χωρίς μπάρα: τη διάβαση του Dartford κοντά στο Λονδίνο, τον αυτοκινητόδρομο M50 του Δουβλίνου, τη σήραγγα της A24 στο Ρότερνταμ, τις ηλεκτρονικές πύλες της Πορτογαλίας. Χωρίς πομποδέκτη, η πληρωμή γίνεται μετά, online και μέσα σε σύντομη προθεσμία· μετά την προθεσμία, μπορεί να προστεθεί πρόστιμο.</p>
+
+  <h2>Και ποιος ο ρόλος του Péage Notif σε όλα αυτά;</h2>
+  <p>Η εφαρμογή περιέχει τους επίσημους τιμοκαταλόγους (πίνακες OD, σταθερά ποσά, τιμές ελεύθερης ροής) και ανασυνθέτει τη διαδρομή σας σε πραγματικό χρόνο: θυμάται τον σταθμό εισόδου σας, αναγνωρίζει τις μπάρες από τις οποίες πραγματικά περνάτε (μαζί με τους κλάδους με χρέωση) και ανακοινώνει το αντίστοιχο ποσό τη στιγμή της διέλευσης. Όταν λείπει κάποια πληροφορία (είσοδος που δεν εντοπίστηκε, ζεύγος που απουσιάζει από τον επίσημο τιμοκατάλογο), προτιμά να <b>ανακοινώσει με ειλικρίνεια «άγνωστη είσοδος»</b> παρά να επινοήσει έναν αριθμό. Εκτός Γαλλίας, σας ειδοποιεί για τη βινιέτα κατά την είσοδο σε χώρα που την απαιτεί και σας υπενθυμίζει την προθεσμία πληρωμής και τον επίσημο ιστότοπο των έργων που πληρώνονται εκ των υστέρων. Τα ποσά παραμένουν <b>μη δεσμευτικές εκτιμήσεις</b>: ισχύει μόνο το αντίγραφο κίνησης του παρόχου σας.</p>
+
+  <a class="back" href="index.html">← Επιστροφή στην αρχική σελίδα</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

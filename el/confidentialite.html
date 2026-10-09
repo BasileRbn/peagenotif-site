@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Πολιτική απορρήτου · Péage Notif</title>
+<meta name="description" content="Πολιτική απορρήτου της εφαρμογής Péage Notif: τοπική επεξεργασία στη συσκευή, χωρίς λογαριασμό και χωρίς ιχνηλάτες· μεταδίδονται μόνο οι αναφορές σφαλμάτων που στέλνετε οικειοθελώς, χωρίς σύνδεση με την ταυτότητά σας.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:32px 0 10px;padding-top:8px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/confidentialite.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/confidentialite.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/confidentialite.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/confidentialite.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/confidentialite.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/confidentialite.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/confidentialite.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/confidentialite.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/confidentialite.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/confidentialite.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/confidentialite.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/confidentialite.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Γλώσσα">EL</summary><span class="langs-l"><a href="/confidentialite.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/confidentialite.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/confidentialite.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/confidentialite.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/confidentialite.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/confidentialite.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/confidentialite.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/confidentialite.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/confidentialite.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <div class="tldr" style="border-left-color:#6B7C9C">Η μετάφραση παρέχεται για διευκόλυνση. Σε περίπτωση απόκλισης υπερισχύει η <a href="/confidentialite.html">γαλλική έκδοση</a>.</div>
+  <h1>Πολιτική απορρήτου</h1>
+  <div class="date">Εφαρμογή <b>Péage Notif</b> (τελευταία ενημέρωση: 31 Ιουλίου 2026)</div>
+
+  <div class="tldr">
+    <b>Με μια φράση:</b> Το Péage Notif λειτουργεί χωρίς λογαριασμό, χωρίς εγγραφή και χωρίς διαφημιστικούς ιχνηλάτες: όλη η επεξεργασία γίνεται τοπικά, στο τηλέφωνό σας. Το μόνο δεδομένο που φεύγει από τη συσκευή είναι η <b>αναφορά σφάλματος που επιλέγετε να στείλετε</b> (βλ. §&nbsp;6), η οποία δεν συνδέεται ποτέ με την ταυτότητά σας.
+  </div>
+
+  <section class="legal">
+
+  <h2>1. Υπεύθυνος επεξεργασίας</h2>
+  <p>Εκδότης της εφαρμογής είναι η <b>SECRETARAI</b>, SASU με κεφάλαιο 50 €, εγγεγραμμένη στο Μητρώο Εμπορίου (RCS) της Nice με αρ. 103&nbsp;272&nbsp;100. Επικοινωνία: <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a> · Υποστήριξη χρηστών: <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>.</p>
+
+  <h2>2. Χωρίς λογαριασμό, χωρίς προφίλ, χωρίς παρακολούθηση</h2>
+  <p>Το Péage Notif λειτουργεί χωρίς λογαριασμό και χωρίς εγγραφή. Η εφαρμογή δεν δημιουργεί προφίλ χρήστη, δεν χρησιμοποιεί διαφημιστικό αναγνωριστικό και δεν στέλνει δεδομένα για σκοπούς ανάλυσης, διαφήμισης ή παρακολούθησης. <b>Η μόνη μετάδοση δεδομένων είναι η αναφορά σφάλματος που ενεργοποιείτε εσείς οι ίδιοι</b> (περιγράφεται στην §&nbsp;6), η οποία δεν περιέχει ούτε όνομα, ούτε email, ούτε αναγνωριστικό της συσκευής σας.</p>
+
+  <h2>3. Τοποθεσία (GPS)</h2>
+  <p>Για να εντοπίσει τη διέλευση από σταθμό διοδίων, η εφαρμογή χρησιμοποιεί τη θέση της συσκευής σας. Τα δεδομένα αυτά υφίστανται επεξεργασία <b>αποκλειστικά τοπικά, σε πραγματικό χρόνο</b>, στο τηλέφωνό σας:</p>
+  <ul>
+    <li>η τοποθεσία είναι ενεργή μόνο κατά τη διάρκεια μιας διαδρομής <b>που ξεκινάτε χειροκίνητα</b> (κουμπί «Έναρξη παρακολούθησης») και σταματά όταν ολοκληρώνετε τη διαδρομή·</li>
+    <li>η θέση σας <b>δεν διαβιβάζεται</b> στον εκδότη ούτε σε διακομιστή τρίτου, με μία μόνο εξαίρεση: τις μεμονωμένες θέσεις που περιέχονται σε αναφορά σφάλματος που στέλνετε οικειοθελώς (§&nbsp;6)·</li>
+    <li>αρκεί η άδεια «Κατά τη χρήση της εφαρμογής»· η ένδειξη τοποθεσίας του iOS παραμένει ορατή κατά την παρακολούθηση.</li>
+  </ul>
+
+  <h2>4. Δεδομένα αποθηκευμένα στη συσκευή</h2>
+  <p>Ορισμένες πληροφορίες αποθηκεύονται <b>μόνο στο τηλέφωνό σας</b>, για τη λειτουργία της εφαρμογής, και δεν φεύγουν ποτέ από τη συσκευή:</p>
+  <ul>
+    <li>το ιστορικό των διαδρομών σας και των σταθμών διοδίων που περάσατε (εκτιμώμενα ποσά, χρονοσήμανση)·</li>
+    <li>οι προτιμήσεις σας (κατηγορία οχήματος, ενεργοποίηση ή όχι της φωνητικής ανακοίνωσης)·</li>
+    <li>ένα προαιρετικό αρχείο διαγνωστικών, που μόνο εσείς μπορείτε να δείτε, να εξαγάγετε ή να διαγράψετε.</li>
+  </ul>
+  <p>Τα δεδομένα αυτά διαγράφονται αν τα διαγράψετε στην εφαρμογή ή αν απεγκαταστήσετε την εφαρμογή.</p>
+
+  <h2>5. Ειδοποιήσεις, ήχος και Ζωντανή δραστηριότητα</h2>
+  <p>Οι ειδοποιήσεις τιμής, οι φωνητικές ανακοινώσεις και η Ζωντανή δραστηριότητα (οθόνη κλειδώματος, Dynamic Island, CarPlay) δημιουργούνται <b>τοπικά</b> από την εφαρμογή. Δεν βασίζονται σε καμία απομακρυσμένη υπηρεσία ειδοποιήσεων και δεν μεταδίδουν δεδομένα.</p>
+
+  <h2>6. Αναφορά σφάλματος (προαιρετική)</h2>
+  <p>Τίποτα δεν μεταδίδεται όσο <b>δεν έχετε αναφέρει εσείς οι ίδιοι ένα σφάλμα</b> (σταθμός διοδίων που δεν εντοπίστηκε, λάθος τιμή…): το πάτημά σας στο κουμπί αναφοράς δημιουργεί την αναφορά, και τίποτε άλλο. Μόλις ολοκληρωθεί η διαδρομή, η αναφορά αυτή αποστέλλεται αυτόματα, μέσω κρυπτογραφημένης σύνδεσης (HTTPS), σε διακομιστή του εκδότη που φιλοξενείται στη Δυτική Ευρώπη, ώστε να έχετε μία ενέργεια λιγότερη στο τιμόνι. Αν εκείνη τη στιγμή δεν υπάρχει σύνδεση, απλώς περιμένει το επόμενο άνοιγμα της εφαρμογής. <b>Καμία αναφορά δεν αποστέλλεται χωρίς να την έχετε ενεργοποιήσει εσείς</b>, και μπορείτε ανά πάσα στιγμή να διαγράψετε όσες δεν έχουν ακόμη μεταδοθεί, από Ρυθμίσεις › Αναφορά σφάλματος.</p>
+  <p>Η αναφορά αυτή περιέχει <b>μόνο ό,τι χρειάζεται για τη διόρθωση του σφάλματος</b>:</p>
+  <ul>
+    <li>τη θέση, την ταχύτητα και τη χρονοσήμανση τη στιγμή κάθε αναφοράς·</li>
+    <li>το σχόλιο που υπαγορεύσατε (μεταγραμμένο σε κείμενο) και τη διόρθωση τιμής που τυχόν υποδείξατε·</li>
+    <li>το αρχείο καταγραφής της σχετικής διαδρομής (συμβάντα εντοπισμού με χρονοσήμανση)·</li>
+    <li>την έκδοση της εφαρμογής και του τιμοκαταλόγου, καθώς και τη ρυθμισμένη κατηγορία οχήματος.</li>
+  </ul>
+  <p>Δεν περιέχει <b>ούτε όνομα, ούτε διεύθυνση email, ούτε αριθμό τηλεφώνου, ούτε αναγνωριστικό της συσκευής σας</b>: δεν μπορούμε να συνδέσουμε μια αναφορά με ένα πρόσωπο. Οι αναφορές αυτές χρησιμοποιούνται αποκλειστικά για τη διόρθωση του εντοπισμού και των τιμών, και διαγράφονται μόλις το σφάλμα διευθετηθεί. Μπορείτε να ζητήσετε τη διαγραφή μιας αναφοράς στο <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> αναφέροντας την ημερομηνία και την ώρα αποστολής.</p>
+
+  <h2>7. Ενημερώσεις τιμών</h2>
+  <p>Οι τιμοκατάλογοι είναι ενσωματωμένοι στην εφαρμογή. Αν είναι διαθέσιμος έλεγχος ενημερώσεων, αυτός συνίσταται αποκλειστικά στη <b>λήψη ενός δημόσιου τιμοκαταλόγου</b> χωρίς να μεταδίδεται κανένα δεδομένο που σας αφορά.</p>
+
+  <h2>8. Καμία κοινοποίηση ή πώληση δεδομένων</h2>
+  <p>Κανένα δεδομένο δεν πωλείται, δεν εκμισθώνεται ούτε κοινοποιείται σε τρίτους, για οποιονδήποτε σκοπό. Οι αναφορές σφαλμάτων (§&nbsp;6) είναι προσβάσιμες μόνο στον εκδότη και χρησιμοποιούνται αποκλειστικά για τη βελτίωση της εφαρμογής.</p>
+
+  <h2 id="vos-droits">9. Τα δικαιώματά σας (ΓΚΠΔ)</h2>
+  <p>Τα δεδομένα στη συσκευή σας βρίσκονται υπό τον αποκλειστικό σας έλεγχο: μπορείτε να τα δείτε, να τα εξαγάγετε ή να τα διαγράψετε ανά πάσα στιγμή από την εφαρμογή. Τα μόνα δεδομένα που διατηρούμε είναι οι αναφορές σφαλμάτων που μας στείλατε (§&nbsp;6)· δεν περιέχουν κανένα άμεσο αναγνωριστικό και μπορείτε να ζητήσετε τη διαγραφή τους στο <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>. Για κάθε ερώτηση σχετικά με την προστασία δεδομένων, γράψτε στο <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a>. Μπορείτε επίσης να υποβάλετε καταγγελία στην CNIL, τη γαλλική αρχή προστασίας δεδομένων (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+
+  <h2>10. Παιδιά</h2>
+  <p>Η εφαρμογή δεν απευθύνεται ειδικά σε παιδιά και δεν συλλέγει εν γνώσει της δεδομένα που τα αφορούν.</p>
+
+  <h2>11. Τροποποιήσεις</h2>
+  <p>Η πολιτική αυτή μπορεί να ενημερωθεί· η ημερομηνία στην κορυφή της σελίδας δείχνει την τελευταία αναθεώρηση. Οι ουσιώδεις αλλαγές θα επισημαίνονται σε αυτή τη σελίδα.</p>
+
+  <a class="back" href="index.html">← Επιστροφή στην αρχική σελίδα</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

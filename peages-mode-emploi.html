@@ -43,15 +43,35 @@
   .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
   .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
   .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
 </style>
   <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
   <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
   <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
   <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
 </head>
 <body>
 
-<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="img/icon.png" alt="" width="30" height="30"> Péage Notif</a><span class="langs" role="group" aria-label="Langue"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr">FR</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en">EN</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it">IT</a></span></div></header>
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Langue">FR</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
 
 <div class="wrap">
   <h1>Comprendre les péages</h1>
@@ -128,8 +148,16 @@
     <dd>Les tarifs des autoroutes concédées sont révisés chaque année au 1<sup>er</sup> février (arrêtés publiés au Journal officiel fin janvier). Une estimation calculée sur l'ancienne grille peut différer de quelques centimes début février.</dd>
   </dl>
 
+  <h2>Ailleurs en Europe</h2>
+
+  <h3>La vignette</h3>
+  <p>En Suisse, en Autriche, en Slovénie, en Tchéquie, en Slovaquie et en Hongrie, on ne paie pas au passage : une <b>vignette</b>, le plus souvent électronique et liée à la plaque, est obligatoire sur les autoroutes. En Roumanie, en Bulgarie et en Moldavie, elle vaut aussi pour les routes nationales. Elle s'achète avant de rouler, sur le site officiel du pays. En Autriche, quelques tunnels et cols (Brenner, Tauern, Arlberg…) ajoutent un péage spécial à la vignette.</p>
+
+  <h3>Payer après coup</h3>
+  <p>Plusieurs ouvrages se franchissent sans barrière : la traversée de Dartford près de Londres, l'autoroute M50 de Dublin, le tunnel de l'A24 à Rotterdam, les portiques électroniques du Portugal. Sans badge, le paiement se fait ensuite, en ligne et dans un délai court ; passé ce délai, une amende peut s'ajouter.</p>
+
   <h2>Et Péage Notif dans tout ça ?</h2>
-  <p>L'application embarque les grilles officielles (matrices OD, forfaits, tarifs flux libre) et reconstitue votre trajet en direct : elle mémorise votre gare d'entrée, reconnaît les barrières réellement franchies — bretelles payantes comprises — et annonce le montant correspondant au passage. Sur un portique sans barrière, elle rappelle aussi le délai et le site officiel où payer. Quand une information manque (entrée non détectée, paire absente de la grille officielle), elle préfère <b>annoncer honnêtement « entrée inconnue »</b> plutôt qu'inventer un chiffre. Les montants restent des <b>estimations non contractuelles</b> : seul le relevé de votre opérateur fait foi.</p>
+  <p>L'application embarque les grilles officielles (matrices OD, forfaits, tarifs flux libre) et reconstitue votre trajet en direct : elle mémorise votre gare d'entrée, reconnaît les barrières réellement franchies — bretelles payantes comprises — et annonce le montant correspondant au passage. Sur un portique sans barrière, elle rappelle aussi le délai et le site officiel où payer. Quand une information manque (entrée non détectée, paire absente de la grille officielle), elle préfère <b>annoncer honnêtement « entrée inconnue »</b> plutôt qu'inventer un chiffre. Hors de France, elle vous prévient de la vignette à l'entrée d'un pays qui l'exige. Les montants restent des <b>estimations non contractuelles</b> : seul le relevé de votre opérateur fait foi.</p>
 
   <a class="back" href="index.html">← Retour à l'accueil</a>
   </section>

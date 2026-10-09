@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entendre els peatges · Péage Notif</title>
+<meta name="description" content="Sistema tancat, sistema obert, flux lliure, tarifes origen-destinació, ramals de pagament, barreres troncals, classes de vehicles: el funcionament dels peatges francesos, explicat de manera senzilla.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Idioma">CA</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Entendre els peatges</h1>
+  <div class="date">Per què aquest import, en aquest lloc? El funcionament dels peatges francesos, explicat de manera senzilla.</div>
+
+  <div class="tldr">
+    <b>L'essencial:</b> a França no hi ha «un» sol sistema de peatge, sinó <b>tres sistemes</b> que conviuen: el sistema tancat (amb tiquet), el sistema obert (import fix a cada barrera) i el flux lliure (pòrtics sense barrera). Una mateixa autopista pot passar de l'un a l'altre, i això és el que fa que alguns extractes de telepeatge resultin desconcertants.
+  </div>
+
+  <section class="legal">
+
+  <h2>Els tres sistemes</h2>
+
+  <h3>1. El sistema tancat («amb tiquet»)</h3>
+  <p>Agafa un tiquet (o es llegeix el seu dispositiu de telepeatge) a l'<b>entrada</b>; paga a la <b>sortida</b>. El preu depèn del parell <b>entrada&nbsp;→&nbsp;sortida</b>: és el que s'anomena una tarifa <b>origen-destinació</b> («OD»). Les concessionàries d'autopistes publiquen cada any autèntiques matrius: una fila per estació d'entrada, una columna per estació de sortida i el preu a la intersecció. La major part de la xarxa (APRR, ASF, Sanef, Escota…) funciona així.</p>
+
+  <h3>2. El sistema obert (import fix en passar)</h3>
+  <p>Sense tiquet: una <b>barrera que travessa la calçada</b> li cobra un <b>import fix</b> a cada pas, sigui quin sigui el seu origen o la seva destinació. Les entrades i sortides intermèdies sovint són gratuïtes. És el cas de trams urbans o costaners molt transitats, per exemple algunes barreres de l'A8 al voltant de Nice.</p>
+
+  <h3>3. El flux lliure (free flow)</h3>
+  <p>Cap barrera: <b>pòrtics</b> travessen l'autopista i detecten el vehicle quan passa, a plena velocitat (dispositiu de telepeatge, matrícula). Sense dispositiu de telepeatge, cal <b>pagar un mateix en línia en un termini de 72 hores</b>, sota pena de recàrrec. L'A79 i l'A13/A14 a Normandia funcionen així.</p>
+
+  <h2>Els casos que sorprenen</h2>
+
+  <h3>El ramal d'entrada de pagament</h3>
+  <p>A la frontera entre una zona oberta i una zona tancada, alguns <b>ramals d'accés</b> tenen la seva pròpia barrera, que cobra un petit import fix a l'entrada. L'operador divideix llavors la tarifa oficial en <b>dues línies al seu extracte</b>: l'import del ramal i després el <b>saldo</b> a la barrera de sortida. La suma de totes dues coincideix exactament amb la tarifa origen-destinació publicada.</p>
+
+  <div class="ex">
+    <div class="t">Exemple real: A8, Nice Saint-Isidore → Antibes (classe 1, tarifes 2026)</div>
+    <table>
+      <tr><td>Ramal d'entrada «Saint-Isidore»</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Barrera de sortida «Antibes Est»</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Total = la tarifa oficial Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Dues línies a l'extracte de telepeatge, un sol trajecte, una sola tarifa de la graella oficial.</p>
+  </div>
+
+  <h3>Sortir sense barrera… i pagar igualment</h3>
+  <p>En el sistema obert, es pot <b>entrar o sortir per un ramal gratuït</b>: només es paga si es travessa una barrera troncal pel camí. A la inversa, li poden cobrar <b>en entrar</b> a l'autopista (barrera travessada en el sentit de la incorporació) i després pot sortir lliurement. Per tant, l'import no sempre correspon al «lloc on es deixa l'autopista»: correspon a les barreres realment travessades.</p>
+
+  <h3>El mateix enllaç, ramals diferents</h3>
+  <p>Un enllaç sovint té <b>quatre ramals</b> (entrada i sortida, en cada sentit), i no sempre reben el mateix tracte: un pot ser de pagament amb import fix, un altre gratuït i un tercer tenir una estació de sortida del sistema tancat. Per això dos passos «pel mateix peatge» poden donar dos imports diferents segons el ramal que es faci servir.</p>
+
+  <h3>El tiquet perdut: la tarifa més cara</h3>
+  <p>En el sistema tancat, sense prova de la seva estació d'entrada (tiquet perdut, dispositiu il·legible), la concessionària aplica la <b>tarifa més cara</b> possible fins a la seva estació de sortida (anomenada «TLPC» a França). De fet, alguns parells de la graella oficial mostren imports que semblen il·lògics: són valors reglamentaris d'aquest tipus, no errors.</p>
+
+  <h2>Petit glossari</h2>
+  <dl>
+    <dt>Tarifa OD <span class="tag">origen-destinació</span></dt>
+    <dd>Preu oficial d'un parell estació d'entrada → estació de sortida en el sistema tancat. Es publica cada any en graelles per concessionària.</dd>
+
+    <dt>Estació de peatge</dt>
+    <dd>El punt de cobrament: el conjunt de carrils de pagament d'un enllaç o d'una barrera. Una estació pot ser «només entrada», «només sortida» o totes dues.</dd>
+
+    <dt>BPV <span class="tag">barrera troncal</span></dt>
+    <dd>Barrera que talla la mateixa autopista (tots els carrils), a diferència de les estacions situades als ramals d'un enllaç. És l'eina del sistema obert.</dd>
+
+    <dt>Pòrtic de flux lliure</dt>
+    <dd>Arc equipat amb sensors que substitueix la barrera: detecció a plena velocitat, pagament amb dispositiu de telepeatge o en línia en un termini de 72 h.</dd>
+
+    <dt>Import fix</dt>
+    <dd>Import fix cobrat a cada pas per un punt determinat (barrera oberta, pòrtic, túnel), independent de la resta del trajecte.</dd>
+
+    <dt>Trànsit <span class="tag">flux lliure A79</span></dt>
+    <dd>A l'A79, dos pòrtics emmarquen cada enllaç. Travessar-los tots dos (només s'és de pas) costa una tarifa de «trànsit» conjunta, que no és la simple suma de les dues zones.</dd>
+
+    <dt>Classes de vehicles (1 a 5)</dt>
+    <dd>Classe 1: cotxe (alçada &lt; 2 m). Classe 2: furgonetes, furgonetes camper, cotxes amb caravana baixa. Classes 3 i 4: camions i autocars. Classe 5: motos. El preu d'un mateix trajecte canvia molt d'una classe a una altra.</dd>
+
+    <dt>Telepeatge (dispositiu)</dt>
+    <dd>Dispositiu (Ulys, Bip&amp;Go, Fulli…) que paga automàticament en passar. L'extracte mensual de l'operador detalla cada cobrament: és la referència per comprovar una estimació.</dd>
+
+    <dt>Revisió de l'1<sup>​</sup> de febrer</dt>
+    <dd>Les tarifes de les autopistes en concessió es revisen cada any l'1<sup>​</sup> de febrer (ordres publicades al Journal officiel a finals de gener). Una estimació calculada amb la graella antiga pot diferir uns cèntims a principis de febrer.</dd>
+  </dl>
+
+  <h2>A la resta d'Europa</h2>
+
+  <h3>La vinyeta</h3>
+  <p>A Suïssa, Àustria, Eslovènia, Txèquia, Eslovàquia i Hongria no es paga en passar: una <b>vinyeta</b>, gairebé sempre electrònica i vinculada a la matrícula, és obligatòria a les autopistes. A Romania, Bulgària i Moldàvia, també val per a les carreteres nacionals. Es compra abans de sortir, al web oficial del país. A Àustria, alguns túnels i ports de muntanya (Brenner, Tauern, Arlberg…) afegeixen un peatge especial a la vinyeta.</p>
+
+  <h3>Pagar després</h3>
+  <p>Diverses infraestructures es travessen sense barrera: el pas de Dartford a prop de Londres, l'autopista M50 de Dublín, el túnel de l'A24 a Rotterdam, els pòrtics electrònics de Portugal. Sense dispositiu de telepeatge, el pagament es fa després, en línia i en un termini curt; un cop passat aquest termini, s'hi pot afegir una multa.</p>
+
+  <h2>I què hi fa Péage Notif, en tot això?</h2>
+  <p>L'aplicació inclou les graelles oficials (matrius OD, imports fixos, tarifes de flux lliure) i reconstrueix el seu trajecte en directe: memoritza la seva estació d'entrada, reconeix les barreres realment travessades (ramals de pagament inclosos) i anuncia l'import corresponent en passar. Quan falta informació (entrada no detectada, parell absent de la graella oficial), prefereix <b>anunciar amb honestedat «entrada desconeguda»</b> abans que inventar una xifra. Fora de França, l'avisa de la vinyeta en entrar en un país que l'exigeix, i li recorda el termini de pagament i el web oficial de les infraestructures que es paguen després. Els imports continuen sent <b>estimacions no vinculants</b>: només compta l'extracte del seu operador.</p>
+
+  <a class="back" href="index.html">← Tornar a la pàgina d'inici</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

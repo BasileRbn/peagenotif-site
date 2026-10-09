@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Razumeti cestnine · Péage Notif</title>
+<meta name="description" content="Zaprti sistem, odprti sistem, prosti prometni tok, cene izvor-cilj, plačljivi priključni kraki, čelne cestninske postaje, razredi vozil: kako delujejo francoske cestnine, preprosto razloženo.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Jezik">SL</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Razumeti cestnine</h1>
+  <div class="date">Zakaj ta znesek prav na tem mestu? Kako delujejo francoske cestnine, preprosto razloženo.</div>
+
+  <div class="tldr">
+    <b>Bistvo:</b> v Franciji ne obstaja „ena“ cestnina, temveč <b>trije sistemi,</b> ki obstajajo drug ob drugem: zaprti sistem (z listkom), odprti sistem (pavšal ob vsaki zapornici) in prosti prometni tok (portali brez zapornice). Ista avtocesta lahko prehaja iz enega v drugega, in prav zato so nekateri izpiski elektronskega cestninjenja tako zmedeni.
+  </div>
+
+  <section class="legal">
+
+  <h2>Trije sistemi</h2>
+
+  <h3>1. Zaprti sistem („z listkom“)</h3>
+  <p>Listek vzamete (ali pa se prebere vaša naprava) na postaji za <b>vstop</b>, plačate pa na postaji za <b>izstop</b>. Cena je odvisna od para <b>vstop&nbsp;→&nbsp;izstop</b>: temu pravimo cena po načelu <b>izvor-cilj</b> („OD“). Upravljavci avtocest vsako leto objavijo prave matrike: ena vrstica za vsako vstopno postajo, en stolpec za vsako izstopno postajo, cena pa na njunem presečišču. Tako deluje večina omrežja (APRR, ASF, Sanef, Escota …).</p>
+
+  <h3>2. Odprti sistem (pavšal ob prehodu)</h3>
+  <p>Brez listka: <b>zapornica prek vozišča</b> vam zaračuna <b>fiksni znesek</b> ob vsakem prehodu, ne glede na to, od kod prihajate in kam greste. Vmesni vstopi in izstopi so pogosto brezplačni. Tako je na zelo prometnih mestnih ali obalnih odsekih, na primer pri nekaterih zapornicah na A8 okoli mesta Nice.</p>
+
+  <h3>3. Prosti prometni tok (free flow)</h3>
+  <p>Nobene zapornice več: <b>portali</b> se pnejo nad avtocesto in zaznajo vozilo ob prehodu pri polni hitrosti (naprava, registrska tablica). Brez naprave za elektronsko cestninjenje morate <b>sami plačati prek spleta v 72 urah</b>, sicer vam grozi pribitek. Tako delujeta A79 ter A13/A14 v Normandiji.</p>
+
+  <h2>Primeri, ki presenetijo</h2>
+
+  <h3>Plačljivi vstopni priključni krak</h3>
+  <p>Na meji med odprtim in zaprtim območjem imajo nekateri <b>priključni kraki</b> svojo zapornico, ki ob vstopu zaračuna majhen pavšal. Upravljavec tedaj uradno ceno razdeli na <b>dve vrstici na vašem izpisku</b>: pavšal priključnega kraka, nato pa <b>preostanek</b> na izstopni zapornici. Vsota obeh se natanko ujema z objavljeno ceno izvor-cilj.</p>
+
+  <div class="ex">
+    <div class="t">Resničen primer: A8, Nice Saint-Isidore → Antibes (razred 1, cene 2026)</div>
+    <table>
+      <tr><td>Vstopni krak „Saint-Isidore“</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Izstopna zapornica „Antibes Est“</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Skupaj = uradna cena Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Dve vrstici na izpisku elektronskega cestninjenja, ena sama vožnja, ena sama cena iz uradnega cenika.</p>
+  </div>
+
+  <h3>Izstop brez zapornice … in vseeno plačilo</h3>
+  <p>V odprtem sistemu lahko <b>vstopite ali izstopite po brezplačnem priključnem kraku</b>: plačate le, če na poti zapeljete skozi čelno cestninsko postajo. Nasprotno vam lahko zaračunajo <b>ob vstopu</b> na avtocesto (zapornica, prevožena v smeri priključevanja), nato pa prosto izstopite. Znesek se torej ne ujema vedno s „krajem, kjer zapustite avtocesto“: ujema se z zapornicami, skozi katere ste dejansko zapeljali.</p>
+
+  <h3>Isti priključek, različni kraki</h3>
+  <p>Priključek ima pogosto <b>štiri krake</b> (vstop in izstop v vsaki smeri), in niso vedno obravnavani enako: eden je lahko plačljiv s pavšalom, drugi brezplačen, tretji pa ima izstopno postajo zaprtega sistema. Zato lahko dva prehoda „pri isti cestnini“ dasta dva različna zneska, odvisno od kraka, ki ste ga uporabili.</p>
+
+  <h3>Izgubljeni listek: najvišja cena</h3>
+  <p>V zaprtem sistemu brez dokazila o vaši vstopni postaji (izgubljen listek, neberljiva naprava) upravljavec zaračuna <b>najvišjo možno ceno</b> do vaše izstopne postaje (v Franciji imenovano „TLPC“). Nekateri pari v uradnem ceniku sicer prikazujejo zneske, ki se zdijo nelogični: gre za tovrstne predpisane vrednosti, ne za napake.</p>
+
+  <h2>Mali slovarček</h2>
+  <dl>
+    <dt>Cena OD <span class="tag">izvor-cilj</span></dt>
+    <dd>Uradna cena para vstopna postaja → izstopna postaja v zaprtem sistemu. Vsako leto se objavi v cenikih posameznih upravljavcev avtocest.</dd>
+
+    <dt>Cestninska postaja</dt>
+    <dd>Mesto pobiranja: vsi plačilni pasovi priključka ali zapornice. Postaja je lahko „samo vstopna“, „samo izstopna“ ali oboje.</dd>
+
+    <dt>BPV <span class="tag">čelna cestninska postaja</span></dt>
+    <dd>Zapornica, ki prečka samo avtocesto (vse pasove), v nasprotju s postajami na krakih priključka. To je orodje odprtega sistema.</dd>
+
+    <dt>Portal s prostim prometnim tokom</dt>
+    <dd>Lok s senzorji, ki nadomesti zapornico: zaznavanje pri polni hitrosti, plačilo z napravo ali prek spleta v 72 h.</dd>
+
+    <dt>Pavšal</dt>
+    <dd>Fiksni znesek, ki se zaračuna ob vsakem prehodu določene točke (odprta zapornica, portal, predor), ne glede na preostanek vožnje.</dd>
+
+    <dt>Tranzit <span class="tag">prosti prometni tok A79</span></dt>
+    <dd>Na A79 vsak priključek obdajata dva portala. Prehod obeh (le peljete mimo) stane združeno „tranzitno“ ceno, ki ni preprosta vsota obeh območij.</dd>
+
+    <dt>Razredi vozil (od 1 do 5)</dt>
+    <dd>Razred 1: osebni avto (višina &lt; 2 m). Razred 2: kombiji, predelani kombiji za bivanje, avtomobili z nizko počitniško prikolico. Razreda 3 in 4: tovorna vozila in avtobusi. Razred 5: motorji. Cena iste vožnje se med razredi močno razlikuje.</dd>
+
+    <dt>Elektronsko cestninjenje (naprava)</dt>
+    <dd>Naprava (Ulys, Bip&amp;Go, Fulli …), ki ob prehodu samodejno plača. Mesečni izpisek ponudnika navaja vsako pobrano cestnino: to je merilo za preverjanje ocene.</dd>
+
+    <dt>Sprememba 1.<sup>​</sup> februarja</dt>
+    <dd>Cene na avtocestah s koncesijo se vsako leto spremenijo 1.<sup>​</sup> februarja (odloki, objavljeni v uradnem listu Journal officiel konec januarja). Ocena, izračunana po starem ceniku, se lahko v začetku februarja razlikuje za nekaj centov.</dd>
+  </dl>
+
+  <h2>Drugod po Evropi</h2>
+
+  <h3>Vinjeta</h3>
+  <p>V Švici, Avstriji, Sloveniji, na Češkem, Slovaškem in Madžarskem se ne plačuje ob prehodu: <b>vinjeta</b>, najpogosteje elektronska in vezana na registrsko tablico, je obvezna na avtocestah. V Romuniji, Bolgariji in Moldaviji velja tudi za državne ceste. Kupi se pred vožnjo, na uradni spletni strani države. V Avstriji nekateri predori in prelazi (Brenner, Tauern, Arlberg …) k vinjeti dodajo posebno cestnino.</p>
+
+  <h3>Naknadno plačilo</h3>
+  <p>Več objektov prevozite brez zapornice: prehod Dartford pri Londonu, avtocesto M50 v Dublinu, predor na A24 v Rotterdamu, elektronske portale na Portugalskem. Brez naprave plačate naknadno, prek spleta in v kratkem roku; po izteku roka lahko sledi globa.</p>
+
+  <h2>Kje je v vsem tem Péage Notif?</h2>
+  <p>Aplikacija vsebuje uradne cenike (matrike OD, pavšale, cene za prosti prometni tok) in vašo vožnjo sproti rekonstruira: zapomni si vašo vstopno postajo, prepozna zapornice, skozi katere dejansko zapeljete (vključno s plačljivimi priključnimi kraki), in ob prehodu sporoči ustrezni znesek. Ko kakšen podatek manjka (vstop ni zaznan, para ni v uradnem ceniku), raje <b>pošteno sporoči „vstop neznan“,</b> kot da bi si izmislila številko. Zunaj Francije vas ob vstopu v državo, ki zahteva vinjeto, nanjo opozori ter vas spomni na rok plačila in uradno spletno stran objektov, ki se plačajo naknadno. Zneski ostajajo <b>nezavezujoče ocene</b>: velja samo izpisek vašega ponudnika.</p>
+
+  <a class="back" href="index.html">← Nazaj na domačo stran</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

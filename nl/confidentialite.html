@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacybeleid · Péage Notif</title>
+<meta name="description" content="Privacybeleid van de app Péage Notif: lokale verwerking op het toestel, zonder account en zonder tracker; alleen de foutmeldingen die je vrijwillig verstuurt, worden doorgegeven, zonder koppeling aan je identiteit.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:32px 0 10px;padding-top:8px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/confidentialite.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/confidentialite.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/confidentialite.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/confidentialite.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/confidentialite.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/confidentialite.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/confidentialite.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/confidentialite.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/confidentialite.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/confidentialite.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/confidentialite.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/confidentialite.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Taal">NL</summary><span class="langs-l"><a href="/confidentialite.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/confidentialite.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/confidentialite.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/confidentialite.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/confidentialite.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/confidentialite.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/confidentialite.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/confidentialite.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/confidentialite.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/confidentialite.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/confidentialite.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <div class="tldr" style="border-left-color:#6B7C9C">Deze vertaling is er voor het gemak. Bij verschillen geldt de <a href="/confidentialite.html">Franse versie</a>.</div>
+  <h1>Privacybeleid</h1>
+  <div class="date">App <b>Péage Notif</b> (laatst bijgewerkt: 31 juli 2026)</div>
+
+  <div class="tldr">
+    <b>In één zin:</b> Péage Notif werkt zonder account, zonder registratie en zonder advertentietracker: alle verwerking gebeurt lokaal, op je telefoon. Het enige wat het toestel verlaat, is de <b>foutmelding die je zelf besluit te versturen</b> (zie §&nbsp;6), en die wordt nooit aan je identiteit gekoppeld.
+  </div>
+
+  <section class="legal">
+
+  <h2>1. Verwerkingsverantwoordelijke</h2>
+  <p>De app wordt uitgegeven door <b>SECRETARAI</b>, een SASU met een kapitaal van 50 €, ingeschreven in het handelsregister (RCS) van Nice onder nr. 103&nbsp;272&nbsp;100. Contact: <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a> · Gebruikerssupport: <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>.</p>
+
+  <h2>2. Geen account, geen profiel, geen tracking</h2>
+  <p>Péage Notif werkt zonder account en zonder registratie. De app maakt geen gebruikersprofiel aan, gebruikt geen advertentie-ID en verstuurt geen gegevens voor analyse, advertenties of tracking. <b>De enige gegevensoverdracht is de foutmelding die je zelf in gang zet</b> (beschreven in §&nbsp;6), en die bevat geen naam, geen e-mailadres en geen ID van je toestel.</p>
+
+  <h2>3. Locatie (GPS)</h2>
+  <p>Om te detecteren dat je een tolpoort passeert, gebruikt de app de positie van je toestel. Deze gegevens worden <b>uitsluitend lokaal en in realtime</b>, op je telefoon zelf, verwerkt:</p>
+  <ul>
+    <li>locatie is alleen actief tijdens een rit <b>die je zelf start</b> (knop “Registratie starten”) en stopt wanneer je de rit beëindigt;</li>
+    <li>je positie <b>wordt niet doorgegeven</b> aan de uitgever of aan een server van derden, met één uitzondering: de losse posities in een foutmelding die je vrijwillig verstuurt (§&nbsp;6);</li>
+    <li>de toestemming “Bij gebruik van app” volstaat; de locatie-indicator van iOS blijft zichtbaar tijdens de registratie.</li>
+  </ul>
+
+  <h2>4. Gegevens die op het toestel worden opgeslagen</h2>
+  <p>Sommige gegevens worden <b>alleen op je telefoon</b>, voor de werking van de app, opgeslagen en verlaten het toestel nooit:</p>
+  <ul>
+    <li>de geschiedenis van je ritten en de gepasseerde tolpoorten (geschatte bedragen, tijdstempels);</li>
+    <li>je voorkeuren (voertuigklasse, gesproken aankondiging aan of uit);</li>
+    <li>een optioneel diagnoselogboek, dat alleen jij kunt bekijken, exporteren of wissen.</li>
+  </ul>
+  <p>Deze gegevens worden verwijderd als je ze in de app wist of als je de app verwijdert.</p>
+
+  <h2>5. Meldingen, audio en Live Activity</h2>
+  <p>Prijsmeldingen, gesproken aankondigingen en de Live Activity (toegangsscherm, Dynamic Island, CarPlay) worden <b>lokaal</b> door de app aangemaakt. Ze steunen op geen enkele externe meldingsdienst en versturen geen gegevens.</p>
+
+  <h2>6. Foutmelding (optioneel)</h2>
+  <p>Er wordt niets verstuurd zolang <b>je niet zelf een fout hebt gemeld</b> (tolpoort niet herkend, verkeerde prijs…): het is jouw tik op de meldknop die het rapport aanmaakt, en niets anders. Zodra de rit is beëindigd, wordt dat rapport vanzelf verstuurd, via een versleutelde verbinding (HTTPS), naar een server van de uitgever in West-Europa, zodat je achter het stuur een handeling minder hebt. Is er op dat moment geen verbinding, dan wacht het gewoon tot je de app de volgende keer opent. <b>Er wordt geen melding verstuurd zonder dat jij die in gang hebt gezet</b>, en je kunt meldingen die nog niet zijn verstuurd op elk moment wissen via Instellingen › Fout melden.</p>
+  <p>Dit rapport bevat <b>alleen wat nodig is om de fout te corrigeren</b>:</p>
+  <ul>
+    <li>de positie, de snelheid en het tijdstip van elke melding;</li>
+    <li>je ingesproken opmerking (omgezet naar tekst) en een eventuele prijscorrectie die je hebt opgegeven;</li>
+    <li>het logboek van de betreffende rit (detectiegebeurtenissen met tijdstempel);</li>
+    <li>de versie van de app en van de tarievenlijst, en de ingestelde voertuigklasse.</li>
+  </ul>
+  <p>Het bevat <b>geen naam, geen e-mailadres, geen telefoonnummer en geen ID van je toestel</b>: we kunnen een rapport niet aan een persoon koppelen. Deze rapporten worden uitsluitend gebruikt om de detectie en de prijzen te corrigeren, en worden verwijderd zodra de fout is afgehandeld. Je kunt de verwijdering van een rapport aanvragen via <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a> met vermelding van de datum en het tijdstip van verzending.</p>
+
+  <h2>7. Tariefupdates</h2>
+  <p>De tarievenlijsten zitten in de app. Als er een controle op updates beschikbaar is, bestaat die uitsluitend uit <b>het downloaden van een openbare prijslijst</b>; daarbij worden geen gegevens over jou verstuurd.</p>
+
+  <h2>8. Gegevens worden niet gedeeld of verkocht</h2>
+  <p>Er worden geen gegevens verkocht, verhuurd of gedeeld met derden, voor welk doel dan ook. Foutmeldingen (§&nbsp;6) zijn alleen toegankelijk voor de uitgever en dienen uitsluitend om de app te verbeteren.</p>
+
+  <h2 id="vos-droits">9. Je rechten (AVG)</h2>
+  <p>De gegevens op je toestel staan volledig onder jouw controle: je kunt ze op elk moment in de app bekijken, exporteren of verwijderen. De enige gegevens die wij bewaren, zijn de foutmeldingen die je ons hebt gestuurd (§&nbsp;6); ze bevatten geen directe identificatie, en je kunt de verwijdering ervan aanvragen via <a href="mailto:support@peagenotif.fr">support@peagenotif.fr</a>. Voor vragen over gegevensbescherming kun je mailen naar <a href="mailto:contact@secretarai.fr">contact@secretarai.fr</a>. Je kunt ook een klacht indienen bij de CNIL, de Franse privacytoezichthouder (<a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+
+  <h2>10. Kinderen</h2>
+  <p>De app is niet specifiek bedoeld voor kinderen en verzamelt niet bewust gegevens over hen.</p>
+
+  <h2>11. Wijzigingen</h2>
+  <p>Dit beleid kan worden bijgewerkt; de datum bovenaan de pagina geeft de laatste herziening aan. Wezenlijke wijzigingen worden op deze pagina aangegeven.</p>
+
+  <a class="back" href="index.html">← Terug naar de startpagina</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · RCS Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

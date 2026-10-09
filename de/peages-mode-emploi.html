@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maut verstehen · Péage Notif</title>
+<meta name="description" content="Geschlossenes System, offenes System, Free Flow, Tarife nach Herkunft und Ziel, kostenpflichtige Auffahrten, Hauptstreckenschranken, Fahrzeugklassen: So funktioniert die Maut in Frankreich, einfach erklärt.">
+<link rel="icon" type="image/png" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+ :root{--blue:#0B5FFF;--green:#1FB25A;--yellow:#FFD400;--bg:#0A0E17;--bg2:#111725;--card:#151C2C;--line:#232C40;--tx:#EAF0FB;--tx2:#9FB0CC}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:rgba(10,14,23,.85);backdrop-filter:blur(12px)}
+  header .wrap{display:flex;align-items:center;height:60px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--tx)}
+  .logo .badge{width:30px;height:30px;border-radius:8px;display:block}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.02em;margin:40px 0 6px}
+  .date{color:var(--tx2);margin-bottom:8px}
+  .tldr{background:linear-gradient(180deg,rgba(31,178,90,.09),transparent);border:1px solid rgba(31,178,90,.28);border-radius:16px;padding:20px 22px;margin:22px 0 34px}
+  .tldr b{color:var(--green)}
+  h2{font-size:22px;letter-spacing:-.01em;margin:36px 0 10px;padding-top:8px}
+  h3{font-size:17px;margin:22px 0 6px}
+  p,li{color:var(--tx)}
+  ul{margin:8px 0 8px 22px}li{margin:4px 0}
+  .muted{color:var(--tx2)}
+  section.legal{padding-bottom:60px}
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+  .ex .t{font-weight:700;color:var(--yellow);margin-bottom:8px}
+  .ex table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15px}
+  .ex td{padding:7px 8px;border-top:1px solid var(--line)}
+  .ex td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ex tr.total td{font-weight:700;color:var(--green)}
+  dl{margin:10px 0}
+  dt{font-weight:700;margin-top:16px}
+  dt .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(11,95,255,.12);border:1px solid rgba(11,95,255,.3);border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  dd{margin:4px 0 0;color:var(--tx)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--tx2);font-size:14px}
+  .back{display:inline-block;margin:26px 0 0;color:var(--tx2)}
+
+  .langs{display:inline-flex;gap:2px;margin-left:12px;padding:2px;border:1px solid var(--line);border-radius:999px;vertical-align:middle}
+  .langs a{padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2);text-decoration:none}
+  .langs a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+
+  /* sélecteur de langue (tools/site_i18n.py) */
+  details.langs{position:relative;display:inline-block;margin:0 0 0 12px;padding:0;vertical-align:middle;background:none;border:0;border-radius:0}
+  details.langs summary{display:block;list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;line-height:1.4;color:var(--tx2)}
+  details.langs summary::-webkit-details-marker{display:none}
+  /* La FAQ stylise TOUS les <details> (fond, bordure, « + » qui pivote) : on les annule ici. */
+  details.langs summary::after,details.langs[open] summary::after{content:" ▾";font-size:inherit;font-weight:400;color:inherit;transform:none;transition:none}
+  .langs-l{position:absolute;right:0;top:calc(100% + 6px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-width:240px;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50}
+  .langs-l a{padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700;color:var(--tx2);text-decoration:none;white-space:nowrap}
+  .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
+  @media(max-width:660px){details.langs{margin-left:8px}}
+  /* fin du sélecteur de langue */
+</style>
+  <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="en" href="https://peagenotif.fr/en/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="it" href="https://peagenotif.fr/it/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="de" href="https://peagenotif.fr/de/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="es" href="https://peagenotif.fr/es/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://peagenotif.fr/pt/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="nl" href="https://peagenotif.fr/nl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="el" href="https://peagenotif.fr/el/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="sl" href="https://peagenotif.fr/sl/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="da" href="https://peagenotif.fr/da/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="ca" href="https://peagenotif.fr/ca/peages-mode-emploi.html">
+  <link rel="alternate" hreflang="x-default" href="https://peagenotif.fr/peages-mode-emploi.html">
+</head>
+<body>
+
+<header><div class="wrap"><a class="logo" href="index.html"><img class="badge" src="../img/icon.png" alt="" width="30" height="30"> Péage Notif</a><details class="langs" translate="no"><summary aria-label="Sprache">DE</summary><span class="langs-l"><a href="/peages-mode-emploi.html" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/peages-mode-emploi.html" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/peages-mode-emploi.html" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/peages-mode-emploi.html" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/peages-mode-emploi.html" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/peages-mode-emploi.html" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/peages-mode-emploi.html" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/peages-mode-emploi.html" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/peages-mode-emploi.html" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/peages-mode-emploi.html" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/peages-mode-emploi.html" hreflang="ca" data-lang="ca" lang="ca">Català</a></span></details></div></header>
+
+<div class="wrap">
+  <h1>Maut verstehen</h1>
+  <div class="date">Warum genau dieser Betrag an genau dieser Stelle? So funktioniert die Maut in Frankreich, einfach erklärt.</div>
+
+  <div class="tldr">
+    <b>Das Wichtigste:</b> In Frankreich gibt es nicht „das eine“ Mautsystem, sondern <b>drei Systeme</b> die nebeneinander bestehen: das geschlossene System (mit Ticket), das offene System (Pauschale an jeder Schranke) und Free Flow (Portale ohne Schranke). Eine Autobahn kann von einem zum anderen wechseln, und genau das macht manche Mautabrechnungen so verwirrend.
+  </div>
+
+  <section class="legal">
+
+  <h2>Die drei Systeme</h2>
+
+  <h3>1. Das geschlossene System („mit Ticket“)</h3>
+  <p>Sie ziehen ein Ticket (oder Ihre Mautbox wird erfasst) an der <b>Einfahrt</b>; bezahlt wird an der <b>Ausfahrt</b>. Der Preis hängt vom Paar <b>Einfahrt&nbsp;→&nbsp;Ausfahrt</b> ab: Man spricht von einem Tarif <b>nach Herkunft und Ziel</b> („OD“). Die Autobahngesellschaften veröffentlichen jedes Jahr regelrechte Matrizen: eine Zeile pro Einfahrtsstation, eine Spalte pro Ausfahrtsstation, der Preis im Schnittpunkt. Der Großteil des Netzes (APRR, ASF, Sanef, Escota …) funktioniert so.</p>
+
+  <h3>2. Das offene System (Pauschale bei der Durchfahrt)</h3>
+  <p>Kein Ticket: Eine <b>Schranke quer über die Fahrbahn</b> berechnet Ihnen einen <b>festen Betrag</b> bei jeder Durchfahrt, unabhängig von Herkunft oder Ziel. Die Ein- und Ausfahrten dazwischen sind oft kostenlos. Das gilt für stark befahrene städtische oder küstennahe Abschnitte, etwa für einige Schranken der A8 rund um Nice.</p>
+
+  <h3>3. Free Flow</h3>
+  <p>Überhaupt keine Schranke mehr: <b>Portale</b> überspannen die Autobahn und erfassen das Fahrzeug bei voller Geschwindigkeit (Mautbox, Kennzeichen). Ohne Mautbox muss man <b>selbst online innerhalb von 72 Stunden bezahlen</b>, sonst droht ein Zuschlag. Die A79 und die A13/A14 in der Normandie funktionieren so.</p>
+
+  <h2>Die überraschenden Fälle</h2>
+
+  <h3>Die kostenpflichtige Auffahrt</h3>
+  <p>An der Grenze zwischen einem offenen und einem geschlossenen Abschnitt sind manche <b>Auffahrten</b> selbst mit einer Schranke ausgestattet, die bei der Einfahrt eine kleine Pauschale berechnet. Der Betreiber teilt den offiziellen Tarif dann in <b>zwei Zeilen auf Ihrer Abrechnung</b> auf: die Pauschale der Auffahrt, dann den <b>Restbetrag</b> an der Ausfahrtsschranke. Zusammen ergeben beide genau den veröffentlichten Tarif nach Herkunft und Ziel.</p>
+
+  <div class="ex">
+    <div class="t">Echtes Beispiel: A8, Nice Saint-Isidore → Antibes (Klasse 1, Tarife 2026)</div>
+    <table>
+      <tr><td>Auffahrt „Saint-Isidore“</td><td>0,50&nbsp;€</td></tr>
+      <tr><td>Ausfahrtsschranke „Antibes Est“</td><td>1,70&nbsp;€</td></tr>
+      <tr class="total"><td>Summe = offizieller Tarif Saint-Isidore&nbsp;→&nbsp;Antibes</td><td>2,20&nbsp;€</td></tr>
+    </table>
+    <p class="muted">Zwei Zeilen auf der Mautabrechnung, eine einzige Fahrt, ein einziger Tarif aus der offiziellen Liste.</p>
+  </div>
+
+  <h3>Ohne Schranke abfahren … und trotzdem bezahlen</h3>
+  <p>Im offenen System kann man <b>über eine kostenlose Rampe auf- oder abfahren</b>: Man zahlt nur, wenn man unterwegs eine Hauptstreckenschranke passiert. Umgekehrt kann man <b>beim Auffahren</b> auf die Autobahn zahlen (Schranke in Einfädelrichtung) und danach frei abfahren. Der Betrag entspricht also nicht immer „der Stelle, an der man die Autobahn verlässt“, sondern den tatsächlich passierten Schranken.</p>
+
+  <h3>Dieselbe Anschlussstelle, verschiedene Rampen</h3>
+  <p>Eine Anschlussstelle hat oft <b>vier Rampen</b> (Auf- und Abfahrt in jeder Richtung), und sie werden nicht immer gleich behandelt: Eine kann eine Pauschale kosten, eine andere kostenlos sein, eine dritte eine Ausfahrtsstation des geschlossenen Systems haben. Deshalb können zwei Durchfahrten „an derselben Mautstelle“ je nach benutzter Rampe zwei verschiedene Beträge ergeben.</p>
+
+  <h3>Das verlorene Ticket: der höchste Tarif</h3>
+  <p>Im geschlossenen System berechnet die Gesellschaft ohne Nachweis Ihrer Einfahrtsstation (Ticket verloren, Mautbox nicht lesbar) den <b>höchstmöglichen Tarif</b> bis zu Ihrer Ausfahrtsstation (auf Französisch „TLPC“). Manche Paare der offiziellen Liste zeigen übrigens Beträge, die unlogisch wirken: Das sind solche vorgeschriebenen Werte, keine Fehler.</p>
+
+  <h2>Kleines Glossar</h2>
+  <dl>
+    <dt>OD-Tarif <span class="tag">nach Herkunft und Ziel</span></dt>
+    <dd>Offizieller Preis eines Paares Einfahrtsstation → Ausfahrtsstation im geschlossenen System. Wird jedes Jahr in Tariflisten je Autobahngesellschaft veröffentlicht.</dd>
+
+    <dt>Mautstation</dt>
+    <dd>Der Erhebungspunkt: alle Zahlspuren einer Anschlussstelle oder einer Schranke. Eine Station kann „nur Einfahrt“, „nur Ausfahrt“ oder beides sein.</dd>
+
+    <dt>BPV <span class="tag">Hauptstreckenschranke</span></dt>
+    <dd>Schranke, die die Autobahn selbst sperrt (alle Fahrstreifen), im Gegensatz zu Stationen auf den Rampen einer Anschlussstelle. Sie ist das Werkzeug des offenen Systems.</dd>
+
+    <dt>Free-Flow-Portal</dt>
+    <dd>Mit Sensoren ausgestatteter Bogen, der die Schranke ersetzt: Erfassung bei voller Geschwindigkeit, Bezahlung per Mautbox oder online innerhalb von 72 h.</dd>
+
+    <dt>Pauschale</dt>
+    <dd>Fester Betrag, der bei jeder Durchfahrt eines bestimmten Punkts berechnet wird (offene Schranke, Portal, Tunnel), unabhängig vom Rest der Fahrt.</dd>
+
+    <dt>Transit <span class="tag">Free Flow A79</span></dt>
+    <dd>Auf der A79 rahmen zwei Portale jede Anschlussstelle ein. Wer beide passiert (also nur durchfährt), zahlt einen gebündelten „Transit“-Tarif, der nicht einfach die Summe der beiden Zonen ist.</dd>
+
+    <dt>Fahrzeugklassen (1 bis 5)</dt>
+    <dd>Klasse 1: Pkw (Höhe &lt; 2 m). Klasse 2: Transporter, Wohnmobile, Pkw mit niedrigem Wohnwagen. Klassen 3 und 4: Lkw und Reisebusse. Klasse 5: Motorräder. Der Preis derselben Fahrt ändert sich stark von einer Klasse zur anderen.</dd>
+
+    <dt>Elektronische Maut (Mautbox)</dt>
+    <dd>Gerät (Ulys, Bip&amp;Go, Fulli …), das bei der Durchfahrt automatisch bezahlt. Die monatliche Abrechnung des Anbieters listet jede Erhebung auf: Sie ist die Referenz, um eine Schätzung zu überprüfen.</dd>
+
+    <dt>Tarifanpassung zum 1.<sup>​</sup> Februar</dt>
+    <dd>Die Tarife der konzessionierten Autobahnen werden jedes Jahr zum 1.<sup>​</sup> Februar angepasst (Erlasse im Journal officiel Ende Januar). Eine mit der alten Tarifliste berechnete Schätzung kann Anfang Februar um einige Cent abweichen.</dd>
+  </dl>
+
+  <h2>Anderswo in Europa</h2>
+
+  <h3>Die Vignette</h3>
+  <p>In der Schweiz, in Österreich, Slowenien, Tschechien, der Slowakei und Ungarn zahlt man nicht bei der Durchfahrt: Eine <b>Vignette</b>, meist elektronisch und an das Kennzeichen gebunden, ist auf den Autobahnen Pflicht. In Rumänien, Bulgarien und Moldau gilt sie auch für die Nationalstraßen. Man kauft sie vor der Fahrt auf der offiziellen Website des Landes. In Österreich kommt bei einigen Tunneln und Pässen (Brenner, Tauern, Arlberg …) eine Sondermaut zur Vignette hinzu.</p>
+
+  <h3>Nachträglich bezahlen</h3>
+  <p>Mehrere Bauwerke passiert man ohne Schranke: die Dartford-Querung bei London, die Autobahn M50 in Dublin, den Tunnel der A24 in Rotterdam, die elektronischen Portale in Portugal. Ohne Mautbox wird nachträglich bezahlt, online und innerhalb einer kurzen Frist; nach Ablauf der Frist kann ein Bußgeld hinzukommen.</p>
+
+  <h2>Und was macht Péage Notif dabei?</h2>
+  <p>Die App enthält die offiziellen Tariflisten (OD-Matrizen, Pauschalen, Free-Flow-Tarife) und rekonstruiert Ihre Fahrt live: Sie merkt sich Ihre Einfahrtsstation, erkennt die tatsächlich passierten Schranken (kostenpflichtige Auffahrten eingeschlossen) und sagt bei der Durchfahrt den entsprechenden Betrag an. Fehlt eine Information (Einfahrt nicht erkannt, Paar nicht in der offiziellen Liste), zieht sie es vor, <b>ehrlich „Einfahrt unbekannt“ anzusagen,</b> statt eine Zahl zu erfinden. Außerhalb Frankreichs weist sie Sie bei der Einreise in ein Land mit Vignettenpflicht auf die Vignette hin und erinnert bei nachträglich zu zahlenden Bauwerken an die Zahlungsfrist und die offizielle Website. Die Beträge bleiben <b>unverbindliche Schätzungen</b>: Maßgeblich ist allein die Abrechnung Ihres Anbieters.</p>
+
+  <a class="back" href="index.html">← Zurück zur Startseite</a>
+  </section>
+</div>
+
+<footer><div class="wrap">© 2026 SECRETARAI · Handelsregister (RCS) Nice 103&nbsp;272&nbsp;100.</div></footer>
+
+</body>
+</html>

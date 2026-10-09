@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte „À payer“…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Nastavitve Péage Notif: vozilo v razredu 1, glasovna obvestila, CarPlay, posodobljene cene, prijava težave">
+              <img class="reel" src="../img/app/reglages-sl.webp" width="603" height="1311" loading="lazy" alt="Nastavitve Péage Notif: vozilo v razredu 1, glasovna obvestila, CarPlay, posodobljene cene, prijava težave">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Drugod po Evropi</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Španija</b><span>Radialne avtoceste okoli Madrida, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, cestnina Garraf, predora Cadí in Artxanda</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Španija</b><span>Radialne avtoceste okoli Madrida, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, cestnina Garraf, predori Cadí, Artxanda in Vallvidrera</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugalska</b><span>Elektronski portali na A4, A8, A17, A19, A28, A29, A33, A41 in A42, zapornice na A16, mostova 25. aprila in Vasco da Gama</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Grčija</b><span>Vse koncesijske avtoceste in most Rio-Antirio</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Avstrija</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karavanke in Felbertauern ter vinjeta</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenija</b><span>Predor Karavanke in vinjeta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andora</b><span>Predor Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Združeno kraljestvo</b><span>Dartford, predora Blackwall in Silvertown, mostova čez Mersey, predora pod Tyne in most čez Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irska</b><span>M50 brez zapornic, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irska</b><span>M50 brez zapornic, predor dublinskega pristanišča, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nizozemska</b><span>Kiltunnel in A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danska</b><span>Most čez Veliki Belt in Øresundski most</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norveška</b><span>Cestninske točke AutoPASS: mestne cestnine v Oslu, Bergnu ali Trondheimu in cestninske ceste</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Obvestilo Péage Notif ob prehodu portala Dozulé: približno 4,20 €, plačilo prek spleta v 72 urah na sanef.com"></figure>
+        <figure><img src="../img/app/passage-sl.webp" width="1030" height="644" loading="lazy" alt="Obvestilo Péage Notif ob prehodu portala Dozulé: približno 4,20 €, plačilo prek spleta v 72 urah na sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Ob prehodu portala</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Povzetek ob koncu vožnje: kartica „Za plačilo na sanef.com“ z zneskom, rokom plačila in koraki plačila"></figure>
+        <figure><img src="../img/app/recap-sl.webp" width="1030" height="644" loading="lazy" alt="Povzetek ob koncu vožnje: kartica „Za plačilo na sanef.com“ z zneskom, rokom plačila in koraki plačila"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>Ob prihodu skupni znesek za plačilo</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Opomnik Péage Notif na zaklenjenem zaslonu: cestnina za plačilo na sanef.com pred iztekom roka, po njem pribitek"></figure>
+        <figure><img src="../img/app/rappel-sl.webp" width="1030" height="644" loading="lazy" alt="Opomnik Péage Notif na zaklenjenem zaslonu: cestnina za plačilo na sanef.com pred iztekom roka, po njem pribitek"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Opomnik, nikoli ponoči</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Dogodek, shranjen v Koledarju: cestnina za plačilo na sanef.com, z rokom plačila in povezavo do spletnega mesta za plačilo"></figure>
+        <figure><img src="../img/app/agenda-sl.webp" width="1030" height="644" loading="lazy" alt="Dogodek, shranjen v Koledarju: cestnina za plačilo na sanef.com, z rokom plačila in povezavo do spletnega mesta za plačilo"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>Rok v vašem koledarju</h3>

@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte “À payer”…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Instellingen van Péage Notif: voertuig in klasse 1, gesproken aankondigingen, CarPlay, actuele tarieven, probleem melden">
+              <img class="reel" src="../img/app/reglages-nl.webp" width="603" height="1311" loading="lazy" alt="Instellingen van Péage Notif: voertuig in klasse 1, gesproken aankondigingen, CarPlay, actuele tarieven, probleem melden">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Elders in Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanje</b><span>Radiales van Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, tolpoort van de Garraf, tunnels van Cadí en Artxanda</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanje</b><span>Radiales van Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, tolpoort van de Garraf, tunnels van Cadí, Artxanda en Vallvidrera</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektronische tolportalen op de A4, A8, A17, A19, A28, A29, A33, A41 en A42, slagbomen op de A16, bruggen 25 de Abril en Vasco da Gama</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Griekenland</b><span>Alle geconcessioneerde snelwegen en de Rio-Antirriobrug</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Oostenrijk</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken en Felbertauern, plus het vignet</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenië</b><span>Karawankentunnel, plus het vignet</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envaliratunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Verenigd Koninkrijk</b><span>Dartford, Blackwall- en Silvertowntunnel, Merseybruggen, Tynetunnels, Tamarbrug</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ierland</b><span>M50 zonder slagboom, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ierland</b><span>M50 zonder slagboom, Dublin Port Tunnel, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederland</b><span>Kiltunnel en Blankenburgverbinding (A24)</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Denemarken</b><span>Grote Beltbrug en Øresundbrug</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noorwegen</b><span>De AutoPASS-tolpunten: stadstol in Oslo, Bergen of Trondheim en tolwegen</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Melding van Péage Notif bij het passeren van het tolportaal van Dozulé: ongeveer € 4,20, binnen 72 uur online te betalen op sanef.com"></figure>
+        <figure><img src="../img/app/passage-nl.webp" width="1030" height="644" loading="lazy" alt="Melding van Péage Notif bij het passeren van het tolportaal van Dozulé: ongeveer € 4,20, binnen 72 uur online te betalen op sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Bij het passeren van het tolportaal</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Ritoverzicht aan het einde van de rit: kaart “Te betalen op sanef.com” met het bedrag, de uiterste datum en de betaalstappen"></figure>
+        <figure><img src="../img/app/recap-nl.webp" width="1030" height="644" loading="lazy" alt="Ritoverzicht aan het einde van de rit: kaart “Te betalen op sanef.com” met het bedrag, de uiterste datum en de betaalstappen"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>Bij aankomst: het te betalen totaal</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Herinnering van Péage Notif op het toegangsscherm: tol te betalen op sanef.com vóór de uiterste datum, daarna een toeslag"></figure>
+        <figure><img src="../img/app/rappel-nl.webp" width="1030" height="644" loading="lazy" alt="Herinnering van Péage Notif op het toegangsscherm: tol te betalen op sanef.com vóór de uiterste datum, daarna een toeslag"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Een herinnering, nooit 's nachts</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Afspraak opgeslagen in Agenda: tol te betalen op sanef.com, met de uiterste datum en de link naar de betaalwebsite"></figure>
+        <figure><img src="../img/app/agenda-nl.webp" width="1030" height="644" loading="lazy" alt="Afspraak opgeslagen in Agenda: tol te betalen op sanef.com, met de uiterste datum en de link naar de betaalwebsite"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>De betaaltermijn in je agenda</h3>

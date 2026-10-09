@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte «À payer»…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Configuració de Péage Notif: vehicle de classe 1, anuncis de veu, CarPlay, tarifes actualitzades, comunicar un problema">
+              <img class="reel" src="../img/app/reglages-ca.webp" width="603" height="1311" loading="lazy" alt="Configuració de Péage Notif: vehicle de classe 1, anuncis de veu, CarPlay, tarifes actualitzades, comunicar un problema">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">A la resta d'Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Espanya</b><span>Radials de Madrid, AP-7 (Costa del Sol, Alacant-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, peatge del Garraf, túnels del Cadí i d'Artxanda</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Espanya</b><span>Radials de Madrid, AP-7 (Costa del Sol, Alacant-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, peatge del Garraf, túnels del Cadí, d'Artxanda i de Vallvidrera</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Pòrtics electrònics de l'A4, l'A8, l'A17, l'A19, l'A28, l'A29, l'A33, l'A41 i l'A42, barreres de l'A16, ponts del 25 d'Abril i Vasco da Gama</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Grècia</b><span>Totes les autopistes en concessió i el pont Rio-Antirrio</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Àustria</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken i Felbertauern, i també la vinyeta</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovènia</b><span>Túnel de les Karavanke, i també la vinyeta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel d'Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Regne Unit</b><span>Dartford, túnels de Blackwall i de Silvertown, ponts del Mersey, túnels del Tyne, pont del Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sense barrera, barreres de les M1, M3, M4, M6, M7, M8, N25 i del túnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sense barrera, túnel del port de Dublín, barreres de les M1, M3, M4, M6, M7, M8, N25 i del túnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Països Baixos</b><span>Kiltunnel i A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Ponts del Gran Belt i de l'Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Els punts de cobrament AutoPASS: peatges urbans d'Oslo, Bergen o Trondheim i carreteres de peatge</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Notificació de Péage Notif en passar pel pòrtic de Dozulé: uns 4,20 €, a pagar en línia a sanef.com en un termini de 72 hores"></figure>
+        <figure><img src="../img/app/passage-ca.webp" width="1030" height="644" loading="lazy" alt="Notificació de Péage Notif en passar pel pòrtic de Dozulé: uns 4,20 €, a pagar en línia a sanef.com en un termini de 72 hores"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>En passar pel pòrtic</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Resum de final de trajecte: targeta «A pagar a sanef.com» amb l'import, la data límit i els passos per pagar"></figure>
+        <figure><img src="../img/app/recap-ca.webp" width="1030" height="644" loading="lazy" alt="Resum de final de trajecte: targeta «A pagar a sanef.com» amb l'import, la data límit i els passos per pagar"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>En arribar, el total a pagar</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Recordatori de Péage Notif a la pantalla bloquejada: peatge a pagar a sanef.com abans de la data límit, amb recàrrec si no es paga a temps"></figure>
+        <figure><img src="../img/app/rappel-ca.webp" width="1030" height="644" loading="lazy" alt="Recordatori de Péage Notif a la pantalla bloquejada: peatge a pagar a sanef.com abans de la data límit, amb recàrrec si no es paga a temps"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Un recordatori, mai de nit</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Esdeveniment desat al Calendari: peatge a pagar a sanef.com, amb la data límit i l'enllaç al web de pagament"></figure>
+        <figure><img src="../img/app/agenda-ca.webp" width="1030" height="644" loading="lazy" alt="Esdeveniment desat al Calendari: peatge a pagar a sanef.com, amb la data límit i l'enllaç al web de pagament"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>El termini, al seu calendari</h3>

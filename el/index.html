@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte «À payer»…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Ρυθμίσεις του Péage Notif: όχημα αυτοκίνητο, φωνητικές ανακοινώσεις, CarPlay, ενημερωμένες τιμές, αναφορά προβλήματος">
+              <img class="reel" src="../img/app/reglages-el.webp" width="603" height="1311" loading="lazy" alt="Ρυθμίσεις του Péage Notif: όχημα αυτοκίνητο, φωνητικές ανακοινώσεις, CarPlay, ενημερωμένες τιμές, αναφορά προβλήματος">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Στην υπόλοιπη Ευρώπη</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Ισπανία</b><span>Αυτοκινητόδρομοι Radiales της Μαδρίτης, AP-7 (Costa del Sol, Αλικάντε-Καρθαγένη, Καρθαγένη-Βέρα), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, διόδια του Garraf, σήραγγες Cadí και Artxanda</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Ισπανία</b><span>Αυτοκινητόδρομοι Radiales της Μαδρίτης, AP-7 (Costa del Sol, Αλικάντε-Καρθαγένη, Καρθαγένη-Βέρα), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, διόδια του Garraf, σήραγγες Cadí, Artxanda και Vallvidrera</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Πορτογαλία</b><span>Ηλεκτρονικές πύλες στις A4, A8, A17, A19, A28, A29, A33, A41 και A42, μπάρες της A16, γέφυρες 25ης Απριλίου και Βάσκο ντα Γκάμα</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Ελλάδα</b><span>Όλοι οι αυτοκινητόδρομοι υπό παραχώρηση και η γέφυρα Ρίου-Αντιρρίου</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Αυστρία</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken και Felbertauern, καθώς και η βινιέτα</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Σλοβενία</b><span>Σήραγγα Karavanke, καθώς και η βινιέτα</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Ανδόρα</b><span>Σήραγγα Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Ηνωμένο Βασίλειο</b><span>Dartford, σήραγγες Blackwall και Silvertown, γέφυρες του Mersey, σήραγγες του Tyne, γέφυρα του Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ιρλανδία</b><span>M50 χωρίς μπάρα, μπάρες στις M1, M3, M4, M6, M7, M8, N25 και στη σήραγγα του Λίμερικ</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ιρλανδία</b><span>M50 χωρίς μπάρα, σήραγγα του λιμανιού του Δουβλίνου, μπάρες στις M1, M3, M4, M6, M7, M8, N25 και στη σήραγγα του Λίμερικ</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Κάτω Χώρες</b><span>Kiltunnel και A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Δανία</b><span>Γέφυρες του Μεγάλου Μπελτ και του Έρεσουντ</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Νορβηγία</b><span>Οι σταθμοί AutoPASS: αστικά διόδια του Όσλο, του Μπέργκεν ή του Τρόντχαϊμ και δρόμοι με διόδια</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Ειδοποίηση του Péage Notif τη στιγμή της διέλευσης από την πύλη του Dozulé: περίπου 4,20 €, πληρωμή online εντός 72 ωρών στο sanef.com"></figure>
+        <figure><img src="../img/app/passage-el.webp" width="1030" height="644" loading="lazy" alt="Ειδοποίηση του Péage Notif τη στιγμή της διέλευσης από την πύλη του Dozulé: περίπου 4,20 €, πληρωμή online εντός 72 ωρών στο sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Τη στιγμή που περνάτε από την πύλη</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Σύνοψη στο τέλος της διαδρομής: κάρτα «Προς πληρωμή στο sanef.com» με το ποσό, την προθεσμία και τα βήματα πληρωμής"></figure>
+        <figure><img src="../img/app/recap-el.webp" width="1030" height="644" loading="lazy" alt="Σύνοψη στο τέλος της διαδρομής: κάρτα «Προς πληρωμή στο sanef.com» με το ποσό, την προθεσμία και τα βήματα πληρωμής"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>Κατά την άφιξη, το σύνολο προς πληρωμή</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Υπενθύμιση του Péage Notif στην οθόνη κλειδώματος: διόδια προς πληρωμή στο sanef.com έως την προθεσμία, με προσαύξηση μετά από αυτήν"></figure>
+        <figure><img src="../img/app/rappel-el.webp" width="1030" height="644" loading="lazy" alt="Υπενθύμιση του Péage Notif στην οθόνη κλειδώματος: διόδια προς πληρωμή στο sanef.com έως την προθεσμία, με προσαύξηση μετά από αυτήν"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Υπενθύμιση, ποτέ τη νύχτα</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Συμβάν αποθηκευμένο στο Ημερολόγιο: διόδια προς πληρωμή στο sanef.com, με την προθεσμία και τον σύνδεσμο προς τον ιστότοπο πληρωμής"></figure>
+        <figure><img src="../img/app/agenda-el.webp" width="1030" height="644" loading="lazy" alt="Συμβάν αποθηκευμένο στο Ημερολόγιο: διόδια προς πληρωμή στο sanef.com, με την προθεσμία και τον σύνδεσμο προς τον ιστότοπο πληρωμής"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>Η προθεσμία στο ημερολόγιό σας</h3>

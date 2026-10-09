@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte „À payer“…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Indstillinger i Péage Notif: køretøj i klasse 1, oplæsninger, CarPlay, opdaterede priser, indberet et problem">
+              <img class="reel" src="../img/app/reglages-da.webp" width="603" height="1311" loading="lazy" alt="Indstillinger i Péage Notif: køretøj i klasse 1, oplæsninger, CarPlay, opdaterede priser, indberet et problem">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Andre steder i Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radialvejene fra Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf-betalingsanlægget, Cadí- og Artxanda-tunnellerne</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radialvejene fra Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf-betalingsanlægget, Cadí-, Artxanda- og Vallvidrera-tunnellerne</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektroniske portaler på A4, A8, A17, A19, A28, A29, A33, A41 og A42, bomme på A16, 25. april-broen og Vasco da Gama-broen</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Grækenland</b><span>Alle koncessionerede motorveje og Rion-Antirrion-broen</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Østrig</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken og Felbertauern samt vignetten</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenien</b><span>Karavanke-tunnellen samt vignetten</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-tunnellen</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannien</b><span>Dartford, Blackwall- og Silvertown-tunnellerne, Mersey-broerne, Tyne-tunnellerne, Tamar-broen</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 uden bom, bomme på M1, M3, M4, M6, M7, M8, N25 og ved Limerick-tunnellen</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 uden bom, Dublin Port Tunnel, bomme på M1, M3, M4, M6, M7, M8, N25 og ved Limerick-tunnellen</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederlandene</b><span>Kiltunnel og A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Storebæltsbroen og Øresundsbroen</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-stationerne: bompengeringe i byer som Oslo, Bergen og Trondheim samt veje med bompenge</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Notifikation fra Péage Notif ved passage af portalen i Dozulé: cirka 4,20 €, betales online inden for 72 timer på sanef.com"></figure>
+        <figure><img src="../img/app/passage-da.webp" width="1030" height="644" loading="lazy" alt="Notifikation fra Péage Notif ved passage af portalen i Dozulé: cirka 4,20 €, betales online inden for 72 timer på sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Når du passerer portalen</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Oversigt ved turens afslutning: kortet ”Skal betales på sanef.com” med beløbet, fristen og trinene til betaling"></figure>
+        <figure><img src="../img/app/recap-da.webp" width="1030" height="644" loading="lazy" alt="Oversigt ved turens afslutning: kortet ”Skal betales på sanef.com” med beløbet, fristen og trinene til betaling"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>Ved ankomst: beløbet, der skal betales</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Påmindelse fra Péage Notif på låseskærmen: vejafgift, der skal betales på sanef.com inden fristen, ellers med tillæg"></figure>
+        <figure><img src="../img/app/rappel-da.webp" width="1030" height="644" loading="lazy" alt="Påmindelse fra Péage Notif på låseskærmen: vejafgift, der skal betales på sanef.com inden fristen, ellers med tillæg"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>En påmindelse, aldrig om natten</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Begivenhed gemt i Kalender: vejafgift, der skal betales på sanef.com, med fristen og linket til betalingssiden"></figure>
+        <figure><img src="../img/app/agenda-da.webp" width="1030" height="644" loading="lazy" alt="Begivenhed gemt i Kalender: vejafgift, der skal betales på sanef.com, med fristen og linket til betalingssiden"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>Fristen i din kalender</h3>

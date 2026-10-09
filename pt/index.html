@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte «À payer»…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Definições do Péage Notif: veículo na classe 1, anúncios por voz, CarPlay, tarifas atualizadas, reportar um problema">
+              <img class="reel" src="../img/app/reglages-pt.webp" width="603" height="1311" loading="lazy" alt="Definições do Péage Notif: veículo na classe 1, anúncios por voz, CarPlay, tarifas atualizadas, reportar um problema">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Noutros países da Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Espanha</b><span>Radiais de Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, portagem do Garraf, túneis do Cadí e de Artxanda</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Espanha</b><span>Radiais de Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, portagem do Garraf, túneis do Cadí, de Artxanda e de Vallvidrera</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Pórticos eletrónicos da A4, da A8, da A17, da A19, da A28, da A29, da A33, da A41 e da A42, barreiras da A16, pontes 25 de Abril e Vasco da Gama</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Grécia</b><span>Todas as autoestradas concessionadas e a ponte Rio-Antírrio</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Áustria</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken e Felbertauern, e a vinheta</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovénia</b><span>Túnel de Karavanke, e a vinheta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel de Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Reino Unido</b><span>Dartford, túneis de Blackwall e de Silvertown, pontes do Mersey, túneis do Tyne, ponte do Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sem barreiras, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sem barreiras, túnel do porto de Dublin, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Países Baixos</b><span>Kiltunnel e A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Pontes do Grande Belt e do Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Os postos AutoPASS: portagens urbanas de Oslo, de Bergen ou de Trondheim e estradas com portagem</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Notificação do Péage Notif ao passar no pórtico de Dozulé: cerca de 4,20 €, a pagar online no prazo de 72 horas em sanef.com"></figure>
+        <figure><img src="../img/app/passage-pt.webp" width="1030" height="644" loading="lazy" alt="Notificação do Péage Notif ao passar no pórtico de Dozulé: cerca de 4,20 €, a pagar online no prazo de 72 horas em sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Ao passar no pórtico</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Resumo de fim de viagem: cartão «A pagar em sanef.com» com o valor, a data-limite e os passos de pagamento"></figure>
+        <figure><img src="../img/app/recap-pt.webp" width="1030" height="644" loading="lazy" alt="Resumo de fim de viagem: cartão «A pagar em sanef.com» com o valor, a data-limite e os passos de pagamento"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>À chegada, o total a pagar</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Lembrete do Péage Notif no ecrã bloqueado: portagem a pagar em sanef.com até à data-limite, com agravamento depois disso"></figure>
+        <figure><img src="../img/app/rappel-pt.webp" width="1030" height="644" loading="lazy" alt="Lembrete do Péage Notif no ecrã bloqueado: portagem a pagar em sanef.com até à data-limite, com agravamento depois disso"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Um lembrete, nunca à noite</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Evento guardado no Calendário: portagem a pagar em sanef.com, com a data-limite e o link para o site de pagamento"></figure>
+        <figure><img src="../img/app/agenda-pt.webp" width="1030" height="644" loading="lazy" alt="Evento guardado no Calendário: portagem a pagar em sanef.com, com a data-limite e o link para o site de pagamento"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>O prazo no seu calendário</h3>

@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte „À payer“…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Einstellungen von Péage Notif: Fahrzeug in Klasse 1, Sprachansagen, CarPlay, aktuelle Tarife, Problem melden">
+              <img class="reel" src="../img/app/reglages-de.webp" width="603" height="1311" loading="lazy" alt="Einstellungen von Péage Notif: Fahrzeug in Klasse 1, Sprachansagen, CarPlay, aktuelle Tarife, Problem melden">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Anderswo in Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radiales von Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Mautstrecke Garraf, Cadí- und Artxanda-Tunnel</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radiales von Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Mautstrecke Garraf, Cadí-, Artxanda- und Vallvidrera-Tunnel</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektronische Portale auf der A4, A8, A17, A19, A28, A29, A33, A41 und A42, Schranken der A16, Brücke des 25. April und Vasco-da-Gama-Brücke</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Griechenland</b><span>Alle konzessionierten Autobahnen und die Rio-Andirrio-Brücke</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Österreich</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken und Felbertauern, dazu die Vignette</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slowenien</b><span>Karawankentunnel, dazu die Vignette</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-Tunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Vereinigtes Königreich</b><span>Dartford, Blackwall- und Silvertown-Tunnel, Mersey-Brücken, Tyne-Tunnel, Tamar-Brücke</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 ohne Schranke, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 ohne Schranke, Dublin Port Tunnel, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Niederlande</b><span>Kiltunnel und A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dänemark</b><span>Brücken über den Großen Belt und den Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norwegen</b><span>Die AutoPASS-Stellen: Mautringe von Oslo, Bergen oder Trondheim und Mautstraßen</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Benachrichtigung von Péage Notif beim Passieren des Portals Dozulé: etwa 4,20 €, online innerhalb von 72 Stunden auf sanef.com zu bezahlen"></figure>
+        <figure><img src="../img/app/passage-de.webp" width="1030" height="644" loading="lazy" alt="Benachrichtigung von Péage Notif beim Passieren des Portals Dozulé: etwa 4,20 €, online innerhalb von 72 Stunden auf sanef.com zu bezahlen"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>Bei der Durchfahrt am Portal</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="Zusammenfassung am Ende der Fahrt: Karte „Zu bezahlen auf sanef.com“ mit Betrag, Frist und Zahlungsschritten"></figure>
+        <figure><img src="../img/app/recap-de.webp" width="1030" height="644" loading="lazy" alt="Zusammenfassung am Ende der Fahrt: Karte „Zu bezahlen auf sanef.com“ mit Betrag, Frist und Zahlungsschritten"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>Bei der Ankunft: was noch zu zahlen ist</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Erinnerung von Péage Notif auf dem Sperrbildschirm: Maut fristgerecht auf sanef.com zu bezahlen, danach mit Zuschlag"></figure>
+        <figure><img src="../img/app/rappel-de.webp" width="1030" height="644" loading="lazy" alt="Erinnerung von Péage Notif auf dem Sperrbildschirm: Maut fristgerecht auf sanef.com zu bezahlen, danach mit Zuschlag"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>Eine Erinnerung, nie nachts</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Im Kalender gespeicherter Termin: Maut auf sanef.com zu bezahlen, mit Frist und Link zur Zahlungsseite"></figure>
+        <figure><img src="../img/app/agenda-de.webp" width="1030" height="644" loading="lazy" alt="Im Kalender gespeicherter Termin: Maut auf sanef.com zu bezahlen, mit Frist und Link zur Zahlungsseite"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>Die Frist in Ihrem Kalender</h3>

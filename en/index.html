@@ -383,6 +383,8 @@
   /* Recadrées sur ce qui compte (bannière, carte “À payer”…), à une échelle où le texte se lit. */
   .ff figure{margin:0;aspect-ratio:8/5;overflow:hidden;background:#000;border-bottom:1px solid var(--line)}
   .ff figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  /* Extraits de vraies captures: le bas s'efface plutôt que de couper net une ligne de texte. */
+  .ff figure img{-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
   .ff .ff-txt{padding:18px 20px 22px}
   .ff .ff-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;background:rgba(69,200,120,.15);color:var(--green-hi);font-weight:800;font-size:14px;margin-bottom:10px}
   .ff h3{font-size:17px;margin-bottom:6px}
@@ -679,7 +681,7 @@
           <div class="phone">
             <div class="frame">
               <div class="di"></div>
-              <img class="reel" src="../img/app/reglages-fr.webp" width="603" height="1311" loading="lazy" alt="Péage Notif settings: vehicle in class 1, voice announcements, CarPlay, prices up to date, report a problem">
+              <img class="reel" src="../img/app/reglages-en.webp" width="603" height="1311" loading="lazy" alt="Péage Notif settings: vehicle in class 1, voice announcements, CarPlay, prices up to date, report a problem">
             </div>
           </div>
         </div>
@@ -734,7 +736,7 @@
 
     <h3 class="pays-titre rv">Elsewhere in Europe</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spain</b><span>Madrid radial motorways, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf toll, Cadí and Artxanda tunnels</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b>Spain</b><span>Madrid radial motorways, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf toll, Cadí, Artxanda and Vallvidrera tunnels</span></div></li>
       <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Electronic gantries on the A4, A8, A17, A19, A28, A29, A33, A41 and A42, barriers on the A16, the 25 de Abril and Vasco da Gama bridges</span></div></li>
       <li><i class="flag gr" aria-hidden="true"></i><div><b>Greece</b><span>Every concession motorway and the Rio-Antirrio Bridge</span></div></li>
       <li><i class="flag at" aria-hidden="true"></i><div><b>Austria</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken and Felbertauern, plus the vignette</span></div></li>
@@ -742,7 +744,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Karavanke Tunnel, plus the vignette</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira Tunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>United Kingdom</b><span>Dartford Crossing, Blackwall and Silvertown tunnels, Mersey bridges, Tyne Tunnels, Tamar Bridge</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ireland</b><span>Barrier-free M50, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ireland</b><span>Barrier-free M50, Dublin Port Tunnel, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Netherlands</b><span>Kiltunnel and A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Denmark</b><span>Great Belt and Øresund bridges</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norway</b><span>AutoPASS toll points: city tolls in Oslo, Bergen or Trondheim, and toll roads</span></div></li>
@@ -774,7 +776,7 @@
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Péage Notif notification as you pass the Dozulé gantry: about €4.20, to pay online within 72 hours on sanef.com"></figure>
+        <figure><img src="../img/app/passage-en.webp" width="1030" height="644" loading="lazy" alt="Péage Notif notification as you pass the Dozulé gantry: about €4.20, to pay online within 72 hours on sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
           <h3>As you pass the gantry</h3>
@@ -782,7 +784,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.1s">
-        <figure><img src="../img/app/recap-fr.webp" width="1030" height="644" loading="lazy" alt="End-of-trip summary: “To pay on sanef.com” card with the amount, the deadline and the payment steps"></figure>
+        <figure><img src="../img/app/recap-en.webp" width="1030" height="644" loading="lazy" alt="End-of-trip summary: “To pay on sanef.com” card with the amount, the deadline and the payment steps"></figure>
         <div class="ff-txt">
           <span class="ff-n">2</span>
           <h3>On arrival, the total to pay</h3>
@@ -790,7 +792,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.2s">
-        <figure><img src="../img/app/rappel-fr.webp" width="1030" height="644" loading="lazy" alt="Péage Notif reminder on the lock screen: toll to pay on sanef.com before the deadline, surcharge after that"></figure>
+        <figure><img src="../img/app/rappel-en.webp" width="1030" height="644" loading="lazy" alt="Péage Notif reminder on the lock screen: toll to pay on sanef.com before the deadline, surcharge after that"></figure>
         <div class="ff-txt">
           <span class="ff-n">3</span>
           <h3>A reminder, never at night</h3>
@@ -798,7 +800,7 @@
         </div>
       </li>
       <li class="ff rv" style="--d:.3s">
-        <figure><img src="../img/app/agenda-fr.webp" width="1030" height="644" loading="lazy" alt="Event saved in the Calendar: toll to pay on sanef.com, with the deadline and the link to the payment site"></figure>
+        <figure><img src="../img/app/agenda-en.webp" width="1030" height="644" loading="lazy" alt="Event saved in the Calendar: toll to pay on sanef.com, with the deadline and the link to the payment site"></figure>
         <div class="ff-txt">
           <span class="ff-n">4</span>
           <h3>The deadline in your calendar</h3>

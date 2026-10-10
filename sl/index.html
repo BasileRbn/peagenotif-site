@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Francija</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="cestnine/francija.html">Francija</a></h3>
           <ul>
             <li><b>96 %</b> cestninskih postaj na avtocestah, ne glede na upravljavca</li>
             <li>Portali s prostim prometnim tokom na A13, A14 in A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italija</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="cestnine/italija.html">Italija</a></h3>
           <ul>
             <li>Celotno omrežje cestninskih avtocest, od Ventimiglie do Sicilije</li>
             <li>Obvoznice okoli Milana, Torina in Neaplja</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Izsek s Kanado: portali avtoceste 407 okoli Toronta, most na A25 in zapornica na A30 pri Montrealu">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Kanada</b> · Ontario in Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="cestnine/kanada.html">Kanada</a></b> · Ontario in Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Drugod po Evropi</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Španija</b><span>Radialne avtoceste okoli Madrida, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, cestnina Garraf, predori Cadí, Artxanda in Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugalska</b><span>Elektronski portali na A4, A8, A17, A19, A28, A29, A33, A41 in A42, zapornice na A16, mostova 25. aprila in Vasco da Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Grčija</b><span>Vse koncesijske avtoceste in most Rio-Antirio</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Avstrija</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karavanke in Felbertauern ter vinjeta</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Švica</b><span>Predor Veliki Sveti Bernard in vinjeta</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenija</b><span>Predor Karavanke in vinjeta</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andora</b><span>Predor Envalira</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Združeno kraljestvo</b><span>Dartford, predora Blackwall in Silvertown, mostova čez Mersey, predora pod Tyne in most čez Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irska</b><span>M50 s prostim prometnim tokom, predor dublinskega pristanišča, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Nizozemska</b><span>Kiltunnel in A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Danska</b><span>Most čez Veliki Belt in Øresundski most</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norveška</b><span>Cestninske točke AutoPASS: mestne cestnine v Oslu, Bergnu ali Trondheimu in cestninske ceste</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Švedska</b><span>Pristojbine za gnečo v Stockholmu in Göteborgu, mostovi Motala, Sundsvall in Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="cestnine/spanija.html">Španija</a></b><span>Radialne avtoceste okoli Madrida, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, cestnina Garraf, predori Cadí, Artxanda in Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="cestnine/portugalska.html">Portugalska</a></b><span>Elektronski portali na A4, A8, A17, A19, A28, A29, A33, A41 in A42, zapornice na A16, mostova 25. aprila in Vasco da Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="cestnine/grcija.html">Grčija</a></b><span>Vse koncesijske avtoceste in most Rio-Antirio</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="cestnine/avstrija.html">Avstrija</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karavanke in Felbertauern ter vinjeta</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="cestnine/svica.html">Švica</a></b><span>Predor Veliki Sveti Bernard in vinjeta</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="cestnine/slovenija.html">Slovenija</a></b><span>Predor Karavanke in vinjeta</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="cestnine/andora.html">Andora</a></b><span>Predor Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="cestnine/zdruzeno-kraljestvo.html">Združeno kraljestvo</a></b><span>Dartford, predora Blackwall in Silvertown, mostova čez Mersey, predora pod Tyne in most čez Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="cestnine/irska.html">Irska</a></b><span>M50 s prostim prometnim tokom, predor dublinskega pristanišča, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="cestnine/nizozemska.html">Nizozemska</a></b><span>Kiltunnel in A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="cestnine/danska.html">Danska</a></b><span>Most čez Veliki Belt in Øresundski most</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="cestnine/norveska.html">Norveška</a></b><span>Cestninske točke AutoPASS: mestne cestnine v Oslu, Bergnu ali Trondheimu in cestninske ceste</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="cestnine/svedska.html">Švedska</a></b><span>Pristojbine za gnečo v Stockholmu in Göteborgu, mostovi Motala, Sundsvall in Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Zunaj Evrope</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Maroko</b><span>Omrežje družbe Autoroutes du Maroc, od Tangerja do Agadirja in od Casablance do Oujde</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunizija</b><span>Avtoceste A1, A3 in A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Kanada</b><span>Avtocesta 407 ETR okoli Toronta s ceno, ocenjeno po kilometrih, most na A25 in zapornica na A30 pri Montrealu</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="cestnine/maroko.html">Maroko</a></b><span>Omrežje družbe Autoroutes du Maroc, od Tangerja do Agadirja in od Casablance do Oujde</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="cestnine/tunizija.html">Tunizija</a></b><span>Avtoceste A1, A3 in A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="cestnine/kanada.html">Kanada</a></b><span>Avtocesta 407 ETR okoli Toronta s ceno, ocenjeno po kilometrih, most na A25 in zapornica na A30 pri Montrealu</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="cestnine/">Cestnine in vinjete, država za državo</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Vinjeta ob prehodu meje</h4><p>Ob vstopu v Švico, Avstrijo, Slovenijo, na Češko, Slovaško, Madžarsko, v Romunijo, Bolgarijo, Moldavijo ali Belorusijo vas aplikacija opomni, da je vinjeta obvezna, in vam pove, kje jo kupite.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Kako deluje</a>
         <a href="#fonctions">Funkcije</a>
         <a href="#perimetre">Pokrite države</a>
+        <a href="cestnine/">Vse države</a>
         <a href="#flux-libre">Cestnine s prostim prometnim tokom</a>
         <a href="peages-mode-emploi.html">Razumeti cestnine</a>
         <a href="#support">Podpora</a>

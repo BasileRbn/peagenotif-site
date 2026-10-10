@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Frankrike</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="bompenger/frankrike.html">Frankrike</a></h3>
           <ul>
             <li><b>96 %</b> av bomstasjonene på motorveiene, uansett operatør</li>
             <li>Portalene med fri flyt på A13, A14 og A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italia</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="bompenger/italia.html">Italia</a></h3>
           <ul>
             <li>Hele motorveinettet med bompenger, fra Ventimiglia til Sicilia</li>
             <li>Ringveiene rundt Milano, Torino og Napoli</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Innfelt kart over Canada: portalene på motorvei 407 rundt Toronto, broen på A25 og bommen på A30 ved Montréal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canada</b> · Ontario og Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="bompenger/canada.html">Canada</a></b> · Ontario og Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Ellers i Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spania</b><span>Radialveiene fra Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, bomstasjonen i Garraf, Cadí-, Artxanda- og Vallvidrera-tunnelene</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektroniske portaler på A4, A8, A17, A19, A28, A29, A33, A41 og A42, bommer på A16, 25. april-broen og Vasco da Gama-broen</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Hellas</b><span>Alle motorveier med konsesjon og Rion-Antirrion-broen</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Østerrike</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken og Felbertauern, og vignetten</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Sveits</b><span>Store Sankt Bernhard-tunnelen, og vignetten</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Karavanke-tunnelen, og vignetten</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-tunnelen</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannia</b><span>Dartford, Blackwall- og Silvertown-tunnelene, Mersey-broene, Tyne-tunnelene, Tamar-broen</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 med fri flyt, Dublin Port Tunnel, bommer på M1, M3, M4, M6, M7, M8 og N25 og ved Limerick-tunnelen</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederland</b><span>Kiltunnel og A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Broene over Storebælt og Øresund</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-bomstasjoner: bomringer som i Oslo, Bergen og Trondheim, og bomveier</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Sverige</b><span>Trengselsskatten i Stockholm og Göteborg, broene i Motala, Sundsvall og Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="bompenger/spania.html">Spania</a></b><span>Radialveiene fra Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, bomstasjonen i Garraf, Cadí-, Artxanda- og Vallvidrera-tunnelene</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="bompenger/portugal.html">Portugal</a></b><span>Elektroniske portaler på A4, A8, A17, A19, A28, A29, A33, A41 og A42, bommer på A16, 25. april-broen og Vasco da Gama-broen</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="bompenger/hellas.html">Hellas</a></b><span>Alle motorveier med konsesjon og Rion-Antirrion-broen</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="bompenger/osterrike.html">Østerrike</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken og Felbertauern, og vignetten</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="bompenger/sveits.html">Sveits</a></b><span>Store Sankt Bernhard-tunnelen, og vignetten</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="bompenger/slovenia.html">Slovenia</a></b><span>Karavanke-tunnelen, og vignetten</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="bompenger/andorra.html">Andorra</a></b><span>Envalira-tunnelen</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="bompenger/storbritannia.html">Storbritannia</a></b><span>Dartford, Blackwall- og Silvertown-tunnelene, Mersey-broene, Tyne-tunnelene, Tamar-broen</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="bompenger/irland.html">Irland</a></b><span>M50 med fri flyt, Dublin Port Tunnel, bommer på M1, M3, M4, M6, M7, M8 og N25 og ved Limerick-tunnelen</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="bompenger/nederland.html">Nederland</a></b><span>Kiltunnel og A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="bompenger/danmark.html">Danmark</a></b><span>Broene over Storebælt og Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="bompenger/norge.html">Norge</a></b><span>AutoPASS-bomstasjoner: bomringer som i Oslo, Bergen og Trondheim, og bomveier</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="bompenger/sverige.html">Sverige</a></b><span>Trengselsskatten i Stockholm og Göteborg, broene i Motala, Sundsvall og Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Utenfor Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marokko</b><span>Motorveinettet til Autoroutes du Maroc, fra Tanger til Agadir og fra Casablanca til Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunisia</b><span>Motorveiene A1, A3 og A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canada</b><span>Motorvei 407 ETR rundt Toronto med anslått kilometerpris, broen på A25 og bommen på A30 ved Montréal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="bompenger/marokko.html">Marokko</a></b><span>Motorveinettet til Autoroutes du Maroc, fra Tanger til Agadir og fra Casablanca til Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="bompenger/tunisia.html">Tunisia</a></b><span>Motorveiene A1, A3 og A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="bompenger/canada.html">Canada</a></b><span>Motorvei 407 ETR rundt Toronto med anslått kilometerpris, broen på A25 og bommen på A30 ved Montréal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="bompenger/">Bompenger og vignetter, land for land</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Vignetten, ved grensen</h4><p>Når du kjører inn i Sveits, Østerrike, Slovenia, Tsjekkia, Slovakia, Ungarn, Romania, Bulgaria, Moldova eller Belarus, minner appen deg på at vignett er påkrevd, og hvor du kan kjøpe den.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Slik fungerer det</a>
         <a href="#fonctions">Funksjoner</a>
         <a href="#perimetre">Land med dekning</a>
+        <a href="bompenger/">Alle land</a>
         <a href="#flux-libre">Bompenger med fri flyt</a>
         <a href="peages-mode-emploi.html">Forstå bompengene</a>
         <a href="#support">Brukerstøtte</a>

@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>France</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="peages/france.html">France</a></h3>
           <ul>
             <li><b>96 %</b> des gares de péage des autoroutes, tous exploitants confondus</li>
             <li>Les portiques en flux libre de l'A13, de l'A14 et de l'A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italie</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="peages/italie.html">Italie</a></h3>
           <ul>
             <li>Tout le réseau autoroutier à péage, de Vintimille à la Sicile</li>
             <li>Les rocades de Milan, de Turin et de Naples</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Encart du Canada : les portiques de l'autoroute 407 autour de Toronto, le pont de l'A25 et la barrière de l'A30 près de Montréal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canada</b> · Ontario et Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="peages/canada.html">Canada</a></b> · Ontario et Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Ailleurs en Europe</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Espagne</b><span>Radiales de Madrid, AP-7 (Costa del Sol, Alicante-Carthagène, Carthagène-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, péage du Garraf, tunnels du Cadí, d'Artxanda et de Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Portiques électroniques de l'A4, de l'A8, de l'A17, de l'A19, de l'A28, de l'A29, de l'A33, de l'A41 et de l'A42, barrières de l'A16, ponts du 25-Avril et Vasco-de-Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Grèce</b><span>Toutes les autoroutes concédées et le pont Rion-Antirrion</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Autriche</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken et Felbertauern, et la vignette</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Suisse</b><span>Tunnel du Grand-Saint-Bernard, et la vignette</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovénie</b><span>Tunnel des Karavanke, et la vignette</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorre</b><span>Tunnel d'Envalira</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Royaume-Uni</b><span>Dartford, tunnels de Blackwall et de Silvertown, ponts de la Mersey, tunnels de la Tyne, pont de la Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlande</b><span>M50 en flux libre, tunnel du port de Dublin, barrières des M1, M3, M4, M6, M7, M8, N25 et du tunnel de Limerick</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Pays-Bas</b><span>Kiltunnel et A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Danemark</b><span>Ponts du Grand Belt et de l'Øresund</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norvège</b><span>Les postes AutoPASS : péages urbains d'Oslo, de Bergen ou de Trondheim et routes à péage</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Suède</b><span>Taxes de congestion de Stockholm et de Göteborg, ponts de Motala, de Sundsvall et de Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="peages/espagne.html">Espagne</a></b><span>Radiales de Madrid, AP-7 (Costa del Sol, Alicante-Carthagène, Carthagène-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, péage du Garraf, tunnels du Cadí, d'Artxanda et de Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="peages/portugal.html">Portugal</a></b><span>Portiques électroniques de l'A4, de l'A8, de l'A17, de l'A19, de l'A28, de l'A29, de l'A33, de l'A41 et de l'A42, barrières de l'A16, ponts du 25-Avril et Vasco-de-Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="peages/grece.html">Grèce</a></b><span>Toutes les autoroutes concédées et le pont Rion-Antirrion</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="peages/autriche.html">Autriche</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken et Felbertauern, et la vignette</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="peages/suisse.html">Suisse</a></b><span>Tunnel du Grand-Saint-Bernard, et la vignette</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="peages/slovenie.html">Slovénie</a></b><span>Tunnel des Karavanke, et la vignette</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="peages/andorre.html">Andorre</a></b><span>Tunnel d'Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="peages/royaume-uni.html">Royaume-Uni</a></b><span>Dartford, tunnels de Blackwall et de Silvertown, ponts de la Mersey, tunnels de la Tyne, pont de la Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="peages/irlande.html">Irlande</a></b><span>M50 en flux libre, tunnel du port de Dublin, barrières des M1, M3, M4, M6, M7, M8, N25 et du tunnel de Limerick</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="peages/pays-bas.html">Pays-Bas</a></b><span>Kiltunnel et A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="peages/danemark.html">Danemark</a></b><span>Ponts du Grand Belt et de l'Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="peages/norvege.html">Norvège</a></b><span>Les postes AutoPASS : péages urbains d'Oslo, de Bergen ou de Trondheim et routes à péage</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="peages/suede.html">Suède</a></b><span>Taxes de congestion de Stockholm et de Göteborg, ponts de Motala, de Sundsvall et de Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Hors d'Europe</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Maroc</b><span>Le réseau d'Autoroutes du Maroc, de Tanger à Agadir et de Casablanca à Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunisie</b><span>Les autoroutes A1, A3 et A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canada</b><span>Autoroute 407 ETR autour de Toronto, tarif estimé au kilomètre, pont de l'A25 et barrière de l'A30 près de Montréal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="peages/maroc.html">Maroc</a></b><span>Le réseau d'Autoroutes du Maroc, de Tanger à Agadir et de Casablanca à Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="peages/tunisie.html">Tunisie</a></b><span>Les autoroutes A1, A3 et A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="peages/canada.html">Canada</a></b><span>Autoroute 407 ETR autour de Toronto, tarif estimé au kilomètre, pont de l'A25 et barrière de l'A30 près de Montréal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="peages/">Péages et vignettes, pays par pays</a></p>
 
     <div class="geo-strip rv">
       <div><h4>La vignette, à la frontière</h4><p>En entrant en Suisse, en Autriche, en Slovénie, en Tchéquie, en Slovaquie, en Hongrie, en Roumanie, en Bulgarie, en Moldavie ou en Biélorussie, l'app vous rappelle que la vignette est obligatoire et où l'acheter.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Comment ça marche</a>
         <a href="#fonctions">Fonctions</a>
         <a href="#perimetre">Pays couverts</a>
+        <a href="peages/">Tous les pays</a>
         <a href="#flux-libre">Péages en flux libre</a>
         <a href="peages-mode-emploi.html">Comprendre les péages</a>
         <a href="#support">Support</a>

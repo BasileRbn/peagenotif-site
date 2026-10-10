@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Frankrijk</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="tol/frankrijk.html">Frankrijk</a></h3>
           <ul>
             <li><b>96 %</b> van de tolstations op de snelwegen, ongeacht de exploitant</li>
             <li>De tolportalen met free flow op de A13, de A14 en de A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italië</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="tol/italie.html">Italië</a></h3>
           <ul>
             <li>Het volledige tolsnelwegennet, van Ventimiglia tot Sicilië</li>
             <li>De ringwegen van Milaan, Turijn en Napels</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Inzet van Canada: de tolportalen van snelweg 407 rond Toronto, de brug van de A25 en de slagboom op de A30 bij Montreal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canada</b> · Ontario en Quebec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="tol/canada.html">Canada</a></b> · Ontario en Quebec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Elders in Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanje</b><span>Radiales van Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, tolpoort van de Garraf, tunnels van Cadí, Artxanda en Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektronische tolportalen op de A4, A8, A17, A19, A28, A29, A33, A41 en A42, slagbomen op de A16, bruggen 25 de Abril en Vasco da Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Griekenland</b><span>Alle geconcessioneerde snelwegen en de Rio-Antirriobrug</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Oostenrijk</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken en Felbertauern, plus het vignet</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Zwitserland</b><span>Grote Sint-Bernhardtunnel, plus het vignet</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenië</b><span>Karawankentunnel, plus het vignet</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envaliratunnel</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Verenigd Koninkrijk</b><span>Dartford, Blackwall- en Silvertowntunnel, Merseybruggen, Tynetunnels, Tamarbrug</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ierland</b><span>M50 met free flow, Dublin Port Tunnel, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederland</b><span>Kiltunnel en Blankenburgverbinding (A24)</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Denemarken</b><span>Grote Beltbrug en Øresundbrug</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Noorwegen</b><span>De AutoPASS-tolpunten: stadstol in Oslo, Bergen of Trondheim en tolwegen</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Zweden</b><span>Congestieheffing in Stockholm en Göteborg, bruggen van Motala, Sundsvall en Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="tol/spanje.html">Spanje</a></b><span>Radiales van Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, tolpoort van de Garraf, tunnels van Cadí, Artxanda en Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="tol/portugal.html">Portugal</a></b><span>Elektronische tolportalen op de A4, A8, A17, A19, A28, A29, A33, A41 en A42, slagbomen op de A16, bruggen 25 de Abril en Vasco da Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="tol/griekenland.html">Griekenland</a></b><span>Alle geconcessioneerde snelwegen en de Rio-Antirriobrug</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="tol/oostenrijk.html">Oostenrijk</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken en Felbertauern, plus het vignet</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="tol/zwitserland.html">Zwitserland</a></b><span>Grote Sint-Bernhardtunnel, plus het vignet</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="tol/slovenie.html">Slovenië</a></b><span>Karawankentunnel, plus het vignet</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="tol/andorra.html">Andorra</a></b><span>Envaliratunnel</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="tol/verenigd-koninkrijk.html">Verenigd Koninkrijk</a></b><span>Dartford, Blackwall- en Silvertowntunnel, Merseybruggen, Tynetunnels, Tamarbrug</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="tol/ierland.html">Ierland</a></b><span>M50 met free flow, Dublin Port Tunnel, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="tol/nederland.html">Nederland</a></b><span>Kiltunnel en Blankenburgverbinding (A24)</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="tol/denemarken.html">Denemarken</a></b><span>Grote Beltbrug en Øresundbrug</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="tol/noorwegen.html">Noorwegen</a></b><span>De AutoPASS-tolpunten: stadstol in Oslo, Bergen of Trondheim en tolwegen</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="tol/zweden.html">Zweden</a></b><span>Congestieheffing in Stockholm en Göteborg, bruggen van Motala, Sundsvall en Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Buiten Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marokko</b><span>Het net van Autoroutes du Maroc, van Tanger tot Agadir en van Casablanca tot Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunesië</b><span>De snelwegen A1, A3 en A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canada</b><span>Snelweg 407 ETR rond Toronto, geschat tarief per kilometer, de brug van de A25 en de slagboom op de A30 bij Montreal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="tol/marokko.html">Marokko</a></b><span>Het net van Autoroutes du Maroc, van Tanger tot Agadir en van Casablanca tot Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="tol/tunesie.html">Tunesië</a></b><span>De snelwegen A1, A3 en A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="tol/canada.html">Canada</a></b><span>Snelweg 407 ETR rond Toronto, geschat tarief per kilometer, de brug van de A25 en de slagboom op de A30 bij Montreal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="tol/">Tol en vignetten, per land</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Het vignet, aan de grens</h4><p>Als je Zwitserland, Oostenrijk, Slovenië, Tsjechië, Slowakije, Hongarije, Roemenië, Bulgarije, Moldavië of Belarus binnenrijdt, herinnert de app je eraan dat het vignet verplicht is en waar je het koopt.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Zo werkt het</a>
         <a href="#fonctions">Functies</a>
         <a href="#perimetre">Ondersteunde landen</a>
+        <a href="tol/">Alle landen</a>
         <a href="#flux-libre">Tol met free flow</a>
         <a href="peages-mode-emploi.html">Tol begrijpen</a>
         <a href="#support">Support</a>

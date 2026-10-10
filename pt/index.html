@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>França</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="portagens/franca.html">França</a></h3>
           <ul>
             <li><b>96 %</b> das praças de portagem das autoestradas, de todas as concessionárias</li>
             <li>Os pórticos de free flow da A13, da A14 e da A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Itália</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="portagens/italia.html">Itália</a></h3>
           <ul>
             <li>Toda a rede de autoestradas com portagem, de Ventimiglia à Sicília</li>
             <li>As circulares de Milão, de Turim e de Nápoles</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Detalhe do Canadá: os pórticos da autoestrada 407 à volta de Toronto, a ponte da A25 e a barreira da A30 perto de Montreal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canadá</b> · Ontário e Quebeque</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="portagens/canada.html">Canadá</a></b> · Ontário e Quebeque</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Noutros países da Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Espanha</b><span>Radiais de Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, portagem do Garraf, túneis do Cadí, de Artxanda e de Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Pórticos eletrónicos da A4, da A8, da A17, da A19, da A28, da A29, da A33, da A41 e da A42, barreiras da A16, pontes 25 de Abril e Vasco da Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Grécia</b><span>Todas as autoestradas concessionadas e a ponte Rio-Antírrio</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Áustria</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken e Felbertauern, e a vinheta</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Suíça</b><span>Túnel do Grande São Bernardo, e a vinheta</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovénia</b><span>Túnel de Karavanke, e a vinheta</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel de Envalira</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Reino Unido</b><span>Dartford, túneis de Blackwall e de Silvertown, pontes do Mersey, túneis do Tyne, ponte do Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 em free flow, túnel do porto de Dublin, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Países Baixos</b><span>Kiltunnel e A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Pontes do Grande Belt e do Øresund</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Os postos AutoPASS: portagens urbanas de Oslo, de Bergen ou de Trondheim e estradas com portagem</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Suécia</b><span>Taxas de congestionamento de Estocolmo e de Gotemburgo, pontes de Motala, de Sundsvall e de Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="portagens/espanha.html">Espanha</a></b><span>Radiais de Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, portagem do Garraf, túneis do Cadí, de Artxanda e de Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="portagens/portugal.html">Portugal</a></b><span>Pórticos eletrónicos da A4, da A8, da A17, da A19, da A28, da A29, da A33, da A41 e da A42, barreiras da A16, pontes 25 de Abril e Vasco da Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="portagens/grecia.html">Grécia</a></b><span>Todas as autoestradas concessionadas e a ponte Rio-Antírrio</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="portagens/austria.html">Áustria</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken e Felbertauern, e a vinheta</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="portagens/suica.html">Suíça</a></b><span>Túnel do Grande São Bernardo, e a vinheta</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="portagens/eslovenia.html">Eslovénia</a></b><span>Túnel de Karavanke, e a vinheta</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="portagens/andorra.html">Andorra</a></b><span>Túnel de Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="portagens/reino-unido.html">Reino Unido</a></b><span>Dartford, túneis de Blackwall e de Silvertown, pontes do Mersey, túneis do Tyne, ponte do Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="portagens/irlanda.html">Irlanda</a></b><span>M50 em free flow, túnel do porto de Dublin, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="portagens/paises-baixos.html">Países Baixos</a></b><span>Kiltunnel e A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="portagens/dinamarca.html">Dinamarca</a></b><span>Pontes do Grande Belt e do Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="portagens/noruega.html">Noruega</a></b><span>Os postos AutoPASS: portagens urbanas de Oslo, de Bergen ou de Trondheim e estradas com portagem</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="portagens/suecia.html">Suécia</a></b><span>Taxas de congestionamento de Estocolmo e de Gotemburgo, pontes de Motala, de Sundsvall e de Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Fora da Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marrocos</b><span>A rede da Autoroutes du Maroc, de Tânger a Agadir e de Casablanca a Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunísia</b><span>As autoestradas A1, A3 e A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canadá</b><span>Autoestrada 407 ETR à volta de Toronto, com tarifa estimada ao quilómetro, ponte da A25 e barreira da A30 perto de Montreal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="portagens/marrocos.html">Marrocos</a></b><span>A rede da Autoroutes du Maroc, de Tânger a Agadir e de Casablanca a Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="portagens/tunisia.html">Tunísia</a></b><span>As autoestradas A1, A3 e A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="portagens/canada.html">Canadá</a></b><span>Autoestrada 407 ETR à volta de Toronto, com tarifa estimada ao quilómetro, ponte da A25 e barreira da A30 perto de Montreal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="portagens/">Portagens e vinhetas, país a país</a></p>
 
     <div class="geo-strip rv">
       <div><h4>A vinheta, na fronteira</h4><p>Ao entrar na Suíça, Áustria, Eslovénia, Chéquia, Eslováquia, Hungria, Roménia, Bulgária, Moldávia ou Bielorrússia, a app lembra-lhe que a vinheta é obrigatória e onde a comprar.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Como funciona</a>
         <a href="#fonctions">Funções</a>
         <a href="#perimetre">Países cobertos</a>
+        <a href="portagens/">Todos os países</a>
         <a href="#flux-libre">Portagens em free flow</a>
         <a href="peages-mode-emploi.html">Compreender as portagens</a>
         <a href="#support">Suporte</a>

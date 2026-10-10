@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Γαλλία</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="diodia/gallia.html">Γαλλία</a></h3>
           <ul>
             <li><b>96 %</b> των σταθμών διοδίων των αυτοκινητοδρόμων, όλων των φορέων εκμετάλλευσης</li>
             <li>Οι πύλες ελεύθερης ροής της A13, της A14 και της A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Ιταλία</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="diodia/italia.html">Ιταλία</a></h3>
           <ul>
             <li>Ολόκληρο το δίκτυο αυτοκινητοδρόμων με διόδια, από τη Βεντιμίλια έως τη Σικελία</li>
             <li>Οι περιφερειακοί δρόμοι του Μιλάνου, του Τορίνου και της Νάπολης</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Ένθετος χάρτης του Καναδά: οι πύλες του αυτοκινητοδρόμου 407 γύρω από το Τορόντο, η γέφυρα της A25 και η μπάρα της A30 κοντά στο Μόντρεαλ">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Καναδάς</b> · Οντάριο και Κεμπέκ</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="diodia/kanadas.html">Καναδάς</a></b> · Οντάριο και Κεμπέκ</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Στην υπόλοιπη Ευρώπη</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Ισπανία</b><span>Αυτοκινητόδρομοι Radiales της Μαδρίτης, AP-7 (Costa del Sol, Αλικάντε-Καρθαγένη, Καρθαγένη-Βέρα), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, διόδια του Garraf, σήραγγες Cadí, Artxanda και Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Πορτογαλία</b><span>Ηλεκτρονικές πύλες στις A4, A8, A17, A19, A28, A29, A33, A41 και A42, μπάρες της A16, γέφυρες 25ης Απριλίου και Βάσκο ντα Γκάμα</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Ελλάδα</b><span>Όλοι οι αυτοκινητόδρομοι υπό παραχώρηση και η γέφυρα Ρίου-Αντιρρίου</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Αυστρία</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken και Felbertauern, καθώς και η βινιέτα</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Ελβετία</b><span>Σήραγγα του Μεγάλου Αγίου Βερνάρδου, καθώς και η βινιέτα</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Σλοβενία</b><span>Σήραγγα Karavanke, καθώς και η βινιέτα</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Ανδόρα</b><span>Σήραγγα Envalira</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Ηνωμένο Βασίλειο</b><span>Dartford, σήραγγες Blackwall και Silvertown, γέφυρες του Mersey, σήραγγες του Tyne, γέφυρα του Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ιρλανδία</b><span>M50 με ελεύθερη ροή, σήραγγα του λιμανιού του Δουβλίνου, μπάρες στις M1, M3, M4, M6, M7, M8, N25 και στη σήραγγα του Λίμερικ</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Κάτω Χώρες</b><span>Kiltunnel και A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Δανία</b><span>Γέφυρες του Μεγάλου Μπελτ και του Έρεσουντ</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Νορβηγία</b><span>Οι σταθμοί AutoPASS: αστικά διόδια του Όσλο, του Μπέργκεν ή του Τρόντχαϊμ και δρόμοι με διόδια</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Σουηδία</b><span>Τέλη συμφόρησης της Στοκχόλμης και του Γκέτεμποργκ, γέφυρες Motala, Sundsvall και Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="diodia/ispania.html">Ισπανία</a></b><span>Αυτοκινητόδρομοι Radiales της Μαδρίτης, AP-7 (Costa del Sol, Αλικάντε-Καρθαγένη, Καρθαγένη-Βέρα), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, διόδια του Garraf, σήραγγες Cadí, Artxanda και Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="diodia/portogalia.html">Πορτογαλία</a></b><span>Ηλεκτρονικές πύλες στις A4, A8, A17, A19, A28, A29, A33, A41 και A42, μπάρες της A16, γέφυρες 25ης Απριλίου και Βάσκο ντα Γκάμα</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="diodia/ellada.html">Ελλάδα</a></b><span>Όλοι οι αυτοκινητόδρομοι υπό παραχώρηση και η γέφυρα Ρίου-Αντιρρίου</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="diodia/afstria.html">Αυστρία</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken και Felbertauern, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="diodia/elvetia.html">Ελβετία</a></b><span>Σήραγγα του Μεγάλου Αγίου Βερνάρδου, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="diodia/slovenia.html">Σλοβενία</a></b><span>Σήραγγα Karavanke, καθώς και η βινιέτα</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="diodia/andora.html">Ανδόρα</a></b><span>Σήραγγα Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="diodia/inomeno-vasileio.html">Ηνωμένο Βασίλειο</a></b><span>Dartford, σήραγγες Blackwall και Silvertown, γέφυρες του Mersey, σήραγγες του Tyne, γέφυρα του Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="diodia/irlandia.html">Ιρλανδία</a></b><span>M50 με ελεύθερη ροή, σήραγγα του λιμανιού του Δουβλίνου, μπάρες στις M1, M3, M4, M6, M7, M8, N25 και στη σήραγγα του Λίμερικ</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="diodia/kato-chores.html">Κάτω Χώρες</a></b><span>Kiltunnel και A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="diodia/dania.html">Δανία</a></b><span>Γέφυρες του Μεγάλου Μπελτ και του Έρεσουντ</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="diodia/norvigia.html">Νορβηγία</a></b><span>Οι σταθμοί AutoPASS: αστικά διόδια του Όσλο, του Μπέργκεν ή του Τρόντχαϊμ και δρόμοι με διόδια</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="diodia/souidia.html">Σουηδία</a></b><span>Τέλη συμφόρησης της Στοκχόλμης και του Γκέτεμποργκ, γέφυρες Motala, Sundsvall και Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Εκτός Ευρώπης</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Μαρόκο</b><span>Το δίκτυο της Autoroutes du Maroc, από την Ταγγέρη έως το Αγκαντίρ και από την Καζαμπλάνκα έως την Ούζντα</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Τυνησία</b><span>Οι αυτοκινητόδρομοι A1, A3 και A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Καναδάς</b><span>Αυτοκινητόδρομος 407 ETR γύρω από το Τορόντο, με εκτιμώμενη τιμή ανά χιλιόμετρο, γέφυρα της A25 και μπάρα της A30 κοντά στο Μόντρεαλ</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="diodia/maroko.html">Μαρόκο</a></b><span>Το δίκτυο της Autoroutes du Maroc, από την Ταγγέρη έως το Αγκαντίρ και από την Καζαμπλάνκα έως την Ούζντα</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="diodia/tynisia.html">Τυνησία</a></b><span>Οι αυτοκινητόδρομοι A1, A3 και A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="diodia/kanadas.html">Καναδάς</a></b><span>Αυτοκινητόδρομος 407 ETR γύρω από το Τορόντο, με εκτιμώμενη τιμή ανά χιλιόμετρο, γέφυρα της A25 και μπάρα της A30 κοντά στο Μόντρεαλ</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="diodia/">Διόδια και βινιέτες, χώρα προς χώρα</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Η βινιέτα, στα σύνορα</h4><p>Όταν μπαίνετε σε Ελβετία, Αυστρία, Σλοβενία, Τσεχία, Σλοβακία, Ουγγαρία, Ρουμανία, Βουλγαρία, Μολδαβία ή Λευκορωσία, η εφαρμογή σας υπενθυμίζει ότι η βινιέτα είναι υποχρεωτική και πού να την αγοράσετε.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Πώς λειτουργεί</a>
         <a href="#fonctions">Λειτουργίες</a>
         <a href="#perimetre">Καλυπτόμενες χώρες</a>
+        <a href="diodia/">Όλες οι χώρες</a>
         <a href="#flux-libre">Διόδια ελεύθερης ροής</a>
         <a href="peages-mode-emploi.html">Κατανοώντας τα διόδια</a>
         <a href="#support">Υποστήριξη</a>

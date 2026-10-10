@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Frankreich</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="maut/frankreich.html">Frankreich</a></h3>
           <ul>
             <li><b>96 %</b> der Autobahn-Mautstationen, über alle Betreiber hinweg</li>
             <li>Die Free-Flow-Portale auf der A13, der A14 und der A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italien</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="maut/italien.html">Italien</a></h3>
           <ul>
             <li>Das gesamte mautpflichtige Autobahnnetz, von Ventimiglia bis Sizilien</li>
             <li>Die Ringautobahnen von Mailand, Turin und Neapel</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Ausschnitt Kanada: die Portale der Autobahn 407 rund um Toronto, die Brücke der A25 und die Schranke der A30 bei Montreal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Kanada</b> · Ontario und Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="maut/kanada.html">Kanada</a></b> · Ontario und Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Anderswo in Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Radiales von Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Mautstrecke Garraf, Cadí-, Artxanda- und Vallvidrera-Tunnel</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektronische Portale auf der A4, A8, A17, A19, A28, A29, A33, A41 und A42, Schranken der A16, Brücke des 25. April und Vasco-da-Gama-Brücke</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Griechenland</b><span>Alle konzessionierten Autobahnen und die Rio-Andirrio-Brücke</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Österreich</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken und Felbertauern, dazu die Vignette</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Schweiz</b><span>Tunnel des Großen St. Bernhard, dazu die Vignette</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slowenien</b><span>Karawankentunnel, dazu die Vignette</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-Tunnel</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Vereinigtes Königreich</b><span>Dartford, Blackwall- und Silvertown-Tunnel, Mersey-Brücken, Tyne-Tunnel, Tamar-Brücke</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>Free-Flow-Maut auf der M50, Dublin Port Tunnel, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Niederlande</b><span>Kiltunnel und A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Dänemark</b><span>Brücken über den Großen Belt und den Øresund</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norwegen</b><span>Die AutoPASS-Stellen: Mautringe von Oslo, Bergen oder Trondheim und Mautstraßen</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Schweden</b><span>City-Maut von Stockholm und Göteborg, Brücken von Motala, Sundsvall und Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="maut/spanien.html">Spanien</a></b><span>Radiales von Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Mautstrecke Garraf, Cadí-, Artxanda- und Vallvidrera-Tunnel</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="maut/portugal.html">Portugal</a></b><span>Elektronische Portale auf der A4, A8, A17, A19, A28, A29, A33, A41 und A42, Schranken der A16, Brücke des 25. April und Vasco-da-Gama-Brücke</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="maut/griechenland.html">Griechenland</a></b><span>Alle konzessionierten Autobahnen und die Rio-Andirrio-Brücke</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="maut/oesterreich.html">Österreich</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken und Felbertauern, dazu die Vignette</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="maut/schweiz.html">Schweiz</a></b><span>Tunnel des Großen St. Bernhard, dazu die Vignette</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="maut/slowenien.html">Slowenien</a></b><span>Karawankentunnel, dazu die Vignette</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="maut/andorra.html">Andorra</a></b><span>Envalira-Tunnel</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="maut/vereinigtes-koenigreich.html">Vereinigtes Königreich</a></b><span>Dartford, Blackwall- und Silvertown-Tunnel, Mersey-Brücken, Tyne-Tunnel, Tamar-Brücke</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="maut/irland.html">Irland</a></b><span>Free-Flow-Maut auf der M50, Dublin Port Tunnel, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="maut/niederlande.html">Niederlande</a></b><span>Kiltunnel und A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="maut/daenemark.html">Dänemark</a></b><span>Brücken über den Großen Belt und den Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="maut/norwegen.html">Norwegen</a></b><span>Die AutoPASS-Stellen: Mautringe von Oslo, Bergen oder Trondheim und Mautstraßen</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="maut/schweden.html">Schweden</a></b><span>City-Maut von Stockholm und Göteborg, Brücken von Motala, Sundsvall und Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Außerhalb Europas</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marokko</b><span>Das Netz von Autoroutes du Maroc, von Tanger bis Agadir und von Casablanca bis Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunesien</b><span>Die Autobahnen A1, A3 und A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Kanada</b><span>Autobahn 407 ETR rund um Toronto mit geschätztem Kilometertarif, Brücke der A25 und Schranke der A30 bei Montreal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="maut/marokko.html">Marokko</a></b><span>Das Netz von Autoroutes du Maroc, von Tanger bis Agadir und von Casablanca bis Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="maut/tunesien.html">Tunesien</a></b><span>Die Autobahnen A1, A3 und A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="maut/kanada.html">Kanada</a></b><span>Autobahn 407 ETR rund um Toronto mit geschätztem Kilometertarif, Brücke der A25 und Schranke der A30 bei Montreal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="maut/">Maut und Vignetten, Land für Land</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Die Vignette an der Grenze</h4><p>In der Schweiz, in Österreich, Slowenien, Tschechien, der Slowakei, Ungarn, Rumänien, Bulgarien, Moldau und Belarus erinnert Sie die App gleich bei der Einreise daran, dass die Vignette Pflicht ist und wo Sie sie kaufen können.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">So funktioniert's</a>
         <a href="#fonctions">Funktionen</a>
         <a href="#perimetre">Abgedeckte Länder</a>
+        <a href="maut/">Alle Länder</a>
         <a href="#flux-libre">Free-Flow-Maut</a>
         <a href="peages-mode-emploi.html">Maut verstehen</a>
         <a href="#support">Support</a>

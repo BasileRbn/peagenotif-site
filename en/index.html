@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>France</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="tolls/france.html">France</a></h3>
           <ul>
             <li><b>96 %</b> of motorway toll plazas, across every operator</li>
             <li>The free-flow gantries of the A13, A14 and A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italy</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="tolls/italy.html">Italy</a></h3>
           <ul>
             <li>The whole toll motorway network, from Ventimiglia to Sicily</li>
             <li>The ring roads of Milan, Turin and Naples</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Canada inset: the Highway 407 gantries around Toronto, the A25 bridge and the A30 barrier near Montreal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canada</b> · Ontario and Quebec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="tolls/canada.html">Canada</a></b> · Ontario and Quebec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Elsewhere in Europe</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spain</b><span>Madrid radial motorways, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf toll, Cadí, Artxanda and Vallvidrera tunnels</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Electronic gantries on the A4, A8, A17, A19, A28, A29, A33, A41 and A42, barriers on the A16, the 25 de Abril and Vasco da Gama bridges</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Greece</b><span>Every concession motorway and the Rio-Antirrio Bridge</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Austria</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken and Felbertauern, plus the vignette</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Switzerland</b><span>Great St Bernard Tunnel, plus the vignette</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Karavanke Tunnel, plus the vignette</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira Tunnel</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>United Kingdom</b><span>Dartford Crossing, Blackwall and Silvertown tunnels, Mersey bridges, Tyne Tunnels, Tamar Bridge</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ireland</b><span>Free-flow M50, Dublin Port Tunnel, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Netherlands</b><span>Kiltunnel and A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Denmark</b><span>Great Belt and Øresund bridges</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norway</b><span>AutoPASS toll points: city tolls in Oslo, Bergen or Trondheim, and toll roads</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Sweden</b><span>Stockholm and Gothenburg congestion taxes, Motala, Sundsvall and Skuru bridges</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="tolls/spain.html">Spain</a></b><span>Madrid radial motorways, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, Garraf toll, Cadí, Artxanda and Vallvidrera tunnels</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="tolls/portugal.html">Portugal</a></b><span>Electronic gantries on the A4, A8, A17, A19, A28, A29, A33, A41 and A42, barriers on the A16, the 25 de Abril and Vasco da Gama bridges</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="tolls/greece.html">Greece</a></b><span>Every concession motorway and the Rio-Antirrio Bridge</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="tolls/austria.html">Austria</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken and Felbertauern, plus the vignette</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="tolls/switzerland.html">Switzerland</a></b><span>Great St Bernard Tunnel, plus the vignette</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="tolls/slovenia.html">Slovenia</a></b><span>Karavanke Tunnel, plus the vignette</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="tolls/andorra.html">Andorra</a></b><span>Envalira Tunnel</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="tolls/united-kingdom.html">United Kingdom</a></b><span>Dartford Crossing, Blackwall and Silvertown tunnels, Mersey bridges, Tyne Tunnels, Tamar Bridge</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="tolls/ireland.html">Ireland</a></b><span>Free-flow M50, Dublin Port Tunnel, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="tolls/netherlands.html">Netherlands</a></b><span>Kiltunnel and A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="tolls/denmark.html">Denmark</a></b><span>Great Belt and Øresund bridges</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="tolls/norway.html">Norway</a></b><span>AutoPASS toll points: city tolls in Oslo, Bergen or Trondheim, and toll roads</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="tolls/sweden.html">Sweden</a></b><span>Stockholm and Gothenburg congestion taxes, Motala, Sundsvall and Skuru bridges</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Outside Europe</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Morocco</b><span>The Autoroutes du Maroc network, from Tangier to Agadir and from Casablanca to Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunisia</b><span>The A1, A3 and A4 motorways</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canada</b><span>Highway 407 ETR around Toronto with an estimated per-kilometre price, the A25 bridge and the A30 barrier near Montreal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="tolls/morocco.html">Morocco</a></b><span>The Autoroutes du Maroc network, from Tangier to Agadir and from Casablanca to Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="tolls/tunisia.html">Tunisia</a></b><span>The A1, A3 and A4 motorways</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="tolls/canada.html">Canada</a></b><span>Highway 407 ETR around Toronto with an estimated per-kilometre price, the A25 bridge and the A30 barrier near Montreal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="tolls/">Tolls and vignettes, country by country</a></p>
 
     <div class="geo-strip rv">
       <div><h4>The vignette, at the border</h4><p>When you enter Switzerland, Austria, Slovenia, Czechia, Slovakia, Hungary, Romania, Bulgaria, Moldova or Belarus, the app reminds you that the vignette is compulsory and where to buy it.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">How it works</a>
         <a href="#fonctions">Features</a>
         <a href="#perimetre">Countries covered</a>
+        <a href="tolls/">All countries</a>
         <a href="#flux-libre">Free-flow tolls</a>
         <a href="peages-mode-emploi.html">Understanding tolls</a>
         <a href="#support">Support</a>

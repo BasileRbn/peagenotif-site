@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Francia</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="pedaggi/francia.html">Francia</a></h3>
           <ul>
             <li><b>96 %</b> dei caselli autostradali, di tutti i gestori</li>
             <li>I portali free flow dell'A13, dell'A14 e dell'A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italia</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="pedaggi/italia.html">Italia</a></h3>
           <ul>
             <li>Tutta la rete autostradale a pedaggio, da Ventimiglia alla Sicilia</li>
             <li>Le tangenziali di Milano, Torino e Napoli</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Riquadro del Canada: i portali dell'autostrada 407 intorno a Toronto, il ponte dell'A25 e la barriera dell'A30 vicino a Montréal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Canada</b> · Ontario e Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="pedaggi/canada.html">Canada</a></b> · Ontario e Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Altrove in Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spagna</b><span>Radiali di Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, pedaggio del Garraf, tunnel del Cadí, di Artxanda e di Vallvidrera</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portogallo</b><span>Portali elettronici dell'A4, dell'A8, dell'A17, dell'A19, dell'A28, dell'A29, dell'A33, dell'A41 e dell'A42, barriere dell'A16, ponti 25 de Abril e Vasco da Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Grecia</b><span>Tutte le autostrade in concessione e il ponte Rion-Antirrion</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Austria</b><span>Brennero, Tauern, Pyhrn, Arlberg, Caravanche e Felbertauern, più la vignetta</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Svizzera</b><span>Traforo del Gran San Bernardo, più la vignetta</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Traforo delle Caravanche, più la vignetta</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Tunnel di Envalira</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Regno Unito</b><span>Dartford, tunnel di Blackwall e di Silvertown, ponti sul Mersey, tunnel sul Tyne, ponte sul Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 in free flow, tunnel del porto di Dublino, barriere delle M1, M3, M4, M6, M7, M8, N25 e del tunnel di Limerick</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Paesi Bassi</b><span>Kiltunnel e A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Danimarca</b><span>Ponti del Grande Belt e dell'Øresund</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norvegia</b><span>I punti AutoPASS: pedaggi urbani di Oslo, Bergen o Trondheim e strade a pedaggio</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Svezia</b><span>Tasse sulla congestione di Stoccolma e Göteborg, ponti di Motala, Sundsvall e Skuru</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="pedaggi/spagna.html">Spagna</a></b><span>Radiali di Madrid, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, pedaggio del Garraf, tunnel del Cadí, di Artxanda e di Vallvidrera</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="pedaggi/portogallo.html">Portogallo</a></b><span>Portali elettronici dell'A4, dell'A8, dell'A17, dell'A19, dell'A28, dell'A29, dell'A33, dell'A41 e dell'A42, barriere dell'A16, ponti 25 de Abril e Vasco da Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="pedaggi/grecia.html">Grecia</a></b><span>Tutte le autostrade in concessione e il ponte Rion-Antirrion</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="pedaggi/austria.html">Austria</a></b><span>Brennero, Tauern, Pyhrn, Arlberg, Caravanche e Felbertauern, più la vignetta</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="pedaggi/svizzera.html">Svizzera</a></b><span>Traforo del Gran San Bernardo, più la vignetta</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="pedaggi/slovenia.html">Slovenia</a></b><span>Traforo delle Caravanche, più la vignetta</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="pedaggi/andorra.html">Andorra</a></b><span>Tunnel di Envalira</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="pedaggi/regno-unito.html">Regno Unito</a></b><span>Dartford, tunnel di Blackwall e di Silvertown, ponti sul Mersey, tunnel sul Tyne, ponte sul Tamar</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="pedaggi/irlanda.html">Irlanda</a></b><span>M50 in free flow, tunnel del porto di Dublino, barriere delle M1, M3, M4, M6, M7, M8, N25 e del tunnel di Limerick</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="pedaggi/paesi-bassi.html">Paesi Bassi</a></b><span>Kiltunnel e A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="pedaggi/danimarca.html">Danimarca</a></b><span>Ponti del Grande Belt e dell'Øresund</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="pedaggi/norvegia.html">Norvegia</a></b><span>I punti AutoPASS: pedaggi urbani di Oslo, Bergen o Trondheim e strade a pedaggio</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="pedaggi/svezia.html">Svezia</a></b><span>Tasse sulla congestione di Stoccolma e Göteborg, ponti di Motala, Sundsvall e Skuru</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Fuori dall'Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marocco</b><span>La rete di Autoroutes du Maroc, da Tangeri ad Agadir e da Casablanca a Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunisia</b><span>Le autostrade A1, A3 e A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Canada</b><span>Autostrada 407 ETR intorno a Toronto, tariffa stimata al chilometro, ponte dell'A25 e barriera dell'A30 vicino a Montréal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="pedaggi/marocco.html">Marocco</a></b><span>La rete di Autoroutes du Maroc, da Tangeri ad Agadir e da Casablanca a Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="pedaggi/tunisia.html">Tunisia</a></b><span>Le autostrade A1, A3 e A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="pedaggi/canada.html">Canada</a></b><span>Autostrada 407 ETR intorno a Toronto, tariffa stimata al chilometro, ponte dell'A25 e barriera dell'A30 vicino a Montréal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="pedaggi/">Pedaggi e vignette, Paese per Paese</a></p>
 
     <div class="geo-strip rv">
       <div><h4>La vignetta, alla frontiera</h4><p>Entrando in Svizzera, Austria, Slovenia, Cechia, Slovacchia, Ungheria, Romania, Bulgaria, Moldavia o Bielorussia, l'app ti ricorda che la vignetta è obbligatoria e dove acquistarla.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Come funziona</a>
         <a href="#fonctions">Funzioni</a>
         <a href="#perimetre">Paesi coperti</a>
+        <a href="pedaggi/">Tutti i paesi</a>
         <a href="#flux-libre">Pedaggi free flow</a>
         <a href="peages-mode-emploi.html">Capire i pedaggi</a>
         <a href="#support">Assistenza</a>

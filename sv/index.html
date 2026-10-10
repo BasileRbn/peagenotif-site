@@ -369,6 +369,9 @@
   .pays li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
   .pays li .flag{margin-top:3px}
   .pays b{display:block;color:var(--tx);font-size:15px;margin-bottom:2px}
+  .pays b a,.geo-card h3 a,.geo-ca figcaption a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(11,95,255,.55)}
+  .pays b a:hover,.geo-card h3 a:hover,.geo-ca figcaption a:hover{color:var(--blue)}
+  .pays-tous{text-align:center;margin:26px 0 0;font-weight:700}
   .pays span{display:block;color:var(--tx2);font-size:13.5px;line-height:1.5}
   @media(max-width:960px){.pays{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:620px){.pays{grid-template-columns:1fr}}
@@ -715,7 +718,7 @@
       </figure>
       <div class="geo-cards">
         <div class="geo-card rv">
-          <h3><i class="flag fr" aria-hidden="true"></i>Frankrike</h3>
+          <h3><i class="flag fr" aria-hidden="true"></i><a href="vagtullar/frankrike.html">Frankrike</a></h3>
           <ul>
             <li><b>96 %</b> av motorvägarnas betalstationer, oavsett operatör</li>
             <li>Portalerna med fritt flöde på A13, A14 och A79</li>
@@ -723,7 +726,7 @@
           </ul>
         </div>
         <div class="geo-card rv" style="--d:.1s">
-          <h3><i class="flag it" aria-hidden="true"></i>Italien</h3>
+          <h3><i class="flag it" aria-hidden="true"></i><a href="vagtullar/italien.html">Italien</a></h3>
           <ul>
             <li>Hela det avgiftsbelagda motorvägsnätet, från Ventimiglia till Sicilien</li>
             <li>Ringlederna runt Milano, Turin och Neapel</li>
@@ -732,34 +735,35 @@
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
           <img src="../img/perimetre-canada.svg" width="1000" height="542" loading="lazy" alt="Infälld karta över Kanada: portalerna på motorväg 407 runt Toronto, bron på A25 och bommen på A30 nära Montréal">
-          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b>Kanada</b> · Ontario och Québec</span></figcaption>
+          <figcaption><i class="flag ca" aria-hidden="true"></i><span><b><a href="vagtullar/kanada.html">Kanada</a></b> · Ontario och Québec</span></figcaption>
         </figure>
       </div>
     </div>
 
     <h3 class="pays-titre rv">Övriga Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag es" aria-hidden="true"></i><div><b>Spanien</b><span>Madrids radialmotorvägar, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, vägtullen i Garraf, Cadí-, Artxanda- och Vallvidreratunnlarna</span></div></li>
-      <li><i class="flag pt" aria-hidden="true"></i><div><b>Portugal</b><span>Elektroniska portaler på A4, A8, A17, A19, A28, A29, A33, A41 och A42, bommar på A16, broarna 25 de Abril och Vasco da Gama</span></div></li>
-      <li><i class="flag gr" aria-hidden="true"></i><div><b>Grekland</b><span>Alla koncessionsmotorvägar och Rion-Antirrion-bron</span></div></li>
-      <li><i class="flag at" aria-hidden="true"></i><div><b>Österrike</b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken och Felbertauern, samt vinjetten</span></div></li>
-      <li><i class="flag ch" aria-hidden="true"></i><div><b>Schweiz</b><span>Stora Sankt Bernhard-tunneln samt vinjetten</span></div></li>
-      <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenien</b><span>Karavanketunneln samt vinjetten</span></div></li>
-      <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envaliratunneln</span></div></li>
-      <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannien</b><span>Dartford, Blackwall- och Silvertowntunnlarna, Merseybroarna, Tynetunnlarna, Tamarbron</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 med fritt flöde, Dublin Port Tunnel, bommar på M1, M3, M4, M6, M7, M8 och N25 samt vid Limericktunneln</span></div></li>
-      <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederländerna</b><span>Kiltunnel och A24 Blankenburg</span></div></li>
-      <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Stora Bältbron och Öresundsbron</span></div></li>
-      <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-stationerna: vägtullarna i städer som Oslo, Bergen och Trondheim samt avgiftsbelagda vägar</span></div></li>
-      <li><i class="flag se" aria-hidden="true"></i><div><b>Sverige</b><span>Trängselskatten i Stockholm och Göteborg, Motalabron, Sundsvallsbron och Skurubron</span></div></li>
+      <li><i class="flag es" aria-hidden="true"></i><div><b><a href="vagtullar/spanien.html">Spanien</a></b><span>Madrids radialmotorvägar, AP-7 (Costa del Sol, Alicante-Cartagena, Cartagena-Vera), AP-36, AP-46, AP-15, AP-53, AP-66, AP-636, vägtullen i Garraf, Cadí-, Artxanda- och Vallvidreratunnlarna</span></div></li>
+      <li><i class="flag pt" aria-hidden="true"></i><div><b><a href="vagtullar/portugal.html">Portugal</a></b><span>Elektroniska portaler på A4, A8, A17, A19, A28, A29, A33, A41 och A42, bommar på A16, broarna 25 de Abril och Vasco da Gama</span></div></li>
+      <li><i class="flag gr" aria-hidden="true"></i><div><b><a href="vagtullar/grekland.html">Grekland</a></b><span>Alla koncessionsmotorvägar och Rion-Antirrion-bron</span></div></li>
+      <li><i class="flag at" aria-hidden="true"></i><div><b><a href="vagtullar/osterrike.html">Österrike</a></b><span>Brenner, Tauern, Pyhrn, Arlberg, Karawanken och Felbertauern, samt vinjetten</span></div></li>
+      <li><i class="flag ch" aria-hidden="true"></i><div><b><a href="vagtullar/schweiz.html">Schweiz</a></b><span>Stora Sankt Bernhard-tunneln samt vinjetten</span></div></li>
+      <li><i class="flag si" aria-hidden="true"></i><div><b><a href="vagtullar/slovenien.html">Slovenien</a></b><span>Karavanketunneln samt vinjetten</span></div></li>
+      <li><i class="flag ad" aria-hidden="true"></i><div><b><a href="vagtullar/andorra.html">Andorra</a></b><span>Envaliratunneln</span></div></li>
+      <li><i class="flag gb" aria-hidden="true"></i><div><b><a href="vagtullar/storbritannien.html">Storbritannien</a></b><span>Dartford, Blackwall- och Silvertowntunnlarna, Merseybroarna, Tynetunnlarna, Tamarbron</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b><a href="vagtullar/irland.html">Irland</a></b><span>M50 med fritt flöde, Dublin Port Tunnel, bommar på M1, M3, M4, M6, M7, M8 och N25 samt vid Limericktunneln</span></div></li>
+      <li><i class="flag nl" aria-hidden="true"></i><div><b><a href="vagtullar/nederlanderna.html">Nederländerna</a></b><span>Kiltunnel och A24 Blankenburg</span></div></li>
+      <li><i class="flag dk" aria-hidden="true"></i><div><b><a href="vagtullar/danmark.html">Danmark</a></b><span>Stora Bältbron och Öresundsbron</span></div></li>
+      <li><i class="flag no" aria-hidden="true"></i><div><b><a href="vagtullar/norge.html">Norge</a></b><span>AutoPASS-stationerna: vägtullarna i städer som Oslo, Bergen och Trondheim samt avgiftsbelagda vägar</span></div></li>
+      <li><i class="flag se" aria-hidden="true"></i><div><b><a href="vagtullar/sverige.html">Sverige</a></b><span>Trängselskatten i Stockholm och Göteborg, Motalabron, Sundsvallsbron och Skurubron</span></div></li>
     </ul>
 
     <h3 class="pays-titre rv">Utanför Europa</h3>
     <ul class="pays rv">
-      <li><i class="flag ma" aria-hidden="true"></i><div><b>Marocko</b><span>Motorvägsnätet som drivs av Autoroutes du Maroc, från Tanger till Agadir och från Casablanca till Oujda</span></div></li>
-      <li><i class="flag tn" aria-hidden="true"></i><div><b>Tunisien</b><span>Motorvägarna A1, A3 och A4</span></div></li>
-      <li><i class="flag ca" aria-hidden="true"></i><div><b>Kanada</b><span>Motorväg 407 ETR runt Toronto med uppskattat pris per kilometer, bron på A25 och bommen på A30 nära Montréal</span></div></li>
+      <li><i class="flag ma" aria-hidden="true"></i><div><b><a href="vagtullar/marocko.html">Marocko</a></b><span>Motorvägsnätet som drivs av Autoroutes du Maroc, från Tanger till Agadir och från Casablanca till Oujda</span></div></li>
+      <li><i class="flag tn" aria-hidden="true"></i><div><b><a href="vagtullar/tunisien.html">Tunisien</a></b><span>Motorvägarna A1, A3 och A4</span></div></li>
+      <li><i class="flag ca" aria-hidden="true"></i><div><b><a href="vagtullar/kanada.html">Kanada</a></b><span>Motorväg 407 ETR runt Toronto med uppskattat pris per kilometer, bron på A25 och bommen på A30 nära Montréal</span></div></li>
     </ul>
+    <p class="pays-tous rv"><a href="vagtullar/">Vägtullar och vinjetter, land för land</a></p>
 
     <div class="geo-strip rv">
       <div><h4>Vinjetten, vid gränsen</h4><p>När du kör in i Schweiz, Österrike, Slovenien, Tjeckien, Slovakien, Ungern, Rumänien, Bulgarien, Moldavien eller Belarus påminner appen dig om att vinjett krävs och var du kan köpa den.</p></div>
@@ -1002,6 +1006,7 @@
         <a href="#comment">Så fungerar det</a>
         <a href="#fonctions">Funktioner</a>
         <a href="#perimetre">Länder som täcks</a>
+        <a href="vagtullar/">Alla länder</a>
         <a href="#flux-libre">Vägtullar med fritt flöde</a>
         <a href="peages-mode-emploi.html">Förstå vägtullarna</a>
         <a href="#support">Support</a>

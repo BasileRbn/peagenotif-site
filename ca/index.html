@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Com funciona</a>
       <a href="#fonctions" class="hide-xxs">Funcions</a>
-      <a href="#nouveautes" class="hide-s">Novetats</a>
+      <a href="#nouveautes" class="hide-l">Novetats</a>
+      <a href="#flux-libre" class="hide-s">Flux lliure</a>
       <a href="tarifs/" class="hide-xs">Preus dels peatges</a><a href="peages-mode-emploi.html" class="hide-xs">Entendre els peatges</a>
       <a href="#support" class="hide-xxs">Suport</a>
       <a href="confidentialite.html" class="hide-m">Privadesa</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Cobertura</span>
       <h2>De Lisboa a Oslo, de Tànger a Toronto</h2>
-      <p>Autopistes, túnels, ponts i pòrtics sense barrera en 18 països: cada punt del mapa és un peatge que Péage Notif reconeix en passar. Tot és dins l'app, no cal descarregar res pel camí.</p>
+      <p>Autopistes, túnels, ponts i pòrtics de flux lliure en 18 països: cada punt del mapa és un peatge que Péage Notif reconeix en passar. Tot és dins l'app, no cal descarregar res pel camí.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa d'Europa i del Magrib cobert de punts: en blau, els peatges que reconeix l'app; en verd, els pòrtics sense barrera que es paguen en línia; i vorejats de groc, els països amb vinyeta">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa d'Europa i del Magrib cobert de punts: en blau, els peatges que reconeix l'app; en verd, els pòrtics de flux lliure, que es paguen en línia; i vorejats de groc, els països amb vinyeta">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Estació, barrera, pont o túnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Pòrtic sense barrera, a pagar en línia</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Pòrtic de flux lliure, a pagar en línia</a></span>
           <span><i class="dot v"></i>Vinyeta anunciada a l'entrada</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>França</h3>
           <ul>
             <li><b>96 %</b> de les estacions de peatge de les autopistes, de tots els operadors</li>
-            <li>Els pòrtics sense barrera de l'A13, l'A14 i l'A79</li>
+            <li>Els pòrtics de flux lliure de l'A13, l'A14 i l'A79</li>
             <li>Túnels del Mont Blanc, del Fréjus, del Pimorent i del Prado, Duplex A86, pont de Normandia, viaducte de Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Tota la xarxa d'autopistes de peatge, de Ventimiglia a Sicília</li>
             <li>Les rondes de Milà, de Torí i de Nàpols</li>
-            <li>Els pòrtics sense barrera de la Pedemontana i de la Corda Molle</li>
+            <li>Els pòrtics de flux lliure de la Pedemontana i de la Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovènia</b><span>Túnel de les Karavanke, i també la vinyeta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel d'Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Regne Unit</b><span>Dartford, túnels de Blackwall i de Silvertown, ponts del Mersey, túnels del Tyne, pont del Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sense barrera, túnel del port de Dublín, barreres de les M1, M3, M4, M6, M7, M8, N25 i del túnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 de flux lliure, túnel del port de Dublín, barreres de les M1, M3, M4, M6, M7, M8, N25 i del túnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Països Baixos</b><span>Kiltunnel i A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Ponts del Gran Belt i de l'Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Els punts de cobrament AutoPASS: peatges urbans d'Oslo, Bergen o Trondheim i carreteres de peatge</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Peatges sense barrera</span>
-      <h2>Sense barrera, sense oblits</h2>
-      <p>A l'A13, l'A14 i l'A79, al voltant de Milà, a Dartford, a la M50 de Dublín o a Portugal, uns pòrtics han substituït les barreres: s'hi passa sense aturar-se. Amb dispositiu de telepeatge, el peatge es cobra automàticament. Sense dispositiu, es paga després en línia, en un termini curt. Péage Notif li diu quant ha de pagar, on i fins quan.</p>
+      <span class="eyebrow">Peatges de flux lliure</span>
+      <h2>Flux lliure: sense barrera, sense oblits</h2>
+      <p>A l'A13, l'A14 i l'A79, al voltant de Milà, a Dartford, a la M50 de Dublín o a Portugal, uns pòrtics han substituït les barreres: és el peatge de flux lliure (free flow), i s'hi passa sense aturar-se. Amb dispositiu de telepeatge, el peatge es cobra automàticament. Sense dispositiu, es paga després en línia, en un termini curt. Péage Notif li diu quant ha de pagar, on i fins quan.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-ca.webp" width="1030" height="644" loading="lazy" alt="Notificació de Péage Notif en passar pel pòrtic de Dozulé: uns 4,20 €, a pagar en línia a sanef.com en un termini de 72 hores"></figure>
+        <figure><img src="../img/app/passage-ca.webp" width="1030" height="644" loading="lazy" alt="Notificació de Péage Notif en passar pel pòrtic de flux lliure de Dozulé: uns 4,20 €, a pagar en línia a sanef.com en un termini de 72 hores"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>En passar pel pòrtic</h3>
+          <h3>En passar pel pòrtic de flux lliure</h3>
           <p>L'import apareix a la pantalla i s'anuncia en veu alta, amb el termini per pagar: <q>Peatge Dozulé, 4 euros amb 20. A pagar en línia en un termini de 72 hores.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Els terminis que cal respectar</h3>
+      <h3>Flux lliure: els terminis per pagar</h3>
       <table>
         <thead><tr><th>On</th><th>Termini</th><th>On pagar</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>L'app és realment gratuïta?</summary><p>Sí, totalment gratuïta i sense subscripció. No cal cap compte.</p></details>
       <details><summary>Els preus que es mostren són exactes?</summary><p>Són estimacions calculades a partir de les graelles de tarifes oficials (classe 1 per defecte, modificable a la configuració). No són vinculants: només compta l'import que cobra el seu operador de telepeatge o la concessionària de l'autopista.</p></details>
-      <details><summary>Cal un dispositiu de telepeatge?</summary><p>No. Péage Notif és independent de qualsevol operador i no cobra cap peatge. L'informa del preu estimat en passar. A les autopistes sense barrera (A13, A14, A79…), si no té dispositiu de telepeatge, el peatge es paga després en línia: l'app li recorda l'import i la data límit.</p></details>
+      <details><summary>Cal un dispositiu de telepeatge?</summary><p>No. Péage Notif és independent de qualsevol operador i no cobra cap peatge. L'informa del preu estimat en passar. A les autopistes de flux lliure (A13, A14, A79…), si no té dispositiu de telepeatge, el peatge es paga després en línia: l'app li recorda l'import i la data límit.</p></details>
       <details><summary>L'app li buida la bateria?</summary><p>El GPS només funciona durant un seguiment que vostè ha iniciat. En repòs, l'app no consumeix res, i amb el vehicle aturat redueix el ritme del GPS. Si s'oblida d'aturar el seguiment en arribar, l'app li pregunta si el trajecte ha acabat.</p></details>
       <details><summary>No s'ha detectat un peatge, o el preu sembla erroni</summary><p>Durant el trajecte, toqui el botó d'avís i digui què no funciona. Després, vagi a Configuració › Comunicar un problema, o escrigui a support@peagenotif.fr. Aquests avisos serveixen directament per corregir la base de dades de peatges.</p></details>
       <details><summary>En quins països funciona l'app?</summary><p>En 18 països: França i Itàlia, a totes les seves autopistes de peatge, tretze països més d'Europa, el Marroc, Tunísia i el Canadà (Ontario i Quebec). El <a href="#perimetre">mapa de cobertura</a> mostra cada peatge reconegut.</p></details>
-      <details><summary>He rebut un SMS que em reclama un peatge impagat. És de Péage Notif?</summary><p>No. Péage Notif no li demanarà mai que pagui i no envia ni SMS ni correus electrònics. Circulen SMS fraudulents d'aquest tipus: no toqui el seu enllaç. Un peatge sense barrera es paga únicament al web oficial de l'operador, per exemple sanef.com per a l'A13 i l'A14.</p></details>
+      <details><summary>Com es paga un peatge de flux lliure?</summary><p>Amb un dispositiu de telepeatge, no cal fer res: el pas es cobra automàticament. Sense dispositiu, es paga en línia al web oficial de l'operador, amb la matrícula del vehicle: sanef.com per a l'A13, l'A14 i la sortida 36 de l'A4, i paiement.aliae.com per a l'A79, en un termini de 72 hores. Péage Notif anuncia l'import en passar pel pòrtic, li recorda la data límit i obre el web correcte amb un sol toc.</p></details>
+      <details><summary>He rebut un SMS que em reclama un peatge impagat. És de Péage Notif?</summary><p>No. Péage Notif no li demanarà mai que pagui i no envia ni SMS ni correus electrònics. Circulen SMS fraudulents d'aquest tipus: no toqui el seu enllaç. Un peatge de flux lliure es paga únicament al web oficial de l'operador, per exemple sanef.com per a l'A13 i l'A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Com funciona</a>
         <a href="#fonctions">Funcions</a>
         <a href="#perimetre">Països coberts</a>
-        <a href="#flux-libre">Peatges sense barrera</a>
+        <a href="#flux-libre">Peatges de flux lliure</a>
         <a href="peages-mode-emploi.html">Entendre els peatges</a>
         <a href="#support">Suport</a>
         <a href="confidentialite.html">Privadesa</a>

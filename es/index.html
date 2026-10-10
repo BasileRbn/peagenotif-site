@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Cómo funciona</a>
       <a href="#fonctions" class="hide-xxs">Funciones</a>
-      <a href="#nouveautes" class="hide-s">Novedades</a>
+      <a href="#nouveautes" class="hide-l">Novedades</a>
+      <a href="#flux-libre" class="hide-s">Free flow</a>
       <a href="tarifs/" class="hide-xs">Precios de los peajes</a><a href="peages-mode-emploi.html" class="hide-xs">Entender los peajes</a>
       <a href="#support" class="hide-xxs">Soporte</a>
       <a href="confidentialite.html" class="hide-m">Privacidad</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Cobertura</span>
       <h2>De Lisboa a Oslo, de Tánger a Toronto</h2>
-      <p>Autopistas, túneles, puentes y pórticos sin barrera en 18 países: cada punto del mapa es un peaje que Péage Notif reconoce al pasar. Todo está en la app, no se descarga nada por el camino.</p>
+      <p>Autopistas, túneles, puentes y pórticos free flow en 18 países: cada punto del mapa es un peaje que Péage Notif reconoce al pasar. Todo está en la app, no se descarga nada por el camino.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa de Europa y del Magreb cubierto de puntos: los peajes que reconoce la app en azul, los pórticos sin barrera de pago en línea en verde y los países con viñeta bordeados de amarillo">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa de Europa y del Magreb cubierto de puntos: los peajes que reconoce la app en azul, los pórticos free flow, de pago en línea, en verde y los países con viñeta bordeados de amarillo">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Estación, barrera, puente o túnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Pórtico sin barrera, de pago en línea</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Pórtico free flow, de pago en línea</a></span>
           <span><i class="dot v"></i>Viñeta anunciada al entrar</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Francia</h3>
           <ul>
             <li><b>96 %</b> de las estaciones de peaje de las autopistas, de todos los operadores</li>
-            <li>Los pórticos sin barrera de la A13, la A14 y la A79</li>
+            <li>Los pórticos free flow de la A13, la A14 y la A79</li>
             <li>Túneles del Mont Blanc, del Fréjus, del Puymorens y del Prado, Duplex A86, puente de Normandía y viaducto de Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Toda la red de autopistas de peaje, de Ventimiglia a Sicilia</li>
             <li>Las circunvalaciones de Milán, Turín y Nápoles</li>
-            <li>Los pórticos sin barrera de la Pedemontana y de la Corda Molle</li>
+            <li>Los pórticos free flow de la Pedemontana y de la Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovenia</b><span>Túnel del Karavanke, además de la viñeta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel de Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Reino Unido</b><span>Dartford, túneles de Blackwall y Silvertown, puentes del Mersey, túneles del Tyne y puente del Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sin barrera, túnel del puerto de Dublín, barreras de la M1, M3, M4, M6, M7, M8, N25 y del túnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 free flow, túnel del puerto de Dublín, barreras de la M1, M3, M4, M6, M7, M8, N25 y del túnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Países Bajos</b><span>Kiltunnel y A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Puentes del Gran Belt y del Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Los puntos AutoPASS: peajes urbanos de Oslo, Bergen o Trondheim y carreteras de peaje</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Peajes sin barrera</span>
-      <h2>Sin barrera, sin olvidos</h2>
-      <p>En la A13, la A14 y la A79, alrededor de Milán, en Dartford, en la M50 de Dublín o en Portugal, los pórticos han sustituido a las barreras: se pasa sin parar. Con un dispositivo de telepeaje, el peaje se cobra solo. Sin él, se paga después en línea, en un plazo corto. Péage Notif te dice cuánto, dónde pagar y hasta cuándo.</p>
+      <span class="eyebrow">Peajes free flow</span>
+      <h2>Free flow: sin barrera, sin olvidos</h2>
+      <p>En la A13, la A14 y la A79, alrededor de Milán, en Dartford, en la M50 de Dublín o en Portugal, los pórticos han sustituido a las barreras: es el peaje free flow, se pasa sin parar. Con un dispositivo de telepeaje, el peaje se cobra solo. Sin él, se paga después en línea, en un plazo corto. Péage Notif te dice cuánto, dónde pagar y hasta cuándo.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-es.webp" width="1030" height="644" loading="lazy" alt="Notificación de Péage Notif al pasar el pórtico de Dozulé: unos 4,20 €, a pagar en línea en un plazo de 72 horas en sanef.com"></figure>
+        <figure><img src="../img/app/passage-es.webp" width="1030" height="644" loading="lazy" alt="Notificación de Péage Notif al pasar el pórtico free flow de Dozulé: unos 4,20 €, a pagar en línea en un plazo de 72 horas en sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Al pasar el pórtico</h3>
+          <h3>Al pasar el pórtico free flow</h3>
           <p>El importe aparece en pantalla y se anuncia en voz alta, con el plazo para pagar: <q>Peaje Dozulé, 4 euros con 20. A pagar en línea en un plazo de 72 horas.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Los plazos que hay que cumplir</h3>
+      <h3>Free flow: los plazos para pagar</h3>
       <table>
         <thead><tr><th>Dónde</th><th>Plazo</th><th>Dónde pagar</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>¿La app es realmente gratuita?</summary><p>Sí, totalmente gratuita y sin suscripción. No hace falta ninguna cuenta.</p></details>
       <details><summary>¿Son exactos los precios que muestra?</summary><p>Son estimaciones calculadas a partir de las tablas de tarifas oficiales (clase 1 por defecto, modificable en los ajustes). No tienen valor contractual: solo cuenta el importe que te cobra tu operador de telepeaje o la sociedad concesionaria de la autopista.</p></details>
-      <details><summary>¿Hace falta un dispositivo de telepeaje?</summary><p>No. Péage Notif es independiente de cualquier operador y no cobra ningún peaje. Te informa del precio estimado al pasar. En las autopistas sin barrera (A13, A14, A79…), sin dispositivo de telepeaje, el peaje se paga después en línea: la app te recuerda el importe y la fecha límite.</p></details>
+      <details><summary>¿Hace falta un dispositivo de telepeaje?</summary><p>No. Péage Notif es independiente de cualquier operador y no cobra ningún peaje. Te informa del precio estimado al pasar. En las autopistas free flow (A13, A14, A79…), sin dispositivo de telepeaje, el peaje se paga después en línea: la app te recuerda el importe y la fecha límite.</p></details>
       <details><summary>¿La app agota la batería?</summary><p>El GPS solo funciona durante un seguimiento que tú has iniciado. En reposo, la app no consume nada, y cuando estás parado reduce el ritmo del GPS. Si olvidas detener el seguimiento al llegar, te pregunta si el trayecto ha terminado.</p></details>
       <details><summary>No se ha detectado un peaje o el precio parece incorrecto</summary><p>Durante el trayecto, toca el botón de aviso y di qué falla. Después, ve a Ajustes › Informar de un problema o escribe a support@peagenotif.fr. Estos avisos sirven directamente para corregir la base de peajes.</p></details>
       <details><summary>¿En qué países funciona la app?</summary><p>En 18 países: Francia e Italia en todas sus autopistas de peaje, otros trece países de Europa, Marruecos, Túnez y Canadá (Ontario y Quebec). El <a href="#perimetre">mapa de cobertura</a> muestra cada peaje reconocido.</p></details>
-      <details><summary>He recibido un SMS que me reclama un peaje impagado. ¿Es de Péage Notif?</summary><p>No. Péage Notif nunca te pedirá que pagues y no envía ni SMS ni correos electrónicos. Circulan SMS fraudulentos de este tipo: no toques su enlace. Un peaje sin barrera se paga únicamente en la web oficial del operador, por ejemplo sanef.com para la A13 y la A14.</p></details>
+      <details><summary>¿Cómo pagar un peaje free flow?</summary><p>Con un dispositivo de telepeaje, no hay que hacer nada: el paso se cobra solo. Sin él, se paga en línea en la web oficial del operador, con tu matrícula: sanef.com para la A13, la A14 y la salida 36 de la A4, paiement.aliae.com para la A79, en un plazo de 72 horas. Péage Notif anuncia el importe al pasar el pórtico, te recuerda la fecha límite y abre la web correcta con un toque.</p></details>
+      <details><summary>He recibido un SMS que me reclama un peaje impagado. ¿Es de Péage Notif?</summary><p>No. Péage Notif nunca te pedirá que pagues y no envía ni SMS ni correos electrónicos. Circulan SMS fraudulentos de este tipo: no toques su enlace. Un peaje free flow se paga únicamente en la web oficial del operador, por ejemplo sanef.com para la A13 y la A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Cómo funciona</a>
         <a href="#fonctions">Funciones</a>
         <a href="#perimetre">Países cubiertos</a>
-        <a href="#flux-libre">Peajes sin barrera</a>
+        <a href="#flux-libre">Peajes free flow</a>
         <a href="peages-mode-emploi.html">Entender los peajes</a>
         <a href="#support">Soporte</a>
         <a href="confidentialite.html">Privacidad</a>

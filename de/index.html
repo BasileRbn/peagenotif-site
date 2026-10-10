@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">So funktioniert's</a>
       <a href="#fonctions" class="hide-xxs">Funktionen</a>
-      <a href="#nouveautes" class="hide-s">Neuheiten</a>
+      <a href="#nouveautes" class="hide-l">Neuheiten</a>
+      <a href="#flux-libre" class="hide-s">Free Flow</a>
       <a href="tarifs/" class="hide-xs">Mautpreise</a><a href="peages-mode-emploi.html" class="hide-xs">Maut verstehen</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Datenschutz</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Abdeckung</span>
       <h2>Von Lissabon bis Oslo, von Tanger bis Toronto</h2>
-      <p>Autobahnen, Tunnel, Brücken und Portale ohne Schranke in 18 Ländern: Jeder Punkt auf der Karte ist eine Mautstelle, die Péage Notif bei der Durchfahrt erkennt. Alles ist in der App gespeichert, unterwegs wird nichts heruntergeladen.</p>
+      <p>Autobahnen, Tunnel, Brücken und Free-Flow-Portale in 18 Ländern: Jeder Punkt auf der Karte ist eine Mautstelle, die Péage Notif bei der Durchfahrt erkennt. Alles ist in der App gespeichert, unterwegs wird nichts heruntergeladen.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Karte von Europa und dem Maghreb voller Punkte: die von der App erkannten Mautstellen in Blau, die online zu bezahlenden Portale ohne Schranke in Grün, die Vignettenländer gelb umrandet">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Karte von Europa und dem Maghreb voller Punkte: die von der App erkannten Mautstellen in Blau, die online zu bezahlenden Free-Flow-Portale in Grün, die Vignettenländer gelb umrandet">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Mautstation, Schranke, Brücke oder Tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portal ohne Schranke, online zu bezahlen</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Free-Flow-Portal, online zu bezahlen</a></span>
           <span><i class="dot v"></i>Vignettenhinweis bei der Einreise</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Frankreich</h3>
           <ul>
             <li><b>96 %</b> der Autobahn-Mautstationen, über alle Betreiber hinweg</li>
-            <li>Die Portale ohne Schranke auf der A13, der A14 und der A79</li>
+            <li>Die Free-Flow-Portale auf der A13, der A14 und der A79</li>
             <li>Mont-Blanc-, Fréjus-, Puymorens- und Prado-Tunnel, Duplex A86, Pont de Normandie, Viadukt von Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Das gesamte mautpflichtige Autobahnnetz, von Ventimiglia bis Sizilien</li>
             <li>Die Ringautobahnen von Mailand, Turin und Neapel</li>
-            <li>Die Portale ohne Schranke der Pedemontana und der Corda Molle</li>
+            <li>Die Free-Flow-Portale der Pedemontana und der Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slowenien</b><span>Karawankentunnel, dazu die Vignette</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-Tunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Vereinigtes Königreich</b><span>Dartford, Blackwall- und Silvertown-Tunnel, Mersey-Brücken, Tyne-Tunnel, Tamar-Brücke</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 ohne Schranke, Dublin Port Tunnel, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>Free-Flow-Maut auf der M50, Dublin Port Tunnel, Schranken auf der M1, M3, M4, M6, M7, M8, N25 und am Limerick-Tunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Niederlande</b><span>Kiltunnel und A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dänemark</b><span>Brücken über den Großen Belt und den Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norwegen</b><span>Die AutoPASS-Stellen: Mautringe von Oslo, Bergen oder Trondheim und Mautstraßen</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Maut ohne Schranke</span>
-      <h2>Keine Schranke, kein Vergessen</h2>
-      <p>Auf der A13, der A14, der A79, rund um Mailand, in Dartford, auf der M50 in Dublin oder in Portugal haben Portale die Schranken ersetzt: Man fährt durch, ohne anzuhalten. Mit Mautbox wird die Maut automatisch abgebucht. Ohne Mautbox bezahlt man sie danach online, innerhalb einer kurzen Frist. Péage Notif sagt Ihnen, wie viel, wo Sie bezahlen und bis wann.</p>
+      <span class="eyebrow">Free-Flow-Maut</span>
+      <h2>Free Flow: keine Schranke, kein Vergessen</h2>
+      <p>Auf der A13, der A14, der A79, rund um Mailand, in Dartford, auf der M50 in Dublin oder in Portugal haben Portale die Schranken ersetzt: Das ist die Free-Flow-Maut, man fährt durch, ohne anzuhalten. Mit Mautbox wird die Maut automatisch abgebucht. Ohne Mautbox bezahlt man sie danach online, innerhalb einer kurzen Frist. Péage Notif sagt Ihnen, wie viel, wo Sie bezahlen und bis wann.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-de.webp" width="1030" height="644" loading="lazy" alt="Benachrichtigung von Péage Notif beim Passieren des Portals Dozulé: etwa 4,20 €, online innerhalb von 72 Stunden auf sanef.com zu bezahlen"></figure>
+        <figure><img src="../img/app/passage-de.webp" width="1030" height="644" loading="lazy" alt="Benachrichtigung von Péage Notif beim Passieren des Free-Flow-Portals Dozulé: etwa 4,20 €, online innerhalb von 72 Stunden auf sanef.com zu bezahlen"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Bei der Durchfahrt am Portal</h3>
+          <h3>Bei der Durchfahrt am Free-Flow-Portal</h3>
           <p>Der Betrag erscheint auf dem Bildschirm und wird laut angesagt, mit der Zahlungsfrist: <q>Mautstelle Dozulé, 4 Euro 20. Online innerhalb von 72 Stunden bezahlen.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Die einzuhaltenden Fristen</h3>
+      <h3>Free Flow: die Zahlungsfristen</h3>
       <table>
         <thead><tr><th>Wo</th><th>Frist</th><th>Wo bezahlen</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Ist die App wirklich kostenlos?</summary><p>Ja, vollständig kostenlos und ohne Abo. Ein Konto ist nicht nötig.</p></details>
       <details><summary>Sind die angezeigten Preise genau?</summary><p>Es handelt sich um Schätzungen, die anhand der offiziellen Tariflisten berechnet werden (standardmäßig Klasse 1, in den Einstellungen änderbar). Sie sind unverbindlich: Maßgeblich ist allein der Betrag, den Ihr Mautbox-Anbieter oder die Autobahngesellschaft berechnet.</p></details>
-      <details><summary>Braucht man eine Mautbox?</summary><p>Nein. Péage Notif ist von allen Betreibern unabhängig und kassiert keine Maut. Die App informiert Sie bei der Durchfahrt über den geschätzten Preis. Auf Autobahnen ohne Schranke (A13, A14, A79 …) wird die Maut ohne Mautbox anschließend online bezahlt: Die App erinnert Sie an Betrag und Frist.</p></details>
+      <details><summary>Braucht man eine Mautbox?</summary><p>Nein. Péage Notif ist von allen Betreibern unabhängig und kassiert keine Maut. Die App informiert Sie bei der Durchfahrt über den geschätzten Preis. Auf Free-Flow-Autobahnen (A13, A14, A79 …) wird die Maut ohne Mautbox anschließend online bezahlt: Die App erinnert Sie an Betrag und Frist.</p></details>
       <details><summary>Leert die App meinen Akku?</summary><p>Das GPS läuft nur während einer Aufzeichnung, die Sie gestartet haben. Im Ruhezustand verbraucht die App nichts, und bei stehendem Fahrzeug drosselt sie das GPS. Vergessen Sie bei der Ankunft, die Aufzeichnung zu beenden, fragt sie Sie, ob die Fahrt vorbei ist.</p></details>
       <details><summary>Eine Mautstelle wurde nicht erkannt, oder der Preis scheint falsch</summary><p>Tippen Sie während der Fahrt auf die Meldeschaltfläche und sagen Sie, was nicht stimmt. Danach geht es über Einstellungen › Problem melden, oder Sie schreiben an support@peagenotif.fr. Diese Rückmeldungen fließen direkt in die Korrektur der Mautdatenbank ein.</p></details>
       <details><summary>In welchen Ländern funktioniert die App?</summary><p>In 18 Ländern: Frankreich und Italien auf allen mautpflichtigen Autobahnen, dreizehn weitere Länder Europas, Marokko, Tunesien und Kanada (Ontario und Québec). Die <a href="#perimetre">Abdeckungskarte</a> zeigt jede erkannte Mautstelle.</p></details>
-      <details><summary>Ich habe eine SMS erhalten, die eine unbezahlte Maut einfordert. Kommt sie von Péage Notif?</summary><p>Nein. Péage Notif fordert Sie nie zum Bezahlen auf und verschickt weder SMS noch E-Mails. Betrügerische SMS dieser Art sind im Umlauf: Tippen Sie nicht auf ihren Link. Maut ohne Schranke wird ausschließlich auf der offiziellen Website des Betreibers bezahlt, zum Beispiel auf sanef.com für die A13 und die A14.</p></details>
+      <details><summary>Wie bezahlt man die Free-Flow-Maut?</summary><p>Mit Mautbox ist nichts zu tun: Die Maut wird automatisch abgebucht. Ohne Mautbox bezahlen Sie sie online auf der offiziellen Website des Betreibers, mit Ihrem Kennzeichen: auf sanef.com für die A13, die A14 und die Ausfahrt 36 der A4, auf paiement.aliae.com für die A79, innerhalb von 72 Stunden. Péage Notif sagt den Betrag bei der Durchfahrt am Portal an, erinnert Sie an die Frist und öffnet mit einem Tippen die richtige Website.</p></details>
+      <details><summary>Ich habe eine SMS erhalten, die eine unbezahlte Maut einfordert. Kommt sie von Péage Notif?</summary><p>Nein. Péage Notif fordert Sie nie zum Bezahlen auf und verschickt weder SMS noch E-Mails. Betrügerische SMS dieser Art sind im Umlauf: Tippen Sie nicht auf ihren Link. Free-Flow-Maut wird ausschließlich auf der offiziellen Website des Betreibers bezahlt, zum Beispiel auf sanef.com für die A13 und die A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">So funktioniert's</a>
         <a href="#fonctions">Funktionen</a>
         <a href="#perimetre">Abgedeckte Länder</a>
-        <a href="#flux-libre">Maut ohne Schranke</a>
+        <a href="#flux-libre">Free-Flow-Maut</a>
         <a href="peages-mode-emploi.html">Maut verstehen</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Datenschutz</a>

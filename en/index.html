@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">How it works</a>
       <a href="#fonctions" class="hide-xxs">Features</a>
-      <a href="#nouveautes" class="hide-s">What's new</a>
+      <a href="#nouveautes" class="hide-l">What's new</a>
+      <a href="#flux-libre" class="hide-s">Free-flow</a>
       <a href="tarifs/" class="hide-xs">Toll prices</a><a href="peages-mode-emploi.html" class="hide-xs">Understanding tolls</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Privacy</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Coverage</span>
       <h2>From Lisbon to Oslo, from Tangier to Toronto</h2>
-      <p>Motorways, tunnels, bridges and barrier-free gantries in 18 countries: every dot on the map is a toll that Péage Notif recognises as you pass. Everything is built into the app, so nothing downloads while you drive.</p>
+      <p>Motorways, tunnels, bridges and free-flow gantries in 18 countries: every dot on the map is a toll that Péage Notif recognises as you pass. Everything is built into the app, so nothing downloads while you drive.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Map of Europe and the Maghreb covered in dots: the tolls recognised by the app in blue, the barrier-free gantries paid online in green, the vignette countries outlined in yellow">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Map of Europe and the Maghreb covered in dots: the tolls recognised by the app in blue, the free-flow gantries, paid online, in green, the vignette countries outlined in yellow">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Toll plaza, barrier, bridge or tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Barrier-free gantry, paid online</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Free-flow gantry, paid online</a></span>
           <span><i class="dot v"></i>Vignette reminder at the border</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>France</h3>
           <ul>
             <li><b>96 %</b> of motorway toll plazas, across every operator</li>
-            <li>The barrier-free gantries of the A13, A14 and A79</li>
+            <li>The free-flow gantries of the A13, A14 and A79</li>
             <li>Mont Blanc, Fréjus, Puymorens and Prado tunnels, Duplex A86, Pont de Normandie, Millau Viaduct</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>The whole toll motorway network, from Ventimiglia to Sicily</li>
             <li>The ring roads of Milan, Turin and Naples</li>
-            <li>The barrier-free gantries of the Pedemontana and the Corda Molle</li>
+            <li>The free-flow gantries of the Pedemontana and the Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Karavanke Tunnel, plus the vignette</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira Tunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>United Kingdom</b><span>Dartford Crossing, Blackwall and Silvertown tunnels, Mersey bridges, Tyne Tunnels, Tamar Bridge</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ireland</b><span>Barrier-free M50, Dublin Port Tunnel, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ireland</b><span>Free-flow M50, Dublin Port Tunnel, barriers on the M1, M3, M4, M6, M7, M8 and N25 and at the Limerick Tunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Netherlands</b><span>Kiltunnel and A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Denmark</b><span>Great Belt and Øresund bridges</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norway</b><span>AutoPASS toll points: city tolls in Oslo, Bergen or Trondheim, and toll roads</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Barrier-free tolls</span>
-      <h2>No barrier, nothing forgotten</h2>
-      <p>On the A13, A14 and A79, around Milan, at Dartford, on Dublin's M50 or in Portugal, gantries have replaced the barriers: you drive through without stopping. With a toll tag, the toll is charged automatically. Without one, you pay online afterwards, within a short window. Péage Notif tells you how much, where to pay and by when.</p>
+      <span class="eyebrow">Free-flow tolls</span>
+      <h2>Free-flow: no barrier, nothing forgotten</h2>
+      <p>On the A13, A14 and A79, around Milan, at Dartford, on Dublin's M50 or in Portugal, gantries have replaced the barriers: this is free-flow tolling, and you drive through without stopping. With a toll tag, the toll is charged automatically. Without one, you pay online afterwards, within a short window. Péage Notif tells you how much, where to pay and by when.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-en.webp" width="1030" height="644" loading="lazy" alt="Péage Notif notification as you pass the Dozulé gantry: about €4.20, to pay online within 72 hours on sanef.com"></figure>
+        <figure><img src="../img/app/passage-en.webp" width="1030" height="644" loading="lazy" alt="Péage Notif notification as you pass the Dozulé free-flow gantry: about €4.20, to pay online within 72 hours on sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>As you pass the gantry</h3>
+          <h3>As you pass the free-flow gantry</h3>
           <p>The amount appears and is read out loud, with the deadline to pay: <q>Toll Dozulé, 4 euros 20. Pay online within 72 hours.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>The deadlines to meet</h3>
+      <h3>Free-flow: the deadlines for paying</h3>
       <table>
         <thead><tr><th>Where</th><th>Deadline</th><th>Where to pay</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Is the app really free?</summary><p>Yes, entirely free and with no subscription. No account is required.</p></details>
       <details><summary>Are the prices shown accurate?</summary><p>They are estimates calculated from the official price lists (class 1 by default, adjustable in settings). They are not binding: only the amount charged by your toll-badge operator or the motorway company is authoritative.</p></details>
-      <details><summary>Do I need a toll badge?</summary><p>No. Péage Notif is independent of every operator and collects no tolls. It tells you the estimated price as you pass. On barrier-free motorways (A13, A14, A79…), without a toll tag, you pay online afterwards: the app reminds you of the amount and the deadline.</p></details>
+      <details><summary>Do I need a toll badge?</summary><p>No. Péage Notif is independent of every operator and collects no tolls. It tells you the estimated price as you pass. On free-flow motorways (A13, A14, A79…), without a toll tag, you pay online afterwards: the app reminds you of the amount and the deadline.</p></details>
       <details><summary>Does the app drain my battery?</summary><p>GPS only runs during tracking you have started. At rest the app uses nothing, and when you are stopped it slows the GPS down. If you forget to stop tracking when you arrive, it asks whether the trip is over.</p></details>
       <details><summary>A toll was not detected, or the price looks wrong</summary><p>During the trip, tap the report button and say what is wrong. Afterwards, go to Settings › Report a problem, or write to support@peagenotif.fr. These reports go straight into correcting the toll database.</p></details>
       <details><summary>Which countries does the app work in?</summary><p>In 18 countries: France and Italy across all their toll motorways, thirteen other European countries, Morocco, Tunisia and Canada (Ontario and Quebec). The <a href="#perimetre">coverage map</a> shows every toll it recognises.</p></details>
-      <details><summary>I received a text message claiming an unpaid toll. Is it Péage Notif?</summary><p>No. Péage Notif will never ask you to pay and sends neither texts nor emails. Fraudulent texts of this kind are circulating: do not tap their link. A barrier-free toll is paid only on the operator's official website, for example sanef.com for the A13 and A14.</p></details>
+      <details><summary>How do I pay a free-flow toll?</summary><p>With a toll tag, there is nothing to do: the crossing is charged automatically. Without one, you pay online on the operator's official website, using your number plate: sanef.com for the A13, the A14 and exit 36 of the A4, paiement.aliae.com for the A79, within 72 hours. Péage Notif announces the amount as you pass the gantry, reminds you of the deadline and opens the right website in one tap.</p></details>
+      <details><summary>I received a text message claiming an unpaid toll. Is it Péage Notif?</summary><p>No. Péage Notif will never ask you to pay and sends neither texts nor emails. Fraudulent texts of this kind are circulating: do not tap their link. A free-flow toll is paid only on the operator's official website, for example sanef.com for the A13 and A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">How it works</a>
         <a href="#fonctions">Features</a>
         <a href="#perimetre">Countries covered</a>
-        <a href="#flux-libre">Barrier-free tolls</a>
+        <a href="#flux-libre">Free-flow tolls</a>
         <a href="peages-mode-emploi.html">Understanding tolls</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Privacy</a>

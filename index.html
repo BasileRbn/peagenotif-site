@@ -62,6 +62,7 @@
      à lui seul la place de deux liens : aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Comment ça marche</a>
       <a href="#fonctions" class="hide-xxs">Fonctions</a>
-      <a href="#nouveautes" class="hide-s">Nouveautés</a>
+      <a href="#nouveautes" class="hide-l">Nouveautés</a>
+      <a href="#flux-libre" class="hide-s">Flux libre</a>
       <a href="tarifs/" class="hide-xs">Prix des péages</a><a href="peages-mode-emploi.html" class="hide-xs">Comprendre les péages</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Confidentialité</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Périmètre</span>
       <h2>De Lisbonne à Oslo, de Tanger à Toronto</h2>
-      <p>Autoroutes, tunnels, ponts et portiques sans barrière dans 18 pays : chaque point de la carte est un péage que Péage Notif reconnaît au passage. Tout est dans l'app, rien ne se télécharge en route.</p>
+      <p>Autoroutes, tunnels, ponts et portiques en flux libre dans 18 pays : chaque point de la carte est un péage que Péage Notif reconnaît au passage. Tout est dans l'app, rien ne se télécharge en route.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Carte de l'Europe et du Maghreb couverte de points : les péages reconnus par l'app en bleu, les portiques sans barrière à payer en ligne en vert, les pays à vignette liserés de jaune">
+        <img src="img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Carte de l'Europe et du Maghreb couverte de points : les péages reconnus par l'app en bleu, les portiques en flux libre, à payer en ligne, en vert, les pays à vignette liserés de jaune">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Gare, barrière, pont ou tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portique sans barrière, à payer en ligne</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portique en flux libre, à payer en ligne</a></span>
           <span><i class="dot v"></i>Vignette annoncée à l'entrée</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>France</h3>
           <ul>
             <li><b>96 %</b> des gares de péage des autoroutes, tous exploitants confondus</li>
-            <li>Les portiques sans barrière de l'A13, de l'A14 et de l'A79</li>
+            <li>Les portiques en flux libre de l'A13, de l'A14 et de l'A79</li>
             <li>Tunnels du Mont-Blanc, du Fréjus, du Puymorens et du Prado, Duplex A86, pont de Normandie, viaduc de Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Tout le réseau autoroutier à péage, de Vintimille à la Sicile</li>
             <li>Les rocades de Milan, de Turin et de Naples</li>
-            <li>Les portiques sans barrière de la Pedemontana et de la Corda Molle</li>
+            <li>Les portiques en flux libre de la Pedemontana et de la Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovénie</b><span>Tunnel des Karavanke, et la vignette</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorre</b><span>Tunnel d'Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Royaume-Uni</b><span>Dartford, tunnels de Blackwall et de Silvertown, ponts de la Mersey, tunnels de la Tyne, pont de la Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlande</b><span>M50 sans barrière, tunnel du port de Dublin, barrières des M1, M3, M4, M6, M7, M8, N25 et du tunnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlande</b><span>M50 en flux libre, tunnel du port de Dublin, barrières des M1, M3, M4, M6, M7, M8, N25 et du tunnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Pays-Bas</b><span>Kiltunnel et A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danemark</b><span>Ponts du Grand Belt et de l'Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norvège</b><span>Les postes AutoPASS : péages urbains d'Oslo, de Bergen ou de Trondheim et routes à péage</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Péages sans barrière</span>
-      <h2>Pas de barrière, pas d'oubli</h2>
-      <p>Sur l'A13, l'A14, l'A79, autour de Milan, à Dartford, sur la M50 de Dublin ou au Portugal, des portiques ont remplacé les barrières : on passe sans s'arrêter. Avec un badge, le péage est prélevé tout seul. Sans badge, il se paie ensuite en ligne, dans un délai court. Péage Notif vous dit combien, où payer et avant quand.</p>
+      <span class="eyebrow">Péages en flux libre</span>
+      <h2>Flux libre : pas de barrière, pas d'oubli</h2>
+      <p>Sur l'A13, l'A14, l'A79, autour de Milan, à Dartford, sur la M50 de Dublin ou au Portugal, des portiques ont remplacé les barrières : c'est le péage en flux libre, on passe sans s'arrêter. Avec un badge, le péage est prélevé tout seul. Sans badge, il se paie ensuite en ligne, dans un délai court. Péage Notif vous dit combien, où payer et avant quand.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Notification de Péage Notif au passage du portique de Dozulé : environ 4,20 €, à payer en ligne sous 72 heures sur sanef.com"></figure>
+        <figure><img src="img/app/passage-fr.webp" width="1030" height="644" loading="lazy" alt="Notification de Péage Notif au passage du portique flux libre de Dozulé : environ 4,20 €, à payer en ligne sous 72 heures sur sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Au passage du portique</h3>
+          <h3>Au passage du portique flux libre</h3>
           <p>Le montant s'affiche et s'annonce à voix haute, avec le délai pour payer : <q>Péage Dozulé, 4 euros 20. À payer en ligne sous 72 heures.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Les délais à respecter</h3>
+      <h3>Flux libre : les délais pour payer</h3>
       <table>
         <thead><tr><th>Où</th><th>Délai</th><th>Où payer</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>L'app est-elle vraiment gratuite ?</summary><p>Oui, entièrement gratuite et sans abonnement. Aucun compte n'est requis.</p></details>
       <details><summary>Les prix affichés sont-ils exacts ?</summary><p>Ce sont des estimations calculées à partir des grilles tarifaires officielles (classe 1 par défaut, modifiable dans les réglages). Elles ne sont pas contractuelles : seul le montant facturé par votre opérateur de télépéage ou la société d'autoroute fait foi.</p></details>
-      <details><summary>Faut-il un badge de télépéage ?</summary><p>Non. Péage Notif est indépendant de tout opérateur et n'encaisse aucun péage. Il vous informe du prix estimé au passage. Sur les autoroutes sans barrière (A13, A14, A79…), sans badge, le péage se paie ensuite en ligne : l'app vous rappelle le montant et la date limite.</p></details>
+      <details><summary>Faut-il un badge de télépéage ?</summary><p>Non. Péage Notif est indépendant de tout opérateur et n'encaisse aucun péage. Il vous informe du prix estimé au passage. Sur les autoroutes en flux libre (A13, A14, A79…), sans badge, le péage se paie ensuite en ligne : l'app vous rappelle le montant et la date limite.</p></details>
       <details><summary>L'app vide-t-elle ma batterie ?</summary><p>Le GPS ne tourne que pendant un suivi que vous avez démarré. Au repos, l'app ne consomme rien, et à l'arrêt elle ralentit le GPS. Si vous oubliez d'arrêter le suivi en arrivant, elle vous demande si le trajet est terminé.</p></details>
       <details><summary>Un péage n'a pas été détecté, ou le prix semble faux</summary><p>Pendant le trajet, touchez le bouton de signalement et dites ce qui ne va pas. Après coup, passez par Réglages › Signaler un problème, ou écrivez à support@peagenotif.fr. Ces retours servent directement à corriger la base de péages.</p></details>
       <details><summary>Dans quels pays l'app fonctionne-t-elle ?</summary><p>Dans 18 pays : la France et l'Italie sur toutes leurs autoroutes à péage, treize autres pays d'Europe, le Maroc, la Tunisie et le Canada (Ontario et Québec). La <a href="#perimetre">carte du périmètre</a> montre chaque péage reconnu.</p></details>
-      <details><summary>J'ai reçu un SMS me réclamant un péage impayé. Est-ce Péage Notif ?</summary><p>Non. Péage Notif ne vous demandera jamais de payer et n'envoie ni SMS ni e-mail. Des SMS frauduleux de ce type circulent : ne touchez pas à leur lien. Un péage sans barrière se paie uniquement sur le site officiel de l'exploitant, par exemple sanef.com pour l'A13 et l'A14.</p></details>
+      <details><summary>Comment payer un péage en flux libre ?</summary><p>Avec un badge de télépéage, rien à faire : le passage est prélevé tout seul. Sans badge, il se paie en ligne sur le site officiel de l'exploitant, avec votre plaque d'immatriculation : sanef.com pour l'A13, l'A14 et la sortie 36 de l'A4, paiement.aliae.com pour l'A79, dans les 72 heures. Péage Notif annonce le montant au passage du portique, vous rappelle la date limite et ouvre le bon site en un appui.</p></details>
+      <details><summary>J'ai reçu un SMS me réclamant un péage impayé. Est-ce Péage Notif ?</summary><p>Non. Péage Notif ne vous demandera jamais de payer et n'envoie ni SMS ni e-mail. Des SMS frauduleux de ce type circulent : ne touchez pas à leur lien. Un péage en flux libre se paie uniquement sur le site officiel de l'exploitant, par exemple sanef.com pour l'A13 et l'A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Comment ça marche</a>
         <a href="#fonctions">Fonctions</a>
         <a href="#perimetre">Pays couverts</a>
-        <a href="#flux-libre">Péages sans barrière</a>
+        <a href="#flux-libre">Péages en flux libre</a>
         <a href="peages-mode-emploi.html">Comprendre les péages</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Confidentialité</a>

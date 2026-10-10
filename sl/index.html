@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Kako deluje</a>
       <a href="#fonctions" class="hide-xxs">Funkcije</a>
-      <a href="#nouveautes" class="hide-s">Novosti</a>
+      <a href="#nouveautes" class="hide-l">Novosti</a>
+      <a href="#flux-libre" class="hide-s">Prosti prometni tok</a>
       <a href="tarifs/" class="hide-xs">Cene cestnin</a><a href="peages-mode-emploi.html" class="hide-xs">Razumeti cestnine</a>
       <a href="#support" class="hide-xxs">Podpora</a>
       <a href="confidentialite.html" class="hide-m">Zasebnost</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Pokritost</span>
       <h2>Od Lizbone do Osla, od Tangerja do Toronta</h2>
-      <p>Avtoceste, predori, mostovi in portali brez zapornice v 18 državah: vsaka točka na zemljevidu je cestninsko mesto, ki ga Péage Notif prepozna ob prehodu. Vse je v aplikaciji, med vožnjo se ne prenaša nič.</p>
+      <p>Avtoceste, predori, mostovi in portali s prostim prometnim tokom v 18 državah: vsaka točka na zemljevidu je cestninsko mesto, ki ga Péage Notif prepozna ob prehodu. Vse je v aplikaciji, med vožnjo se ne prenaša nič.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Zemljevid Evrope in Magreba, poln točk: cestnine, ki jih aplikacija prepozna, so modre, portali brez zapornice s plačilom prek spleta zeleni, države z vinjeto pa obrobljene z rumeno">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Zemljevid Evrope in Magreba, poln točk: cestnine, ki jih aplikacija prepozna, so modre, portali s prostim prometnim tokom, s plačilom prek spleta, zeleni, države z vinjeto pa obrobljene z rumeno">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Postaja, zapornica, most ali predor</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portal brez zapornice, plačilo prek spleta</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portal s prostim prometnim tokom, plačilo prek spleta</a></span>
           <span><i class="dot v"></i>Opozorilo na vinjeto ob vstopu</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Francija</h3>
           <ul>
             <li><b>96 %</b> cestninskih postaj na avtocestah, ne glede na upravljavca</li>
-            <li>Portali brez zapornice na A13, A14 in A79</li>
+            <li>Portali s prostim prometnim tokom na A13, A14 in A79</li>
             <li>Predori Mont Blanc, Fréjus, Puymorens in Prado, Duplex A86, most Normandie, viadukt Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Celotno omrežje cestninskih avtocest, od Ventimiglie do Sicilije</li>
             <li>Obvoznice okoli Milana, Torina in Neaplja</li>
-            <li>Portali brez zapornice na avtocestah Pedemontana in Corda Molle</li>
+            <li>Portali s prostim prometnim tokom na avtocestah Pedemontana in Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenija</b><span>Predor Karavanke in vinjeta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andora</b><span>Predor Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Združeno kraljestvo</b><span>Dartford, predora Blackwall in Silvertown, mostova čez Mersey, predora pod Tyne in most čez Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irska</b><span>M50 brez zapornic, predor dublinskega pristanišča, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irska</b><span>M50 s prostim prometnim tokom, predor dublinskega pristanišča, zapornice na M1, M3, M4, M6, M7, M8, N25 in v predoru Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nizozemska</b><span>Kiltunnel in A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danska</b><span>Most čez Veliki Belt in Øresundski most</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norveška</b><span>Cestninske točke AutoPASS: mestne cestnine v Oslu, Bergnu ali Trondheimu in cestninske ceste</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Cestnine brez zapornic</span>
-      <h2>Brez zapornic, brez pozabljanja</h2>
-      <p>Na A13, A14 in A79, okoli Milana, v Dartfordu, na dublinski M50 ali na Portugalskem so zapornice zamenjali portali: peljete mimo brez ustavljanja. Z elektronsko napravo za cestnino se cestnina zaračuna samodejno. Brez nje jo plačate naknadno prek spleta, v kratkem roku. Péage Notif vam pove, koliko, kje plačati in do kdaj.</p>
+      <span class="eyebrow">Cestnine s prostim prometnim tokom</span>
+      <h2>Prosti prometni tok: brez zapornic, brez pozabljanja</h2>
+      <p>Na A13, A14 in A79, okoli Milana, v Dartfordu, na dublinski M50 ali na Portugalskem so zapornice zamenjali portali: to je cestnina s prostim prometnim tokom, peljete mimo brez ustavljanja. Z elektronsko napravo za cestnino se cestnina zaračuna samodejno. Brez nje jo plačate naknadno prek spleta, v kratkem roku. Péage Notif vam pove, koliko, kje plačati in do kdaj.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-sl.webp" width="1030" height="644" loading="lazy" alt="Obvestilo Péage Notif ob prehodu portala Dozulé: približno 4,20 €, plačilo prek spleta v 72 urah na sanef.com"></figure>
+        <figure><img src="../img/app/passage-sl.webp" width="1030" height="644" loading="lazy" alt="Obvestilo Péage Notif ob prehodu portala Dozulé s prostim prometnim tokom: približno 4,20 €, plačilo prek spleta v 72 urah na sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Ob prehodu portala</h3>
+          <h3>Ob prehodu portala s prostim prometnim tokom</h3>
           <p>Znesek se prikaže in glasno sporoči, skupaj z rokom plačila: <q>Cestnina Dozulé, 4,20 €. Plačilo prek spleta v 72 urah.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Roki za plačilo</h3>
+      <h3>Prosti prometni tok: roki za plačilo</h3>
       <table>
         <thead><tr><th>Kje</th><th>Rok</th><th>Kje plačati</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Je aplikacija res brezplačna?</summary><p>Da, popolnoma brezplačna in brez naročnine. Račun ni potreben.</p></details>
       <details><summary>Ali so prikazane cene točne?</summary><p>Gre za ocene, izračunane na podlagi uradnih cenikov (privzeto razred 1, kar lahko spremenite v nastavitvah). Niso zavezujoče: velja samo znesek, ki vam ga zaračuna ponudnik elektronskega cestninjenja ali upravljavec avtoceste.</p></details>
-      <details><summary>Ali potrebujete napravo za elektronsko cestninjenje?</summary><p>Ne. Péage Notif je neodvisen od vseh ponudnikov in ne pobira cestnin. Ob prehodu vas obvesti o ocenjeni ceni. Na avtocestah brez zapornic (A13, A14, A79 …) se cestnina brez elektronske naprave plača naknadno prek spleta: aplikacija vas opomni na znesek in rok plačila.</p></details>
+      <details><summary>Ali potrebujete napravo za elektronsko cestninjenje?</summary><p>Ne. Péage Notif je neodvisen od vseh ponudnikov in ne pobira cestnin. Ob prehodu vas obvesti o ocenjeni ceni. Na avtocestah s prostim prometnim tokom (A13, A14, A79 …) se cestnina brez elektronske naprave plača naknadno prek spleta: aplikacija vas opomni na znesek in rok plačila.</p></details>
       <details><summary>Ali aplikacija izprazni baterijo?</summary><p>GPS deluje samo med spremljanjem, ki ste ga začeli sami. V mirovanju aplikacija ne porabi ničesar, ko vozilo stoji, pa GPS upočasni. Če ob prihodu pozabite ustaviti spremljanje, vas vpraša, ali je vožnja končana.</p></details>
       <details><summary>Cestnina ni bila zaznana ali pa se cena zdi napačna</summary><p>Med vožnjo tapnite gumb za prijavo in povejte, kaj ni v redu. Pozneje uporabite Nastavitve › Prijavi težavo ali pišite na support@peagenotif.fr. Te prijave neposredno služijo za popravljanje baze cestnin.</p></details>
       <details><summary>V katerih državah deluje aplikacija?</summary><p>V 18 državah: v Franciji in Italiji na vseh cestninskih avtocestah, v trinajstih drugih evropskih državah ter v Maroku, Tuniziji in Kanadi (Ontario in Québec). <a href="#perimetre">Zemljevid pokritosti</a> prikazuje vsako prepoznano cestnino.</p></details>
-      <details><summary>Prejel sem SMS, ki zahteva plačilo neplačane cestnine. Ali ga je poslal Péage Notif?</summary><p>Ne. Péage Notif vas nikoli ne bo pozval k plačilu in ne pošilja ne SMS-ov ne e-pošte. Takšni goljufivi SMS-i so v obtoku: ne tapnite povezave v njih. Cestnina brez zapornice se plača samo na uradnem spletnem mestu upravljavca, na primer na sanef.com za A13 in A14.</p></details>
+      <details><summary>Kako plačati cestnino s prostim prometnim tokom?</summary><p>Z napravo za elektronsko cestninjenje vam ni treba storiti ničesar: prehod se zaračuna samodejno. Brez nje ga plačate prek spleta na uradnem spletnem mestu upravljavca, z registrsko številko vozila: na sanef.com za A13, A14 in izvoz 36 na A4 ter na paiement.aliae.com za A79, v 72 urah. Péage Notif ob prehodu portala sporoči znesek, vas opomni na rok plačila in z enim dotikom odpre pravo spletno mesto.</p></details>
+      <details><summary>Prejel sem SMS, ki zahteva plačilo neplačane cestnine. Ali ga je poslal Péage Notif?</summary><p>Ne. Péage Notif vas nikoli ne bo pozval k plačilu in ne pošilja ne SMS-ov ne e-pošte. Takšni goljufivi SMS-i so v obtoku: ne tapnite povezave v njih. Cestnina s prostim prometnim tokom se plača samo na uradnem spletnem mestu upravljavca, na primer na sanef.com za A13 in A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Kako deluje</a>
         <a href="#fonctions">Funkcije</a>
         <a href="#perimetre">Pokrite države</a>
-        <a href="#flux-libre">Cestnine brez zapornic</a>
+        <a href="#flux-libre">Cestnine s prostim prometnim tokom</a>
         <a href="peages-mode-emploi.html">Razumeti cestnine</a>
         <a href="#support">Podpora</a>
         <a href="confidentialite.html">Zasebnost</a>

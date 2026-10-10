@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Come funziona</a>
       <a href="#fonctions" class="hide-xxs">Funzioni</a>
-      <a href="#nouveautes" class="hide-s">Novità</a>
+      <a href="#nouveautes" class="hide-l">Novità</a>
+      <a href="#flux-libre" class="hide-s">Free flow</a>
       <a href="tarifs/" class="hide-xs">Prezzo dei pedaggi</a><a href="peages-mode-emploi.html" class="hide-xs">Capire i pedaggi</a>
       <a href="#support" class="hide-xxs">Assistenza</a>
       <a href="confidentialite.html" class="hide-m">Privacy</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Copertura</span>
       <h2>Da Lisbona a Oslo, da Tangeri a Toronto</h2>
-      <p>Autostrade, tunnel, ponti e portali senza barriera in 18 paesi: ogni punto della mappa è un pedaggio che Péage Notif riconosce al passaggio. È tutto nell'app, non si scarica niente per strada.</p>
+      <p>Autostrade, tunnel, ponti e portali free flow in 18 paesi: ogni punto della mappa è un pedaggio che Péage Notif riconosce al passaggio. È tutto nell'app, non si scarica niente per strada.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mappa dell'Europa e del Maghreb coperta di punti: in blu i pedaggi riconosciuti dall'app, in verde i portali senza barriera da pagare online, bordati di giallo i paesi con vignetta">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mappa dell'Europa e del Maghreb coperta di punti: in blu i pedaggi riconosciuti dall'app, in verde i portali free flow da pagare online, bordati di giallo i paesi con vignetta">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Casello, barriera, ponte o tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portale senza barriera, da pagare online</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portale free flow, da pagare online</a></span>
           <span><i class="dot v"></i>Vignetta annunciata all'ingresso</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Francia</h3>
           <ul>
             <li><b>96 %</b> dei caselli autostradali, di tutti i gestori</li>
-            <li>I portali senza barriera dell'A13, dell'A14 e dell'A79</li>
+            <li>I portali free flow dell'A13, dell'A14 e dell'A79</li>
             <li>Trafori del Monte Bianco e del Fréjus, tunnel del Puymorens e del Prado, Duplex A86, ponte di Normandia, viadotto di Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Tutta la rete autostradale a pedaggio, da Ventimiglia alla Sicilia</li>
             <li>Le tangenziali di Milano, Torino e Napoli</li>
-            <li>I portali senza barriera della Pedemontana e della Corda Molle</li>
+            <li>I portali free flow della Pedemontana e della Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Traforo delle Caravanche, più la vignetta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Tunnel di Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Regno Unito</b><span>Dartford, tunnel di Blackwall e di Silvertown, ponti sul Mersey, tunnel sul Tyne, ponte sul Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 senza barriera, tunnel del porto di Dublino, barriere delle M1, M3, M4, M6, M7, M8, N25 e del tunnel di Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 in free flow, tunnel del porto di Dublino, barriere delle M1, M3, M4, M6, M7, M8, N25 e del tunnel di Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Paesi Bassi</b><span>Kiltunnel e A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danimarca</b><span>Ponti del Grande Belt e dell'Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norvegia</b><span>I punti AutoPASS: pedaggi urbani di Oslo, Bergen o Trondheim e strade a pedaggio</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Pedaggi senza barriera</span>
-      <h2>Niente barriera, niente dimenticanze</h2>
-      <p>Sull'A13, sull'A14, sull'A79, intorno a Milano, a Dartford, sulla M50 di Dublino o in Portogallo, i portali hanno sostituito le barriere: si passa senza fermarsi. Con il telepedaggio, il pedaggio viene addebitato da solo. Senza, si paga dopo online, entro un termine breve. Péage Notif ti dice quanto, dove pagare ed entro quando.</p>
+      <span class="eyebrow">Pedaggi free flow</span>
+      <h2>Free flow: niente barriera, niente dimenticanze</h2>
+      <p>Sull'A13, sull'A14, sull'A79, intorno a Milano, a Dartford, sulla M50 di Dublino o in Portogallo, i portali hanno sostituito le barriere: è il pedaggio free flow, si passa senza fermarsi. Con il telepedaggio, il pedaggio viene addebitato da solo. Senza, si paga dopo online, entro un termine breve. Péage Notif ti dice quanto, dove pagare ed entro quando.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-it.webp" width="1030" height="644" loading="lazy" alt="Notifica di Péage Notif al passaggio sotto il portale di Dozulé: circa 4,20 €, da pagare online entro 72 ore su sanef.com"></figure>
+        <figure><img src="../img/app/passage-it.webp" width="1030" height="644" loading="lazy" alt="Notifica di Péage Notif al passaggio sotto il portale free flow di Dozulé: circa 4,20 €, da pagare online entro 72 ore su sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Al passaggio sotto il portale</h3>
+          <h3>Al passaggio sotto il portale free flow</h3>
           <p>L'importo compare e viene annunciato a voce, con il termine per pagare: <q>Casello Dozulé, 4 euro e 20. Da pagare online entro 72 ore.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>I termini da rispettare</h3>
+      <h3>Free flow: i termini per pagare</h3>
       <table>
         <thead><tr><th>Dove</th><th>Termine</th><th>Dove pagare</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>L'app è davvero gratuita?</summary><p>Sì, del tutto gratuita e senza abbonamento. Non serve alcun account.</p></details>
       <details><summary>I prezzi indicati sono esatti?</summary><p>Sono stime calcolate a partire dai tariffari ufficiali (classe A come predefinita, modificabile nelle impostazioni). Non sono vincolanti: fa fede solo l'importo addebitato dal tuo operatore di telepedaggio o dalla società autostradale.</p></details>
-      <details><summary>Serve un dispositivo di telepedaggio?</summary><p>No. Péage Notif è indipendente da ogni gestore e non incassa alcun pedaggio. Ti informa del prezzo stimato al passaggio. Sulle autostrade senza barriera (A13, A14, A79…), senza telepedaggio, si paga poi online: l'app ti ricorda l'importo e la scadenza.</p></details>
+      <details><summary>Serve un dispositivo di telepedaggio?</summary><p>No. Péage Notif è indipendente da ogni gestore e non incassa alcun pedaggio. Ti informa del prezzo stimato al passaggio. Sulle autostrade in free flow (A13, A14, A79…), senza telepedaggio, si paga poi online: l'app ti ricorda l'importo e la scadenza.</p></details>
       <details><summary>L'app consuma la batteria?</summary><p>Il GPS funziona solo durante un rilevamento avviato da te. A riposo l'app non consuma nulla, e da fermo rallenta il GPS. Se dimentichi di fermare il rilevamento all'arrivo, ti chiede se il viaggio è finito.</p></details>
       <details><summary>Un pedaggio non è stato rilevato, o il prezzo sembra sbagliato</summary><p>Durante il viaggio, tocca il pulsante di segnalazione e di' cosa non va. Dopo, passa da Impostazioni › Segnala un problema, oppure scrivi a support@peagenotif.fr. Queste segnalazioni servono direttamente a correggere la banca dati dei caselli.</p></details>
       <details><summary>In quali paesi funziona l'app?</summary><p>In 18 paesi: la Francia e l'Italia su tutte le loro autostrade a pedaggio, altri tredici paesi europei, il Marocco, la Tunisia e il Canada (Ontario e Québec). La <a href="#perimetre">mappa della copertura</a> mostra ogni casello riconosciuto.</p></details>
-      <details><summary>Ho ricevuto un SMS che reclama un pedaggio non pagato. È Péage Notif?</summary><p>No. Péage Notif non ti chiederà mai di pagare e non invia né SMS né e-mail. Circolano SMS fraudolenti di questo tipo: non toccare il loro link. Un pedaggio senza barriera si paga solo sul sito ufficiale del gestore, per esempio sanef.com per l'A13 e l'A14.</p></details>
+      <details><summary>Come pagare un pedaggio free flow?</summary><p>Con il telepedaggio non devi fare nulla: il passaggio viene addebitato da solo. Senza, si paga online sul sito ufficiale del gestore, con la targa del veicolo: sanef.com per l'A13, l'A14 e l'uscita 36 dell'A4, paiement.aliae.com per l'A79, entro 72 ore. Péage Notif annuncia l'importo al passaggio sotto il portale, ti ricorda la scadenza e apre il sito giusto con un tocco.</p></details>
+      <details><summary>Ho ricevuto un SMS che reclama un pedaggio non pagato. È Péage Notif?</summary><p>No. Péage Notif non ti chiederà mai di pagare e non invia né SMS né e-mail. Circolano SMS fraudolenti di questo tipo: non toccare il loro link. Un pedaggio free flow si paga solo sul sito ufficiale del gestore, per esempio sanef.com per l'A13 e l'A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Come funziona</a>
         <a href="#fonctions">Funzioni</a>
         <a href="#perimetre">Paesi coperti</a>
-        <a href="#flux-libre">Pedaggi senza barriera</a>
+        <a href="#flux-libre">Pedaggi free flow</a>
         <a href="peages-mode-emploi.html">Capire i pedaggi</a>
         <a href="#support">Assistenza</a>
         <a href="confidentialite.html">Privacy</a>

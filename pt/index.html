@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Como funciona</a>
       <a href="#fonctions" class="hide-xxs">Funções</a>
-      <a href="#nouveautes" class="hide-s">Novidades</a>
+      <a href="#nouveautes" class="hide-l">Novidades</a>
+      <a href="#flux-libre" class="hide-s">Free flow</a>
       <a href="tarifs/" class="hide-xs">Preços das portagens</a><a href="peages-mode-emploi.html" class="hide-xs">Compreender as portagens</a>
       <a href="#support" class="hide-xxs">Suporte</a>
       <a href="confidentialite.html" class="hide-m">Privacidade</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Cobertura</span>
       <h2>De Lisboa a Oslo, de Tânger a Toronto</h2>
-      <p>Autoestradas, túneis, pontes e pórticos sem barreira em 18 países: cada ponto do mapa é uma portagem que o Péage Notif reconhece à passagem. Está tudo na app, nada é descarregado pelo caminho.</p>
+      <p>Autoestradas, túneis, pontes e pórticos de free flow em 18 países: cada ponto do mapa é uma portagem que o Péage Notif reconhece à passagem. Está tudo na app, nada é descarregado pelo caminho.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa da Europa e do Magrebe coberto de pontos: as portagens reconhecidas pela app a azul, os pórticos sem barreira a pagar online a verde, os países com vinheta contornados a amarelo">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Mapa da Europa e do Magrebe coberto de pontos: as portagens reconhecidas pela app a azul, os pórticos de free flow, a pagar online, a verde, os países com vinheta contornados a amarelo">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Praça, barreira, ponte ou túnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Pórtico sem barreira, a pagar online</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Pórtico de free flow, a pagar online</a></span>
           <span><i class="dot v"></i>Vinheta anunciada à entrada</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>França</h3>
           <ul>
             <li><b>96 %</b> das praças de portagem das autoestradas, de todas as concessionárias</li>
-            <li>Os pórticos sem barreira da A13, da A14 e da A79</li>
+            <li>Os pórticos de free flow da A13, da A14 e da A79</li>
             <li>Túneis do Monte Branco, do Fréjus, do Puymorens e do Prado, Duplex A86, ponte da Normandia, viaduto de Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Toda a rede de autoestradas com portagem, de Ventimiglia à Sicília</li>
             <li>As circulares de Milão, de Turim e de Nápoles</li>
-            <li>Os pórticos sem barreira da Pedemontana e da Corda Molle</li>
+            <li>Os pórticos de free flow da Pedemontana e da Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Eslovénia</b><span>Túnel de Karavanke, e a vinheta</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Túnel de Envalira</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Reino Unido</b><span>Dartford, túneis de Blackwall e de Silvertown, pontes do Mersey, túneis do Tyne, ponte do Tamar</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 sem barreiras, túnel do porto de Dublin, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irlanda</b><span>M50 em free flow, túnel do porto de Dublin, barreiras das M1, M3, M4, M6, M7, M8, da N25 e do túnel de Limerick</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Países Baixos</b><span>Kiltunnel e A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Dinamarca</b><span>Pontes do Grande Belt e do Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noruega</b><span>Os postos AutoPASS: portagens urbanas de Oslo, de Bergen ou de Trondheim e estradas com portagem</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Portagens sem barreira</span>
-      <h2>Sem barreira, sem esquecimentos</h2>
-      <p>Na A13, na A14, na A79, à volta de Milão, em Dartford, na M50 de Dublin ou em Portugal, os pórticos substituíram as barreiras: passa-se sem parar. Com identificador, a portagem é cobrada automaticamente. Sem identificador, paga-se depois online, num prazo curto. O Péage Notif diz-lhe quanto, onde pagar e até quando.</p>
+      <span class="eyebrow">Portagens em free flow</span>
+      <h2>Free flow: sem barreira, sem esquecimentos</h2>
+      <p>Na A13, na A14, na A79, à volta de Milão, em Dartford, na M50 de Dublin ou em Portugal, os pórticos substituíram as barreiras: é a portagem em free flow, passa-se sem parar. Com identificador, a portagem é cobrada automaticamente. Sem identificador, paga-se depois online, num prazo curto. O Péage Notif diz-lhe quanto, onde pagar e até quando.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-pt.webp" width="1030" height="644" loading="lazy" alt="Notificação do Péage Notif ao passar no pórtico de Dozulé: cerca de 4,20 €, a pagar online no prazo de 72 horas em sanef.com"></figure>
+        <figure><img src="../img/app/passage-pt.webp" width="1030" height="644" loading="lazy" alt="Notificação do Péage Notif ao passar no pórtico de free flow de Dozulé: cerca de 4,20 €, a pagar online no prazo de 72 horas em sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Ao passar no pórtico</h3>
+          <h3>Ao passar no pórtico de free flow</h3>
           <p>O valor aparece no ecrã e é anunciado em voz alta, com o prazo para pagar: <q>Portagem Dozulé, 4 euros e 20. A pagar online no prazo de 72 horas.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Os prazos a cumprir</h3>
+      <h3>Free flow: os prazos para pagar</h3>
       <table>
         <thead><tr><th>Onde</th><th>Prazo</th><th>Onde pagar</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>A app é mesmo gratuita?</summary><p>Sim, totalmente gratuita e sem subscrição. Não é preciso conta.</p></details>
       <details><summary>Os preços apresentados são exatos?</summary><p>São estimativas calculadas a partir das tabelas de tarifas oficiais (classe 1 por predefinição, alterável nas definições). Não têm valor contratual: só faz fé o montante cobrado pelo seu operador de portagem eletrónica ou pela concessionária da autoestrada.</p></details>
-      <details><summary>É preciso um identificador de portagem eletrónica?</summary><p>Não. O Péage Notif é independente de qualquer operador e não cobra portagens. Informa-o do preço estimado à passagem. Nas autoestradas sem barreira (A13, A14, A79…), sem identificador, a portagem paga-se depois online: a app lembra-lhe o valor e a data-limite.</p></details>
+      <details><summary>É preciso um identificador de portagem eletrónica?</summary><p>Não. O Péage Notif é independente de qualquer operador e não cobra portagens. Informa-o do preço estimado à passagem. Nas autoestradas em free flow (A13, A14, A79…), sem identificador, a portagem paga-se depois online: a app lembra-lhe o valor e a data-limite.</p></details>
       <details><summary>A app gasta a bateria?</summary><p>O GPS só funciona durante uma monitorização iniciada por si. Em repouso, a app não consome nada, e com o carro parado reduz o ritmo do GPS. Se se esquecer de parar a monitorização ao chegar, a app pergunta-lhe se a viagem terminou.</p></details>
       <details><summary>Uma portagem não foi detetada, ou o preço parece errado</summary><p>Durante a viagem, toque no botão de relato e diga o que está errado. Depois, vá a Definições › Reportar um problema, ou escreva para support@peagenotif.fr. Estes relatos servem diretamente para corrigir a base de dados de portagens.</p></details>
       <details><summary>Em que países funciona a app?</summary><p>Em 18 países: França e Itália em todas as autoestradas com portagem, outros treze países da Europa, Marrocos, Tunísia e Canadá (Ontário e Quebeque). O <a href="#perimetre">mapa da cobertura</a> mostra cada portagem reconhecida.</p></details>
-      <details><summary>Recebi um SMS a reclamar uma portagem por pagar. É do Péage Notif?</summary><p>Não. O Péage Notif nunca lhe vai pedir para pagar e não envia SMS nem e-mails. Circulam SMS fraudulentos deste tipo: não toque no link que contêm. Uma portagem sem barreira paga-se apenas no site oficial da concessionária, por exemplo sanef.com para a A13 e a A14.</p></details>
+      <details><summary>Como pagar uma portagem em free flow?</summary><p>Com um identificador de portagem eletrónica, não há nada a fazer: a passagem é cobrada automaticamente. Sem identificador, paga-se online no site oficial da concessionária, com a matrícula do veículo: sanef.com para a A13, a A14 e a saída 36 da A4, paiement.aliae.com para a A79, no prazo de 72 horas. O Péage Notif anuncia o valor ao passar no pórtico, lembra-lhe a data-limite e abre o site certo num toque.</p></details>
+      <details><summary>Recebi um SMS a reclamar uma portagem por pagar. É do Péage Notif?</summary><p>Não. O Péage Notif nunca lhe vai pedir para pagar e não envia SMS nem e-mails. Circulam SMS fraudulentos deste tipo: não toque no link que contêm. Uma portagem em free flow paga-se apenas no site oficial da concessionária, por exemplo sanef.com para a A13 e a A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Como funciona</a>
         <a href="#fonctions">Funções</a>
         <a href="#perimetre">Países cobertos</a>
-        <a href="#flux-libre">Portagens sem barreira</a>
+        <a href="#flux-libre">Portagens em free flow</a>
         <a href="peages-mode-emploi.html">Compreender as portagens</a>
         <a href="#support">Suporte</a>
         <a href="confidentialite.html">Privacidade</a>

@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Slik fungerer det</a>
       <a href="#fonctions" class="hide-xxs">Funksjoner</a>
-      <a href="#nouveautes" class="hide-s">Nyheter</a>
+      <a href="#nouveautes" class="hide-l">Nyheter</a>
+      <a href="#flux-libre" class="hide-s">Fri flyt</a>
       <a href="tarifs/" class="hide-xs">Bompriser</a><a href="peages-mode-emploi.html" class="hide-xs">Forstå bompengene</a>
       <a href="#support" class="hide-xxs">Brukerstøtte</a>
       <a href="confidentialite.html" class="hide-m">Personvern</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Dekning</span>
       <h2>Fra Lisboa til Oslo, fra Tanger til Toronto</h2>
-      <p>Motorveier, tunneler, broer og portaler uten bom i 18 land: hvert punkt på kartet er en bomstasjon som Péage Notif gjenkjenner når du passerer. Alt ligger i appen, ingenting lastes ned underveis.</p>
+      <p>Motorveier, tunneler, broer og portaler med fri flyt i 18 land: hvert punkt på kartet er en bomstasjon som Péage Notif gjenkjenner når du passerer. Alt ligger i appen, ingenting lastes ned underveis.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kart over Europa og Maghreb fullt av prikker: bomstasjonene appen gjenkjenner i blått, portalene uten bom som betales på nett i grønt, og landene med vignett med gul kant">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kart over Europa og Maghreb fullt av prikker: bomstasjonene appen gjenkjenner i blått, portalene med fri flyt, som betales på nett, i grønt, og landene med vignett med gul kant">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Bomstasjon, bom, bro eller tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portal uten bom, betales på nett</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portal med fri flyt, betales på nett</a></span>
           <span><i class="dot v"></i>Vignett varslet ved innreise</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Frankrike</h3>
           <ul>
             <li><b>96 %</b> av bomstasjonene på motorveiene, uansett operatør</li>
-            <li>Portalene uten bom på A13, A14 og A79</li>
+            <li>Portalene med fri flyt på A13, A14 og A79</li>
             <li>Mont Blanc-, Fréjus-, Puymorens- og Prado-tunnelene, Duplex A86, Pont de Normandie, Millau-viadukten</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Hele motorveinettet med bompenger, fra Ventimiglia til Sicilia</li>
             <li>Ringveiene rundt Milano, Torino og Napoli</li>
-            <li>Portalene uten bom på Pedemontana og Corda Molle</li>
+            <li>Portalene med fri flyt på Pedemontana og Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenia</b><span>Karavanke-tunnelen, og vignetten</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-tunnelen</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannia</b><span>Dartford, Blackwall- og Silvertown-tunnelene, Mersey-broene, Tyne-tunnelene, Tamar-broen</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 uten bom, Dublin Port Tunnel, bommer på M1, M3, M4, M6, M7, M8 og N25 og ved Limerick-tunnelen</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 med fri flyt, Dublin Port Tunnel, bommer på M1, M3, M4, M6, M7, M8 og N25 og ved Limerick-tunnelen</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederland</b><span>Kiltunnel og A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Broene over Storebælt og Øresund</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-bomstasjoner: bomringer som i Oslo, Bergen og Trondheim, og bomveier</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Bompenger uten bom</span>
-      <h2>Ingen bom, ingenting glemt</h2>
-      <p>På A13, A14 og A79, rundt Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: du kjører gjennom uten å stoppe. Med bombrikke trekkes bompengene automatisk. Uten bombrikke betaler du etterpå på nett, innen en kort frist. Péage Notif forteller deg hvor mye, hvor du skal betale og innen når.</p>
+      <span class="eyebrow">Bompenger med fri flyt</span>
+      <h2>Fri flyt: ingen bom, ingenting glemt</h2>
+      <p>På A13, A14 og A79, rundt Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: det er bompenger med fri flyt, og du kjører gjennom uten å stoppe. Med bombrikke trekkes bompengene automatisk. Uten bombrikke betaler du etterpå på nett, innen en kort frist. Péage Notif forteller deg hvor mye, hvor du skal betale og innen når.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-nb.webp" width="1030" height="644" loading="lazy" alt="Varsel fra Péage Notif ved passering av portalen i Dozulé: rundt 4,20 €, betales på nett innen 72 timer på sanef.com"></figure>
+        <figure><img src="../img/app/passage-nb.webp" width="1030" height="644" loading="lazy" alt="Varsel fra Péage Notif ved passering av portalen med fri flyt i Dozulé: rundt 4,20 €, betales på nett innen 72 timer på sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Når du passerer portalen</h3>
+          <h3>Når du passerer portalen med fri flyt</h3>
           <p>Beløpet vises og leses opp, sammen med fristen for å betale: <q>Bomstasjon Dozulé, 4 euro og 20 cent. Betal på nett innen 72 timer.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Fristene du må overholde</h3>
+      <h3>Fri flyt: fristene for å betale</h3>
       <table>
         <thead><tr><th>Hvor</th><th>Frist</th><th>Hvor du betaler</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Er appen virkelig gratis?</summary><p>Ja, helt gratis og uten abonnement. Du trenger ingen konto.</p></details>
       <details><summary>Er prisene som vises, nøyaktige?</summary><p>Det er anslag beregnet ut fra de offisielle takstlistene (klasse 1 som standard, kan endres i innstillingene). De er ikke bindende: bare beløpet som brikkeutstederen din eller motorveiselskapet krever inn, gjelder.</p></details>
-      <details><summary>Trenger jeg bombrikke?</summary><p>Nei. Péage Notif er uavhengig av alle operatører og krever ikke inn noen bompenger. Appen forteller deg den anslåtte prisen når du passerer. På motorveier uten bom (A13, A14, A79 …) betaler du bompengene etterpå på nett hvis du ikke har bombrikke: appen minner deg om beløpet og fristen.</p></details>
+      <details><summary>Trenger jeg bombrikke?</summary><p>Nei. Péage Notif er uavhengig av alle operatører og krever ikke inn noen bompenger. Appen forteller deg den anslåtte prisen når du passerer. På motorveier med fri flyt (A13, A14, A79 …) betaler du bompengene etterpå på nett hvis du ikke har bombrikke: appen minner deg om beløpet og fristen.</p></details>
       <details><summary>Tømmer appen batteriet mitt?</summary><p>GPS-en går bare under en sporing du selv har startet. I hvile bruker appen ingenting, og når du står stille, skrur den ned GPS-bruken. Hvis du glemmer å stoppe sporingen når du er fremme, spør den om turen er over.</p></details>
       <details><summary>En bomstasjon ble ikke oppdaget, eller prisen virker feil</summary><p>Under turen trykker du på rapportknappen og sier hva som er galt. Etterpå kan du gå til Innstillinger › Rapporter et problem eller skrive til support@peagenotif.fr. Rapportene brukes direkte til å rette bomstasjonsdatabasen.</p></details>
       <details><summary>I hvilke land fungerer appen?</summary><p>I 18 land: Frankrike og Italia på alle motorveiene med bompenger, tretten andre europeiske land, Marokko, Tunisia og Canada (Ontario og Québec). <a href="#perimetre">Dekningskartet</a> viser alle bomstasjonene appen gjenkjenner.</p></details>
-      <details><summary>Jeg har fått en SMS som krever betaling for ubetalte bompenger. Er det fra Péage Notif?</summary><p>Nei. Péage Notif ber deg aldri om å betale og sender verken SMS eller e-post. Det går rundt falske SMS-er av denne typen: ikke trykk på lenken i dem. Bompenger uten bom betales bare på operatørens offisielle nettsted, for eksempel sanef.com for A13 og A14.</p></details>
+      <details><summary>Hvordan betaler jeg bompenger med fri flyt?</summary><p>Med bombrikke trenger du ikke gjøre noe: passeringen trekkes automatisk. Uten bombrikke betaler du på nett på operatørens offisielle nettsted, med registreringsnummeret ditt: sanef.com for A13, A14 og avkjøring 36 på A4, paiement.aliae.com for A79, innen 72 timer. Péage Notif varsler beløpet når du passerer portalen, minner deg om fristen og åpner riktig nettsted med ett trykk.</p></details>
+      <details><summary>Jeg har fått en SMS som krever betaling for ubetalte bompenger. Er det fra Péage Notif?</summary><p>Nei. Péage Notif ber deg aldri om å betale og sender verken SMS eller e-post. Det går rundt falske SMS-er av denne typen: ikke trykk på lenken i dem. Bompenger med fri flyt betales bare på operatørens offisielle nettsted, for eksempel sanef.com for A13 og A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Slik fungerer det</a>
         <a href="#fonctions">Funksjoner</a>
         <a href="#perimetre">Land med dekning</a>
-        <a href="#flux-libre">Bompenger uten bom</a>
+        <a href="#flux-libre">Bompenger med fri flyt</a>
         <a href="peages-mode-emploi.html">Forstå bompengene</a>
         <a href="#support">Brukerstøtte</a>
         <a href="confidentialite.html">Personvern</a>

@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Så fungerar det</a>
       <a href="#fonctions" class="hide-xxs">Funktioner</a>
-      <a href="#nouveautes" class="hide-s">Nyheter</a>
+      <a href="#nouveautes" class="hide-l">Nyheter</a>
+      <a href="#flux-libre" class="hide-s">Fritt flöde</a>
       <a href="tarifs/" class="hide-xs">Vägtullspriser</a><a href="peages-mode-emploi.html" class="hide-xs">Förstå vägtullarna</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Integritet</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Täckning</span>
       <h2>Från Lissabon till Oslo, från Tanger till Toronto</h2>
-      <p>Motorvägar, tunnlar, broar och portaler utan bom i 18 länder: varje punkt på kartan är en betalstation som Péage Notif känner igen när du passerar. Allt finns i appen, inget laddas ned under resan.</p>
+      <p>Motorvägar, tunnlar, broar och portaler med fritt flöde i 18 länder: varje punkt på kartan är en betalstation som Péage Notif känner igen när du passerar. Allt finns i appen, inget laddas ned under resan.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Karta över Europa och Maghreb full av punkter: blått för betalstationerna som appen känner igen, grönt för portaler utan bom som betalas online och gul kant runt länder med vinjett">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Karta över Europa och Maghreb full av punkter: blått för betalstationerna som appen känner igen, grönt för portaler med fritt flöde som betalas online och gul kant runt länder med vinjett">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Betalstation, bom, bro eller tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portal utan bom, betalas online</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Portal med fritt flöde, betalas online</a></span>
           <span><i class="dot v"></i>Vinjett som meddelas vid gränsen</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Frankrike</h3>
           <ul>
             <li><b>96 %</b> av motorvägarnas betalstationer, oavsett operatör</li>
-            <li>Portalerna utan bom på A13, A14 och A79</li>
+            <li>Portalerna med fritt flöde på A13, A14 och A79</li>
             <li>Mont Blanc-, Fréjus-, Puymorens- och Pradotunnlarna, Duplex A86, Pont de Normandie, Millauviadukten</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Hela det avgiftsbelagda motorvägsnätet, från Ventimiglia till Sicilien</li>
             <li>Ringlederna runt Milano, Turin och Neapel</li>
-            <li>Portalerna utan bom på Pedemontana och Corda Molle</li>
+            <li>Portalerna med fritt flöde på Pedemontana och Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenien</b><span>Karavanketunneln samt vinjetten</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envaliratunneln</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannien</b><span>Dartford, Blackwall- och Silvertowntunnlarna, Merseybroarna, Tynetunnlarna, Tamarbron</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 utan bom, Dublin Port Tunnel, bommar på M1, M3, M4, M6, M7, M8 och N25 samt vid Limericktunneln</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 med fritt flöde, Dublin Port Tunnel, bommar på M1, M3, M4, M6, M7, M8 och N25 samt vid Limericktunneln</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederländerna</b><span>Kiltunnel och A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Stora Bältbron och Öresundsbron</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-stationerna: vägtullarna i städer som Oslo, Bergen och Trondheim samt avgiftsbelagda vägar</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Vägtullar utan bom</span>
-      <h2>Ingen bom, inget glöms bort</h2>
-      <p>På A13, A14 och A79, runt Milano, vid Dartford, på M50 runt Dublin och i Portugal har portaler ersatt bommarna: du kör igenom utan att stanna. Med en transponder dras avgiften automatiskt. Utan transponder betalar du i efterhand online, inom en kort frist. Péage Notif talar om hur mycket, var du betalar och senast när.</p>
+      <span class="eyebrow">Vägtullar med fritt flöde</span>
+      <h2>Fritt flöde: ingen bom, inget glöms bort</h2>
+      <p>På A13, A14 och A79, runt Milano, vid Dartford, på M50 runt Dublin och i Portugal har portaler ersatt bommarna: det här är vägtull med fritt flöde, och du kör igenom utan att stanna. Med en transponder dras avgiften automatiskt. Utan transponder betalar du i efterhand online, inom en kort frist. Péage Notif talar om hur mycket, var du betalar och senast när.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-sv.webp" width="1030" height="644" loading="lazy" alt="Notis från Péage Notif vid portalen i Dozulé: cirka 4,20 €, att betala online inom 72 timmar på sanef.com"></figure>
+        <figure><img src="../img/app/passage-sv.webp" width="1030" height="644" loading="lazy" alt="Notis från Péage Notif vid portalen med fritt flöde i Dozulé: cirka 4,20 €, att betala online inom 72 timmar på sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>När du passerar portalen</h3>
+          <h3>När du passerar portalen med fritt flöde</h3>
           <p>Beloppet visas och läses upp, tillsammans med betalningsfristen: <q>Betalstation Dozulé, 4 euro och 20 cent. Betala online inom 72 timmar.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Frister att hålla</h3>
+      <h3>Fritt flöde: fristerna för att betala</h3>
       <table>
         <thead><tr><th>Var</th><th>Frist</th><th>Var du betalar</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Är appen verkligen gratis?</summary><p>Ja, helt gratis och utan abonnemang. Inget konto behövs.</p></details>
       <details><summary>Stämmer priserna som visas?</summary><p>Det är uppskattningar beräknade utifrån de officiella pristabellerna (klass 1 som standard, kan ändras i inställningarna). De är inte bindande: endast det belopp som din transponderleverantör eller motorvägsbolaget debiterar gäller.</p></details>
-      <details><summary>Behöver jag en transponder?</summary><p>Nej. Péage Notif är oberoende av alla operatörer och tar inte emot några avgifter. Appen talar om det uppskattade priset när du passerar. På motorvägar utan bom (bland annat A13, A14 och A79) betalar du utan transponder vägtullen i efterhand online: appen påminner dig om beloppet och sista betalningsdag.</p></details>
+      <details><summary>Behöver jag en transponder?</summary><p>Nej. Péage Notif är oberoende av alla operatörer och tar inte emot några avgifter. Appen talar om det uppskattade priset när du passerar. På motorvägar med fritt flöde (bland annat A13, A14 och A79) betalar du utan transponder vägtullen i efterhand online: appen påminner dig om beloppet och sista betalningsdag.</p></details>
       <details><summary>Tömmer appen mitt batteri?</summary><p>GPS:en är bara igång under en spårning som du själv har startat. I vila förbrukar appen ingenting, och när du står still drar den ned på GPS:en. Om du glömmer att stoppa spårningen när du är framme frågar den om resan är slut.</p></details>
       <details><summary>En betalstation upptäcktes inte, eller priset verkar fel</summary><p>Under resan trycker du på rapportknappen och säger vad som är fel. Efteråt går du till Inställningar › Rapportera ett problem eller skriver till support@peagenotif.fr. Rapporterna används direkt för att rätta databasen över betalstationer.</p></details>
       <details><summary>I vilka länder fungerar appen?</summary><p>I 18 länder: Frankrike och Italien på alla deras avgiftsbelagda motorvägar, tretton andra europeiska länder, Marocko, Tunisien och Kanada (Ontario och Québec). <a href="#perimetre">Täckningskartan</a> visar varje betalstation som appen känner igen.</p></details>
-      <details><summary>Jag har fått ett sms om en obetald vägtull. Är det från Péage Notif?</summary><p>Nej. Péage Notif ber dig aldrig betala och skickar varken sms eller e-post. Bedrägliga sms av det här slaget förekommer: tryck inte på länken i dem. En vägtull utan bom betalas bara på operatörens officiella webbplats, till exempel sanef.com för A13 och A14.</p></details>
+      <details><summary>Hur betalar jag en vägtull med fritt flöde?</summary><p>Med en transponder behöver du inte göra något: avgiften för passagen dras automatiskt. Utan transponder betalar du online på operatörens officiella webbplats med ditt registreringsnummer: sanef.com för A13, A14 och avfart 36 på A4, paiement.aliae.com för A79, inom 72 timmar. Péage Notif meddelar beloppet när du passerar portalen, påminner dig om sista betalningsdag och öppnar rätt webbplats med ett tryck.</p></details>
+      <details><summary>Jag har fått ett sms om en obetald vägtull. Är det från Péage Notif?</summary><p>Nej. Péage Notif ber dig aldrig betala och skickar varken sms eller e-post. Bedrägliga sms av det här slaget förekommer: tryck inte på länken i dem. En vägtull med fritt flöde betalas bara på operatörens officiella webbplats, till exempel sanef.com för A13 och A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Så fungerar det</a>
         <a href="#fonctions">Funktioner</a>
         <a href="#perimetre">Länder som täcks</a>
-        <a href="#flux-libre">Vägtullar utan bom</a>
+        <a href="#flux-libre">Vägtullar med fritt flöde</a>
         <a href="peages-mode-emploi.html">Förstå vägtullarna</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Integritet</a>

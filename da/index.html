@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Sådan virker det</a>
       <a href="#fonctions" class="hide-xxs">Funktioner</a>
-      <a href="#nouveautes" class="hide-s">Nyheder</a>
+      <a href="#nouveautes" class="hide-l">Nyheder</a>
+      <a href="#flux-libre" class="hide-s">Free flow</a>
       <a href="tarifs/" class="hide-xs">Vejafgifter</a><a href="peages-mode-emploi.html" class="hide-xs">Forstå vejafgifterne</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Privatliv</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Dækning</span>
       <h2>Fra Lissabon til Oslo, fra Tanger til Toronto</h2>
-      <p>Motorveje, tunneller, broer og portaler uden bom i 18 lande: Hvert punkt på kortet er et betalingsanlæg, som Péage Notif genkender, når du passerer. Alt ligger i appen, intet skal hentes undervejs.</p>
+      <p>Motorveje, tunneller, broer og free flow-portaler i 18 lande: Hvert punkt på kortet er et betalingsanlæg, som Péage Notif genkender, når du passerer. Alt ligger i appen, intet skal hentes undervejs.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kort over Europa og Maghreb fuld af prikker: blå for de betalingsanlæg, appen genkender, grøn for portaler uden bom, der betales online, og gul kant om lande med vignet">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kort over Europa og Maghreb fuld af prikker: blå for de betalingsanlæg, appen genkender, grøn for free flow-portaler, der betales online, og gul kant om lande med vignet">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Betalingsanlæg, bom, bro eller tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Portal uden bom, betales online</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Free flow-portal, betales online</a></span>
           <span><i class="dot v"></i>Vignet oplyst ved indrejse</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Frankrig</h3>
           <ul>
             <li><b>96 %</b> af motorvejenes betalingsanlæg, uanset operatør</li>
-            <li>Portalerne uden bom på A13, A14 og A79</li>
+            <li>Free flow-portalerne på A13, A14 og A79</li>
             <li>Mont Blanc-, Fréjus-, Puymorens- og Prado-tunnellerne, Duplex A86, Pont de Normandie, Millau-viadukten</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Hele det betalingspligtige motorvejsnet, fra Ventimiglia til Sicilien</li>
             <li>Ringvejene omkring Milano, Torino og Napoli</li>
-            <li>Portalerne uden bom på Pedemontana og Corda Molle</li>
+            <li>Free flow-portalerne på Pedemontana og Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenien</b><span>Karavanke-tunnellen samt vignetten</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envalira-tunnellen</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Storbritannien</b><span>Dartford, Blackwall- og Silvertown-tunnellerne, Mersey-broerne, Tyne-tunnellerne, Tamar-broen</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 uden bom, Dublin Port Tunnel, bomme på M1, M3, M4, M6, M7, M8, N25 og ved Limerick-tunnellen</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Irland</b><span>M50 med free flow, Dublin Port Tunnel, bomme på M1, M3, M4, M6, M7, M8, N25 og ved Limerick-tunnellen</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederlandene</b><span>Kiltunnel og A24 Blankenburg</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Danmark</b><span>Storebæltsbroen og Øresundsbroen</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Norge</b><span>AutoPASS-stationerne: bompengeringe i byer som Oslo, Bergen og Trondheim samt veje med bompenge</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Vejafgifter uden bom</span>
-      <h2>Ingen bom, intet glemt</h2>
-      <p>På A13, A14 og A79, omkring Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: Du kører igennem uden at stoppe. Med en bizz trækkes afgiften automatisk. Uden bizz betales den bagefter online inden for en kort frist. Péage Notif fortæller dig, hvor meget, hvor du skal betale, og hvornår fristen udløber.</p>
+      <span class="eyebrow">Vejafgifter med free flow</span>
+      <h2>Free flow: ingen bom, intet glemt</h2>
+      <p>På A13, A14 og A79, omkring Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: Det er vejafgift med free flow, og du kører igennem uden at stoppe. Med en bizz trækkes afgiften automatisk. Uden bizz betales den bagefter online inden for en kort frist. Péage Notif fortæller dig, hvor meget, hvor du skal betale, og hvornår fristen udløber.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-da.webp" width="1030" height="644" loading="lazy" alt="Notifikation fra Péage Notif ved passage af portalen i Dozulé: cirka 4,20 €, betales online inden for 72 timer på sanef.com"></figure>
+        <figure><img src="../img/app/passage-da.webp" width="1030" height="644" loading="lazy" alt="Notifikation fra Péage Notif ved passage af free flow-portalen i Dozulé: cirka 4,20 €, betales online inden for 72 timer på sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Når du passerer portalen</h3>
+          <h3>Når du passerer free flow-portalen</h3>
           <p>Beløbet vises og læses højt sammen med betalingsfristen: <q>Betalingsanlæg Dozulé, 4 euro og 20 cent. Betal online inden for 72 timer.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>Fristerne, du skal overholde</h3>
+      <h3>Free flow: fristerne for at betale</h3>
       <table>
         <thead><tr><th>Hvor</th><th>Frist</th><th>Hvor du betaler</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Er appen virkelig gratis?</summary><p>Ja, helt gratis og uden abonnement. Du behøver ingen konto.</p></details>
       <details><summary>Er de viste priser præcise?</summary><p>Det er skøn beregnet ud fra de officielle prislister (klasse 1 som standard, kan ændres i indstillingerne). De er ikke bindende: Kun det beløb, som din bizz-udbyder eller motorvejsselskabet opkræver, er gældende.</p></details>
-      <details><summary>Skal man have en bizz?</summary><p>Nej. Péage Notif er uafhængig af alle operatører og opkræver ingen afgifter. Appen fortæller dig den anslåede pris, når du passerer. På motorveje uden bom (A13, A14, A79 …) betales afgiften bagefter online, hvis du ikke har en bizz: Appen minder dig om beløbet og fristen.</p></details>
+      <details><summary>Skal man have en bizz?</summary><p>Nej. Péage Notif er uafhængig af alle operatører og opkræver ingen afgifter. Appen fortæller dig den anslåede pris, når du passerer. På motorveje med free flow (A13, A14, A79 …) betales afgiften bagefter online, hvis du ikke har en bizz: Appen minder dig om beløbet og fristen.</p></details>
       <details><summary>Dræner appen mit batteri?</summary><p>GPS'en kører kun under en sporing, du selv har startet. I hvile bruger appen ingenting, og når du holder stille, skruer den ned for GPS'en. Glemmer du at stoppe sporingen, når du ankommer, spørger den, om turen er slut.</p></details>
       <details><summary>Et betalingsanlæg blev ikke registreret, eller prisen virker forkert</summary><p>Under turen trykker du på indberetningsknappen og siger, hvad der er galt. Bagefter kan du gå til Indstillinger › Indberet et problem eller skrive til support@peagenotif.fr. Indberetningerne bruges direkte til at rette databasen over betalingsanlæg.</p></details>
       <details><summary>I hvilke lande virker appen?</summary><p>I 18 lande: Frankrig og Italien på alle deres betalingspligtige motorveje, tretten andre europæiske lande, Marokko, Tunesien og Canada (Ontario og Québec). <a href="#perimetre">Dækningskortet</a> viser hvert betalingsanlæg, som appen genkender.</p></details>
-      <details><summary>Jeg har fået en sms om en ubetalt vejafgift. Er det fra Péage Notif?</summary><p>Nej. Péage Notif beder dig aldrig om at betale og sender hverken sms'er eller e-mails. Der går svindel-sms'er af den slags rundt: Tryk ikke på linket i dem. En afgift uden bom betales kun på operatørens officielle websted, for eksempel sanef.com for A13 og A14.</p></details>
+      <details><summary>Hvordan betaler man vejafgift med free flow?</summary><p>Med en bizz skal du ikke gøre noget: Afgiften trækkes automatisk. Uden bizz betales den online inden for 72 timer på operatørens officielle websted med din nummerplade: sanef.com for A13, A14 og afkørsel 36 på A4, paiement.aliae.com for A79. Péage Notif oplyser beløbet, når du passerer portalen, minder dig om fristen og åbner det rigtige websted med ét tryk.</p></details>
+      <details><summary>Jeg har fået en sms om en ubetalt vejafgift. Er det fra Péage Notif?</summary><p>Nej. Péage Notif beder dig aldrig om at betale og sender hverken sms'er eller e-mails. Der går svindel-sms'er af den slags rundt: Tryk ikke på linket i dem. En afgift med free flow betales kun på operatørens officielle websted, for eksempel sanef.com for A13 og A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Sådan virker det</a>
         <a href="#fonctions">Funktioner</a>
         <a href="#perimetre">Dækkede lande</a>
-        <a href="#flux-libre">Vejafgifter uden bom</a>
+        <a href="#flux-libre">Vejafgifter med free flow</a>
         <a href="peages-mode-emploi.html">Forstå vejafgifterne</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Privatliv</a>

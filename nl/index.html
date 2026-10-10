@@ -62,6 +62,7 @@
      à lui seul la place de deux liens: aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
   @media(max-width:780px){nav a{margin-left:14px}nav a.hide-xs{display:none}}
@@ -454,7 +455,8 @@
     <nav>
       <a href="#comment" class="hide-m">Zo werkt het</a>
       <a href="#fonctions" class="hide-xxs">Functies</a>
-      <a href="#nouveautes" class="hide-s">Nieuw</a>
+      <a href="#nouveautes" class="hide-l">Nieuw</a>
+      <a href="#flux-libre" class="hide-s">Free flow</a>
       <a href="tarifs/" class="hide-xs">Tolprijzen</a><a href="peages-mode-emploi.html" class="hide-xs">Tol begrijpen</a>
       <a href="#support" class="hide-xxs">Support</a>
       <a href="confidentialite.html" class="hide-m">Privacy</a>
@@ -700,14 +702,14 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Dekking</span>
       <h2>Van Lissabon tot Oslo, van Tanger tot Toronto</h2>
-      <p>Snelwegen, tunnels, bruggen en tolportalen zonder slagboom in 18 landen: elk punt op de kaart is een tolpoort die Péage Notif bij het passeren herkent. Alles zit in de app, onderweg wordt er niets gedownload.</p>
+      <p>Snelwegen, tunnels, bruggen en tolportalen met free flow in 18 landen: elk punt op de kaart is een tolpoort die Péage Notif bij het passeren herkent. Alles zit in de app, onderweg wordt er niets gedownload.</p>
     </div>
     <div class="geo">
       <figure class="geo-map rv">
-        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kaart van Europa en de Maghreb vol punten: de tolpoorten die de app herkent in blauw, de tolportalen zonder slagboom die je online betaalt in groen, de vignetlanden met een gele rand">
+        <img src="../img/perimetre.svg" width="1000" height="1175" loading="lazy" alt="Kaart van Europa en de Maghreb vol punten: de tolpoorten die de app herkent in blauw, de tolportalen met free flow, die je online betaalt, in groen, de vignetlanden met een gele rand">
         <figcaption class="geo-leg">
           <span><i class="dot b"></i>Tolstation, slagboom, brug of tunnel</span>
-          <span><i class="dot g"></i><a href="#flux-libre">Tolportaal zonder slagboom, online te betalen</a></span>
+          <span><i class="dot g"></i><a href="#flux-libre">Tolportaal met free flow, online te betalen</a></span>
           <span><i class="dot v"></i>Vignet, gemeld bij binnenkomst</span>
         </figcaption>
       </figure>
@@ -716,7 +718,7 @@
           <h3><i class="flag fr" aria-hidden="true"></i>Frankrijk</h3>
           <ul>
             <li><b>96 %</b> van de tolstations op de snelwegen, ongeacht de exploitant</li>
-            <li>De tolportalen zonder slagboom op de A13, de A14 en de A79</li>
+            <li>De tolportalen met free flow op de A13, de A14 en de A79</li>
             <li>Tunnels van de Mont Blanc, de Fréjus, de Puymorens en de Prado, Duplex A86, Pont de Normandie, viaduct van Millau</li>
           </ul>
         </div>
@@ -725,7 +727,7 @@
           <ul>
             <li>Het volledige tolsnelwegennet, van Ventimiglia tot Sicilië</li>
             <li>De ringwegen van Milaan, Turijn en Napels</li>
-            <li>De tolportalen zonder slagboom van de Pedemontana en de Corda Molle</li>
+            <li>De tolportalen met free flow van de Pedemontana en de Corda Molle</li>
           </ul>
         </div>
         <figure class="geo-card geo-ca rv" style="--d:.2s">
@@ -745,7 +747,7 @@
       <li><i class="flag si" aria-hidden="true"></i><div><b>Slovenië</b><span>Karawankentunnel, plus het vignet</span></div></li>
       <li><i class="flag ad" aria-hidden="true"></i><div><b>Andorra</b><span>Envaliratunnel</span></div></li>
       <li><i class="flag gb" aria-hidden="true"></i><div><b>Verenigd Koninkrijk</b><span>Dartford, Blackwall- en Silvertowntunnel, Merseybruggen, Tynetunnels, Tamarbrug</span></div></li>
-      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ierland</b><span>M50 zonder slagboom, Dublin Port Tunnel, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
+      <li><i class="flag ie" aria-hidden="true"></i><div><b>Ierland</b><span>M50 met free flow, Dublin Port Tunnel, slagbomen op de M1, M3, M4, M6, M7, M8, N25 en bij de Limericktunnel</span></div></li>
       <li><i class="flag nl" aria-hidden="true"></i><div><b>Nederland</b><span>Kiltunnel en Blankenburgverbinding (A24)</span></div></li>
       <li><i class="flag dk" aria-hidden="true"></i><div><b>Denemarken</b><span>Grote Beltbrug en Øresundbrug</span></div></li>
       <li><i class="flag no" aria-hidden="true"></i><div><b>Noorwegen</b><span>De AutoPASS-tolpunten: stadstol in Oslo, Bergen of Trondheim en tolwegen</span></div></li>
@@ -767,20 +769,20 @@
   </div>
 </section>
 
-<!-- PÉAGES SANS BARRIÈRE -->
+<!-- PÉAGES EN FLUX LIBRE -->
 <section id="flux-libre" class="band">
   <div class="wrap">
     <div class="sec-head center rv">
-      <span class="eyebrow">Tol zonder slagboom</span>
-      <h2>Geen slagboom, niets vergeten</h2>
-      <p>Op de A13, de A14 en de A79, rond Milaan, bij Dartford, op de M50 rond Dublin of in Portugal hebben tolportalen de slagbomen vervangen: je rijdt door zonder te stoppen. Met een tolbadge wordt de tol vanzelf afgeschreven. Zonder badge betaal je achteraf online, binnen een korte termijn. Péage Notif vertelt je hoeveel, waar je betaalt en vóór wanneer.</p>
+      <span class="eyebrow">Tol met free flow</span>
+      <h2>Free flow: geen slagboom, niets vergeten</h2>
+      <p>Op de A13, de A14 en de A79, rond Milaan, bij Dartford, op de M50 rond Dublin of in Portugal hebben tolportalen de slagbomen vervangen: dat is tol met free flow, je rijdt door zonder te stoppen. Met een tolbadge wordt de tol vanzelf afgeschreven. Zonder badge betaal je achteraf online, binnen een korte termijn. Péage Notif vertelt je hoeveel, waar je betaalt en vóór wanneer.</p>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">
-        <figure><img src="../img/app/passage-nl.webp" width="1030" height="644" loading="lazy" alt="Melding van Péage Notif bij het passeren van het tolportaal van Dozulé: ongeveer € 4,20, binnen 72 uur online te betalen op sanef.com"></figure>
+        <figure><img src="../img/app/passage-nl.webp" width="1030" height="644" loading="lazy" alt="Melding van Péage Notif bij het passeren van het tolportaal met free flow bij Dozulé: ongeveer € 4,20, binnen 72 uur online te betalen op sanef.com"></figure>
         <div class="ff-txt">
           <span class="ff-n">1</span>
-          <h3>Bij het passeren van het tolportaal</h3>
+          <h3>Bij het passeren van het tolportaal met free flow</h3>
           <p>Het bedrag verschijnt in beeld en wordt hardop omgeroepen, met de betaaltermijn: <q>Tolpoort Dozulé, 4 euro 20. Online betalen binnen 72 uur.</q></p>
         </div>
       </li>
@@ -811,7 +813,7 @@
     </ol>
 
     <div class="delais rv">
-      <h3>De betaaltermijnen</h3>
+      <h3>Free flow: de betaaltermijnen</h3>
       <table>
         <thead><tr><th>Waar</th><th>Termijn</th><th>Waar betalen</th></tr></thead>
         <tbody>
@@ -966,11 +968,12 @@
     <div class="faq rv">
       <details><summary>Is de app echt gratis?</summary><p>Ja, helemaal gratis en zonder abonnement. Je hebt geen account nodig.</p></details>
       <details><summary>Kloppen de getoonde prijzen?</summary><p>Het zijn schattingen op basis van de officiële tarievenlijsten (standaard klasse 1, aan te passen in de instellingen). Ze zijn niet bindend: alleen het bedrag dat je tolbadge-aanbieder of de snelwegmaatschappij in rekening brengt, is doorslaggevend.</p></details>
-      <details><summary>Heb je een tolbadge nodig?</summary><p>Nee. Péage Notif staat los van elke aanbieder en int zelf geen tol. De app laat je de geschatte prijs bij het passeren weten. Op snelwegen zonder slagboom (A13, A14, A79…) betaal je zonder tolbadge achteraf online: de app herinnert je aan het bedrag en de uiterste datum.</p></details>
+      <details><summary>Heb je een tolbadge nodig?</summary><p>Nee. Péage Notif staat los van elke aanbieder en int zelf geen tol. De app laat je de geschatte prijs bij het passeren weten. Op snelwegen met free flow (A13, A14, A79…) betaal je zonder tolbadge achteraf online: de app herinnert je aan het bedrag en de uiterste datum.</p></details>
       <details><summary>Loopt de app mijn batterij leeg?</summary><p>De GPS draait alleen tijdens een registratie die je zelf hebt gestart. In rust verbruikt de app niets, en als je stilstaat, gaat de GPS trager. Vergeet je bij aankomst de registratie te stoppen, dan vraagt de app of de rit voorbij is.</p></details>
       <details><summary>Een tolpoort werd niet herkend, of de prijs lijkt niet te kloppen</summary><p>Tik tijdens de rit op de meldknop en zeg wat er mis is. Achteraf kan het via Instellingen › Probleem melden, of mail naar support@peagenotif.fr. Deze meldingen worden direct gebruikt om de toldatabase te corrigeren.</p></details>
       <details><summary>In welke landen werkt de app?</summary><p>In 18 landen: Frankrijk en Italië op al hun tolsnelwegen, dertien andere Europese landen, Marokko, Tunesië en Canada (Ontario en Quebec). De <a href="#perimetre">dekkingskaart</a> toont elke tolpoort die de app herkent.</p></details>
-      <details><summary>Ik kreeg een sms over onbetaalde tol. Komt die van Péage Notif?</summary><p>Nee. Péage Notif vraagt je nooit om te betalen en verstuurt geen sms of e-mail. Er circuleren frauduleuze sms'jes van dit soort: tik niet op de link erin. Tol zonder slagboom betaal je uitsluitend op de officiële website van de exploitant, bijvoorbeeld sanef.com voor de A13 en de A14.</p></details>
+      <details><summary>Hoe betaal je tol met free flow?</summary><p>Met een tolbadge hoef je niets te doen: de passage wordt vanzelf afgeschreven. Zonder tolbadge betaal je online op de officiële website van de exploitant, met je kenteken: sanef.com voor de A13, de A14 en afrit 36 van de A4, paiement.aliae.com voor de A79, binnen 72 uur. Péage Notif meldt het bedrag bij het passeren van het tolportaal, herinnert je aan de uiterste datum en opent met één tik de juiste website.</p></details>
+      <details><summary>Ik kreeg een sms over onbetaalde tol. Komt die van Péage Notif?</summary><p>Nee. Péage Notif vraagt je nooit om te betalen en verstuurt geen sms of e-mail. Er circuleren frauduleuze sms'jes van dit soort: tik niet op de link erin. Tol met free flow betaal je uitsluitend op de officiële website van de exploitant, bijvoorbeeld sanef.com voor de A13 en de A14.</p></details>
     </div>
   </div>
 </section>
@@ -999,7 +1002,7 @@
         <a href="#comment">Zo werkt het</a>
         <a href="#fonctions">Functies</a>
         <a href="#perimetre">Ondersteunde landen</a>
-        <a href="#flux-libre">Tol zonder slagboom</a>
+        <a href="#flux-libre">Tol met free flow</a>
         <a href="peages-mode-emploi.html">Tol begrijpen</a>
         <a href="#support">Support</a>
         <a href="confidentialite.html">Privacy</a>

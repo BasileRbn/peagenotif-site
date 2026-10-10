@@ -416,6 +416,12 @@
     .delais tr.pays-ligne{padding:0}
     .delais tr.pays-ligne th{display:block}
   }
+  .ff-atouts{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:34px auto 0}
+  .ff-atout{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(69,200,120,.38);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(69,200,120,.09),transparent)}
+  .ff-atout .ic{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:rgba(69,200,120,.16)}
+  .ff-atout h3{font-size:17px;margin-bottom:4px}
+  .ff-atout p{font-size:14.5px;color:var(--tx2)}
+  @media(max-width:620px){.ff-atouts{grid-template-columns:1fr}}
   .ff-plus{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:22px auto 0}
   .ff-plus div{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
   .ff-plus h4{font-size:15.5px;margin-bottom:4px;color:var(--tx)}
@@ -486,6 +492,7 @@
         <span class="pill">🔊 <b>Oplæsning</b></span>
         <span class="pill">🚗 <b>CarPlay</b></span>
         <span class="pill">🤝 <b>Priser finjusteret</b> af fællesskabet</span>
+        <span class="pill">🔔 <b>Betalingspåmindelse</b> ved free flow</span>
         <span class="pill">🔒 <b>Ingen konto</b> og ingen trackere</span>
       </div>
     </div>
@@ -597,6 +604,7 @@
           <li>Free flow-portaler og betalingsanlæg med bom</li>
           <li>Oplæsning, også med låst skærm</li>
           <li>Intet at taste, intet at tjekke under kørslen</li>
+          <li>Ved free flow: en påmindelse, før fristen udløber, og fristen i din kalender</li>
         </ul>
       </div>
       <div class="art rv" style="--d:.15s">
@@ -779,7 +787,11 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Vejafgifter med free flow</span>
       <h2>Free flow: ingen bom, intet glemt</h2>
-      <p>På A13, A14 og A79, omkring Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: Det er vejafgift med free flow, og du kører igennem uden at stoppe. Med en bizz trækkes afgiften automatisk. Uden bizz betales den bagefter online inden for en kort frist. Péage Notif fortæller dig, hvor meget, hvor du skal betale, og hvornår fristen udløber.</p>
+      <p>På A13, A14 og A79, omkring Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: Det er vejafgift med free flow, og du kører igennem uden at stoppe. Med en bizz trækkes afgiften automatisk. Uden bizz betales den bagefter online inden for en kort frist. Péage Notif fortæller dig, hvor meget og hvor du skal betale, minder dig derefter om fristen og skriver den ind i din kalender.</p>
+    </div>
+    <div class="ff-atouts rv">
+      <div class="ff-atout"><span class="ic" aria-hidden="true">🔔</span><div><h3>En påmindelse før fristen</h3><p>En notifikation dagen efter passagen og en anden kort før fristen, altid i dagtimerne: Du betaler til tiden, uden tillæg.</p></div></div>
+      <div class="ff-atout"><span class="ic" aria-hidden="true">📅</span><div><h3>Fristen i din kalender</h3><p>Begivenheden er færdigudfyldt med beløbet, fristen og linket til det officielle websted: Ét tryk, så er den gemt.</p></div></div>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">

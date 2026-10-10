@@ -416,6 +416,12 @@
     .delais tr.pays-ligne{padding:0}
     .delais tr.pays-ligne th{display:block}
   }
+  .ff-atouts{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:34px auto 0}
+  .ff-atout{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(69,200,120,.38);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(69,200,120,.09),transparent)}
+  .ff-atout .ic{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:rgba(69,200,120,.16)}
+  .ff-atout h3{font-size:17px;margin-bottom:4px}
+  .ff-atout p{font-size:14.5px;color:var(--tx2)}
+  @media(max-width:620px){.ff-atouts{grid-template-columns:1fr}}
   .ff-plus{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:22px auto 0}
   .ff-plus div{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
   .ff-plus h4{font-size:15.5px;margin-bottom:4px;color:var(--tx)}
@@ -486,6 +492,7 @@
         <span class="pill">🔊 <b>Opplesning</b></span>
         <span class="pill">🚗 <b>CarPlay</b></span>
         <span class="pill">🤝 <b>Priser finjustert</b> av fellesskapet</span>
+        <span class="pill">🔔 <b>Betalingspåminnelse</b> ved fri flyt</span>
         <span class="pill">🔒 <b>Ingen konto</b> og ingen sporingsverktøy</span>
       </div>
     </div>
@@ -597,6 +604,7 @@
           <li>Portaler med fri flyt og bomstasjoner med bom</li>
           <li>Opplesning, også med låst skjerm</li>
           <li>Ingenting å skrive inn, ingenting å sjekke mens du kjører</li>
+          <li>Ved fri flyt: en påminnelse før fristen, som også legges inn i kalenderen din</li>
         </ul>
       </div>
       <div class="art rv" style="--d:.15s">
@@ -779,7 +787,11 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Bompenger med fri flyt</span>
       <h2>Fri flyt: ingen bom, ingenting glemt</h2>
-      <p>På A13, A14 og A79, rundt Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: det er bompenger med fri flyt, og du kjører gjennom uten å stoppe. Med bombrikke trekkes bompengene automatisk. Uten bombrikke betaler du etterpå på nett, innen en kort frist. Péage Notif forteller deg hvor mye, hvor du skal betale og innen når.</p>
+      <p>På A13, A14 og A79, rundt Milano, ved Dartford, på M50 ved Dublin og i Portugal har portaler erstattet bommene: det er bompenger med fri flyt, og du kjører gjennom uten å stoppe. Med bombrikke trekkes bompengene automatisk. Uten bombrikke betaler du etterpå på nett, innen en kort frist. Péage Notif forteller deg hvor mye og hvor du skal betale, minner deg så på fristen og legger den inn i kalenderen din.</p>
+    </div>
+    <div class="ff-atouts rv">
+      <div class="ff-atout"><span class="ic" aria-hidden="true">🔔</span><div><h3>En påminnelse før fristen</h3><p>Ett varsel dagen etter passeringen, så ett til kort før fristen, alltid på dagtid: du betaler i tide, uten tilleggsgebyr.</p></div></div>
+      <div class="ff-atout"><span class="ic" aria-hidden="true">📅</span><div><h3>Fristen i kalenderen din</h3><p>Hendelsen er ferdig utfylt, med beløpet, fristen og lenken til det offisielle nettstedet: ett trykk, så er den lagret.</p></div></div>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">

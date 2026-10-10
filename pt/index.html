@@ -416,6 +416,12 @@
     .delais tr.pays-ligne{padding:0}
     .delais tr.pays-ligne th{display:block}
   }
+  .ff-atouts{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:34px auto 0}
+  .ff-atout{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(69,200,120,.38);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(69,200,120,.09),transparent)}
+  .ff-atout .ic{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;background:rgba(69,200,120,.16)}
+  .ff-atout h3{font-size:17px;margin-bottom:4px}
+  .ff-atout p{font-size:14.5px;color:var(--tx2)}
+  @media(max-width:620px){.ff-atouts{grid-template-columns:1fr}}
   .ff-plus{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:22px auto 0}
   .ff-plus div{border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent)}
   .ff-plus h4{font-size:15.5px;margin-bottom:4px;color:var(--tx)}
@@ -486,6 +492,7 @@
         <span class="pill">🔊 <b>Anúncio por voz</b></span>
         <span class="pill">🚗 <b>CarPlay</b></span>
         <span class="pill">🤝 <b>Preços afinados</b> pela comunidade</span>
+        <span class="pill">🔔 <b>Lembrete de pagamento</b> em free flow</span>
         <span class="pill">🔒 <b>Sem conta</b> nem rastreadores</span>
       </div>
     </div>
@@ -597,6 +604,7 @@
           <li>Pórticos de fluxo livre e praças com barreira</li>
           <li>Anúncio por voz, mesmo com o ecrã bloqueado</li>
           <li>Nada para escrever, nada para consultar a conduzir</li>
+          <li>Em free flow, um lembrete antes da data-limite e o prazo no seu calendário</li>
         </ul>
       </div>
       <div class="art rv" style="--d:.15s">
@@ -779,7 +787,11 @@
     <div class="sec-head center rv">
       <span class="eyebrow">Portagens em free flow</span>
       <h2>Free flow: sem barreira, sem esquecimentos</h2>
-      <p>Na A13, na A14, na A79, à volta de Milão, em Dartford, na M50 de Dublin ou em Portugal, os pórticos substituíram as barreiras: é a portagem em free flow, passa-se sem parar. Com identificador, a portagem é cobrada automaticamente. Sem identificador, paga-se depois online, num prazo curto. O Péage Notif diz-lhe quanto, onde pagar e até quando.</p>
+      <p>Na A13, na A14, na A79, à volta de Milão, em Dartford, na M50 de Dublin ou em Portugal, os pórticos substituíram as barreiras: é a portagem em free flow, passa-se sem parar. Com identificador, a portagem é cobrada automaticamente. Sem identificador, paga-se depois online, num prazo curto. O Péage Notif diz-lhe quanto e onde pagar e, depois, lembra-lhe a data-limite e adiciona-a ao seu calendário.</p>
+    </div>
+    <div class="ff-atouts rv">
+      <div class="ff-atout"><span class="ic" aria-hidden="true">🔔</span><div><h3>Um lembrete antes da data-limite</h3><p>Uma notificação no dia seguinte à passagem, depois outra pouco antes do fim do prazo, sempre durante o dia: paga a tempo, sem agravamento.</p></div></div>
+      <div class="ff-atout"><span class="ic" aria-hidden="true">📅</span><div><h3>O prazo no seu calendário</h3><p>O evento já vem preenchido, com o valor, a data-limite e o link do site oficial: basta um toque para o guardar.</p></div></div>
     </div>
     <ol class="ff-steps">
       <li class="ff rv">

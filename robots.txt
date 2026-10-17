@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /publications/
 
 Sitemap: https://peagenotif.fr/sitemap.xml

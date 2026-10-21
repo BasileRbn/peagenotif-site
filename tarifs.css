@@ -21,6 +21,26 @@ td+td,th+th{text-align:right;font-variant-numeric:tabular-nums;white-space:nowra
 .guides b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx2);margin-bottom:6px}
 .guides a{display:block;padding:5px 0;font-weight:600}
 .cols a{display:block;padding:3px 0;break-inside:avoid}
+h2{font-size:21px;letter-spacing:-.01em;margin:30px 0 10px}
+.note{color:var(--tx2);font-size:14px;margin:0 0 18px}
+.tw+.note{margin-top:-22px}
+.prix-cle{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 6px}
+.prix-cle div{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.prix-cle span{display:block;color:var(--tx2);font-size:13px}
+.prix-cle b{display:block;font-size:22px;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:2px}
+td.gares{text-align:left;white-space:normal;line-height:1.35}
+td.gares span{display:block;color:var(--tx2);font-size:.93em}
+.legende-fixe{color:var(--tx2);font-size:14px;margin:0 0 6px}
+details.classes{border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:0 0 26px}
+details.classes summary{cursor:pointer;font-weight:700}
+details.classes[open] summary{margin-bottom:10px}
+details.classes .note{margin-bottom:6px}
+.det{border-top:1px solid var(--line);padding:10px 0}
+.det-t{font-weight:600;line-height:1.35;margin-bottom:6px}
+.det-t span{display:block;color:var(--tx2);font-weight:400;font-size:.93em}
+.det ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 16px}
+.det li{white-space:nowrap;font-variant-numeric:tabular-nums}
+.det li b{font-weight:400;color:var(--tx2)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--tx2);font-size:14px;margin-top:20px}
 details.langs{position:relative;margin-left:auto}
 details.langs summary{list-style:none;cursor:pointer;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--tx2)}
@@ -37,5 +57,7 @@ details.langs summary::after{content:" ▾";font-weight:400}
   table{font-size:13.5px}
   th,td{padding:8px 5px}
   th{font-size:10.5px;letter-spacing:.03em}
+  th+th{white-space:normal}
+  .prix-cle b{font-size:20px}
   .wrap{padding:0 14px}
 }

@@ -17,6 +17,9 @@ td+td,th+th{text-align:right;font-variant-numeric:tabular-nums;white-space:nowra
 .btn{display:inline-block;margin-top:12px;background:var(--blue);color:#fff;font-weight:700;padding:11px 18px;border-radius:12px}
 .btn:hover{text-decoration:none;opacity:.92}
 .cols{columns:3 200px;column-gap:26px;margin:6px 0 34px}
+.guides{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:26px 0}
+.guides b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx2);margin-bottom:6px}
+.guides a{display:block;padding:5px 0;font-weight:600}
 .cols a{display:block;padding:3px 0;break-inside:avoid}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--tx2);font-size:14px;margin-top:20px}
 details.langs{position:relative;margin-left:auto}

@@ -28,6 +28,10 @@ a { color: #eaf1ff; }
 <p><a href="/">Découvrir l'application</a></p>
 </main>
 <script>
+// Compteur de visites anonyme (worker-audience/) : envoyé AVANT la redirection, qu'un
+// script différé n'aurait pas le temps de précéder.
+try { navigator.sendBeacon("https://peage-audience.peagenotif.workers.dev/v",
+  JSON.stringify({p: location.pathname, r: document.referrer, s: "", e: "vue"})); } catch (e) {}
 var ua = navigator.userAgent || "";
 if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
   location.replace("https://apps.apple.com/app/apple-store/id6787924563?pt=129128858&ct=li-2026-10-20&mt=8");

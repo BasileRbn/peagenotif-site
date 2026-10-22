@@ -101,7 +101,6 @@
   "des gares de péage françaises": "av de franska betalstationerna",
   "trajets tarifés, hors-ligne": "sträckor med pris, offline",
   "réseaux vérifiés à la source": "nät kontrollerade mot källan",
-  "compte, 0 traceur": "konton, 0 spårare",
   "Le bon montant, au bon moment": "Rätt belopp i rätt ögonblick",
   "Une notification au passage": "En notis när du passerar",
   "Le prix s'affiche en grand, à l'instant précis du franchissement, avec le trajet et le réseau concernés.": "Priset visas stort i exakt det ögonblick du passerar, tillsammans med sträckan och det berörda nätet.",
@@ -352,7 +351,6 @@
   "Politique de confidentialité — Péage Notif": "Integritetspolicy · Péage Notif",
   "Politique de confidentialité": "Integritetspolicy",
   "Application": "Appen",
-  "— dernière mise à jour : 31 juillet 2026": "(senast uppdaterad 31 juli 2026)",
   "En une phrase :": "Kort sagt:",
   "Péage Notif fonctionne sans compte, sans inscription et sans traceur publicitaire : tout le traitement se fait localement, sur votre téléphone. La seule donnée qui quitte l'appareil est le": "Péage Notif fungerar utan konto, utan registrering och utan reklamspårare: all behandling sker lokalt, på din telefon. Det enda som lämnar enheten är den",
   "signalement d'erreur que vous choisissez de faire": "felrapport som du själv väljer att skicka",
@@ -425,7 +423,6 @@
   ").": ").",
   "10. Enfants": "10. Barn",
   "L'application ne s'adresse pas spécifiquement aux enfants et ne collecte sciemment aucune donnée les concernant.": "Appen riktar sig inte specifikt till barn och samlar inte medvetet in några uppgifter om dem.",
-  "11. Modifications": "11. Ändringar",
   "Cette politique pourra être mise à jour ; la date en tête de page indique la dernière révision. Les modifications substantielles seront signalées sur cette page.": "Denna policy kan komma att uppdateras; datumet högst upp på sidan anger den senaste revideringen. Väsentliga ändringar kommer att anges på denna sida.",
   "← Retour à l'accueil": "← Tillbaka till startsidan",
   "© 2026 SECRETARAI — RCS Nice 103": "© 2026 SECRETARAI · RCS Nice 103",
@@ -552,5 +549,12 @@
   "Calendrier du téléphone, vue du mois : l'échéance « Péage à payer sur sanef.com : ~4,20 € » parmi les autres rendez-vous du jour": "Telefonens kalender, månadsvy: tidsfristen ”Vägtull att betala på sanef.com: ~4,20 €” bland dagens andra möten",
   "Fiche de l'événement dans le Calendrier : péage à payer sur sanef.com, date limite et lien « Ouvrir » vers le site de paiement": "Händelsens detaljer i Kalender: vägtull att betala på sanef.com, tidsfrist och länk till betalningssidan",
   "Écouter un exemple": "Lyssna på ett exempel",
-  "Lecture en cours…": "Spelas upp …"
+  "Lecture en cours…": "Spelas upp …",
+  "ni cookie": "och inga kakor",
+  "compte, 0 cookie": "konton, 0 kakor",
+  "— dernière mise à jour : 22 octobre 2026": "(senast uppdaterad 22 oktober 2026)",
+  "11. Le site peagenotif.fr : mesure d'audience anonyme": "11. Webbplatsen peagenotif.fr: anonym räkning av besök",
+  "Cette politique concerne l'application. Le site peagenotif.fr, lui, compte ses visites de façon anonyme pour savoir quelles pages sont utiles : la page consultée, le site d'où l'on arrive (un moteur de recherche, un réseau social), le pays, le type d'appareil, et les appuis sur les boutons App Store et Google Play.": "Den här policyn gäller appen. Webbplatsen peagenotif.fr räknar däremot sina besök anonymt för att veta vilka sidor som är användbara: sidan som visas, webbplatsen du kommer från (en sökmotor, ett socialt nätverk), landet, typen av enhet och tryck på knapparna App Store och Google Play.",
+  "Aucun cookie n'est déposé et rien n'est enregistré sur votre appareil. Ni votre adresse IP, ni votre navigateur, ni l'heure de la visite ne sont conservés : chaque visite ajoute seulement 1 à un total par jour, si bien qu'il est impossible de suivre une personne d'une page à l'autre, y compris pour nous. Ces totaux sont stockés en Europe de l'Ouest par Cloudflare, Inc., l'hébergeur du serveur de l'éditeur, et ne sont ni partagés ni vendus.": "Ingen kaka sätts och ingenting sparas på din enhet. Varken din IP-adress, din webbläsare eller tidpunkten för besöket sparas: varje besök lägger bara till 1 till en daglig summa, så det är omöjligt att följa en person från sida till sida, även för oss. Summorna lagras i Västeuropa av Cloudflare, Inc., som är värd för utgivarens server, och delas eller säljs aldrig.",
+  "12. Modifications": "12. Ändringar"
 }

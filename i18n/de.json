@@ -101,7 +101,6 @@
   "des gares de péage françaises": "der französischen Mautstationen",
   "trajets tarifés, hors-ligne": "bepreiste Strecken, offline",
   "réseaux vérifiés à la source": "Netze, an der Quelle geprüft",
-  "compte, 0 traceur": "Konten, 0 Tracker",
   "Le bon montant, au bon moment": "Der richtige Betrag im richtigen Moment",
   "Une notification au passage": "Eine Benachrichtigung bei der Durchfahrt",
   "Le prix s'affiche en grand, à l'instant précis du franchissement, avec le trajet et le réseau concernés.": "Der Preis erscheint groß, genau im Moment der Durchfahrt, mit der betreffenden Strecke und dem Netz.",
@@ -352,7 +351,6 @@
   "Politique de confidentialité — Péage Notif": "Datenschutzerklärung · Péage Notif",
   "Politique de confidentialité": "Datenschutzerklärung",
   "Application": "App",
-  "— dernière mise à jour : 31 juillet 2026": "(zuletzt aktualisiert: 31. Juli 2026)",
   "En une phrase :": "In einem Satz:",
   "Péage Notif fonctionne sans compte, sans inscription et sans traceur publicitaire : tout le traitement se fait localement, sur votre téléphone. La seule donnée qui quitte l'appareil est le": "Péage Notif funktioniert ohne Konto, ohne Anmeldung und ohne Werbe-Tracker: Die gesamte Verarbeitung erfolgt lokal auf Ihrem Telefon. Das Einzige, was das Gerät verlässt, ist die",
   "signalement d'erreur que vous choisissez de faire": "Fehlermeldung, die Sie selbst senden möchten",
@@ -425,7 +423,6 @@
   ").": ").",
   "10. Enfants": "10. Kinder",
   "L'application ne s'adresse pas spécifiquement aux enfants et ne collecte sciemment aucune donnée les concernant.": "Die App richtet sich nicht speziell an Kinder und erhebt wissentlich keine Daten über sie.",
-  "11. Modifications": "11. Änderungen",
   "Cette politique pourra être mise à jour ; la date en tête de page indique la dernière révision. Les modifications substantielles seront signalées sur cette page.": "Diese Erklärung kann aktualisiert werden; das Datum oben auf der Seite gibt die letzte Überarbeitung an. Wesentliche Änderungen werden auf dieser Seite kenntlich gemacht.",
   "← Retour à l'accueil": "← Zurück zur Startseite",
   "© 2026 SECRETARAI — RCS Nice 103": "© 2026 SECRETARAI · Handelsregister (RCS) Nice 103",
@@ -552,5 +549,12 @@
   "Calendrier du téléphone, vue du mois : l'échéance « Péage à payer sur sanef.com : ~4,20 € » parmi les autres rendez-vous du jour": "Kalender des Handys, Monatsansicht: die Frist „Zu zahlende Maut auf sanef.com: ~4,20 €“ zwischen den anderen Terminen des Tages",
   "Fiche de l'événement dans le Calendrier : péage à payer sur sanef.com, date limite et lien « Ouvrir » vers le site de paiement": "Termindetails im Kalender: Maut auf sanef.com zu zahlen, Frist und Link zur Bezahlseite",
   "Écouter un exemple": "Beispiel anhören",
-  "Lecture en cours…": "Wird abgespielt …"
+  "Lecture en cours…": "Wird abgespielt …",
+  "ni cookie": "und ohne Cookies",
+  "compte, 0 cookie": "Konten, 0 Cookies",
+  "— dernière mise à jour : 22 octobre 2026": "(zuletzt aktualisiert: 22. Oktober 2026)",
+  "11. Le site peagenotif.fr : mesure d'audience anonyme": "11. Die Website peagenotif.fr: anonyme Besuchszählung",
+  "Cette politique concerne l'application. Le site peagenotif.fr, lui, compte ses visites de façon anonyme pour savoir quelles pages sont utiles : la page consultée, le site d'où l'on arrive (un moteur de recherche, un réseau social), le pays, le type d'appareil, et les appuis sur les boutons App Store et Google Play.": "Diese Richtlinie betrifft die App. Die Website peagenotif.fr zählt ihre Besuche anonym, um zu erfahren, welche Seiten nützlich sind: die aufgerufene Seite, die Website, von der Sie kommen (eine Suchmaschine, ein soziales Netzwerk), das Land, die Art des Geräts sowie das Antippen der Schaltflächen App Store und Google Play.",
+  "Aucun cookie n'est déposé et rien n'est enregistré sur votre appareil. Ni votre adresse IP, ni votre navigateur, ni l'heure de la visite ne sont conservés : chaque visite ajoute seulement 1 à un total par jour, si bien qu'il est impossible de suivre une personne d'une page à l'autre, y compris pour nous. Ces totaux sont stockés en Europe de l'Ouest par Cloudflare, Inc., l'hébergeur du serveur de l'éditeur, et ne sont ni partagés ni vendus.": "Es wird kein Cookie gesetzt und nichts auf Ihrem Gerät gespeichert. Weder Ihre IP-Adresse noch Ihr Browser noch die Uhrzeit des Besuchs werden aufbewahrt: Jeder Besuch erhöht lediglich eine Tagessumme um 1, sodass es unmöglich ist, eine Person von einer Seite zur nächsten zu verfolgen, auch für uns. Diese Summen werden in Westeuropa von Cloudflare, Inc., dem Hoster des Servers des Herausgebers, gespeichert und weder weitergegeben noch verkauft.",
+  "12. Modifications": "12. Änderungen"
 }

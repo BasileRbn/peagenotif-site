@@ -556,5 +556,9 @@
   "11. Le site peagenotif.fr : mesure d'audience anonyme": "11. Webstedet peagenotif.fr: anonym optælling af besøg",
   "Cette politique concerne l'application. Le site peagenotif.fr, lui, compte ses visites de façon anonyme pour savoir quelles pages sont utiles : la page consultée, le site d'où l'on arrive (un moteur de recherche, un réseau social), le pays, le type d'appareil, et les appuis sur les boutons App Store et Google Play.": "Denne politik gælder appen. Webstedet peagenotif.fr tæller derimod sine besøg anonymt for at vide, hvilke sider der er nyttige: den viste side, det websted, du kommer fra (en søgemaskine, et socialt netværk), landet, enhedstypen og tryk på knapperne App Store og Google Play.",
   "Aucun cookie n'est déposé et rien n'est enregistré sur votre appareil. Ni votre adresse IP, ni votre navigateur, ni l'heure de la visite ne sont conservés : chaque visite ajoute seulement 1 à un total par jour, si bien qu'il est impossible de suivre une personne d'une page à l'autre, y compris pour nous. Ces totaux sont stockés en Europe de l'Ouest par Cloudflare, Inc., l'hébergeur du serveur de l'éditeur, et ne sont ni partagés ni vendus.": "Der sættes ingen cookie, og intet gemmes på din enhed. Hverken din IP-adresse, din browser eller tidspunktet for besøget gemmes: hvert besøg lægger blot 1 til en daglig sum, så det er umuligt at følge en person fra side til side, også for os. Disse summer opbevares i Vesteuropa af Cloudflare, Inc., der hoster udgiverens server, og de hverken deles eller sælges.",
-  "12. Modifications": "12. Ændringer"
+  "12. Modifications": "12. Ændringer",
+  "Télécharger": "Hent appen",
+  "Le prochain portique, vous saurez quoi payer et avant quand.": "Ved næste portal ved du, hvad du skal betale og senest hvornår.",
+  "Votre prochain trajet est sur la carte ? L'app est prête.": "Er din næste tur på kortet? Appen er klar.",
+  "Gratuit, sans compte": "Gratis, uden konto"
 }

@@ -556,5 +556,9 @@
   "11. Le site peagenotif.fr : mesure d'audience anonyme": "11. El sitio peagenotif.fr: recuento anónimo de visitas",
   "Cette politique concerne l'application. Le site peagenotif.fr, lui, compte ses visites de façon anonyme pour savoir quelles pages sont utiles : la page consultée, le site d'où l'on arrive (un moteur de recherche, un réseau social), le pays, le type d'appareil, et les appuis sur les boutons App Store et Google Play.": "Esta política se refiere a la aplicación. El sitio peagenotif.fr, por su parte, cuenta sus visitas de forma anónima para saber qué páginas son útiles: la página consultada, el sitio desde el que llegas (un buscador, una red social), el país, el tipo de dispositivo y las pulsaciones en los botones App Store y Google Play.",
   "Aucun cookie n'est déposé et rien n'est enregistré sur votre appareil. Ni votre adresse IP, ni votre navigateur, ni l'heure de la visite ne sont conservés : chaque visite ajoute seulement 1 à un total par jour, si bien qu'il est impossible de suivre une personne d'une page à l'autre, y compris pour nous. Ces totaux sont stockés en Europe de l'Ouest par Cloudflare, Inc., l'hébergeur du serveur de l'éditeur, et ne sont ni partagés ni vendus.": "No se instala ninguna cookie y no se guarda nada en tu dispositivo. No se conservan ni tu dirección IP, ni tu navegador, ni la hora de la visita: cada visita solo suma 1 a un total diario, de modo que es imposible seguir a una persona de una página a otra, también para nosotros. Estos totales se almacenan en Europa occidental en Cloudflare, Inc., el proveedor que aloja el servidor del editor, y no se comparten ni se venden.",
-  "12. Modifications": "12. Cambios"
+  "12. Modifications": "12. Cambios",
+  "Télécharger": "Descargar",
+  "Le prochain portique, vous saurez quoi payer et avant quand.": "En el próximo pórtico sabrás qué pagar y hasta cuándo.",
+  "Votre prochain trajet est sur la carte ? L'app est prête.": "¿Tu próximo viaje está en el mapa? La app está lista.",
+  "Gratuit, sans compte": "Gratis, sin cuenta"
 }

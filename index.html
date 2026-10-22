@@ -65,6 +65,7 @@
      à lui seul la place de deux liens : aux anciens seuils le nav débordait hors
      écran à 601, 768 et 1100 px. Chaque valeur est vérifiée par balayage de
      largeurs, pas estimée. La navigation complète reste dans le pied de page. */
+  @media(max-width:1700px){nav a.hide-xl{display:none}}
   @media(max-width:1400px){nav a.hide-l{display:none}}
   @media(max-width:1250px){nav a{margin-left:20px}nav a.hide-m{display:none}}
   @media(max-width:950px){nav a{margin-left:16px;font-size:14px}nav a.hide-s{display:none}}
@@ -512,6 +513,9 @@
   .delais th{color:var(--tx3);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#F7F9FD}
   .delais tr:last-child td{border-bottom:none}
   .delais td b{color:var(--tx);white-space:nowrap}
+  /* Sur écran étroit, un délai long (« Antes de la medianoche del día siguiente ») doit
+     pouvoir passer à la ligne : sans cela le tableau dépassait de l'écran en es, el, nl. */
+  @media(max-width:760px){.delais td b{white-space:normal}}
   .delais td{color:var(--tx2)}
   .delais tr.pays-ligne th{color:var(--tx);font-size:13px;letter-spacing:.04em;text-transform:none;background:#F1F5FB;padding:9px 16px}
   .delais tr.pays-ligne .flag{display:inline-block;vertical-align:-2px;margin-right:9px}
@@ -542,6 +546,36 @@
   .langs-l a[aria-current="true"]{background:var(--tx2);color:var(--bg)}
   @media(max-width:660px){details.langs{margin-left:8px}}
   /* fin du sélecteur de langue */
+  /* Appels à télécharger (aperçu du 22/10/2026) */
+  .nav-dl{margin-left:18px;padding:7px 14px;border-radius:999px;background:var(--blue);color:#fff!important;font-weight:700;font-size:14px}
+  .nav-dl:hover{opacity:.9}
+  .cta-rappel{margin:56px auto 0;max-width:720px;text-align:center;padding:30px 24px;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:0 18px 40px -28px rgba(11,21,48,.35)}
+  .cta-rappel-t{font-size:clamp(19px,2.2vw,23px);font-weight:800;letter-spacing:-.015em;line-height:1.3;margin:0 0 18px;color:var(--tx)}
+  .cta-fixe{display:none}
+  @media(max-width:760px){
+    .nav-dl{display:none}
+    .cta-rappel{margin-top:40px;padding:24px 16px}
+    .cta-fixe{display:flex;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 14px 34px -12px rgba(11,21,48,.35);transform:translateY(140%);transition:transform .35s ease}
+    .cta-fixe.vu{transform:none}
+    .cta-fixe-ic{border-radius:9px;flex:none}
+    .cta-fixe-t{display:flex;flex-direction:column;line-height:1.2;min-width:0;flex:1}
+    .cta-fixe-t b{font-size:15px}
+    .cta-fixe-t span{font-size:12.5px;color:var(--tx2)}
+    .cta-fixe-b{display:flex;gap:6px;flex:none}
+    .cta-fixe-b img{height:40px;width:auto;display:block}
+    .cta-fixe:not(.un) .cta-fixe-t{display:none}
+    .cta-fixe:not(.un){justify-content:center}
+  }
+  /* Petits téléphones : on resserre tout SAUF le badge, qui reste à 40 px (minimum d'Apple).
+     Mesuré dans les 13 langues : le sous-titre tient sur une ligne dès 360 px. */
+  @media(max-width:420px){
+    .cta-fixe{left:8px;right:8px;gap:8px;padding:8px 10px}
+    .cta-fixe-ic{width:30px;height:30px;border-radius:8px}
+    .cta-fixe-t b{font-size:14px}
+    .cta-fixe-t span{font-size:12px}
+  }
+  @media(max-width:350px){.cta-fixe-ic{display:none}}
+  @media (prefers-reduced-motion:reduce){.cta-fixe{transition:none}}
 </style>
 <script src="/m.js" defer></script>
   <link rel="alternate" hreflang="fr" href="https://peagenotif.fr/">
@@ -572,7 +606,8 @@
       <a href="#flux-libre" class="hide-s">Flux libre</a>
       <a href="tarifs/" class="hide-xs">Prix des péages</a><a href="peages-mode-emploi.html" class="hide-xs">Comprendre les péages</a>
       <a href="#support" class="hide-xxs">Support</a>
-      <a href="confidentialite.html" class="hide-m">Confidentialité</a>
+      <a href="confidentialite.html" class="hide-xl">Confidentialité</a>
+      <a href="#telecharger" class="nav-dl">Télécharger</a>
       <details class="langs" translate="no"><summary aria-label="Langue">FR</summary><span class="langs-l"><a href="/" hreflang="fr" data-lang="fr" lang="fr">Français</a><a href="/en/" hreflang="en" data-lang="en" lang="en">English</a><a href="/it/" hreflang="it" data-lang="it" lang="it">Italiano</a><a href="/de/" hreflang="de" data-lang="de" lang="de">Deutsch</a><a href="/es/" hreflang="es" data-lang="es" lang="es">Español</a><a href="/pt/" hreflang="pt-PT" data-lang="pt" lang="pt">Português</a><a href="/nl/" hreflang="nl" data-lang="nl" lang="nl">Nederlands</a><a href="/el/" hreflang="el" data-lang="el" lang="el">Ελληνικά</a><a href="/sl/" hreflang="sl" data-lang="sl" lang="sl">Slovenščina</a><a href="/da/" hreflang="da" data-lang="da" lang="da">Dansk</a><a href="/ca/" hreflang="ca" data-lang="ca" lang="ca">Català</a><a href="/sv/" hreflang="sv" data-lang="sv" lang="sv">Svenska</a><a href="/nb/" hreflang="nb" data-lang="nb" lang="nb">Norsk bokmål</a></span></details>
     </nav>
   </div>
@@ -820,6 +855,10 @@
         <p>Péage Notif ne vous demandera jamais de payer et n'envoie aucun SMS. Le paiement se fait uniquement sur le site officiel de l'exploitant, celui que l'app vous indique.</p>
       </div>
     </div>
+    <div class="cta-rappel rv">
+      <p class="cta-rappel-t">Le prochain portique, vous saurez quoi payer et avant quand.</p>
+      <div class="hx-cta"><a class="hx-store" href="https://apps.apple.com/fr/app/id6787924563" rel="noopener"><img src="img/appstore-badge-fr.svg" alt="Télécharger dans l'App Store" width="164" height="52"></a><a class="hx-store" href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif" rel="noopener"><img src="img/play-badge-fr.png" alt="Disponible sur Google Play" width="175" height="52"></a></div>
+    </div>
   </div>
 </section>
 
@@ -971,6 +1010,10 @@
       <div><h4>La devise du pays</h4><p>Franc suisse, livre sterling, couronnes, dirham, dinar ou dollar canadien : le montant s'affiche dans la devise du pays, avec son équivalent en euros quand la Banque centrale européenne en publie le cours.</p></div>
       <div><h4>Votre langue, partout</h4><p>L'app parle treize langues et garde la vôtre de part et d'autre des frontières. Les noms des gares restent ceux des panneaux.</p></div>
     </div>
+    <div class="cta-rappel rv">
+      <p class="cta-rappel-t">Votre prochain trajet est sur la carte ? L'app est prête.</p>
+      <div class="hx-cta"><a class="hx-store" href="https://apps.apple.com/fr/app/id6787924563" rel="noopener"><img src="img/appstore-badge-fr.svg" alt="Télécharger dans l'App Store" width="164" height="52"></a><a class="hx-store" href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif" rel="noopener"><img src="img/play-badge-fr.png" alt="Disponible sur Google Play" width="175" height="52"></a></div>
+    </div>
   </div>
 </section>
 
@@ -1102,7 +1145,7 @@
 </section>
 
 <!-- CTA -->
-<section class="cta band">
+<section class="cta band" id="telecharger">
   <div class="wrap">
     <span class="soon rv"><span class="dot"></span> Disponible sur l'App Store et sur Google Play</span>
     <h2 class="rv" style="margin-top:22px;--d:.08s">Ne vous demandez plus<br>« ça m'a coûté combien ? »</h2>
@@ -1222,6 +1265,51 @@
     },motionOK?900:0);
     hxMinuteur=setTimeout(hxFin,7000);
   });
+</script>
+<!-- Barre de téléchargement, sur téléphone seulement : le magasin de l'appareil, visible une
+     fois les badges du haut passés, effacée à l'approche de l'appel final. -->
+<div class="cta-fixe" id="cta-fixe" hidden>
+  <img class="cta-fixe-ic" src="img/icon.png" alt="" width="36" height="36">
+  <span class="cta-fixe-t"><b>Péage Notif</b><span>Gratuit, sans compte</span></span>
+  <span class="cta-fixe-b"><a class="hx-store" data-os="ios" href="https://apps.apple.com/fr/app/id6787924563" rel="noopener"><img src="img/appstore-badge-fr.svg" alt="Télécharger dans l'App Store" width="164" height="52"></a><a class="hx-store" data-os="android" href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif" rel="noopener"><img src="img/play-badge-fr.png" alt="Disponible sur Google Play" width="175" height="52"></a></span>
+</div>
+<script>
+(function(){
+  var barre=document.getElementById('cta-fixe'); if(!barre) return;
+  var ua=navigator.userAgent, os=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)?'ios':(/Android/.test(ua)?'android':'');
+  if(os){ barre.classList.add('un'); barre.querySelectorAll('[data-os]').forEach(function(a){ if(a.dataset.os!==os) a.remove(); }); }
+  var haut=document.querySelector('.hx-cta'), fin=document.getElementById('telecharger'), voitHaut=true, voitFin=false;
+  var sous=barre.querySelector('.cta-fixe-t span'), ic=barre.querySelector('.cta-fixe-ic');
+  function serrer(){ if(!sous||!ic) return; ic.style.display='';
+    if(sous.offsetHeight>parseFloat(getComputedStyle(sous).lineHeight)*1.5) ic.style.display='none'; }
+  addEventListener('resize',serrer);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(serrer);
+  function maj(){ var montre=!voitHaut&&!voitFin; barre.hidden=false; serrer(); barre.classList.toggle('vu',montre); barre.setAttribute('aria-hidden',montre?'false':'true'); barre.inert=!montre; }
+  new IntersectionObserver(function(e){ voitHaut=e[0].isIntersecting; maj(); }).observe(haut);
+  new IntersectionObserver(function(e){ voitFin=e[0].isIntersecting; maj(); }).observe(fin);
+})();
+// Menu : les libellés n'ont pas la même longueur d'une langue à l'autre, et des seuils fixes
+// laissaient le menu sortir de sa colonne (jusqu'à 170 px en français sur grand écran). On
+// retire des liens dans l'ordre de priorité des classes hide-*, tant que le menu dépasse ;
+// « Télécharger » part en dernier. Sans script, les seuils CSS restent la règle.
+(function(){
+  var wrap=document.querySelector('header .wrap'), fin=document.querySelector('header details.langs');
+  if(!wrap||!fin) return;
+  var liens=[];
+  ['hide-xl','hide-l','hide-m','hide-s','hide-xs','hide-xxs','nav-dl'].forEach(function(c){
+    liens=liens.concat([].slice.call(document.querySelectorAll('header nav a.'+c)).reverse());
+  });
+  function deborde(){
+    var r=wrap.getBoundingClientRect();
+    return fin.getBoundingClientRect().right>r.right-parseFloat(getComputedStyle(wrap).paddingRight)+0.5;
+  }
+  function ajuster(){
+    liens.forEach(function(a){ a.style.display=''; });
+    for(var i=0;i<liens.length&&deborde();i++) liens[i].style.display='none';
+  }
+  ajuster(); addEventListener('resize',ajuster);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ajuster);
+})();
 </script>
 </body>
 </html>

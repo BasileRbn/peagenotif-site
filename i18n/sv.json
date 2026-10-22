@@ -556,5 +556,9 @@
   "11. Le site peagenotif.fr : mesure d'audience anonyme": "11. Webbplatsen peagenotif.fr: anonym räkning av besök",
   "Cette politique concerne l'application. Le site peagenotif.fr, lui, compte ses visites de façon anonyme pour savoir quelles pages sont utiles : la page consultée, le site d'où l'on arrive (un moteur de recherche, un réseau social), le pays, le type d'appareil, et les appuis sur les boutons App Store et Google Play.": "Den här policyn gäller appen. Webbplatsen peagenotif.fr räknar däremot sina besök anonymt för att veta vilka sidor som är användbara: sidan som visas, webbplatsen du kommer från (en sökmotor, ett socialt nätverk), landet, typen av enhet och tryck på knapparna App Store och Google Play.",
   "Aucun cookie n'est déposé et rien n'est enregistré sur votre appareil. Ni votre adresse IP, ni votre navigateur, ni l'heure de la visite ne sont conservés : chaque visite ajoute seulement 1 à un total par jour, si bien qu'il est impossible de suivre une personne d'une page à l'autre, y compris pour nous. Ces totaux sont stockés en Europe de l'Ouest par Cloudflare, Inc., l'hébergeur du serveur de l'éditeur, et ne sont ni partagés ni vendus.": "Ingen kaka sätts och ingenting sparas på din enhet. Varken din IP-adress, din webbläsare eller tidpunkten för besöket sparas: varje besök lägger bara till 1 till en daglig summa, så det är omöjligt att följa en person från sida till sida, även för oss. Summorna lagras i Västeuropa av Cloudflare, Inc., som är värd för utgivarens server, och delas eller säljs aldrig.",
-  "12. Modifications": "12. Ändringar"
+  "12. Modifications": "12. Ändringar",
+  "Télécharger": "Ladda ned",
+  "Le prochain portique, vous saurez quoi payer et avant quand.": "Vid nästa portal vet du vad du ska betala och senast när.",
+  "Votre prochain trajet est sur la carte ? L'app est prête.": "Finns din nästa resa på kartan? Appen är redo.",
+  "Gratuit, sans compte": "Gratis, utan konto"
 }

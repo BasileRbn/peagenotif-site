@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Péage Notif</title>
+<meta property="og:title" content="Péage Notif : le prix de chaque péage, au passage">
+<meta property="og:description" content="Gratuit, sans compte, sur iPhone et Android.">
+<meta property="og:image" content="https://peagenotif.fr/img/og.png">
+<link rel="icon" href="/img/icon.png">
+<style>
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center;
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #060b18; color: #eaf1ff; padding: 24px; box-sizing: border-box; }
+img { border-radius: 18px; }
+a { color: #eaf1ff; }
+.boutons a { display: inline-block; margin: 6px; padding: 12px 20px; border-radius: 12px;
+  background: #0b5fff; color: #fff; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+<img src="/img/icon.png" width="72" height="72" alt="">
+<h1>Péage Notif</h1>
+<p>Le prix de chaque péage, annoncé au passage.</p>
+<p class="boutons"><a href="https://apps.apple.com/app/apple-store/id6787924563?pt=129128858&ct=fb-2026-11-26&mt=8">App Store</a><a href="https://play.google.com/store/apps/details?id=com.secretarai.peagenotif&referrer=utm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dfb-2026-11-26">Google Play</a></p>
+<p><a href="/">Découvrir l'application</a></p>
+</main>
+<script>
+// Compteur de visites anonyme (worker-audience/) : envoyé AVANT la redirection, qu'un
+// script différé n'aurait pas le temps de précéder.
+try { navigator.sendBeacon("https://peage-audience.peagenotif.workers.dev/v",
+  JSON.stringify({p: location.pathname, r: document.referrer, s: "", e: "vue"})); } catch (e) {}
+var ua = navigator.userAgent || "";
+if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
+  location.replace("https://apps.apple.com/app/apple-store/id6787924563?pt=129128858&ct=fb-2026-11-26&mt=8");
+} else if (/Android/.test(ua)) {
+  location.replace("https://play.google.com/store/apps/details?id=com.secretarai.peagenotif&referrer=utm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dfb-2026-11-26");
+} else {
+  location.replace("/");
+}
+</script>
+</body>
+</html>

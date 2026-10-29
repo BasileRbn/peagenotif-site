@@ -288,19 +288,19 @@
   @media(max-width:720px){.steps{grid-template-columns:1fr}}
 
   /* ---------- Dans les médias (29/10/2026) ----------
-     Les noms des médias sont écrits en texte, jamais avec leur logo: ce sont leurs marques. */
+     Logos officiels des deux médias, passés en gris (décision du président, 29/10/2026):
+     le logo renvoie vers le site du média, le lien du bas vers la chronique ou l'article. */
   section.presse{padding:58px 0}
   .presse-cartes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:34px auto 0}
-  .presse-carte{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 1px 2px rgba(11,21,48,.04);padding:24px 26px;color:var(--tx);transition:transform .25s,border-color .25s,box-shadow .25s}
-  .presse-carte:hover{text-decoration:none;transform:translateY(-4px);border-color:#C5D1E5;box-shadow:0 18px 40px rgba(11,21,48,.10)}
-  .presse-tete{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-  .presse-ic{width:40px;height:40px;border-radius:12px;background:rgba(11,95,255,.10);color:var(--blue);display:grid;place-items:center;flex:none}
-  .presse-ic svg{width:21px;height:21px}
-  .presse-media{display:block;font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.05}
-  .presse-type{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin-top:3px}
+  .presse-carte{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 1px 2px rgba(11,21,48,.04);padding:24px 26px;color:var(--tx)}
+  .presse-logo{display:inline-flex;align-items:center;align-self:flex-start;height:46px;margin-bottom:8px;transition:opacity .2s}
+  .presse-logo:hover,.presse-logo:focus-visible{opacity:.7}
+  .presse-logo img{height:40px;width:auto;display:block}
+  .presse-logo img.fin{height:46px}
+  .presse-type{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3)}
   .presse-titre{font-size:18px;font-weight:700;line-height:1.35}
   .presse-date{font-size:14px;color:var(--tx2)}
-  .presse-lien{margin-top:auto;padding-top:12px;font-weight:700;font-size:15px;color:var(--blue)}
+  .presse-lien{margin-top:auto;padding-top:12px;font-weight:700;font-size:15px;color:var(--blue);align-self:flex-start}
   @media(max-width:720px){.presse-cartes{grid-template-columns:1fr}.presse-carte{padding:22px}}
 
   /* Stats */
@@ -706,7 +706,8 @@
 <!-- DANS LES MÉDIAS (29/10/2026). Deux mentions vérifiées à la source le 29/10: la chronique
      «Sur les réseaux» de Laura Tenoudji (Europe 1 Matin, 17/10/2026, 2 min 40) et sa newsletter
      L'Allumette n° 93 (1er/10/2026, rubrique «La startup»). Les noms propres sont en
-     translate="no"; les dates et les liens se traduisent dans le catalogue. -->
+     translate="no"; les dates et les liens se traduisent dans le catalogue. Logos officiels en
+     gris (img/presse/), tirés d'europe1.fr et de lallumette.com. -->
 <section id="presse" class="band presse">
   <div class="wrap">
     <div class="sec-head center rv">
@@ -715,24 +716,20 @@
       <p>Laura Tenoudji apresentou a Péage Notif na sua crónica de fim de semana na rádio francesa Europe 1, depois de lhe dedicar a rubrica «La startup» da sua newsletter.</p>
     </div>
     <div class="presse-cartes">
-      <a class="presse-carte rv" href="https://www.europe1.fr/emissions/sur-les-reseaux/peages-notif-pour-sadapter-au-nouveau-systeme-de-peages-par-camera-1156220" rel="noopener">
-        <span class="presse-tete">
-          <span class="presse-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/></svg></span>
-          <span><span class="presse-media" translate="no">Europe 1</span><span class="presse-type">Crónica de rádio <span translate="no">«Sur les réseaux»</span></span></span>
-        </span>
+      <article class="presse-carte rv">
+        <a class="presse-logo" href="https://www.europe1.fr" rel="noopener"><img src="../img/presse/europe1.svg" alt="Europe 1" width="110" height="40"></a>
+        <span class="presse-type">Crónica de rádio <span translate="no">«Sur les réseaux»</span></span>
         <span class="presse-titre">Péage Notif, para se adaptar às novas portagens por câmara</span>
         <span class="presse-date"><time datetime="2026-10-17">17 de outubro de 2026</time> · <span translate="no">Europe 1 Matin</span></span>
-        <span class="presse-lien">Ouvir a crónica (2 min 40, em francês) →</span>
-      </a>
-      <a class="presse-carte rv" style="--d:.12s" href="https://lallumette.com/articles/93-plus-de-mauvaise-surprise-au-peage" rel="noopener">
-        <span class="presse-tete">
-          <span class="presse-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
-          <span><span class="presse-media" translate="no">L'Allumette</span><span class="presse-type">Newsletter, rubrica <span translate="no">«La startup»</span></span></span>
-        </span>
+        <a class="presse-lien" href="https://www.europe1.fr/emissions/sur-les-reseaux/peages-notif-pour-sadapter-au-nouveau-systeme-de-peages-par-camera-1156220" rel="noopener">Ouvir a crónica (2 min 40, em francês) →</a>
+      </article>
+      <article class="presse-carte rv" style="--d:.12s">
+        <a class="presse-logo" href="https://lallumette.com" rel="noopener"><img class="fin" src="../img/presse/lallumette.webp" alt="L'Allumette" width="173" height="46"></a>
+        <span class="presse-type">Newsletter, rubrica <span translate="no">«La startup»</span></span>
         <span class="presse-titre">Acabaram-se as surpresas desagradáveis na portagem!</span>
         <span class="presse-date"><time datetime="2026-10-01">1 de outubro de 2026</time> · <span translate="no">n° 93</span></span>
-        <span class="presse-lien">Ler o artigo (em francês) →</span>
-      </a>
+        <a class="presse-lien" href="https://lallumette.com/articles/93-plus-de-mauvaise-surprise-au-peage" rel="noopener">Ler o artigo (em francês) →</a>
+      </article>
     </div>
   </div>
 </section>
